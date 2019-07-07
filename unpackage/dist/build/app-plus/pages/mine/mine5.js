@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"list_wrap{background: #FFFFFF; width: ",[0,710],"; padding: 0 ",[0,20],";margin-top: ",[0,20],";}\n.",[1],"list .",[1],"item{color: #333333; font-size: ",[0,32],"; line-height: 2em; padding: ",[0,20],"; border-bottom: 1px solid #E6E6E6;}\n.",[1],"list .",[1],"item .",[1],"forward{float: right; line-height: 2em;}\n",],undefined,{path:"./pages/mine/mine5.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/mine5.wxml') } }));

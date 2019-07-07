@@ -1,0 +1,16 @@
+
+.img{
+	width:90%;
+	margin:20rpx auto;
+	text-align: center;
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+	padding:20rpx;
+	background: red;
+}
+.img image{
+	width:100%;
+	margin:0 auto;
+	display:block;
+}
+

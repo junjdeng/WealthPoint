@@ -1,0 +1,1 @@
+<view class="{{['segmented-control',styleType]}}" style="{{(wrapStyle)}}"><block wx:for="{{values}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['onClick',[index]]]]]}}" class="{{['segmented-control-item',styleType]}}" style="{{(index===currentIndex?activeStyle:itemStyle)}}" bindtap="__e">{{''+item+''}}</view></block></view>
