@@ -197,7 +197,7 @@ var canvas = null;var _default =
     return {
       // echarts: echarts,
       updateStatus: false,
-      showPop: true,
+      showPop: false,
       cWidth: '',
       cHeight: '',
       pixelRatio: 0.98, //放大位数

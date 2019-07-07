@@ -147,7 +147,11 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../.
 //
 //
 //
-var _default = { data: function data() {return { user: 'Waixin', pwd: 'a123456' };}, methods: { registre: function registre() {uni.navigateTo({ url: '/pages/login/register' });}, formSubmit: function formSubmit(e) {var data = e.detail.value; /* console.log(JSON.stringify(data)) */if (!_common.default.isNotNull(data.username, "账号")) return;if (!_common.default.isNotNull(data.password, "密码")) return;(0, _request.djRequest)({ url: '/api/login', data: data,
+var _default = { data: function data() {return { user: '', pwd: '' };}, onLoad: function onLoad() {var _this = this;uni.getStorage({ key: 'userpwd', success: function success(res) {_this.login(res.data);} });}, methods: { registre: function registre() {uni.navigateTo({ url: '/pages/login/register' });},
+    login: function login(data) {
+      (0, _request.djRequest)({
+        url: '/api/login',
+        data: data,
         success: function success(res) {
           if (res.data.status == 406) {
             _common.default.TostUtil(res.data.message);
@@ -158,12 +162,12 @@ var _default = { data: function data() {return { user: 'Waixin', pwd: 'a123456' 
               key: 'sessionid',
               data: res.data.data.sessionId });
 
-            /* uni.getStorage({
-                                                	key:'sessionid',
-                                                	success(e){
-                                                		uni.request.defaults.headers.common['sessionid']=e.data;
-                                                	}
-                                                }) */
+
+            uni.setStorage({
+              key: 'userpwd',
+              data: data });
+
+
             uni.setStorage({
               key: 'loginInfo',
               data: JSON.stringify(res.data.data) });
@@ -180,6 +184,13 @@ var _default = { data: function data() {return { user: 'Waixin', pwd: 'a123456' 
           }
         } });
 
+    },
+    formSubmit: function formSubmit(e) {
+      var data = e.detail.value;
+      /* console.log(JSON.stringify(data)) */
+      if (!_common.default.isNotNull(data.username, "账号")) return;
+      if (!_common.default.isNotNull(data.password, "密码")) return;
+      this.login(data);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
