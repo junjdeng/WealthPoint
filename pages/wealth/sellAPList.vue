@@ -31,11 +31,11 @@
 						<view class="contect">
 							<view v-show="current!==0" @click="connect(temp,1)"> 联系会员</view>
 							<!--待付款v-show="current===1"-->
-							<view v-show="current===2">查看凭证</view>
+							<view v-show="current===2"  :data-url="'OrderConfirm?id='+temp.matchId" @click="navTo">查看凭证</view>
 							<view v-show="current===2">投诉</view>
 							<view v-show="current===2">确认收款</view>
 							<!--待确认-->
-							<view v-show="current===3">去评价</view>
+							<view v-show="current===3" :data-url="'GoEvaluate?id='+temp.id" @click="navTo">去评价</view>
 							<!--待评价-->
 						</view>
 					</view>
@@ -72,6 +72,11 @@
 			})
 		},
 		methods: {
+			navTo(e) {
+				uni.navigateTo({
+					url:e.currentTarget.dataset.url
+				})
+			},
 			/* 联系会员 */
 			connect(temp, dist) {
 				uni.navigateTo({

@@ -16,6 +16,8 @@
     "pages/wealth/buyAP",
     "pages/wealth/buyAPList",
     "pages/wealth/buyRecord",
+    "pages/wealth/OrderConfirm",
+    "pages/wealth/GoEvaluate",
     "pages/wealth/buyDetail",
     "pages/wealth/sellRecord",
     "pages/wealth/sellAP",
