@@ -8,7 +8,7 @@
 				<view class="text">{{item.name}}</view>
 			</label>
 		</radio-group>
-		<view class="uni-btn-v" @click="submit()">
+		<view class="uni-btn-v" @click="submit">
 			<button>{{flag?'提交':'处理中...'}}</button>
 		</view>
 	</view>
