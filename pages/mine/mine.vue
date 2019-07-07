@@ -40,7 +40,7 @@
 				<view class="item" data-url="mine5" @tap="navTo">
 					密码管理<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
 				</view>
-				<view class="item" data-url="mine8" @tap="navTo">
+				<view class="item" data-url="code" @tap="navTo">
 					收款码管理<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
 				</view>
 			</view>
@@ -76,13 +76,12 @@
 		components: {
 			uniIcon
 		},
-		onLoad() {
+		onShow() {
 			djRequest({
 				url:'/api/member/balance',
 				method:'GET',
 				success:function(res) {
-					console.log(res);
-					config.Balance = res.data.data;
+					/* console.log(res); */
 				}
 			})				
 		},

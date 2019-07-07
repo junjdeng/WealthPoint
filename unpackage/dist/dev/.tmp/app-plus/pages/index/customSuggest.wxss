@@ -4,6 +4,7 @@ textarea {
 	margin: 20rpx;
 	width: 670rpx;
 	padding: 20rpx;
+	font-size: 28rpx;
 }
 .bottomBtn {
 	text-align: center;

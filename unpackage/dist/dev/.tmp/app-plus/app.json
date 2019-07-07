@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/index/newsList",
     "pages/index/customSuggest",
+    "pages/index/chart",
     "pages/index/sign",
     "pages/index/wwallet",
     "pages/charity/charity",
@@ -14,19 +15,29 @@
     "pages/wealth/wallet1",
     "pages/wealth/buyAP",
     "pages/wealth/buyAPList",
+    "pages/wealth/buyRecord",
+    "pages/wealth/buyDetail",
+    "pages/wealth/sellRecord",
     "pages/wealth/sellAP",
+    "pages/wealth/sellDetail",
+    "pages/wealth/harvest",
     "pages/wealth/sellAPList",
+    "pages/wealth/connectMember",
     "pages/mine/mine",
     "pages/mine/mine0",
     "pages/mine/mine1",
     "pages/mine/mine2",
     "pages/mine/mine3",
     "pages/mine/mine4",
+    "pages/mine/addAliPay",
+    "pages/mine/alipayEdit",
     "pages/mine/mine5",
     "pages/mine/mine6",
     "pages/mine/mine7",
     "pages/mine/mine8",
-    "pages/mine/mine8AddCode",
+    "pages/mine/code",
+    "pages/mine/addCode",
+    "pages/mine/getTool",
     "pages/mine/mine3Addbank",
     "pages/mine/mine5ResetPw",
     "pages/mine/mine6Sell",
@@ -35,14 +46,16 @@
     "pages/login/login",
     "pages/login/finishRegisterInfo",
     "pages/login/waitAgree",
-    "pages/login/register"
+    "pages/login/register",
+    "pages/mine/reviseBank"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "",
     "navigationBarBackgroundColor": "#FFFFFF",
-    "backgroundColor": "#F5F5F5"
+    "backgroundColor": "#F5F5F5",
+    "bounce": "none"
   },
   "tabBar": {
     "color": "#999999",
@@ -61,6 +74,12 @@
         "iconPath": "static/images/tabbar3.png",
         "selectedIconPath": "static/images/tabbar3_seled.png",
         "text": "财富"
+      },
+      {
+        "pagePath": "pages/charity/charity",
+        "iconPath": "static/images/tabbar2.png",
+        "selectedIconPath": "static/images/tabbar2_seled.png",
+        "text": "公益"
       },
       {
         "pagePath": "pages/mine/mine",

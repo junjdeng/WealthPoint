@@ -1,15 +1,13 @@
 <template>
 	<view class="wrap">
-		<form @submit="formSubmit">
-			<textarea name="content" placeholder="请输入您的意见"></textarea>
-			<button class="bottomBtn" formType="submit">提交</button>
-		</form>
+		<textarea placeholder="请输入您的意见" v-model.trim="text"></textarea>
+		<view class="bottomBtn"  @tap="submit">提交</view>
 		<uni-popup :show="showPop" position="middle" mode="fixed" @hidePopup="hidePop">
 			<view class="pop_wrap">
 				<uni-icon type="checkbox-filled" class="forward" size="56" color="#CCA366"></uni-icon>
 				<view>提交成功</view>
 				<view class="text">您的意见已经收到，我们会及时跟进反馈</view>
-				<view class="close" @tap="close">返回</view>
+				<view class="close" >返回</view>
 			</view>
 		</uni-popup>	
 	</view>
@@ -19,7 +17,9 @@
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
-	import {djRequest} from '../../common/request.js'
+	import { config } from '../../common/config.js'
+	import { djRequest } from '../../common/request.js'
+
 	export default {
 		components: {
 			uniIcon,
@@ -28,36 +28,33 @@
 		data() {
 			return {
 				showPop: false,
-				type:""
+				type:"",
+				text:''
 			}
 		},
 		methods: {
-			hidePop(){
-				this.showPop = false	
-			},
-			close(){
-				uni.navigateBack()
-			},
-			formSubmit: function(e) {
-				var data = e.detail.value;
-				if (!common.isNotNull(data.content, "反馈意见")) return;
-				var _this = this;
+			submit() {	
+				let that = this;
+				if(!common.isNotNull(that.text,'输入')) return;
 				djRequest({
 					url:'/api/message/send',
-					data:data,
-					success:function(res) {
-						console.log(res);
-						if (res.data.status == 200){
-							   _this.showPop = true
-						}else{
-							uni.showToast({
-								title:res.data.message,
-								icon:"none"
-							   })
-						}	
+					data:{
+						content:that.text
+					},
+					method:'POST',
+					success:function(res){
+						if(res.data.status===200){
+							that.text="";
+							that.showPop=true;
+						}
 					}
-				})	
-            }
+				})
+			},
+			hidePop(){
+				uni.switchTab({
+					url:'index'
+				})
+			}
 		}
 	}
 </script>
@@ -68,6 +65,7 @@
 		margin: 20upx;
 		width: 670upx;
 		padding: 20upx;
+		font-size: 28upx;
 	}
 
 	.bottomBtn {

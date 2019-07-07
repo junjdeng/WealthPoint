@@ -33,6 +33,7 @@
 		border-radius: 10upx;
 		background: #ccc;
 		color: #333;
+		text-align: center;
 		font-size: 28upx;
 	}
 </style>

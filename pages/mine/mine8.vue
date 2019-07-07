@@ -2,69 +2,72 @@
 	<view class="container">
 		<view class="list_wrap">
 			<view class="list">
-				<view  v-for="value in lists" :key='value.id' v-if="value.images.length>0"  v-bind:class="[itemClass, value.type == 'alipay'?'alipay':'wechat']">
-					<view>
-						<image v-bind:src="http_url + value.images"></image>
+				<view class="item flex-start" v-for="(temp,index) in list" :key="index" :data-url="'getTool?text='+temp.text+'&price='+temp.price" @click="navTo" >
+					<view class="flex2">
+						<image :src="temp.icon"></image>
 					</view>
-					<view>
-						<view class="name">扫一扫{{value.type == "alipay" ? "支付宝" : "微信"}}付款</view>
+					<view class="flex5">
+						<view class="name">{{temp.text}}</view>
+						<view class="price">{{temp.price}}AP</view>
 					</view>
 				</view>
 			</view>
-			<view class="bottomBtn" data-url="mine8AddCode"  @tap="navTo">添加</view>
 		</view>
 	</view>
 </template>
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
-	import {djRequest} from '../../common/request.js'
-	import {config} from '../../common/config.js'
-	
 	export default {
 		data() {
 			return {
-				itemClass:'item',
-				lists:[],
-				http_url:config.BASE_URL,
+				list:[
+					{
+						price:0.25,
+						text:'改手机号卡',
+						icon:'/static/images/shop1.png'
+					},
+					{
+						price:0.25,
+						text:'改姓名卡',
+						icon:'/static/images/shop2.png'
+					},
+					{
+						price:0.25,
+						text:'解封卡',
+						icon:'/static/images/shop3.png'
+					},
+					{
+						price:1,
+						text:'超级解封卡',
+						icon:'/static/images/shop4.png'
+					}
+				]
 			}
 		},
 		components: {
 			uniIcon
 		},
-		onShow() {
-			var _this = this;
-			djRequest({
-				url:'/api/qrcode',
-				method:'GET',
-				success:function(res) {
-					console.log(res);
-					_this.lists = res.data.data;
-				}
-			})				
-		},
 		onNavigationBarButtonTap(e){
+			
 			uni.navigateTo({
 				url:'mine7Cards'
 			})
 		},
 		methods: {
 			navTo(e) {
+				console.log(e,3)
 				uni.navigateTo({
 					url:e.currentTarget.dataset.url
 				})
-			},
+			}
 		}
 	}
 </script>
 
 <style>
-	.list_wrap{margin: 0 20upx; width: 710upx; margin-top: 20upx; margin-bottom: 100upx;}
-	.list .item{color: #FFFFFF;  border-radius: 8upx; font-size: 36upx; 
-	line-height: 2em; padding: 30rpx; margin-bottom: 20upx; text-align: center;}
-    .list .item image{width: 300upx; height: 300upx; border-radius: 8upx;}
-	.bottomBtn{width: 710upx; position: fixed; bottom: 10upx;  background: #CCA366; color: #ffffff; border-radius: 8upx;
- font-size: 32upx; height: 88upx; line-height: 88upx; text-align: center;}
-   .alipay{background: #0DA1E6;}
-   .wechat{background: #00ad47;}
+	.list_wrap{margin: 0 20upx; width: 710upx; margin-top: 20upx;}
+	.list .item{color: #333333; background: #FFFFFF; border-radius: 8upx; font-size: 32upx; line-height: 2em; padding: 20rpx; margin-bottom: 20upx;}
+    .list .item image{width: 160upx; height: 160upx; border-radius: 8upx;}
+	.list .item .price{color: #D03C29;}
 </style>

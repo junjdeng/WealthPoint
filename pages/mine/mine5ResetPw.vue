@@ -4,21 +4,21 @@
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">原密码</span>
-					<input class="uni-input flex5" name="old_password" type="password" placeholder="请输入原密码" />
+					<input class="uni-input flex5" type="password" v-model.trim="oldPwd" placeholder="请输入原密码" />
 				</view>
-				
+
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">新密码</span>
-					<input class="uni-input flex5" name="password" type="password" placeholder="请输入新密码" />
+					<input class="uni-input flex5" type="password" v-model.trim="newPwd1" placeholder="请输入新密码" />
 				</view>
-				
+
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">确认密码</span>
-					<input class="uni-input flex5" name="re_password" type="password" placeholder="请输入确认密码" />
+					<input class="uni-input flex5" type="password" v-model.trim="newPwd2" placeholder="请输入确认密码" />
 				</view>
-				
+
 				<view class="uni-btn-v">
-					<button formType="submit">完成</button>
+					<button formType="submit">{{flag?'完成':'处理中...'}}</button>
 				</view>
 			</form>
 		</view>
@@ -28,12 +28,16 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
-	import {djRequest} from '../../common/request.js'
-	
+	import { config } from '../../common/config.js'
+	import { djRequest } from '../../common/request.js'
 	export default {
 		data() {
 			return {
-				type:0,
+				type: 0,
+				flag: true,
+				oldPwd: '',
+				newPwd1: '',
+				newPwd2: ''
 			}
 		},
 		components: {
@@ -43,67 +47,138 @@
 			this.type = options.type;
 			if (options.type == 1) {
 				uni.setNavigationBarTitle({
-					title:"修改登录密码"
+					title: "修改登录密码"
 				})
-			} else{
+			} else {
 				uni.setNavigationBarTitle({
-					title:"修改安全密码"
+					title: "修改安全密码"
 				})
 			}
 		},
 		methods: {
-			formSubmit: function(e) {
-				var data = e.detail.value;
-				if (!common.isNotNull(data.old_password, "原密码")) return;
-				if (!common.isNotNull(data.password, "新密码")) return;				
-				if (!common.isNotNull(data.re_password, "确认密码")) return;
-				if (data.password != data.re_password){
-					uni.showToast({
-						title:'新密码和确认密码不一致！',
-						icon:"none"
-					})
-					return;
-				} 
-				
-				var url = "/api/member/password";//登录密码
-				if (this.type != 1) {
-					url = "/api/member/security";//安全密码
-				} 
-				console.log(data,url);
-				
-				djRequest({
-					url:url,
-					data:data,
-					success:function(res) {												
-						if (res.data.status == 200){
-							   uni.showToast({
-								title:res.data.message,
-								icon:"none",
-								duration:1000,
-								complete() {
-									uni.navigateBack()
-								}
-							   })
-						}else{
-							uni.showToast({
-								title:res.data.message,
-								icon:"none"
-							})
-						}	
+			formSubmit() {
+				let that = this;
+				if (that.flag) {
+					that.flag = false;
+					if (that.newPwd1 !== that.newPwd2) {
+						common.TostUtil('两次输入的新密码不一致！');
+						that.flag = true;
+						return;
 					}
-				})	
-            }
+					if (that.type == 1) {
+						if (!common.RegUtil.isMatchPwd(that.newPwd1) || !common.RegUtil.isMatchPwd(that.newPwd2)) {
+							common.TostUtil('新密码格式不正确！');
+							that.flag = true;
+							return;
+						}
+						djRequest({
+							url: '/api/member/password',
+							method: "POST",
+							data: {
+								old_password: that.oldPwd,
+								password: that.newPwd1,
+								re_password: that.newPwd2
+							},
+							success: function(res) {
+								common.TostUtil(res.data.message);
+								if (res.data.status === 200) {
+									uni.navigateTo({
+										url: '../login/login'
+									})
+								}
+								that.flag = true;
+							},
+							fail: function(res) {
+								common.TostUtil(res.data.message);
+								that.oldPwd='';
+								that.newPwd1='';
+								that.newPwd2='';
+								that.flag = true;
+							}
+						})
+					}
+					if (that.type == 2) {
+						if (!common.RegUtil.isMatchSafePwd(that.newPwd1) || !common.RegUtil.isMatchSafePwd(that.newPwd2)) {
+							common.TostUtil('新密码格式不正确');
+							that.flag = true;
+							return;
+						}
+						djRequest({
+							url: '/api/member/security',
+							method: "POST",
+							data: {
+								old_password: that.oldPwd,
+								password: that.newPwd1
+							},
+							success: function(res) {
+								common.TostUtil(res.data.message);
+								that.oldPwd='';
+								that.newPwd1='';
+								that.newPwd2='';
+								that.flag = true;
+							},
+							fail: function(res) {
+								common.TostUtil(res.data.message);
+								that.oldPwd='';
+								that.newPwd1='';
+								that.newPwd2='';
+								that.flag = true;
+							}
+						})
+					}
+				}
+
+
+			}
 		}
 	}
 </script>
 
 <style>
-.form_wrap{ margin-top: 20upx;}
-.form_wrap .dj_form{display: inline-block; width: 750upx;position: relative;}
-.dj_form .uni-form-item{ margin-bottom: 2upx; padding: 20upx; background: #ffffff;}
-.dj_form .uni-form-item image{width:100upx; height: 100upx; border-radius: 50upx;}
-.dj_form .uni-form-item .title{color: #333333; font-size: 28upx; line-height: 2em;}
-.dj_form .uni-input{color: #333333; font-size: 28upx;  text-align: left;}
-.dj_form .uni-btn-v{position: absolute; bottom: -200upx; left: 20upx; width: 710upx; }
-.dj_form .uni-btn-v button{background: #CCA366; font-size: 32upx; color: #ffffff;}
+	.form_wrap {
+		margin-top: 20upx;
+	}
+
+	.form_wrap .dj_form {
+		display: inline-block;
+		width: 750upx;
+		position: relative;
+	}
+
+	.dj_form .uni-form-item {
+		margin-bottom: 2upx;
+		padding: 20upx;
+		background: #ffffff;
+	}
+
+	.dj_form .uni-form-item image {
+		width: 100upx;
+		height: 100upx;
+		border-radius: 50upx;
+	}
+
+	.dj_form .uni-form-item .title {
+		color: #333333;
+		font-size: 32upx;
+		line-height: 2em;
+	}
+
+	.dj_form .uni-input {
+		color: #333333;
+		font-size: 28upx;
+		text-align: left;
+	}
+
+	.dj_form .uni-btn-v {
+		position: absolute;
+		bottom: -200upx;
+		left: 20upx;
+		width: 710upx;
+	}
+
+	.dj_form .uni-btn-v button {
+		background: #CCA366;
+		font-size: 32upx;
+		color: #ffffff;
+	}
 </style>

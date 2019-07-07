@@ -1,35 +1,39 @@
 <template>
 	<view class="list">
-		<view class="item" v-for="item in list" :key="item.id">
+		<view class="item">
 			<view class="flex-start">
-				<view class="title ellipsis flex5">{{item.title}}</view>
-				<span class="time flex1">{{item.time | dateTimeFormat('MM-dd')}}</span>
+				<view class="title ellipsis flex5">首尔FC去年的表现很好去年的表现很好，但是今但是今但是今年表</view>
+				<span class="time flex1">11-20</span>
 			</view>
-			<view class="content ellipsis2">{{item.content}}</view>
-		</view>			
+			<view class="content ellipsis2">首尔FC去年的表现很好，但是今年表现却不如人意，导致这个 原因的背后是什么呢？ </view>
+		</view>
+		
+		<view class="item">
+			<view class="flex-start">
+				<view class="title ellipsis flex5">首尔FC去年的表现很好去年的表现很好，但是今但是今但是今年表</view>
+				<span class="time flex1">11-20</span>
+			</view>
+			<view class="content ellipsis2">首尔FC去年的表现很好，但是今年表现却不如人意，导致这个 原因的背后是什么呢？ </view>
+		</view>
+			
 	</view>
 </template>
 
 <script>
 	import {djRequest} from '../../common/request.js'
-	import common from '../../common/common.js'
 	
 	export default {
 		data() {
 			return {
-			   list:[],	
+				
 			}
 		},
 		onLoad() {
-			var _this = this;
 			djRequest({
 				url:'/api/news',
 				data:{'start': 0,'length': 10},
 				success:function(res) {
 					console.log(res);
-					if (res.data.status == 200) {
-						_this.list = res.data.data.data;
-					}
 				}
 			})				
 		},

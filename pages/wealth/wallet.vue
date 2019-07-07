@@ -2,8 +2,8 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">AP数量</view>
-			<view class="num wpgold">{{parseFloat(type==1 ? balance.ecash : balance.bonus).toFixed(4)}}</view>
-			<span class="want"  @tap="navTo(type)">退租AP</span>
+			<view class="num wpgold">{{wallet}}</view>
+			<span class="want" data-url="sellAP" @tap="navTo">退租AP</span>
 		</view>
 	
 		<view class="section2">
@@ -36,20 +36,21 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import common from '../../common/common.js'
+	import {config} from '../../common/config.js'	
 	import {djRequest} from '../../common/request.js'
-	import {config} from '../../common/config.js'
-	
 	export default {
 		data() {
 			return {
 				type:1,
-				balance:{},
+				wallet:0
 			}
 		},
 		components: {
 			uniIcon
 		},
 		onLoad(options) {
+			this.type=options.type
 			if (options.type == 1) {
 				uni.setNavigationBarTitle({
 					title: '希望钱包'
@@ -59,14 +60,26 @@
 					title: '奖金钱包'
 				});
 			}
-			this.type = options.type;
-			this.balance = config.Balance;
+		},
+		onShow(){
+			let that = this;
+			that.wallets();
 		},
 		methods: {
-			navTo(type) {
+			navTo(e) {
+				let that = this;
 				uni.navigateTo({
-					url:"sellAP?type="+type
+					url:e.currentTarget.dataset.url+'?type='+that.type
 				})
+			},
+			/* 当前钱包资产 */
+			wallets () {
+				let that = this;
+				if(that.type==1){
+					that.wallet=parseFloat(config.balance.ecash).toFixed(4);//希望钱包
+				}else if(that.type==2){
+					that.wallet=parseFloat(config.balance.bonus).toFixed(4);//奖金钱包
+				}
 			},
 		}
 	}

@@ -2,40 +2,13 @@
 	<view class="container">
 		<view class="list_wrap">
 			<view class="list">
-				<view class="item flex-start">
+				<view class="item flex-start" v-for="(temp,index) in list" :key="index" :data-url="'getTool?text='+temp.text+'&price='+temp.price+'&id='+temp.id+'&name='+temp.name" @click="navTo" >
 					<view class="flex2">
-						<image src="../../static/images/shop1.png"></image>
+						<image :src="temp.icon"></image>
 					</view>
 					<view class="flex5">
-						<view class="name">改手机号卡</view>
-						<view class="price">0.25AP</view>
-					</view>
-				</view>
-				<view class="item flex-start">
-					<view class="flex2">
-						<image src="../../static/images/shop2.png"></image>
-					</view>
-					<view class="flex5">
-						<view class="name">改姓名卡</view>
-						<view class="price">0.25AP</view>
-					</view>
-				</view>
-				<view class="item flex-start">
-					<view class="flex2">
-						<image src="../../static/images/shop3.png"></image>
-					</view>
-					<view class="flex5">
-						<view class="name">解封卡</view>
-						<view class="price">0.25AP</view>
-					</view>
-				</view>
-				<view class="item flex-start">
-					<view class="flex2">
-						<image src="../../static/images/shop4.png"></image>
-					</view>
-					<view class="flex5">
-						<view class="name">超级解封卡</view>
-						<view class="price">1.00AP</view>
+						<view class="name">{{temp.text}}</view>
+						<view class="price">{{temp.price}}AP</view>
 					</view>
 				</view>
 			</view>
@@ -45,32 +18,46 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
-	import common from '../../common/common.js'
-	import {djRequest} from '../../common/request.js'
-	
 	export default {
 		data() {
 			return {
-
+				list:[
+					{
+						price:0.25,
+						id:0,
+						name:'gift_phone',
+						text:'改手机号卡',
+						icon:'/static/images/shop1.png'
+					},
+					{
+						price:0.25,
+						id:1,
+						name:"gift_name",
+						text:'改姓名卡',
+						icon:'/static/images/shop2.png'
+					},
+					{
+						price:0.25,
+						id:2,
+						name:"gift_unblock",
+						text:'解封卡',
+						icon:'/static/images/shop3.png'
+					},
+					{
+						price:1,
+						id:3,
+						name:"gift_super_unblock",
+						text:'超级解封卡',
+						icon:'/static/images/shop4.png'
+					}
+				]
 			}
 		},
 		components: {
 			uniIcon
 		},
-		onLoad() {
-			var _this = this;
-			djRequest({
-				url:'/api/gift/price',
-				method:'GET',
-				success:function(res) {
-					console.log(res);
-					if(res.data.status===200){
-							// _this.balance = res.data.data;
-					}				
-				}
-			})			
-		},
 		onNavigationBarButtonTap(e){
+			
 			uni.navigateTo({
 				url:'mine7Cards'
 			})
@@ -80,7 +67,7 @@
 				uni.navigateTo({
 					url:e.currentTarget.dataset.url
 				})
-			},
+			}
 		}
 	}
 </script>

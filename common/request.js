@@ -1,5 +1,6 @@
 import {config} from './config.js'
 
+ 
 const djRequest = async function (opt){
 	opt = opt || {};
     opt.url = opt.url || '';
@@ -19,7 +20,9 @@ const djRequest = async function (opt){
 		opt.header.authorization = config.Authorization;			
 	} else{
 		opt.header.authorization = config.Authorization;
-	}		
+	}
+	
+	/* console.log(opt.header); */
 	
 	uni.request({
 	　	url: config.BASE_URL + opt.url +'?t='+Date.now(),
@@ -41,59 +44,6 @@ const djRequest = async function (opt){
             });
         }
 	});		
-}
-
-const djPostForm = function(opt){
-	opt = opt || {};
-	opt.url = opt.url || '';
-	opt.data = opt.data || null;
-	opt.method = opt.method || 'POST';
-	opt.name = opt.name || 'file'
-	opt.filePath = opt.filePath || null,
-    opt.header = opt.header || {
-    'content-type':'multipart/form-data',
-		'sessionid':config.User.sessionId,
-		'authorization':config.Authorization
-    };	
-    opt.success = opt.success || function () {};
-			
-	// uni.uploadFile({
-	// 	url: config.BASE_URL + opt.url +'?t='+Date.now(),
-	// 	header: opt.header,
-	// 	filePath: opt.filePath,
-	// 	name: opt.name,
-	// 	formData: opt.data,
-	// 	success: (uploadFileRes) => {
-	// 		console.log(uploadFileRes.data);
-	// 	}
-	// });	
-	uni.uploadFile({
-			url: config.BASE_URL + opt.url +'?t='+Date.now(),
-			header: opt.header,
-			filePath: opt.filePath,
-			fileType: 'image',
-			name: opt.name,
-			formData: opt.data,
-			success: (res) => {
-				console.log('uploadImage success, res is:', res)
-				uni.showToast({
-					title: '上传成功',
-					icon: 'success',
-					duration: 1000
-				})
-				//this.imageSrc = imageSrc
-			},
-			fail: (err) => {
-				console.log('uploadImage fail', err);
-				uni.showModal({
-					content: err.errMsg,
-					showCancel: false
-				});
-			}
-		});
-
-	
-	
 }
 
 
@@ -118,6 +68,5 @@ function  getAuth() {
  
 
 export {
-	djRequest,
-	djPostForm
+	djRequest
 }

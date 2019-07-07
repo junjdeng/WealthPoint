@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="list_wrap">
 			<view class="list">
-				<view class="item flex-start" v-for="item in lists" :key="item.id"  @tap="navTo('mine3Addbank?id='+item.id)">
+				<view class="item flex-start" v-for="(item,index) in list" :key="index" :data-url="'reviseBank?id='+item.id"  @click="navTo">
 					<view class="flex1">
 						<image src="../../static/images/bg112.jpg"></image>
 					</view>
@@ -11,64 +11,71 @@
 						<view class="type">借记卡</view>
 						<view class="num">{{item.bankNumber}}</view>
 					</view>
-				</view>	
+				</view>
 			</view>
-			
-			<view class="bottomBtn"  @tap="navTo('mine3Addbank')">添加</view>
 		</view>
 	</view>
 </template>
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import common from '../../common/common.js'
+	import {config} from '../../common/config.js'	
 	import {djRequest} from '../../common/request.js'
-	
 	export default {
 		data() {
 			return {
-				lists:[],
+				list:[]
 			}
+		},
+		created(){
+		
 		},
 		components: {
 			uniIcon
 		},
-		onShow() {
-			var _this = this;
-			djRequest({
-				url:'/api/bank',
-				method:'GET',
-				success:function(res) {
-					//console.log(res);
-					if (res.data.status == 200) {
-						_this.lists = res.data.data;
-					} else{
-						uni.showToast({
-							title:res.data.message,
-							icon:"none"
-						 })
-					}
-				}
-			})		
+		onShow(){
+			let that = this;
+			that.bankList();
 		},
 		methods: {
 			navTo(e) {
-				//console.log(e);
 				uni.navigateTo({
-					url:e
+					url:e.currentTarget.dataset.url
 				})
 			},
+			onNavigationBarButtonTap(e) {
+				uni.navigateTo({
+					url: 'mine3Addbank'
+				})
+			},
+			bankList(){
+				let that = this;
+				
+				djRequest({
+					url:'/api/bank',
+					method:'GET',
+					success:function(res){
+						let arr = res.data.data;
+						arr.forEach(item=>{
+							item.bankNumber=item.bankNumber.substring(0,4)+'******'+item.bankNumber.substring(item.bankNumber.length-4);
+						})
+						that.list = arr;
+					}
+				})
+			}
 		}
 	}
 </script>
 
 <style>
-	.list_wrap{margin:0 20upx; width: 710upx; margin-top: 20upx; margin-bottom: 100upx;}
+	.list_wrap{margin:0 20upx; width: 710upx; margin-top: 20upx;}
 	.list .item{color: #333333; background: #FFFFFF; font-size: 32upx; line-height: 2em; border-radius: 8upx; padding: 20rpx; margin-bottom: 20upx;}
 	.list .item .flex1{align-self: flex-start; margin-top: 20upx;}
 	.list .item image{width: 80upx; height: 80upx;}
 	.list .item .name{color: #333333; font-size: 32upx;}
 	.list .item .type{color: #999999; font-size: 26upx;}
 	.list .item .num{color: #333333; font-size: 28upx;}
-	.bottomBtn{width: 710upx; position: fixed; bottom: 10upx;  background: #CCA366; color: #ffffff; border-radius: 8upx;
+	.bottomBtn{width: 710upx;  background: #CCA366; color: #ffffff; border-radius: 8upx; margin-top: 80upx;
  font-size: 32upx; height: 88upx; line-height: 88upx; text-align: center;}
 </style>

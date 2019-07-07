@@ -13,7 +13,7 @@
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	width: 75%;
+	width: 100%;
 	font-size: 28rpx;
 	-webkit-border-radius: 10rpx;
 	        border-radius: 10rpx;
@@ -23,7 +23,7 @@
 	overflow: hidden;
 }
 .segmented-control.button {
-	border: 2rpx solid;
+	border: 2rpx solid transparent;
 }
 .segmented-control.text {
 	border: 0;

@@ -4,7 +4,7 @@ var config = {
 	Authorization:null,
   Version: '1.0.0',
   User: null,
-	Balance:null
+	balance:null
 	}
 
 export {

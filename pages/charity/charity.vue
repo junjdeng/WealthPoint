@@ -98,7 +98,7 @@
 .section1 .total_card .num{font-size: 32upx; color: #333333; font-weight: bold;}
 .section1 .total_card .title{font-size: 28upx; color: #666666;}
 
-.section_title{font-size: 36upx; color: #333333; line-height: 2em; height: 2em; text-align: left; width: 710upx; padding: 20upx 30upx;}
+.section_title{font-size: 36upx; color: #333333; line-height: 2em; height: 2em; text-align: left; width: 710upx; padding: 20upx 30upx;margin-bottom:30upx;}
 .section_title span{float: right;font-size: 28upx; color: #999999;}
 
 .list{width: 710upx;}
@@ -108,4 +108,7 @@
 .list .item .content{align-self: flex-start;}
 .list .item .title{font-size: 32upx; color: #333333; line-height: 2.2em;}
 .list .item .sub_title{font-size: 24upx; color: #999999; line-height: 1.8em;}
+view{
+	box-sizing:border-box!important;
+}
 </style>

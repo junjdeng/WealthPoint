@@ -4,11 +4,11 @@
 
 		<form class="login_form" @submit="formSubmit">
 			<view class="uni-form-item uni-column">
-                <input class="uni-input" name="username" type="text" placeholder="手机号／邮箱" value="kaixin" />
+                <input class="uni-input" name="username" type="text" v-model="user" placeholder="手机号／邮箱"  />
 			</view>
 			
 			<view class="uni-form-item uni-column">
-                <input class="uni-input" name="password" password type="text" placeholder="密码" value="a123456" />
+                <input class="uni-input" name="password" password type="text" v-model="pwd" placeholder="密码"  />
 			</view>
 									
 			<view class="uni-btn-v">
@@ -29,7 +29,8 @@
 	export default {
 		data() {
 			return {
-				
+				user:'Waixin',
+				pwd:'a123456'
 			}
 		},
 		methods: {
@@ -40,7 +41,7 @@
 			},
 			formSubmit: function(e) {
 				var data = e.detail.value;
-				console.log(JSON.stringify(data))
+				/* console.log(JSON.stringify(data)) */
 				if (!common.isNotNull(data.username, "账号")) return;
 				if (!common.isNotNull(data.password, "密码")) return;
 				
@@ -48,15 +49,31 @@
 					url:'/api/login',
 					data:data,
 					success:function(res) {
-						console.log(res);						
 						if (res.data.status == 406) {
-							uni.showToast({
-								title:res.data.message
-							})
+							common.TostUtil(res.data.message);
 						} 
 						
 						if (res.data.status == 200){
+							uni.setStorage({
+								key:'sessionid',
+								data:res.data.data.sessionId
+							})
+							/* uni.getStorage({
+								key:'sessionid',
+								success(e){
+									uni.request.defaults.headers.common['sessionid']=e.data;
+								}
+							}) */
+							uni.setStorage({
+								key:'loginInfo',
+								data:JSON.stringify(res.data.data)
+							})
+							uni.setStorage({
+								key:'time',
+								data:JSON.stringify(new Date().getTime())
+							})
 							config.User = res.data.data;
+							common.balance();
 							uni.switchTab({
 								url: '/pages/index/index'
 							});

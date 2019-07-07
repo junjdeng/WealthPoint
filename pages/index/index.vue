@@ -2,6 +2,7 @@
 	<view class="container">
 		<view class="header">
 			<image mode="aspectFit" src="../../static/images/maintopbg.png"></image>
+			<image src="../../static/images/message.png"></image>
 		</view>
 
 		<view class="section section1">
@@ -20,7 +21,7 @@
 				</view>
 			</view>
 			<view class="flex-start section_row">
-				<view class="flex1 item" data-url="sign" @tap="navTo">
+				<view class="flex1 item" data-url="sign" @tap="navTo" >
 					<image src="../../static/images/main4.png"></image>
 					<view>签到</view>
 				</view>
@@ -28,7 +29,7 @@
 					<image src="../../static/images/main5.png"></image>
 					<view>W钱包</view>
 				</view>
-				<view class="flex1 item">
+				<view class="flex1 item" data-url="../wealth/wallet1" @click="navTo">
 					<image src="../../static/images/main6.png"></image>
 					<view>奖金钱包</view>
 				</view>
@@ -39,8 +40,7 @@
 			<view class="notice flex-start">
 				<uni-icon type="sound" class="sound_icon" size="14" color="#CCA366"></uni-icon>
 				<text class="ellipsis flex5">
-					{{news}}
-				</text>
+					年末大礼：uni-app1.4 新增百度、支付宝小程序。插件市场重磅上线！</text>
 				<span class="flex1" data-url="newsList" @tap="navTo">更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></span></span>
 			</view>
 		</view>
@@ -71,135 +71,143 @@
 			<view class="section_title">AP走势</view>
 			<view class="trend">
 				<view class="qiun-columns">
-					<view class="qiun-charts">
-						<canvas canvas-id="canvas" id="canvas" class="charts"></canvas>
+					<view class="qiun-charts" >
+						<canvas canvas-id="canvas" id="canvas" class="charts" @touchstart="touchCanvas"></canvas>
 					</view>
 				</view>
 			</view>
 		</view>
-
-		<view class="cover" v-if="showPop" @tap="hidePop()">
+		
+		<view class="cover" v-if="showPop"  @tap="hidePop()">
 			<view class="pop_wrap">
 				<view class="text">签到领红包</view>
 				<view class="signBtn">签到</view>
 			</view>
-		</view>
-		<!-- 要 叶要艰苦奋斗村叶要 -->
-	</view>
+	    </view>
+	</view>	
 </template>
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import uCharts from '@/components/u-charts/u-charts.js';
-	import {djRequest} from '../../common/request.js'
-	import common from '../../common/common.js'
-	
-	
-	var canvas = null;
-	
+	var _self;
+	var canvas=null;
 	export default {
 		data() {
 			return {
+				// echarts: echarts,
 				updateStatus: false,
-				showPop: false,
-				news:'暂无公告',
+				showPop: true,
+				cWidth:'',
+				cHeight:'',
+				pixelRatio:0.98,//放大位数
+				serverData:'',
+				das:[],
+				week:[],
+				webview:null
 			}
 		},
 		components: {
-			uniIcon
+			uniIcon,
+			//mpvueEcharts
 		},
 		onLoad() {
-			var _this = this;
-			djRequest({
-				url:'/api/news',
-				data:{'start': 0,'length': 1},
-				success:function(res) {
-					if (res.data.status == 200 && res.data.data.data.length >0 ) {
-						_this.news = res.data.data.data[0].title;
-					} 
-				}
-			})		
-			
-			
-			let canvasData = {
-				categories: [],
-				series: []
-			};
-			canvasData.categories = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04'];
-			canvasData.series = [{
-				data: [2000, 2200, 2800, 3400, 2900, 3000, 3020],
-				name: '',
-				color:'#CCA366'
-			}];
-			this.CanvasData("canvas", canvasData);
+		this._data.das = [2000, 2200, 2800, 3400, 2900, 3000, 3020];
+		this._data.week=['5.29','5.30','5.31','6.01','6.02','6.03','6.04',];
+		_self = this;
+		this.cWidth=uni.upx2px(680);
+		this.cHeight=uni.upx2px(460);
+		this.getServerData();
 		},
 		methods: {
 			navTo(e) {
 				uni.navigateTo({
-					url: e.currentTarget.dataset.url
+					url:e.currentTarget.dataset.url
 				})
 			},
-			hidePop() {
-				this.showPop = false
-			},
-			CanvasData(canvasId, chartData) {
+			getServerData(){
 				let that = this;
-				canvas = new uCharts({
-					$this: that,
+				let canvasData={categories:[],series:[]};
+				//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
+				canvasData.categories=that._data.week;
+				canvasData.series=[{data:that._data.das,name:'',color:"#CCA366"}];
+				that._data.das=canvasData.series[0].data;
+				_self.CanvasData("canvas",canvasData);
+			},
+			CanvasData(canvasId,chartData){
+				let that = this;
+				canvas=new uCharts({
+					$this:_self,
 					canvasId: canvasId,
 					type: 'line',
-					fontSize: 11,
-					legend: false,
-					dataLabel: false,
-					dataPointShape: false,
-					background: 'transparent',
-					dataLineColor: '#333333',
-					pixelRatio: 1,
+					fontSize:11,
+					legend:false,
+					dataLabel:false,
+					dataPointShape:false,
+					background:'transparent',
+					dataLineColor:'#333333',
+					pixelRatio:_self.pixelRatio,
 					categories: chartData.categories,
 					series: chartData.series,
 					animation: false,
 					xAxis: {
-						splitNumber: 6,
-						disabled: false,
-						gridColor:"transparent"
+						dashLength:8,
+						gridColor:'transparent'
 					},
 					yAxis: {
-						dashLength: 8,
-						splitNumber: 4,
-						min: 2000,
-						gridType: "dash",
-						disabled: false,
-						max: 4000,
-						format: (val) => {
-							return val
-						}
+						dashLength:8,
+						splitNumber:4,
+						min:2000,
+						disabled:false,
+						max:4000,
+						format:(val)=>{return val}
 					},
-					width: uni.upx2px(680),
-					height: uni.upx2px(460),
+					width: _self.cWidth*_self.pixelRatio,
+					height: _self.cHeight*_self.pixelRatio,
 					extra: {
 						lineStyle: 'curve',
+						
+					}
+				});
+				
+			},
+			touchCanvas(e) {
+				canvas.showToolTip(e, {
+					format: function (item, category) {
+						return /* category + ' ' + item.name + ':' + */item.data 
 					}
 				});
 			},
+			hidePop(){
+				this.showPop = false	
+			}
 		},
-
 	}
 </script>
 
 <style>
+	
 	.header {
 		height: 128upx;
 		background: #ffffff;
 		text-align: center;
 		width: 100%;
+		position:relative;
 	}
 
-	.header image {
+	.header image:first-child {
 		margin-top: 20upx;
 		height: 100%;
 		width: 45%;
 	}
-
+	.header image:last-child{
+		width:60upx;
+		height: 60upx;;
+		position:absolute;
+		z-index:1000;
+		top:54upx;
+		right:30upx;
+	}
 	.section1 {
 		padding: 20upx 0;
 	}
@@ -227,11 +235,7 @@
 	.section2 {
 		background: #f5f5f5;
 	}
-
-	.notice .sound_icon {
-		width: 50upx;
-		line-height: 2.5;		
-	}
+	.notice .sound{width: 50upx;}
 
 	.notice text {
 		font-size: 24upx;
@@ -239,8 +243,8 @@
 		display: inline-block;
 		width: 570upx;
 		height: 50upx;
-		text-indent: 0.5em;
-		line-height: 2;
+		text-indent: 1em;
+		line-height: 50upx;
 	}
 
 	.notice span {
@@ -249,7 +253,7 @@
 		display: inline-block;
 		text-align: right;
 		height: 50upx;
-		line-height: 2;
+		line-height: 50upx;
 	}
 
 	.section_title {
@@ -294,45 +298,23 @@
 		width: 100%;
 		height: 400upx;
 	}
-
-	.cover {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.4);
-	}
-
-	.pop_wrap {
+	
+	.cover{position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.4);}
+	.pop_wrap{
 		text-align: center;
 		width: 470upx;
-		background-image: url("../../static/images/main11.jpg");
-		background-size: 100% 100%;
+		background-image: url("../../static/images/main11.jpg"); background-size: 100% 100%;
 		padding: 20upx;
 		margin: 20upx auto;
 		border-radius: 8upx;
 		position: relative;
 		top: 30%;
 	}
+	.pop_wrap .text{font-size: 32upx; color: #FFFFFF; line-height: 3em; padding: 20upx 0;}
+	.signBtn{background: linear-gradient(180deg,#EA6F53,#D03C29); width: 270upx; height: 270upx; border-radius: 50%;
+color: #FFFFFF; line-height: 270upx; font-size:32upx; text-align: center;margin: 20upx auto; }
 
-	.pop_wrap .text {
-		font-size: 32upx;
-		color: #FFFFFF;
-		line-height: 3em;
-		padding: 20upx 0;
-	}
-
-	.signBtn {
-		background: linear-gradient(180deg, #EA6F53, #D03C29);
-		width: 270upx;
-		height: 270upx;
-		border-radius: 50%;
-		color: #FFFFFF;
-		line-height: 270upx;
-		font-size: 32upx;
-		text-align: center;
-		margin: 20upx auto;
-	}
-	/* 趋势图 */
+/* 趋势图 */
 .qiun-padding{padding:2%; width:96%;box-sizing:border-box;}
 .qiun-wrap{display:flex; flex-wrap:wrap;}
 .qiun-rows{display:flex; flex-direction:row !important;}
@@ -343,4 +325,6 @@
 .qiun-title-dot-light{border-left: 5px solid #0ea391; padding-left: 5px; font-size: 16px;color: #000000;}
 .qiun-charts{width: 375px; height:250px;background-color: #FFFFFF; overflow:hidden;}
 .charts{width: 375px; height:250px;background-color: #FFFFFF;}
+
 </style>
+

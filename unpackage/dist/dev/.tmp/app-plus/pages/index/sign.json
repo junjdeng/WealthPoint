@@ -5,7 +5,8 @@
       {
         "text": "签到记录",
         "color": "#333333",
-        "fontSize": "14px"
+        "fontSize": "14px",
+        "width": "80"
       }
     ]
   },

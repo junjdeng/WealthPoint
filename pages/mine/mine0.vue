@@ -9,21 +9,21 @@
 				
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">用户名</span>
-					<input class="uni-input flex5" disabled  value="mayun" />
+					<input class="uni-input flex5" disabled  v-model="obj.username" />
 				</view>
 				
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">真实姓名</span>
-					<input class="uni-input flex5"  disabled  value="马云" />
+					<input class="uni-input flex5"  disabled  v-model="obj.realName" />
 				</view>
 				
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">会员级别</span>
-					<input class="uni-input flex5"  disabled value="v8" />
+					<input class="uni-input flex5"  disabled v-model="obj.levelName" />
 				</view>
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">手机号</span>
-					<input class="uni-input flex5" type="number" disabled value="13760108636" />
+					<input class="uni-input flex5" type="number" disabled v-model="obj.phone" />
 				</view>
 				
 				<view class="uni-form-item uni-column flex-start">
@@ -49,14 +49,25 @@
 	export default {
 		data() {
 			return {
-
+				obj:{}
 			}
 		},
 		components: {
 			uniIcon
 		},
+		onShow () {
+			this.getUserInfo();
+		},
 		methods: {
-
+			getUserInfo(){
+				let that = this;
+				uni.getStorage({
+					key:'loginInfo',
+					success(e){
+						that.obj= JSON.parse(e.data);
+					}
+				})
+			}
 		}
 	}
 </script>

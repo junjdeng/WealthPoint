@@ -23,6 +23,12 @@
 			}
 		},
 		{
+			"path": "pages/index/chart",
+			"style": {
+				"navigationBarTitleText": "走势图"
+			}
+		},
+		{
 			"path": "pages/index/sign",
 			"style": {
 				"navigationBarTitleText": "签到",
@@ -31,7 +37,8 @@
 						"buttons": [{
 							"text": "签到记录",
 							"color":"#333333",
-							"fontSize": "14px"
+							"fontSize": "14px",
+							"width":"80"
 						}]
 					}
 				}
@@ -94,7 +101,35 @@
 		{
 			"path": "pages/wealth/buyAPList",
 			"style": {
-				"navigationBarTitleText": "承租记录"
+				"navigationBarTitleText": "承租记录",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "已完成",
+							"color":"#CCA366",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/wealth/buyRecord",
+			"style": {
+				"navigationBarTitleText": "已承租记录"
+			}
+		},
+		{
+			"path": "pages/wealth/buyDetail",
+			"style": {
+				"navigationBarTitleText": "AP详情"
+			}
+		},
+		{
+			"path": "pages/wealth/sellRecord",
+			"style": {
+				"navigationBarTitleText": "已退租记录"
 			}
 		},
 		{
@@ -104,9 +139,37 @@
 			}
 		},
 		{
+			"path": "pages/wealth/sellDetail",
+			"style": {
+				"navigationBarTitleText": "AP详情"
+			}
+		},
+		{
+			"path": "pages/wealth/harvest",
+			"style": {
+				"navigationBarTitleText": "分红中的AP"
+			}
+		},
+		{
 			"path": "pages/wealth/sellAPList",
 			"style": {
-				"navigationBarTitleText": "退租记录"
+				"navigationBarTitleText": "退租记录",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "已完成",
+							"color":"#CCA366",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/wealth/connectMember",
+			"style": {
+				"navigationBarTitleText": "联系会员"
 			}
 		},
 		{
@@ -140,13 +203,56 @@
 		{
 			"path": "pages/mine/mine3",
 			"style": {
-				"navigationBarTitleText": "银行账号"
+				"navigationBarTitleText": "银行账号",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "添加",
+							"color":"#333333",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
 			}
 		},
 		{
 			"path": "pages/mine/mine4",
 			"style": {
-				"navigationBarTitleText": "支付宝账号"
+				"navigationBarTitleText": "支付宝账号",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "添加",
+							"color":"#333333",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/mine/addAliPay",
+			"style": {
+				"navigationBarTitleText": "添加支付宝"
+			}
+		},
+		//添加支付宝
+		{
+			"path": "pages/mine/alipayEdit",
+			"style": {
+				"navigationBarTitleText": "修改支付宝",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"color":"#333333",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
 			}
 		},
 		{
@@ -170,7 +276,8 @@
 						"buttons": [{
 							"text": "我的道具",
 							"color":"#333333",
-							"fontSize": "14px"
+							"fontSize": "14px",
+							"width":"80"
 						}]
 					}
 				}
@@ -183,24 +290,37 @@
 			}
 		},
 		{
-			"path": "pages/mine/mine8AddCode",
+			"path": "pages/mine/code",
+			"style": {
+				"navigationBarTitleText": "收款码",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "添加",
+							"color":"#333333",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/mine/addCode",
 			"style": {
 				"navigationBarTitleText": "添加收款码"
 			}
 		},
 		{
+			"path": "pages/mine/getTool",
+			"style": {
+				"navigationBarTitleText": "购买道具"
+			}
+		},
+		{
 			"path": "pages/mine/mine3Addbank",
 			"style": {
-				"navigationBarTitleText": "添加银行卡",
-				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "删除",
-							"color":"#333333",
-							"fontSize": "14px"
-						}]
-					}
-				}
+				"navigationBarTitleText": "添加银行卡"
 			}
 		},
 		{
@@ -247,13 +367,33 @@
 			"style": {
 				"navigationBarTitleText": "注册"
 			}
+		},
+		{
+			"path": "pages/mine/reviseBank",
+			"style": {
+				"navigationBarTitleText": "银行帐户",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"color":"#333333",
+							"fontSize": "14px",
+							"width":"60"
+						}]
+					}
+				}
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "",
 		"navigationBarBackgroundColor": "#FFFFFF",
-		"backgroundColor": "#F5F5F5"
+		"backgroundColor": "#F5F5F5",
+		"app-plus":{
+			// 将回弹属性关掉
+			"bounce":"none"
+		}
 	},
 	"condition": { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式（list 的索引项）
@@ -262,6 +402,7 @@
 			"path": "pages/index/index" //启动页面，必选
 		}]
 	},
+	
 	"tabBar": {
 		"color": "#999999",
 		"selectedColor": "#D03C29",
@@ -279,12 +420,12 @@
 				"selectedIconPath": "static/images/tabbar3_seled.png",
 				"text": "财富"
 			},
-			// {
-			// 	"pagePath": "pages/charity/charity",
-			// 	"iconPath": "static/images/tabbar2.png",
-			// 	"selectedIconPath": "static/images/tabbar2_seled.png",
-			// 	"text": "公益"
-			// },
+			{
+				"pagePath": "pages/charity/charity",
+				"iconPath": "static/images/tabbar2.png",
+				"selectedIconPath": "static/images/tabbar2_seled.png",
+				"text": "公益"
+			},
 			{
 				"pagePath": "pages/mine/mine",
 				"iconPath": "static/images/tabbar4.png",

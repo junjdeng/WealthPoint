@@ -13,8 +13,6 @@
 </script>
 
 <style>
-	/* @import './common/uni.css'; */
-	
 	page{background: #f5f5f5;}
 	
 	.container {
@@ -123,4 +121,8 @@
 	.wpred{color: #FF5533;}
 	.wpgreen{color: #7ED321;}
 	.wpgold{color: #CCA366;}
+	uni-radio.uni-radio-input-checked{
+		background-color: #CCA366!important;
+		border-color:#CCA366!important;
+	}
 </style>

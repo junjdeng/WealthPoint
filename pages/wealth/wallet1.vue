@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">AP数量</view>
-			<view class="num wpgold">318.05</view>
+			<view class="num wpgold">{{wallet}}</view>
 			<span class="want" data-url="buyAP" @tap="navTo">转到希望钱包</span>
 		</view>
 	
@@ -24,10 +24,13 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import common from '../../common/common.js'
+	import {config} from '../../common/config.js'	
+	import {djRequest} from '../../common/request.js'
 	export default {
 		data() {
 			return {
-
+				wallet:0
 			}
 		},
 		components: {
@@ -36,8 +39,19 @@
 		onLoad() {
 			
 		},
+		onShow(){
+			let that = this;
+			common.balance();
+			that.wallets();
+		},
 		methods: {
-
+			/* 当前钱包资产 */
+			
+			wallets () {
+				let that = this;
+				that.wallet=Number(config.balance.temporary).toFixed(4);
+					
+			},
 		}
 	}
 </script>

@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">激活码数量</view>
-			<view class="num wpgold">{{balance.code}}</view>
+			<view class="num wpgold">{{num}}</view>
 			<view class="flex-center">
 				<span class="flex1 want" data-url="mine6Sell" @tap="navTo">转码</span>
 				<span class="flex1 want" data-url="mine6Use" @tap="navTo">激活会员</span>
@@ -33,19 +33,23 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
-	import {config} from '../../common/config.js'
-	
+	import common from '../../common/common.js'
+	import { config } from '../../common/config.js'
+	import { djRequest } from '../../common/request.js'
 	export default {
 		data() {
 			return {
-				balance:null,
+				num:0
 			}
 		},
 		components: {
 			uniIcon
 		},
+		onShow (){
+			this.num = config.balance.code;
+		},
 		onLoad() {
-			this.balance = config.Balance;
+			
 		},
 		methods: {
 			navTo(e) {

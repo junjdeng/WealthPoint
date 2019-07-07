@@ -95,7 +95,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		width: 75%;
+		width: 100%;
 		font-size: 28upx;
 		border-radius: 10upx;
 		box-sizing: border-box;
@@ -104,7 +104,7 @@
 	}
 
 	.segmented-control.button {
-		border: 2upx solid;
+		border: 2upx solid transparent;
 	}
 
 	.segmented-control.text {
