@@ -60,7 +60,10 @@
 			uniIcon
 		},
 		onLoad() {
-			
+			console.log(999);
+		},
+		onShow() {
+			console.log('888')
 		},
 		methods: {
 			bindPickerChange: function(e) {
@@ -74,7 +77,34 @@
 					success: (res) => {
 						console.log(res);
 						this.tempImagePath = res.tempFilePaths;
-						this.tempFile = res.tempFiles;
+						this.tempFile = res.tempFiles;						
+														
+						var _this = this;
+						djPostForm({
+							url:"/api/uploads",
+							data:{},
+							name:"files",
+							filePath:_this.tempImagePath,
+							success:function(res11) {	
+								console.log(res11);
+								// if (res.data.status == 200){
+								// 	   uni.showToast({
+								// 		title:res.data.message,
+								// 		icon:"none",
+								// 		duration:1000,
+								// 		complete() {
+								// 			uni.navigateBack()
+								// 		}
+								// 	   })
+								// }else{
+								// 	uni.showToast({
+								// 		title:res.data.message,
+								// 		icon:"none"
+								// 	   })
+								// }	
+							}
+						})									
+				
 					}
 				})
 			},

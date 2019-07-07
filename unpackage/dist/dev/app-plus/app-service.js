@@ -2955,51 +2955,38 @@ var djPostForm = function djPostForm(opt) {
   opt.url = opt.url || '';
   opt.data = opt.data || null;
   opt.method = opt.method || 'POST';
-  opt.name = opt.name || 'file';
-  opt.filePath = opt.filePath || null,
+  opt.name = opt.name || 'files';
+  opt.filePath = opt.filePath || null;
   opt.header = opt.header || {
-    'content-type': 'multipart/form-data',
+    'content-type': 'multipart/form-data;charset=utf-8',
     'sessionid': _config.config.User.sessionId,
     'authorization': _config.config.Authorization };
 
   opt.success = opt.success || function () {};
 
-  // uni.uploadFile({
-  // 	url: config.BASE_URL + opt.url +'?t='+Date.now(),
-  // 	header: opt.header,
-  // 	filePath: opt.filePath,
-  // 	name: opt.name,
-  // 	formData: opt.data,
-  // 	success: (uploadFileRes) => {
-  // 		console.log(uploadFileRes.data);
-  // 	}
-  // });	
   uni.uploadFile({
     url: _config.config.BASE_URL + opt.url + '?t=' + Date.now(),
     header: opt.header,
-    filePath: opt.filePath,
     fileType: 'image',
+    filePath: opt.filePath,
     name: opt.name,
     formData: opt.data,
     success: function success(res) {
-      console.log('uploadImage success, res is:', res, " at common/request.js:78");
-      uni.showToast({
-        title: '上传成功',
-        icon: 'success',
-        duration: 1000 });
-
-      //this.imageSrc = imageSrc
+      // console.log('uploadImage success, res is:', res)
+      // uni.showToast({
+      // 	title: '上传成功',
+      // 	icon: 'success',
+      // 	duration: 1000
+      // })
+      opt.success(res);
     },
     fail: function fail(err) {
-      console.log('uploadImage fail', err, " at common/request.js:87");
+      console.log('uploadImage fail', err, " at common/request.js:77");
       uni.showModal({
         content: err.errMsg,
         showCancel: false });
 
     } });
-
-
-
 
 };
 
@@ -23524,7 +23511,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../../
       url: '/api/member/balance',
       method: 'GET',
       success: function success(res) {
-        /* console.log(res); */
+        console.log(res, " at pages/mine/mine.vue:84");
       } });
 
   },
@@ -26256,17 +26243,30 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../.
       this.index = e.target.value,
       this.type = this.array[this.index];
     },
-    chooseImg: function chooseImg() {
-      var that = this;
+    chooseImg: function chooseImg() {var _this2 = this;
       uni.chooseImage({
-        count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['album'],
-        success: function success(res) {
-          uni.getImageInfo({
-            src: res.tempFilePaths[0],
-            success: function success(image) {
-              that.url = res.tempFilePaths[0];
+        count: 1,
+        success: function success(imageFile) {
+          _this2.url = imageFile.tempFilePaths[0];
+          var _this = _this2;
+          (0, _request.djPostForm)({
+            url: "/api/uploads",
+            filePath: _this.url,
+            fileType: 'image',
+            name: 'files',
+            success: function success(result) {
+              var res = JSON.parse(result.data);
+              console.log(res, " at pages/mine/addCode.vue:89");
+              if (res.status == 200) {
+                _this.url = _config.config.BASE_URL + res.data.filePath + res.data.fileName;
+              } else {
+                uni.showToast({
+                  title: res.data.message,
+                  icon: "none" });
+
+              }
             } });
 
         } });
@@ -26292,6 +26292,16 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../.
           that.flag = true;
           return;
         }
+        if (!_common.default.isNotNull(that.url, "收款码图片")) return;
+
+        var data = {
+          'url': that.url,
+          'userName': that.userName,
+          'type': that.type };
+
+
+        console.log(data, " at pages/mine/addCode.vue:131");
+
 
       }
     } } };exports.default = _default;

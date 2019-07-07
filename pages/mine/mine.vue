@@ -81,7 +81,7 @@
 				url:'/api/member/balance',
 				method:'GET',
 				success:function(res) {
-					/* console.log(res); */
+					 console.log(res); 
 				}
 			})				
 		},

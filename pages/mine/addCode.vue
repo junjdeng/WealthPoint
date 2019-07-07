@@ -43,7 +43,7 @@
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
 	import {config} from '../../common/config.js'	
-	import {djRequest} from '../../common/request.js'
+	import {djRequest,djPostForm} from '../../common/request.js'
 	export default {
 		data() {
 			return {
@@ -71,22 +71,35 @@
 				this.index = e.target.value,
 				this.type=this.array[this.index];
 			},
-			chooseImg(){
-				let that = this;
+		chooseImg(){
 				uni.chooseImage({
-					count: 1,
 					sizeType: ['original', 'compressed'],
 					sourceType: ['album'],
-					success: function (res) {
-						uni.getImageInfo({
-							src: res.tempFilePaths[0],
-							success: function (image) {
-								that.url=res.tempFilePaths[0];
+					count: 1,
+					success: (imageFile) => {
+						this.url = imageFile.tempFilePaths[0];																				
+						var _this = this;
+						djPostForm({
+							url:"/api/uploads",
+							filePath: _this.url,
+							fileType: 'image',
+							name: 'files',
+							success:function(result) {
+								var res = JSON.parse(result.data);
+								console.log(res);															
+								if (res.status == 200){
+									_this.url = config.BASE_URL + res.data.filePath+res.data.fileName;
+								}else{
+									uni.showToast({
+										title:res.data.message,
+										icon:"none"
+									})
+								}	
 							}
-						});
+						})									
 					}
-				});
-			},
+				})				
+			}, 
 			/* 获取用户名 */
 			getUserName (){
 				let that = this;
@@ -107,7 +120,17 @@
 					that.flag=true;
 					return ;
 				  }
-				 
+				  if (!common.isNotNull(that.url, "收款码图片")) return;
+				  
+				  var data = {
+					  'url':that.url,
+					  'userName':that.userName,
+					  'type':that.type,
+				  }
+				  
+				  console.log(data);
+				  
+				  
 				}
 			},
 		}

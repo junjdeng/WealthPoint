@@ -239,51 +239,38 @@ var djPostForm = function djPostForm(opt) {
   opt.url = opt.url || '';
   opt.data = opt.data || null;
   opt.method = opt.method || 'POST';
-  opt.name = opt.name || 'file';
-  opt.filePath = opt.filePath || null,
+  opt.name = opt.name || 'files';
+  opt.filePath = opt.filePath || null;
   opt.header = opt.header || {
-    'content-type': 'multipart/form-data',
+    'content-type': 'multipart/form-data;charset=utf-8',
     'sessionid': _config.config.User.sessionId,
     'authorization': _config.config.Authorization };
 
   opt.success = opt.success || function () {};
 
-  // uni.uploadFile({
-  // 	url: config.BASE_URL + opt.url +'?t='+Date.now(),
-  // 	header: opt.header,
-  // 	filePath: opt.filePath,
-  // 	name: opt.name,
-  // 	formData: opt.data,
-  // 	success: (uploadFileRes) => {
-  // 		console.log(uploadFileRes.data);
-  // 	}
-  // });	
   uni.uploadFile({
     url: _config.config.BASE_URL + opt.url + '?t=' + Date.now(),
     header: opt.header,
-    filePath: opt.filePath,
     fileType: 'image',
+    filePath: opt.filePath,
     name: opt.name,
     formData: opt.data,
     success: function success(res) {
-      console.log('uploadImage success, res is:', res, " at common/request.js:78");
-      uni.showToast({
-        title: '上传成功',
-        icon: 'success',
-        duration: 1000 });
-
-      //this.imageSrc = imageSrc
+      // console.log('uploadImage success, res is:', res)
+      // uni.showToast({
+      // 	title: '上传成功',
+      // 	icon: 'success',
+      // 	duration: 1000
+      // })
+      opt.success(res);
     },
     fail: function fail(err) {
-      console.log('uploadImage fail', err, " at common/request.js:87");
+      console.log('uploadImage fail', err, " at common/request.js:77");
       uni.showModal({
         content: err.errMsg,
         showCancel: false });
 
     } });
-
-
-
 
 };
 

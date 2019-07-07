@@ -181,7 +181,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../../
       url: '/api/member/balance',
       method: 'GET',
       success: function success(res) {
-        /* console.log(res); */
+        console.log(res, " at pages/mine/mine.vue:84");
       } });
 
   },
