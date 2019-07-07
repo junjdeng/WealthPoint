@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "我的道具",
-  "usingComponents": {
-    "uni-segmented-control": "/components/uni-segmented-control/uni-segmented-control"
-  }
-}

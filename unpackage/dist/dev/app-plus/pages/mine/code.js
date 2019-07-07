@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"img{ width:90%; margin:",[0,20]," auto; text-align: center; -webkit-box-sizing:border-box; box-sizing:border-box; padding:",[0,20],"; background: red; }\n.",[1],"img wx-image{ width:100%; margin:0 auto; display:block; }\n",],undefined,{path:"./pages/mine/code.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/code.wxml') } }));

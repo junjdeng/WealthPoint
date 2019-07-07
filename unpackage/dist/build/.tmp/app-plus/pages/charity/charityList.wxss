@@ -1,9 +1,0 @@
-
-.list{width: 710rpx;margin-top: 20rpx;}
-.list .item{ background: #ffffff; -webkit-border-radius: 16rpx; border-radius: 16rpx; padding: 20rpx; margin-bottom: 20rpx;}
-.list .item image{width: 160rpx; height: 160rpx;-webkit-border-radius: 16rpx;border-radius: 16rpx;}
-.list .item .flex2{height: 160rpx;}
-.list .item .content{-webkit-align-self: flex-start;-ms-flex-item-align: start;align-self: flex-start;}
-.list .item .title{font-size: 32rpx; color: #333333; line-height: 2.2em;}
-.list .item .sub_title{font-size: 24rpx; color: #999999; line-height: 1.8em;}
-

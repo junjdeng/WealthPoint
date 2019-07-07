@@ -29,9 +29,18 @@
 	export default {
 		data() {
 			return {
-				user:'Waixin',
-				pwd:'a123456'
+				user:'',
+				pwd:''
 			}
+		},
+		onLoad() {
+			var _this = this;
+			uni.getStorage({
+				key: 'userpwd',
+				success: function (res) {
+					_this.login(res.data);
+				}
+			});			
 		},
 		methods: {
 			registre(){
@@ -39,12 +48,7 @@
 					url: '/pages/login/register'
 				});
 			},
-			formSubmit: function(e) {
-				var data = e.detail.value;
-				/* console.log(JSON.stringify(data)) */
-				if (!common.isNotNull(data.username, "账号")) return;
-				if (!common.isNotNull(data.password, "密码")) return;
-				
+			login(data){				
 				djRequest({
 					url:'/api/login',
 					data:data,
@@ -58,12 +62,12 @@
 								key:'sessionid',
 								data:res.data.data.sessionId
 							})
-							/* uni.getStorage({
-								key:'sessionid',
-								success(e){
-									uni.request.defaults.headers.common['sessionid']=e.data;
-								}
-							}) */
+							
+							uni.setStorage({
+								key:'userpwd',
+								data:data
+							})							
+																																		
 							uni.setStorage({
 								key:'loginInfo',
 								data:JSON.stringify(res.data.data)
@@ -78,8 +82,15 @@
 								url: '/pages/index/index'
 							});
 						}	
-					}
+					},
 				})	
+			},
+			formSubmit: function(e) {
+				var data = e.detail.value;
+				/* console.log(JSON.stringify(data)) */
+				if (!common.isNotNull(data.username, "账号")) return;
+				if (!common.isNotNull(data.password, "密码")) return;
+				this.login(data);
             }
 		}
 	}
