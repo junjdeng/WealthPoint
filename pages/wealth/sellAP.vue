@@ -60,15 +60,19 @@
 		methods: {
 			/* 当前钱包资产 */
 			wallets () {
-				let that = this;
-				common.balance();
-				if(that.status==1){
-					that.wallet=parseFloat(config.balance.ecash).toFixed(4);//希望钱包
-					that.type = 'ecash'
-				}else if(that.status==2){
-					that.wallet=parseFloat(config.balance.bonus).toFixed(4);//奖金钱包
-					that.type = 'bonus'
-				}
+				let that = this;			
+			    common.balance({
+					success:function(res){
+						config.balance = res;
+						if(that.status==1){
+							that.wallet=parseFloat(config.balance.ecash).toFixed(4);//希望钱包
+							that.type = 'ecash'
+						}else if(that.status==2){
+							that.wallet=parseFloat(config.balance.bonus).toFixed(4);//奖金钱包
+							that.type = 'bonus'
+						}						
+					}
+				});	
 			},
 			/* 判断钱包并判断规则 */
 			getRule() {
@@ -100,12 +104,12 @@
 							that.flag = true;
 							return;
 						}
-						if (parseFloat(that.APNumber) < 1) {
-							common.TostUtil('最少1个！');
-							that.APNumber = '';
-							that.flag = true;
-							return;
-						}
+						// if (parseFloat(that.APNumber) < 1) {
+						// 	common.TostUtil('最少1个！');
+						// 	that.APNumber = '';
+						// 	that.flag = true;
+						// 	return;
+						// }
 						if (config.balance.ecashLock !== 'no') { //希望钱包是否被锁定
 							common.TostUtil('希望钱包中AP已被锁定，不能卖出！');
 							that.flag = true;
@@ -150,6 +154,7 @@
 					method: 'POST',
 					success: function(res) {
 						if (res.data.status === 200) {
+							//console.log(999);
 							that.wallets();
 						}
 						that.APNumber = '';

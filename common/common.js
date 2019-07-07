@@ -11,16 +11,20 @@ const  isNotNull = function(text,title){
   }
   return true;
 }
-const balance = function(obj){
+const balance = function(opt){
+	opt = opt || {};
+	opt.success = opt.success || function () {};
 	djRequest({
 				url:'/api/member/balance',
 				method:'GET',
 				success:function(res){
 					if(res.data.status===200){
-					return	config.balance=res.data.data;
+					 opt.success(res.data.data);
+					 return	config.balance=res.data.data;
 					}
 				}
 	})
+	
 }
 const TostUtil =function(message){
     return uni.showToast({

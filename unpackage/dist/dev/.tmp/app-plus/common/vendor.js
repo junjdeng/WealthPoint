@@ -1,16 +1,16 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
-/***/ "../../../../test/WealthPoint/common/common.js":
-/*!********************************************!*\
-  !*** D:/test/WealthPoint/common/common.js ***!
-  \********************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/common.js":
+/*!**************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/common/common.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _config = __webpack_require__(/*! ./config.js */ "../../../../test/WealthPoint/common/config.js");
-var _request = __webpack_require__(/*! ./request.js */ "../../../../test/WealthPoint/common/request.js");
+var _config = __webpack_require__(/*! ./config.js */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/config.js");
+var _request = __webpack_require__(/*! ./request.js */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/request.js");
 var isNotNull = function isNotNull(text, title) {
   if (text == null || text == undefined || text.length == 0 || text == "" || text.replace(/\s+/g, '') == "") {
     uni.showToast({
@@ -21,15 +21,19 @@ var isNotNull = function isNotNull(text, title) {
   }
   return true;
 };
-var balance = function balance(obj) {
+var balance = function balance(opt) {
+  opt = opt || {};
+  opt.success = opt.success || function () {};
   (0, _request.djRequest)({
     url: '/api/member/balance',
     method: 'GET',
     success: function success(res) {
       if (res.data.status === 200) {
+        opt.success(res.data.data);
         return _config.config.balance = res.data.data;
       }
     } });
+
 
 };
 var TostUtil = function TostUtil(message) {
@@ -100,10 +104,10 @@ var RegUtil = {
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/common/config.js":
-/*!********************************************!*\
-  !*** D:/test/WealthPoint/common/config.js ***!
-  \********************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/config.js":
+/*!**************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/common/config.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -118,10 +122,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.config = v
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/common/filter.js":
-/*!********************************************!*\
-  !*** D:/test/WealthPoint/common/filter.js ***!
-  \********************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/filter.js":
+/*!**************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/common/filter.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -177,16 +181,15 @@ var formatLeftDate = _vue.default.filter('formatLeftDate');var _default =
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/common/request.js":
-/*!*********************************************!*\
-  !*** D:/test/WealthPoint/common/request.js ***!
-  \*********************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/request.js":
+/*!***************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/common/request.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.djRequest = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));var _config = __webpack_require__(/*! ./config.js */ "../../../../test/WealthPoint/common/config.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.djPostForm = exports.djRequest = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));var _config = __webpack_require__(/*! ./config.js */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/config.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 
 var djRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(opt) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
             opt = opt || {};
@@ -209,8 +212,6 @@ var djRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PUR
             opt.header.authorization = _config.config.Authorization;case 14:
 
 
-            /* console.log(opt.header); */
-
             uni.request({
               url: _config.config.BASE_URL + opt.url + '?t=' + Date.now(),
               data: opt.data,
@@ -229,13 +230,66 @@ var djRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PUR
                 uni.showToast({
                   title: '请稍后重试' });
 
-              } });case 15:case "end":return _context.stop();}}}, _callee, this);}));return function djRequest(_x) {return _ref.apply(this, arguments);};}();
+              } });case 15:case "end":return _context.stop();}}}, _callee, this);}));return function djRequest(_x) {return _ref.apply(this, arguments);};}();exports.djRequest = djRequest;
 
 
+
+var djPostForm = function djPostForm(opt) {
+  opt = opt || {};
+  opt.url = opt.url || '';
+  opt.data = opt.data || null;
+  opt.method = opt.method || 'POST';
+  opt.name = opt.name || 'file';
+  opt.filePath = opt.filePath || null,
+  opt.header = opt.header || {
+    'content-type': 'multipart/form-data',
+    'sessionid': _config.config.User.sessionId,
+    'authorization': _config.config.Authorization };
+
+  opt.success = opt.success || function () {};
+
+  // uni.uploadFile({
+  // 	url: config.BASE_URL + opt.url +'?t='+Date.now(),
+  // 	header: opt.header,
+  // 	filePath: opt.filePath,
+  // 	name: opt.name,
+  // 	formData: opt.data,
+  // 	success: (uploadFileRes) => {
+  // 		console.log(uploadFileRes.data);
+  // 	}
+  // });	
+  uni.uploadFile({
+    url: _config.config.BASE_URL + opt.url + '?t=' + Date.now(),
+    header: opt.header,
+    filePath: opt.filePath,
+    fileType: 'image',
+    name: opt.name,
+    formData: opt.data,
+    success: function success(res) {
+      console.log('uploadImage success, res is:', res, " at common/request.js:78");
+      uni.showToast({
+        title: '上传成功',
+        icon: 'success',
+        duration: 1000 });
+
+      //this.imageSrc = imageSrc
+    },
+    fail: function fail(err) {
+      console.log('uploadImage fail', err, " at common/request.js:87");
+      uni.showModal({
+        content: err.errMsg,
+        showCancel: false });
+
+    } });
+
+
+
+
+};
 
 
 //获取auth
-exports.djRequest = djRequest;function getAuth() {
+exports.djPostForm = djPostForm;function getAuth() {
   return new Promise(function (resolve, reject) {
     uni.request({
       url: _config.config.BASE_URL + '/auth/token?t=' + Date.now(),
@@ -256,10 +310,10 @@ exports.djRequest = djRequest;function getAuth() {
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/components/ican-clipBoard/ican-clipBoard.js":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/components/ican-clipBoard/ican-clipBoard.js ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/components/ican-clipBoard/ican-clipBoard.js":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/components/ican-clipBoard/ican-clipBoard.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -282,14 +336,14 @@ exports.djRequest = djRequest;function getAuth() {
     return type == '[object Function]';}, isObject: function isObject(obj) {var type = Object.prototype.toString.call(obj);
     return type == '[object Object]';}, isString: function isString(obj) {var type = Object.prototype.toString.call(obj);
     return type == '[object String]';} };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/components/u-charts/u-charts.js":
-/*!***********************************************************!*\
-  !*** D:/test/WealthPoint/components/u-charts/u-charts.js ***!
-  \***********************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/components/u-charts/u-charts.js":
+/*!*****************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/components/u-charts/u-charts.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3320,7 +3374,7 @@ Event.prototype.trigger = function () {
       try {
         listener.apply(null, params);
       } catch (e) {
-        console.error(e, " at components\\u-charts\\u-charts.js:3027");
+        console.error(e, " at components/u-charts/u-charts.js:3027");
       }
     });
   }
@@ -3435,7 +3489,7 @@ Charts.prototype.updateData = function () {
 Charts.prototype.zoom = function () {
   var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.opts.xAxis.itemCount;
   if (this.opts.enableScroll !== true) {
-    console.log('请启用滚动条后使用！', " at components\\u-charts\\u-charts.js:3142");
+    console.log('请启用滚动条后使用！', " at components/u-charts/u-charts.js:3142");
     return;
   }
   this.opts.animation = false;
@@ -3572,18 +3626,18 @@ module.exports = Charts;
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js":
-/*!***********************************!*\
-  !*** D:/test/WealthPoint/main.js ***!
-  \***********************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js":
+/*!*****************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "../../../../test/WealthPoint/App.vue"));
-__webpack_require__(/*! ./common/filter.js */ "../../../../test/WealthPoint/common/filter.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/App.vue"));
+__webpack_require__(/*! ./common/filter.js */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/common/filter.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 _vue.default.config.productionTip = false;
 _App.default.mpType = 'app';
 
@@ -3622,826 +3676,826 @@ createApp(app).$mount();
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2Fcharity\"}":
-/*!************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fcharity%2Fcharity"} ***!
-  \************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2Fcharity\"}":
+/*!******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fcharity%2Fcharity"} ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _charity = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charity.vue */ "../../../../test/WealthPoint/pages/charity/charity.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _charity = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charity.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/charity/charity.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_charity.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2FcharityDetail\"}":
-/*!******************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fcharity%2FcharityDetail"} ***!
-  \******************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2FcharityDetail\"}":
+/*!************************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fcharity%2FcharityDetail"} ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _charityDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charityDetail.vue */ "../../../../test/WealthPoint/pages/charity/charityDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _charityDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charityDetail.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/charity/charityDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_charityDetail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2FcharityHelp\"}":
-/*!****************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fcharity%2FcharityHelp"} ***!
-  \****************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2FcharityHelp\"}":
+/*!**********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fcharity%2FcharityHelp"} ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _charityHelp = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charityHelp.vue */ "../../../../test/WealthPoint/pages/charity/charityHelp.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _charityHelp = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charityHelp.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/charity/charityHelp.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_charityHelp.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2FcharityList\"}":
-/*!****************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fcharity%2FcharityList"} ***!
-  \****************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fcharity%2FcharityList\"}":
+/*!**********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fcharity%2FcharityList"} ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _charityList = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charityList.vue */ "../../../../test/WealthPoint/pages/charity/charityList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _charityList = _interopRequireDefault(__webpack_require__(/*! ./pages/charity/charityList.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/charity/charityList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_charityList.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Fchart\"}":
-/*!********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Findex%2Fchart"} ***!
-  \********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Fchart\"}":
+/*!**************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Findex%2Fchart"} ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _chart = _interopRequireDefault(__webpack_require__(/*! ./pages/index/chart.vue */ "../../../../test/WealthPoint/pages/index/chart.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _chart = _interopRequireDefault(__webpack_require__(/*! ./pages/index/chart.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/index/chart.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_chart.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Findex%2FcustomSuggest\"}":
-/*!****************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Findex%2FcustomSuggest"} ***!
-  \****************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Findex%2FcustomSuggest\"}":
+/*!**********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Findex%2FcustomSuggest"} ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _customSuggest = _interopRequireDefault(__webpack_require__(/*! ./pages/index/customSuggest.vue */ "../../../../test/WealthPoint/pages/index/customSuggest.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _customSuggest = _interopRequireDefault(__webpack_require__(/*! ./pages/index/customSuggest.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/index/customSuggest.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_customSuggest.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Findex\"}":
-/*!********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Findex\"}":
+/*!**************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ "../../../../test/WealthPoint/pages/index/index.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/index/index.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_index.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Findex%2FnewsList\"}":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Findex%2FnewsList"} ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Findex%2FnewsList\"}":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Findex%2FnewsList"} ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _newsList = _interopRequireDefault(__webpack_require__(/*! ./pages/index/newsList.vue */ "../../../../test/WealthPoint/pages/index/newsList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _newsList = _interopRequireDefault(__webpack_require__(/*! ./pages/index/newsList.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/index/newsList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_newsList.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Fsign\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Findex%2Fsign"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Fsign\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Findex%2Fsign"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _sign = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sign.vue */ "../../../../test/WealthPoint/pages/index/sign.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _sign = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sign.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/index/sign.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_sign.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Fwwallet\"}":
-/*!**********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Findex%2Fwwallet"} ***!
-  \**********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Findex%2Fwwallet\"}":
+/*!****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Findex%2Fwwallet"} ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _wwallet = _interopRequireDefault(__webpack_require__(/*! ./pages/index/wwallet.vue */ "../../../../test/WealthPoint/pages/index/wwallet.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _wwallet = _interopRequireDefault(__webpack_require__(/*! ./pages/index/wwallet.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/index/wwallet.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_wwallet.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2FfinishRegisterInfo\"}":
-/*!*********************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Flogin%2FfinishRegisterInfo"} ***!
-  \*********************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2FfinishRegisterInfo\"}":
+/*!***************************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Flogin%2FfinishRegisterInfo"} ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _finishRegisterInfo = _interopRequireDefault(__webpack_require__(/*! ./pages/login/finishRegisterInfo.vue */ "../../../../test/WealthPoint/pages/login/finishRegisterInfo.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _finishRegisterInfo = _interopRequireDefault(__webpack_require__(/*! ./pages/login/finishRegisterInfo.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/login/finishRegisterInfo.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_finishRegisterInfo.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
-/*!********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
-  \********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
+/*!**************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "../../../../test/WealthPoint/pages/login/login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/login/login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_login.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2Fregister\"}":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Flogin%2Fregister"} ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2Fregister\"}":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Flogin%2Fregister"} ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _register = _interopRequireDefault(__webpack_require__(/*! ./pages/login/register.vue */ "../../../../test/WealthPoint/pages/login/register.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _register = _interopRequireDefault(__webpack_require__(/*! ./pages/login/register.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/login/register.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_register.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2FwaitAgree\"}":
-/*!************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Flogin%2FwaitAgree"} ***!
-  \************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Flogin%2FwaitAgree\"}":
+/*!******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Flogin%2FwaitAgree"} ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _waitAgree = _interopRequireDefault(__webpack_require__(/*! ./pages/login/waitAgree.vue */ "../../../../test/WealthPoint/pages/login/waitAgree.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _waitAgree = _interopRequireDefault(__webpack_require__(/*! ./pages/login/waitAgree.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/login/waitAgree.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_waitAgree.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FaddAliPay\"}":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2FaddAliPay"} ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FaddAliPay\"}":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2FaddAliPay"} ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _addAliPay = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/addAliPay.vue */ "../../../../test/WealthPoint/pages/mine/addAliPay.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _addAliPay = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/addAliPay.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/addAliPay.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_addAliPay.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FaddCode\"}":
-/*!*********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2FaddCode"} ***!
-  \*********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FaddCode\"}":
+/*!***************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2FaddCode"} ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _addCode = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/addCode.vue */ "../../../../test/WealthPoint/pages/mine/addCode.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _addCode = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/addCode.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/addCode.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_addCode.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FalipayEdit\"}":
-/*!************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2FalipayEdit"} ***!
-  \************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FalipayEdit\"}":
+/*!******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2FalipayEdit"} ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _alipayEdit = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/alipayEdit.vue */ "../../../../test/WealthPoint/pages/mine/alipayEdit.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _alipayEdit = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/alipayEdit.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/alipayEdit.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_alipayEdit.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fcode\"}":
-/*!******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fcode"} ***!
-  \******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fcode\"}":
+/*!************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fcode"} ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _code = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/code.vue */ "../../../../test/WealthPoint/pages/mine/code.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _code = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/code.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/code.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_code.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FgetTool\"}":
-/*!*********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2FgetTool"} ***!
-  \*********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FgetTool\"}":
+/*!***************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2FgetTool"} ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _getTool = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/getTool.vue */ "../../../../test/WealthPoint/pages/mine/getTool.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _getTool = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/getTool.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/getTool.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_getTool.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine\"}":
-/*!******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine"} ***!
-  \******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine\"}":
+/*!************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine"} ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine.vue */ "../../../../test/WealthPoint/pages/mine/mine.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine0\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine0"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine0\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine0"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine0.vue */ "../../../../test/WealthPoint/pages/mine/mine0.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine0.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine0.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine1\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine1"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine1\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine1"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine1.vue */ "../../../../test/WealthPoint/pages/mine/mine1.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine1.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine1.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine2\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine2"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine2\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine2"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine2.vue */ "../../../../test/WealthPoint/pages/mine/mine2.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine2.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine2.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine3\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine3"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine3\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine3"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine3.vue */ "../../../../test/WealthPoint/pages/mine/mine3.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine3.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine3.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine3Addbank\"}":
-/*!**************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine3Addbank"} ***!
-  \**************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine3Addbank\"}":
+/*!********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine3Addbank"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine3Addbank = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine3Addbank.vue */ "../../../../test/WealthPoint/pages/mine/mine3Addbank.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine3Addbank = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine3Addbank.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine3Addbank.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine3Addbank.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine4\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine4"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine4\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine4"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine4.vue */ "../../../../test/WealthPoint/pages/mine/mine4.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine4.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine4.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine5\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine5"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine5\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine5"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine5.vue */ "../../../../test/WealthPoint/pages/mine/mine5.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine5.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine5.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine5ResetPw\"}":
-/*!**************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine5ResetPw"} ***!
-  \**************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine5ResetPw\"}":
+/*!********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine5ResetPw"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine5ResetPw = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine5ResetPw.vue */ "../../../../test/WealthPoint/pages/mine/mine5ResetPw.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine5ResetPw = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine5ResetPw.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine5ResetPw.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine5ResetPw.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine6\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine6"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine6\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine6"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine6.vue */ "../../../../test/WealthPoint/pages/mine/mine6.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine6.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine6.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine6Sell\"}":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine6Sell"} ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine6Sell\"}":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine6Sell"} ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine6Sell = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine6Sell.vue */ "../../../../test/WealthPoint/pages/mine/mine6Sell.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine6Sell = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine6Sell.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine6Sell.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine6Sell.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine6Use\"}":
-/*!**********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine6Use"} ***!
-  \**********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine6Use\"}":
+/*!****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine6Use"} ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine6Use = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine6Use.vue */ "../../../../test/WealthPoint/pages/mine/mine6Use.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine6Use = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine6Use.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine6Use.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine6Use.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine7\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine7"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine7\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine7"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine7.vue */ "../../../../test/WealthPoint/pages/mine/mine7.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine7.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine7.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine7Cards\"}":
-/*!************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine7Cards"} ***!
-  \************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine7Cards\"}":
+/*!******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine7Cards"} ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine7Cards = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine7Cards.vue */ "../../../../test/WealthPoint/pages/mine/mine7Cards.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine7Cards = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine7Cards.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine7Cards.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine7Cards.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine8\"}":
-/*!*******************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine8"} ***!
-  \*******************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine8\"}":
+/*!*************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2Fmine8"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine8.vue */ "../../../../test/WealthPoint/pages/mine/mine8.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/mine8.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/mine8.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FreviseBank\"}":
-/*!************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2FreviseBank"} ***!
-  \************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FreviseBank\"}":
+/*!******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fmine%2FreviseBank"} ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _reviseBank = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/reviseBank.vue */ "../../../../test/WealthPoint/pages/mine/reviseBank.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _reviseBank = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/reviseBank.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/mine/reviseBank.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_reviseBank.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyAP\"}":
-/*!*********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyAP"} ***!
-  \*********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyAP\"}":
+/*!***************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyAP"} ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _buyAP = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyAP.vue */ "../../../../test/WealthPoint/pages/wealth/buyAP.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _buyAP = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyAP.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/buyAP.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_buyAP.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyAPList\"}":
-/*!*************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyAPList"} ***!
-  \*************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyAPList\"}":
+/*!*******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyAPList"} ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _buyAPList = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyAPList.vue */ "../../../../test/WealthPoint/pages/wealth/buyAPList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _buyAPList = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyAPList.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/buyAPList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_buyAPList.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyDetail\"}":
-/*!*************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyDetail"} ***!
-  \*************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyDetail\"}":
+/*!*******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyDetail"} ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _buyDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyDetail.vue */ "../../../../test/WealthPoint/pages/wealth/buyDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _buyDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyDetail.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/buyDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_buyDetail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyRecord\"}":
-/*!*************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyRecord"} ***!
-  \*************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyRecord\"}":
+/*!*******************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyRecord"} ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _buyRecord = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyRecord.vue */ "../../../../test/WealthPoint/pages/wealth/buyRecord.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _buyRecord = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/buyRecord.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/buyRecord.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_buyRecord.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FconnectMember\"}":
-/*!*****************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FconnectMember"} ***!
-  \*****************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FconnectMember\"}":
+/*!***********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FconnectMember"} ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _connectMember = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/connectMember.vue */ "../../../../test/WealthPoint/pages/wealth/connectMember.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _connectMember = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/connectMember.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/connectMember.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_connectMember.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fharvest\"}":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fharvest"} ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fharvest\"}":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fharvest"} ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _harvest = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/harvest.vue */ "../../../../test/WealthPoint/pages/wealth/harvest.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _harvest = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/harvest.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/harvest.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_harvest.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellAP\"}":
-/*!**********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellAP"} ***!
-  \**********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellAP\"}":
+/*!****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellAP"} ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _sellAP = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellAP.vue */ "../../../../test/WealthPoint/pages/wealth/sellAP.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _sellAP = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellAP.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/sellAP.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_sellAP.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellAPList\"}":
-/*!**************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellAPList"} ***!
-  \**************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellAPList\"}":
+/*!********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellAPList"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _sellAPList = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellAPList.vue */ "../../../../test/WealthPoint/pages/wealth/sellAPList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _sellAPList = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellAPList.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/sellAPList.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_sellAPList.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellDetail\"}":
-/*!**************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellDetail"} ***!
-  \**************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellDetail\"}":
+/*!********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellDetail"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _sellDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellDetail.vue */ "../../../../test/WealthPoint/pages/wealth/sellDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _sellDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellDetail.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/sellDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_sellDetail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellRecord\"}":
-/*!**************************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellRecord"} ***!
-  \**************************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FsellRecord\"}":
+/*!********************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2FsellRecord"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _sellRecord = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellRecord.vue */ "../../../../test/WealthPoint/pages/wealth/sellRecord.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _sellRecord = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/sellRecord.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/sellRecord.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_sellRecord.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwallet\"}":
-/*!**********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwallet"} ***!
-  \**********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwallet\"}":
+/*!****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwallet"} ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _wallet = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/wallet.vue */ "../../../../test/WealthPoint/pages/wealth/wallet.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _wallet = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/wallet.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/wallet.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_wallet.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwallet1\"}":
-/*!***********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwallet1"} ***!
-  \***********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwallet1\"}":
+/*!*****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwallet1"} ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _wallet = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/wallet1.vue */ "../../../../test/WealthPoint/pages/wealth/wallet1.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _wallet = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/wallet1.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/wallet1.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_wallet.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwealth\"}":
-/*!**********************************************************************!*\
-  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwealth"} ***!
-  \**********************************************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwealth\"}":
+/*!****************************************************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwealth"} ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _wealth = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/wealth.vue */ "../../../../test/WealthPoint/pages/wealth/wealth.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _wealth = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/wealth.vue */ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages/wealth/wealth.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_wealth.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../test/WealthPoint/pages.json":
-/*!**************************************!*\
-  !*** D:/test/WealthPoint/pages.json ***!
-  \**************************************/
+/***/ "../../../../../../Users/dengjunjun/Desktop/WealthPoint/pages.json":
+/*!********************************************************!*\
+  !*** /Users/dengjunjun/Desktop/WealthPoint/pages.json ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
