@@ -13,7 +13,7 @@
 			<!-- 个性签名 -->
 			<view class="sign">个性签名: <text></text></view>
 			<!-- 投诉 -->
-			<view class="bank">
+			<view class="bank" @click="complain"  v-show="dist==2">
 				<view>帐户信息错误投诉</view>
 			</view>
 			<!-- 个人信息 -->
@@ -132,6 +132,13 @@
 			copy(txt){
 				uni.setClipboardData({
 					data:txt
+				})
+			},
+			/* 投诉 */
+			complain(){
+				let that = this;
+				uni.navigateTo({
+					url:'complaint?id='+that.id+'&type='+that.type
 				})
 			},
 			getInfo() {

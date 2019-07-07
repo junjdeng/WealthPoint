@@ -133,6 +133,12 @@
 			}
 		},
 		{
+			"path": "pages/wealth/complaint",
+			"style": {
+				"navigationBarTitleText": "投诉"
+			}
+		},
+		{
 			"path": "pages/wealth/buyDetail",
 			"style": {
 				"navigationBarTitleText": "AP详情"

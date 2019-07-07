@@ -54,7 +54,6 @@
 			},
 			method:'GET',
 			success:function(res){
-				console.log(res)
 				if(res.data.status===200){
 				  that.record=res.data.data;
 				}
