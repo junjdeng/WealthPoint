@@ -120,7 +120,6 @@
 					that.flag=true;
 					return ;
 				  }
-<<<<<<< HEAD
 				  if (!common.isNotNull(that.url, "收款码图片")) return;
 				  
 				  var data = {
@@ -129,11 +128,7 @@
 					  'type':that.type,
 				  }
 				  
-				  console.log(data);
-				  
-				  
-=======
->>>>>>> d845ad91e9c879b4e8fc66d6b69e97f72568d58f
+				  console.log(data);				 
 				}
 			},
 		}
