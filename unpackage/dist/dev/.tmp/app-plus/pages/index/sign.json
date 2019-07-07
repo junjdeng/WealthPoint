@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "签到",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "签到记录",
+        "color": "#333333",
+        "fontSize": "14px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-icon": "/components/uni-icon/uni-icon"
+  }
+}

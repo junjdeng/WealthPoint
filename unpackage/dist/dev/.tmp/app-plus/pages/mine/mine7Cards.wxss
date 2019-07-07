@@ -1,0 +1,10 @@
+
+.segmented{background: #FFFFFF; width: 750rpx; height: 68rpx;}
+.list{ margin-top: 20rpx;}
+.list .item{color: #333333; background: #FFFFFF; width: 670rpx; padding: 20rpx; margin: 0 20rpx 20rpx 20rpx; 
+	-webkit-border-radius: 8rpx; 
+	        border-radius: 8rpx; font-size: 32rpx; line-height: 2em; padding: 20rpx; margin-bottom: 20rpx;}
+.list .item image{width: 160rpx; height: 160rpx; -webkit-border-radius: 8rpx; border-radius: 8rpx;}
+.list .item .price{color: #D03C29;}
+.list .item .time{color: #999999; font-size: 24rpx;}
+

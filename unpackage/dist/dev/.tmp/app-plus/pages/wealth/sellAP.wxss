@@ -1,0 +1,14 @@
+
+.section1{width: 750rpx; padding: 40rpx 0; background: -webkit-gradient(linear,left top, left bottom,from(#CEA15A),to(#F3CB84)); background: -webkit-linear-gradient(#CEA15A,#F3CB84); background: -o-linear-gradient(#CEA15A,#F3CB84); background: linear-gradient(#CEA15A,#F3CB84);text-align: center;}
+.section1 .title{font-size: 32rpx; color: #ffffff; line-height: 1.6em; margin-top: 10rpx;
+}
+.section1 .num{font-size: 64rpx;color: #ffffff; line-height: 1.6em; font-weight: bold; margin-bottom: 30rpx;}
+.form_wrap{ margin-top: 20rpx;}
+.form_wrap .dj_form{display: inline-block; width: 750rpx;position: relative;}
+.dj_form .uni-form-item{ margin-bottom: 2rpx; padding: 20rpx; background: #ffffff;}
+.dj_form .uni-form-item .title{color: #333333; font-size: 28rpx; line-height: 2em;}
+.dj_form .uni-input{color: #333333; font-size: 28rpx;  text-align: left;}
+.dj_form .uni-btn-v{position: absolute; bottom: -200rpx; left: 20rpx; width: 710rpx;
+}
+.dj_form .uni-btn-v button{background: #CCA366; font-size: 32rpx; color: #ffffff;}
+

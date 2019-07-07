@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "银行账号",
+  "usingComponents": {
+    "uni-icon": "/components/uni-icon/uni-icon"
+  }
+}

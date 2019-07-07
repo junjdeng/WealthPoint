@@ -1,0 +1,12 @@
+
+.segmented{background: #FFFFFF; width: 750rpx; height: 68rpx;}
+.list{margin-top: 20rpx;}
+.list .item{background: #FFFFFF; width: 670rpx; padding: 20rpx; margin: 0 20rpx 20rpx 20rpx; 
+-webkit-border-radius: 8rpx; 
+        border-radius: 8rpx; font-size: 28rpx; line-height: 2em; color: #333333;}
+.list .item .first{color: #999999;}
+.list .item .date{float: right;}
+.list .item .time{color: #D03C29;}
+.btngroup{text-align: center;}
+.btngroup .actionBtn{border:1px solid #d5d5d5; -webkit-border-radius: 8rpx; border-radius: 8rpx; margin: 10rpx;}
+

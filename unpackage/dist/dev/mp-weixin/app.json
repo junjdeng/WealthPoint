@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/charity/charity",
+    "pages/mine/mine",
+    "pages/wealth/wealth"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Wealth Point",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#D03C29",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/tabbar1.png",
+        "selectedIconPath": "static/images/tabbar1_seled.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/wealth/wealth",
+        "iconPath": "static/images/tabbar2.png",
+        "selectedIconPath": "static/images/tabbar2_seled.png",
+        "text": "财富"
+      },
+      {
+        "pagePath": "pages/charity/charity",
+        "iconPath": "static/images/tabbar4.png",
+        "selectedIconPath": "static/images/tabbar4_seled.png",
+        "text": "公益"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/images/tabbar3.png",
+        "selectedIconPath": "static/images/tabbar3_seled.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

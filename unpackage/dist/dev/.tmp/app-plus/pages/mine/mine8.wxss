@@ -1,0 +1,10 @@
+
+.list_wrap{margin: 0 20rpx; width: 710rpx; margin-top: 20rpx; margin-bottom: 100rpx;}
+.list .item{color: #FFFFFF;  -webkit-border-radius: 8rpx;  border-radius: 8rpx; font-size: 36rpx; 
+	line-height: 2em; padding: 30rpx; margin-bottom: 20rpx; text-align: center;}
+.list .item image{width: 300rpx; height: 300rpx; -webkit-border-radius: 8rpx; border-radius: 8rpx;}
+.bottomBtn{width: 710rpx; position: fixed; bottom: 10rpx;  background: #CCA366; color: #ffffff; -webkit-border-radius: 8rpx; border-radius: 8rpx;
+ font-size: 32rpx; height: 88rpx; line-height: 88rpx; text-align: center;}
+.alipay{background: #0DA1E6;}
+.wechat{background: #00ad47;}
+
