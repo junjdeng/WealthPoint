@@ -121,6 +121,24 @@
 			}
 		},
 		{
+			"path": "pages/wealth/OrderConfirm",
+			"style": {
+				"navigationBarTitleText": "订单支付详情"
+			}
+		},
+		{
+			"path": "pages/wealth/GoEvaluate",
+			"style": {
+				"navigationBarTitleText": "订单评价"
+			}
+		},
+		{
+			"path": "pages/wealth/complaint",
+			"style": {
+				"navigationBarTitleText": "投诉"
+			}
+		},
+		{
 			"path": "pages/wealth/buyDetail",
 			"style": {
 				"navigationBarTitleText": "AP详情"

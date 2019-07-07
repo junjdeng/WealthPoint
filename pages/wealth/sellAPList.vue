@@ -31,11 +31,11 @@
 						<view class="contect">
 							<view v-show="current!==0" @click="connect(temp,1)"> 联系会员</view>
 							<!--待付款v-show="current===1"-->
-							<view v-show="current===2">查看凭证</view>
-							<view v-show="current===2">投诉</view>
-							<view v-show="current===2">确认收款</view>
+							<view v-show="current===2" :data-url="'OrderConfirm?id='+temp.matchId" @click="navTo">查看凭证</view>
+							<view v-show="current===2" :data-url="'complaint?id='+temp.id+'&type='+temp.type" @click="navTo">投诉</view>
+							<view v-show="current===2" @click="confirmPay(temp.id)">确认收款</view>
 							<!--待确认-->
-							<view v-show="current===3">去评价</view>
+							<view v-show="current===3" :data-url="'GoEvaluate?id='+temp.id" @click="navTo">去评价</view>
 							<!--待评价-->
 						</view>
 					</view>
@@ -50,8 +50,12 @@
 	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
-	import { config } from '../../common/config.js'
-	import { djRequest } from '../../common/request.js'
+	import {
+		config
+	} from '../../common/config.js'
+	import {
+		djRequest
+	} from '../../common/request.js'
 	export default {
 		data() {
 			return {
@@ -66,12 +70,20 @@
 		created() {
 			this.getList('match')
 		},
-		onNavigationBarButtonTap(e){
+		onNavigationBarButtonTap(e) {
 			uni.navigateTo({
-				url:'sellRecord'
+				url: 'sellRecord'
 			})
 		},
+		onShow(){
+			
+		},
 		methods: {
+			navTo(e) {
+				uni.navigateTo({
+					url: e.currentTarget.dataset.url
+				})
+			},
 			/* 联系会员 */
 			connect(temp, dist) {
 				uni.navigateTo({
@@ -84,8 +96,27 @@
 				let ars = ['match', 'pay', 'confirm', 'evaluate'];
 				if (this.current !== index) {
 					this.current = index;
+					
 					that.getList(ars[index]);
 				}
+			},
+			/* 确认收款 */
+			confirmPay(id) {
+				let that = this;
+				djRequest({
+					url:'/api/order/confirm',
+					method:'POST',
+					data:{
+						Id: id,
+						status: 'success'
+					},
+					success:function(res){
+						common.TostUtil(res.data.message);
+						if(res.data.status===200){
+							that.getList('confirm');
+						}
+					}
+				})
 			},
 			//获取数据
 			getList(idx) {
@@ -140,7 +171,7 @@
 								that.list = arr1;
 							}, 1000)
 						}
-						
+
 					}
 				})
 			}

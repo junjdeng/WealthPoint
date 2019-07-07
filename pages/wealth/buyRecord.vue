@@ -47,7 +47,6 @@
 				})
 			},
 			navTo(e) {
-				
 				uni.navigateTo({
 					url:e.currentTarget.dataset.url
 				})

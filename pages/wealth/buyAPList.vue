@@ -34,9 +34,9 @@
 							<!--v-show="current!==0">  -->
 							<view v-show="current===1">上传凭证</view>
 							<!--待付款v-show="current===1"-->
-							<view v-show="current===2">查看凭证</view>
+							<view v-show="current===2" :data-url="'OrderConfirm?id='+temp.id" @click="navTo">查看凭证</view>
 							<!--待确认-->
-							<view v-show="current===3">去评价</view>
+							<view v-show="current===3" :data-url="'GoEvaluate?id='+temp.id" @click="navTo">去评价</view>
 							<!--待评价-->
 						</view>
 					</view>
@@ -78,6 +78,11 @@
 			this.getList('match')
 		},
 		methods: {
+			navTo(e) {
+				uni.navigateTo({
+					url:e.currentTarget.dataset.url
+				})
+			},
 			/* 联系会员 */
 			connect(temp, dist) {
 				uni.navigateTo({
