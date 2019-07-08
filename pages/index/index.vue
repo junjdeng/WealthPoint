@@ -45,7 +45,7 @@
 			</view>
 		</view>
 		<view class="section section3">
-			<view class="section_title">比特币行情</view>
+			<view class="section_title">BTC行情</view>
 			<view class="total">
 			{{theNow}}
 			<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#FF5533"></uni-icon>
@@ -174,8 +174,8 @@
 						that.low = Number(res.data.tick.low).toFixed(2);
 						that.theNow =Number(res.data.tick.close).toFixed(2);
 						that.opens =Number(res.data.tick.open).toFixed(2);
-						that.num = that.theNow - that.opens;
-						that.cent = (that.num/that.opens)*100;
+						that.num = Number(that.theNow - that.opens).toFixed(2);
+						that.cent = Number((that.num/that.opens)*100).toFixed(2);
 					},
 					fail:function(res){
 						console.log(res,4)
