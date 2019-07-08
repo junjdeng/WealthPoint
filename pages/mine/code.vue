@@ -1,17 +1,26 @@
 <template>
 	<view class="content">
-		<view class="img">
-			<image src="/static/images/code.png"></image>
+		<view class="img" v-for="(item,index) in list" :key="index" v-if="item.images !=''" >
+			<image :src="baseUrl+item.images"></image>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {config} from '../../common/config.js'	
+	import {djRequest} from '../../common/request.js'
 	export default{
 		data(){
 			return {
-				
+				list:[],
+				baseUrl:config.BASE_URL,
 			}
+		},
+		onLoad() {
+			
+		},
+		onShow() {
+			this.getQrcodeList();
 		},
 		onNavigationBarButtonTap(e){
 			uni.navigateTo({
@@ -22,6 +31,17 @@
 			navTo(e){
 				uni.navigateTo({
 					url:e.currentTarget.dataset.url
+				})
+			},
+			getQrcodeList(){
+				var _this = this;
+				djRequest({
+					url:'/api/qrcode',
+					method:'GET',
+					success:function(res){
+						//console.log(res);
+						_this.list = res.data.data;
+					}
 				})
 			}
 		}
@@ -35,7 +55,6 @@
 		text-align: center;
 		box-sizing:border-box;
 		padding:20upx;
-		background: red;
 	}
 	.img image{
 		width:100%;
