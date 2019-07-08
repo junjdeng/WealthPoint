@@ -89,6 +89,7 @@
 							success:function(result) {
 								var res = JSON.parse(result.data);														
 								if (res.status == 200){
+									console.log(res)
 									_this.url = config.BASE_URL + res.data.filePath+res.data.fileName;
 									_this.imageFile = res.data;
 								}else{
@@ -136,6 +137,7 @@
 					data: data,
 					method: 'POST',
 					success: function(res) {
+						console.log(res)
 						that.flag = true;
 						if (res.data.status === 200) {
 							uni.navigateBack();

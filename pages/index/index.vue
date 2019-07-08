@@ -45,7 +45,10 @@
 			</view>
 		</view>
 		<view class="section section3">
-			<view class="section_title">BTC行情</view>
+			<view class="section_title">
+				<view>BTC行情</view>
+				<view class="flex1 rt " data-url="btc" @tap="navTo" >更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></view>
+			</view>
 			<view class="total">
 			{{theNow}}
 			<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#FF5533"></uni-icon>
@@ -60,10 +63,10 @@
 				</view>
 				<view class="flex1">
 					<view>最低</view>
-					<view class="wpgreen">{{low}}</view>
+					<view :class="color>=0?'wpred':'wpgreen'">{{low}}</view>
 				</view>
 				<view class="flex1">
-					<view>成交数</view>
+					<view>成交量</view>
 					<view class="wpgold">{{amount}}</view>
 				</view>
 			</view>
@@ -129,7 +132,8 @@
 				amount:0,
 				opens:0,
 				cent:0,
-				num:0
+				num:0,
+				color:0
 			}
 		},
 		components: {
@@ -176,10 +180,11 @@
 						that.opens =Number(res.data.tick.open).toFixed(2);
 						that.num = Number(that.theNow - that.opens).toFixed(2);
 						that.cent = Number((that.num/that.opens)*100).toFixed(2);
+						that.color = Number(that.low-that.opens);
 					},
 					fail:function(res){
 						console.log(res,4)
-						that.getBTC();
+						//that.getBTC();
 					}
 				})
 							
@@ -401,9 +406,14 @@
 	}
 
 	.section_title {
+		width:100%;
 		color: #333333;
+		display:flex;
+		justify-content: space-between;
+		align-items:center;
 		font-size: 32upx;
 		font-weight: bold;
+		position:relative;
 	}
 
 
@@ -418,7 +428,7 @@
 		color: #FF5533;
 		text-align: center;
 	}
-
+	
 	.section3 .total_sub {
 		font-size: 28upx;
 		color: #FF5533;
@@ -429,14 +439,20 @@
 		color: green;
 		text-align: center;
 	}
-
+	.rt{
+		position:absolute;
+		right:-20upx;
+		top:5upx;
+		font-weight: normal!important;
+		color:#999!important;
+		font-size: 24upx!important;
+	}
 	.section3 .condition_card {
 		color: #999999;
 		font-size: 28upx;
 		text-align: center;
 		padding-top: 40upx;
 	}
-
 	.section4 {
 		padding: 20upx;
 		margin-bottom: 20upx;

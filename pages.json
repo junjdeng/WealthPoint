@@ -17,6 +17,12 @@
 			}
 		},
 		{
+			"path": "pages/index/btc",
+			"style": {
+				"navigationBarTitleText": "24小时币行情"
+			}
+		},
+		{
 			"path": "pages/index/customSuggest",
 			"style": {
 				"navigationBarTitleText": "客户服务"
