@@ -27,12 +27,12 @@
 							<view>剩余时间：<text class='time'>{{temp.rever | formatLeftDate}}</text></view>
 							<view>合计: <text class="money">{{temp.number * 2000 | yuan}}</text>元</view>
 						</view>
-						
+
 
 						<view class="contect">
 							<view @click="connect(temp,2)" v-show="current!==0"> 联系会员</view>
 							<!--v-show="current!==0">  -->
-							<view v-show="current===1">上传凭证</view>
+							<view v-show="current===1" @click="showOrHid(temp.id)">上传凭证</view>
 							<!--待付款v-show="current===1"-->
 							<view v-show="current===2" :data-url="'OrderConfirm?id='+temp.id" @click="navTo">查看凭证</view>
 							<!--待确认-->
@@ -41,6 +41,19 @@
 						</view>
 					</view>
 				</view>
+			</view>
+		</view>
+		<view class="pop" v-show="showOrHide">
+			<view class="pop-title">请上传付款凭证</view>
+			<view class="chose">
+				<input class="" @click="chooseImg" v-show="inputShow" ref="files" type="file" />
+				<image v-show = "gif" class="pop-img" src="/static/images/loading.gif"></image>
+				<view class="place" v-show="proof">请点击上传付款凭证</view>
+				<view class="txt" v-show="sucs">上传成功</view>
+			</view>
+			<view class="btns">
+				<view class="lt" @click="submit">{{flag?'提交':'处理中'}}</view>
+				<view class="rt" @click="cal">取消</view>
 			</view>
 		</view>
 	</view>
@@ -55,19 +68,28 @@
 		config
 	} from '../../common/config.js'
 	import {
-		djRequest
+		djRequest,djPostForm
 	} from '../../common/request.js'
 	export default {
 		data() {
 			return {
 				items: ['待匹配', '待付款', '待确认', '待评价'],
 				current: 0,
-				list: []
+				list: [],
+				showOrHide: false, //弹出框显示或隐藏
+				txtShowOrHide: true,
+				url: '',
+				imageFile: null,
+				proof:true,//是否显示 text
+				sucs:false,//是否显示‘上传成功提示’
+				flag: true,
+				gif:false,
+				inputShow:true
 			}
 		},
-		onNavigationBarButtonTap(e){
+		onNavigationBarButtonTap(e) {
 			uni.navigateTo({
-				url:'buyRecord'
+				url: 'buyRecord'
 			})
 		},
 		components: {
@@ -80,8 +102,96 @@
 		methods: {
 			navTo(e) {
 				uni.navigateTo({
-					url:e.currentTarget.dataset.url
+					url: e.currentTarget.dataset.url
 				})
+			},
+			showOrHid(id) {
+				this.id = id;
+				this.showOrHide = !this.showOrHide;
+			},
+			cal() {
+				this.showOrHide = !this.showOrHide;
+				this.proof=true;
+				this.sucs=false;
+				this.flag = true;
+				this.gif=false;
+				that.inputShow=true;
+				this.$refs.files.value = null;
+			},
+			chooseImg() {
+				let that = this;
+				uni.chooseImage({
+					sizeType: ['original', 'compressed'],
+					sourceType: ['album'],
+					count: 1,
+					success: (imageFile) => {
+						this.url = imageFile.tempFilePaths[0];
+						var _this = this;
+						that.gif=true;
+						that.inputShow=false;
+						that.proof = false;
+						djPostForm({
+							url: "/api/uploads",
+							filePath: _this.url,
+							fileType: 'image',
+							name: 'files',
+							success: function(result) {
+								var res = JSON.parse(result.data);
+								console.log(res);
+								if (res.status == 200) {
+									that.gif=false;
+									that.sucs=true;
+									_this.url = config.BASE_URL + res.data.filePath + res.data.fileName;
+									_this.imageFile = res.data;
+								} else {
+									uni.showToast({
+										title: res.data.message,
+										icon: "none"
+									})
+								}
+							}
+						})
+					}
+				})
+			},
+			submit() { //确定提交
+				let that = this;
+				if (!common.isNotNull(that.url, "收款码图片")) return;
+
+				if (that.flag) {
+					var imageUrl = that.imageFile.filePath + that.imageFile.fileName;
+
+					var data = {
+						'payment_file': imageUrl,
+						'Id': that.id
+					}
+
+					that.flag = false;
+					djRequest({
+						url: '/api/order/uniapp_payment',
+						data: data,
+						method: 'POST',
+						success: function(res) {
+							console.log(res)
+							that.flag = true;
+							that.showOrHide=!that.showOrHide;
+							that.sucs=false;
+							that.proof=true;
+							that.inputShow=true;
+							if (res.data.status === 200) {
+								common.TostUtil(res.data.message);
+								that.getList('pay');
+								
+							} else {
+								common.TostUtil(res.data.message);
+							}
+						},
+						fail: function(res) {
+							common.TostUtil(res.data.message);
+						}
+					})
+
+				}
 			},
 			/* 联系会员 */
 			connect(temp, dist) {
@@ -153,6 +263,102 @@
 </script>
 
 <style>
+	.container {
+		position: relative;
+	}
+	.pop-img{
+		width:48upx;
+		height:48upx;
+		margin:10upx 252upx;
+	}
+	.txt {
+		width: 50%;
+		height: 100%;
+		margin-left: 25%;
+		color: #CCA366;
+		font-size: 28upx;
+		text-align: center;
+		line-height: 80upx;
+	}
+
+	.pop {
+		width: 600upx;
+		height: 300upx;
+		background: #fff;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		background: #fff;
+		border-radius: 10px;
+		margin: auto;
+		box-shadow: 0 0 10upx #BEBEBE;
+	}
+
+	.pop-title {
+		padding: 20upx 10upx 10upx;
+		box-sizing: border-box;
+		text-align: center;
+		font-size: 32upx;
+		color: #666;
+	}
+
+	.chose {
+		width: 100%;
+		height: 80upx;
+		position: relative;
+		box-sizing: border-box;
+		margin-top: 20upx;
+	}
+
+	input[type='file'] {
+		position: absolute;
+		display: block;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		left: 25%;
+		z-index: 1000;
+	}
+
+	.btns {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-size: 28upx;
+		margin-top: 30upx;
+	}
+
+	.btns>view {
+		padding: 12upx 30upx;
+		border-radius: 10upx;
+		overflow: hidden;
+		color: #fff;
+	}
+
+	.lt {
+
+		background: #CCA366;
+	}
+
+	.rt {
+		background: #ccc;
+	}
+
+	.place {
+		width: 50%;
+		height: 100%;
+		margin-left: 25%;
+		border: 1px solid #CCA366;
+		color: #CCA366;
+		border-radius: 12upx;
+		font-size: 28upx;
+		text-align: center;
+		line-height: 80upx;
+	}
+
 	.segmented {
 		background: #FFFFFF;
 		width: 750upx;
@@ -179,7 +385,7 @@
 
 	.list .item .first {
 		color: #999999;
-		border-bottom:2upx solid #f7f7f7;
+		border-bottom: 2upx solid #f7f7f7;
 	}
 
 	.list .item .date {
@@ -212,32 +418,37 @@
 
 		margin-left: 20upx;
 	}
-	.tw{
-		display:flex;
-		justify-content:flex-start;
-		align-items:center;
-		padding:10upx 0;
+
+	.tw {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 10upx 0;
 	}
-	.sum{
-		display:flex;
-		justify-content:space-between;
-		align-items:center;
+
+	.sum {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
-	.tw>view:first-child{
-		width:160upx;
-		margin-right:60upx;
-		font-size:60upx ;
-		color:#CCA366;
+
+	.tw>view:first-child {
+		width: 160upx;
+		margin-right: 60upx;
+		font-size: 60upx;
+		color: #CCA366;
 		text-align: center;
 	}
-	.tw>view:first-child text{
-		font-size: 24upx!important;
-		position:relative;
-		bottom:2upx;
+
+	.tw>view:first-child text {
+		font-size: 24upx !important;
+		position: relative;
+		bottom: 2upx;
 	}
-	.money{
-		font-size: 40upx!important;
+
+	.money {
+		font-size: 40upx !important;
 		font-weight: 600;
-		margin:0 10upx;
+		margin: 0 10upx;
 	}
 </style>

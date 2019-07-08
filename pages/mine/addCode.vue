@@ -19,7 +19,7 @@
 				<view class="uni-form-item uni-column flex-start">
 					<span class=" title">收款码:</span>
 					<view class="getImg">
-						<input class="" @click=chooseImg  type="file"  />
+						<input class="" @click="chooseImg"  type="file"  />
 						<view class="showImg">
 							<image :src="url"></image>
 						</view>
@@ -139,12 +139,8 @@
 					data: data,
 					method: 'POST',
 					success: function(res) {
-<<<<<<< HEAD
 						console.log(res)
 						that.flag = true;
-=======
-						that.flag = true;					
->>>>>>> be858fb7b9f41d857e421253e8535d5bdbea6f79
 						if (res.data.status === 200) {
 							uni.navigateBack();
 						} else {

@@ -68,15 +68,13 @@
 			uniSegmentedControl
 		},
 		created() {
-			this.getList('match')
+			this.getList('match');
+			
 		},
 		onNavigationBarButtonTap(e) {
 			uni.navigateTo({
 				url: 'sellRecord'
 			})
-		},
-		onShow(){
-			
 		},
 		methods: {
 			navTo(e) {

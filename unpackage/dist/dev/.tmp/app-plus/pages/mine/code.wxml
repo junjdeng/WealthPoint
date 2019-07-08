@@ -1,1 +1,0 @@
-<view class="content"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block wx:if="{{item.images!=''}}"><view class="img"><image src="{{baseUrl+item.images}}"></image></view></block></block></view>
