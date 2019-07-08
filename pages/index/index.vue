@@ -29,7 +29,7 @@
 					<image src="../../static/images/main5.png"></image>
 					<view>W钱包</view>
 				</view>
-				<view class="flex1 item" data-url="../wealth/wallet1" @click="navTo">
+				<view class="flex1 item" data-url="../wealth/wallet?type=2" @click="navTo">
 					<image src="../../static/images/main6.png"></image>
 					<view>奖金钱包</view>
 				</view>
@@ -126,6 +126,32 @@
 			uniIcon,
 			//mpvueEcharts
 		},
+		onShow(){
+				console.log(4);
+				uni.request({
+					url: 'https://api.huobi.pro/market/detail', 
+					 data: { 
+						 symbol:'btcusdt', 
+						 /* Timestamp:'2019-07-06T10:19:30' ,
+						 SignatureMethod:'HmacSHA256',
+						 SignatureVersion:2, 
+						 SecretKey:'b258a5a1-ba1076ce-d7b9f9a7-d07e0', 
+						 AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6' */
+					 }, 
+					 header:{
+						 'Content-Type':'application/x-www-form-urlencoded',
+						 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+					}, 
+					method:'GET',
+					success:function(res){
+						console.log(res);
+					},
+					fail:function(res){
+						console.log(res,4)
+					}
+				})
+			
+		},
 		onLoad() {
 			this._data.das = [2, 2.2, 2.800, 3.400, 2.900, 3.000, 3.020];
 			this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04', ];
@@ -137,6 +163,21 @@
 			this.getServerData2();
 		},
 		methods: {
+			getUTC(){
+				let date = new Date();
+				    let YY = date.getFullYear();
+				    let MM = date.getMonth() + 1;
+				    let d = date.getDate();
+				    let h = date.getHours();
+				    let m = date.getMinutes();
+				    let s = date.getSeconds();
+					MM = MM < 10 ? ('0' + MM) : MM;
+					d = d < 10 ? ('0' + d) : d;
+					h = h < 10 ? ('0' + h) : h;
+					m = m < 10 ? ('0' + m) : m;
+					s = s < 10 ? ('0' + s) : s;
+					return YY+'-'+MM+'-'+d+'T'+h+':'+m+':'+s
+			},
 			navTo(e) {
 				uni.navigateTo({
 					url: e.currentTarget.dataset.url
@@ -153,7 +194,7 @@
 				canvasData.series = [{
 					data: that._data.das,
 					name: '',
-					color: "red"
+					color: "#D03C29"
 				}];
 				that._data.das = canvasData.series[0].data;
 				_self.CanvasData("canvas", canvasData);
@@ -219,7 +260,7 @@
 				Column.series = [{
 					data: that._data.das2,
 					name: '',
-					color: "red"
+					color: "#D03C29"
 				}];
 				that._data.das2 = Column.series[0].data;
 				_self.showColumn("canvasColumn",Column);
@@ -293,12 +334,12 @@
 	}
 
 	.header image:last-child {
-		width: 60upx;
-		height: 60upx;
+		width: 50upx;
+		height: 50upx;
 		;
 		position: absolute;
 		z-index: 1000;
-		top: 54upx;
+		top: 58upx;
 		right: 30upx;
 	}
 
