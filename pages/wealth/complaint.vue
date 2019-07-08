@@ -22,7 +22,6 @@
 		onLoad(options){
 			this.id = options.id;
 			this.type = options.type;
-			this.getData();
 		},
 		methods:{
 			submit () {
@@ -55,25 +54,8 @@
 					}
 				})
 			  }
-      },
-			getData(){
-				console.log(4)
-				/* uni.request({
-					url: 'https://api.huobi.pro/market/detail/merged', 
-					data: {
-						symbol:'ethusdt',
-						 AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6',/*b258a5a1-ba1076ce-d7b9f9a7-d07e0 */
-						/*SignatureMethod:'HmacSHA256',
-					},
-					header:{
-						 'Content-Type':'application/x-www-form-urlencoded'
-					},
-					method:'GET',
-					success:function(res){
-						console.log(res);
-					}
-				}) */
-			}
+      }
+			
 		}
 	}
 </script>
