@@ -51,11 +51,13 @@
 				  '微信',
 				  '支付宝'
 				],
+				typeArr:['wechat','alipay'],
 				index: 0,
 				flag:true,
 				type: '',//收款类别
 				userName: '',//开户人
-				url:''
+				url:'',
+				imageFile:null,
 			}
 		},
 		components: {
@@ -85,10 +87,10 @@
 							fileType: 'image',
 							name: 'files',
 							success:function(result) {
-								var res = JSON.parse(result.data);
-								console.log(res);															
+								var res = JSON.parse(result.data);														
 								if (res.status == 200){
 									_this.url = config.BASE_URL + res.data.filePath+res.data.fileName;
+									_this.imageFile = res.data;
 								}else{
 									uni.showToast({
 										title:res.data.message,
@@ -110,7 +112,6 @@
 					}
 				})
 			},
-			/*  */
 			formSubmit () {//确定提交
 				let that = this;
 				if(that.flag){
@@ -123,10 +124,29 @@
 				  if (!common.isNotNull(that.url, "收款码图片")) return;
 				  
 				  var data = {
-					  'url':that.url,
-					  'userName':that.userName,
-					  'type':that.type,
+					  'qr_code_file':that.imageFile.filePath+that.imageFile.fileName,
+					  'accountName':that.userName,
+					  'type':that.typeArr[that.index],
+					  'status':'yes',
+					  'name':''
 				  }
+				  that.flag = false;				  
+				  djRequest({
+					url: '/api/qrcode/uniapp_add',
+					data: data,
+					method: 'POST',
+					success: function(res) {
+						that.flag = true;
+						if (res.data.status === 200) {
+							uni.navigateBack();
+						} else {
+							common.TostUtil(res.data.message);
+						}						
+					},
+					fail: function(res) {
+						common.TostUtil(res.data.message);						
+					}
+				})
 				  
 				  console.log(data);				 
 				}

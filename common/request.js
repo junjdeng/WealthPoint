@@ -74,7 +74,7 @@ const djPostForm = function(opt){
 				opt.success(res);
 			},
 			fail: (err) => {
-				console.log('uploadImage fail', err);
+				//console.log('uploadImage fail', err);
 				uni.showModal({
 					content: err.errMsg,
 					showCancel: false
