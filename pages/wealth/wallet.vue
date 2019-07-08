@@ -64,6 +64,9 @@
 		onShow(){
 			let that = this;
 			that.wallets();
+			if(that.type==2){
+				
+			}
 		},
 		methods: {
 			navTo(e) {

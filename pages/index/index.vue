@@ -44,25 +44,27 @@
 				<span class="flex1" data-url="newsList" @tap="navTo">更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></span></span>
 			</view>
 		</view>
-
 		<view class="section section3">
-			<view class="section_title">AP收益</view>
-			<view class="total">3183.18<uni-icon type="arrowthinup" size="18" color="#FF5533"></uni-icon>
+			<view class="section_title">比特币行情</view>
+			<view class="total">
+			{{theNow}}
+			<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#FF5533"></uni-icon>
+			<uni-icon v-if="num<0" type="arrowthindown" size="18" color="green"></uni-icon>
 			</view>
-			<view class="total_sub">+13.67 +0.51%</view>
-
+			<view class="total_sub" v-if="num>=0">+{{num}} +{{cent}}%</view>
+			<view class="total_sub2" v-if="num<0">-{{num}} -{{cent}}%</view>
 			<view class="flex-start condition_card">
 				<view class="flex1">
 					<view>最高</view>
-					<view class="wpred">3184.64</view>
+					<view class="wpred">{{high}}</view>
 				</view>
 				<view class="flex1">
 					<view>最低</view>
-					<view class="wpgreen">3184.64</view>
+					<view class="wpgreen">{{low}}</view>
 				</view>
 				<view class="flex1">
 					<view>成交数</view>
-					<view class="wpgold">3184手</view>
+					<view class="wpgold">{{amount}}</view>
 				</view>
 			</view>
 		</view>
@@ -119,7 +121,15 @@
 				cHeight2:'',
 				serverData2:'',
 				das2:[],
-				week2:[]
+				week2:[],
+				//比特币
+				theNow:0,
+				low:0,
+				high:0,
+				amount:0,
+				opens:0,
+				cent:0,
+				num:0
 			}
 		},
 		components: {
@@ -127,30 +137,7 @@
 			//mpvueEcharts
 		},
 		onShow(){
-				console.log(4);
-				uni.request({
-					url: 'https://api.huobi.pro/market/detail', 
-					 data: { 
-						 symbol:'btcusdt', 
-						 /* Timestamp:'2019-07-06T10:19:30' ,
-						 SignatureMethod:'HmacSHA256',
-						 SignatureVersion:2, 
-						 SecretKey:'b258a5a1-ba1076ce-d7b9f9a7-d07e0', 
-						 AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6' */
-					 }, 
-					 header:{
-						 'Content-Type':'application/x-www-form-urlencoded',
-						 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
-					}, 
-					method:'GET',
-					success:function(res){
-						console.log(res);
-					},
-					fail:function(res){
-						console.log(res,4)
-					}
-				})
-			
+			this.getBTC();
 		},
 		onLoad() {
 			this._data.das = [2, 2.2, 2.800, 3.400, 2.900, 3.000, 3.020];
@@ -163,20 +150,39 @@
 			this.getServerData2();
 		},
 		methods: {
-			getUTC(){
-				let date = new Date();
-				    let YY = date.getFullYear();
-				    let MM = date.getMonth() + 1;
-				    let d = date.getDate();
-				    let h = date.getHours();
-				    let m = date.getMinutes();
-				    let s = date.getSeconds();
-					MM = MM < 10 ? ('0' + MM) : MM;
-					d = d < 10 ? ('0' + d) : d;
-					h = h < 10 ? ('0' + h) : h;
-					m = m < 10 ? ('0' + m) : m;
-					s = s < 10 ? ('0' + s) : s;
-					return YY+'-'+MM+'-'+d+'T'+h+':'+m+':'+s
+			getBTC(){
+				let that = this;
+				uni.request({
+					url: 'https://api.huobi.pro/market/detail', 
+					 data: { 
+						 symbol:'btcusdt', 
+						 /* Timestamp:'2019-07-06T10:19:30' ,
+						 SignatureMethod:'HmacSHA256',
+						 SignatureVersion:2, 
+						 SecretKey:'b258a5a1-ba1076ce-d7b9f9a7-d07e0', 
+						 AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6' */
+					 }, 
+					 header:{
+						 'Content-Type':'application/x-www-form-urlencoded',
+						 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
+						 'timeout':8000
+					}, 
+					method:'GET',
+					success:function(res){
+						that.amount=Number(res.data.tick.amount).toFixed(2);
+						that.high = Number(res.data.tick.high).toFixed(2);
+						that.low = Number(res.data.tick.low).toFixed(2);
+						that.theNow =Number(res.data.tick.close).toFixed(2);
+						that.opens =Number(res.data.tick.open).toFixed(2);
+						that.num = that.theNow - that.opens;
+						that.cent = (that.num/that.opens)*100;
+					},
+					fail:function(res){
+						console.log(res,4)
+						that.getBTC();
+					}
+				})
+							
 			},
 			navTo(e) {
 				uni.navigateTo({
@@ -416,6 +422,11 @@
 	.section3 .total_sub {
 		font-size: 28upx;
 		color: #FF5533;
+		text-align: center;
+	}
+	.section3 .total_sub2 {
+		font-size: 28upx;
+		color: green;
 		text-align: center;
 	}
 
