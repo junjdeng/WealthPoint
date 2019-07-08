@@ -21,6 +21,8 @@ const djRequest = async function (opt){
 		opt.header.authorization = config.Authorization;
 	}		
 	
+	//console.log(opt);
+	
 	uni.request({
 	　	url: config.BASE_URL + opt.url +'?t='+Date.now(),
 		data: opt.data,

@@ -179,7 +179,7 @@
 					},
 					fail:function(res){
 						console.log(res,4)
-						that.getBTC();
+						//that.getBTC();
 					}
 				})
 							

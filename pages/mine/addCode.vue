@@ -87,7 +87,8 @@
 							fileType: 'image',
 							name: 'files',
 							success:function(result) {
-								var res = JSON.parse(result.data);														
+								var res = JSON.parse(result.data);
+								console.log(res);
 								if (res.status == 200){
 									_this.url = config.BASE_URL + res.data.filePath+res.data.fileName;
 									_this.imageFile = res.data;
@@ -114,29 +115,30 @@
 			},
 			formSubmit () {//确定提交
 				let that = this;
-				if(that.flag){
-					that.flag=false;
-				  if (!common.RegUtil.isMatchRealName(that.userName)) {
+				if (!common.RegUtil.isMatchRealName(that.userName)) {
 					common.TostUtil('请输入真实姓名！');
-					that.flag=true;
 					return ;
 				  }
-				  if (!common.isNotNull(that.url, "收款码图片")) return;
-				  
+				if (!common.isNotNull(that.url, "收款码图片")) return;
+				
+				if(that.flag){
+				  var imageUrl = that.imageFile.filePath+that.imageFile.fileName;
+
 				  var data = {
-					  'qr_code_file':that.imageFile.filePath+that.imageFile.fileName,
+					  'qr_code_file':imageUrl,
 					  'accountName':that.userName,
 					  'type':that.typeArr[that.index],
 					  'status':'yes',
 					  'name':''
 				  }
+				  
 				  that.flag = false;				  
 				  djRequest({
 					url: '/api/qrcode/uniapp_add',
 					data: data,
 					method: 'POST',
 					success: function(res) {
-						that.flag = true;
+						that.flag = true;					
 						if (res.data.status === 200) {
 							uni.navigateBack();
 						} else {
@@ -147,8 +149,7 @@
 						common.TostUtil(res.data.message);						
 					}
 				})
-				  
-				  console.log(data);				 
+				  			 
 				}
 			},
 		}
