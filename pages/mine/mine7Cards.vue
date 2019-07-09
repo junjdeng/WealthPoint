@@ -6,10 +6,10 @@
 		<view class="content">
 			<view>
 				<view class="list" v-show="current===0">
-					<view class="item flex-start" v-for="(temp,index) in arr1" :key="index" v-show="temp.type!=='code'">
+					<view class="item flex-start" v-for="(temp,index) in arr1" :key="index" v-show="temp.operate=='add'" >
 						<view class="flex2">
-							<image v-show="temp.type==='phone'" :src="icon1"></image>
-							<image v-show="temp.type==='name'" :src="icon2"></image>
+							<image v-show="temp.type==='name'" :src="icon1"></image>
+							<image v-show="temp.type==='phone'" :src="icon2"></image>
 							<image v-show="temp.type==='unblock'" :src="icon3"></image>
 							<image v-show="temp.type==='super_unblock'" :src="icon4"></image>
 						</view>
@@ -100,7 +100,15 @@
 					},
 					success: function(res) {
 						if (res.data.status === 200) {
-							that.arr1 = res.data.data.data;
+							let arr = res.data.data.data;
+							let arr1=[];
+							arr.forEach(item=>{
+								if(item.operate !=='deduct'){
+									arr1.push(item)
+								}
+							})
+							console.log(res)
+							that.arr1 = arr1;
 						}
 					}
 				})

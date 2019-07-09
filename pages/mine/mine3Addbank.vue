@@ -143,6 +143,9 @@
 					  that.bankNumber='';
 					  common.TostUtil(res.data.message);
 					  that.flag=true;
+					  setTimeout(function(){
+					  	uni.navigateBack();
+					  },1000)
 					}
 					  }
 				 })

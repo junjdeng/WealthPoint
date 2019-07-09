@@ -67,9 +67,16 @@
 		components: {
 			uniSegmentedControl
 		},
-		created() {
-			this.getList('match');
-			
+		onShow() {
+			if(this.current==0){
+				this.getList('match');
+			}else if(this.current==1){
+				this.getList('pay');
+			}else if(this.current==2){
+				this.getList('confirm');
+			}else if(this.current==3){
+				this.getList('evaluate');
+			}
 		},
 		onNavigationBarButtonTap(e) {
 			uni.navigateTo({
@@ -94,7 +101,6 @@
 				let ars = ['match', 'pay', 'confirm', 'evaluate'];
 				if (this.current !== index) {
 					this.current = index;
-					
 					that.getList(ars[index]);
 				}
 			},
@@ -111,6 +117,7 @@
 					success:function(res){
 						common.TostUtil(res.data.message);
 						if(res.data.status===200){
+							common.balance();
 							that.getList('confirm');
 						}
 					}

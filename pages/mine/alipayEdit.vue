@@ -108,11 +108,9 @@
 							console.log(res);
 							common.TostUtil(res.data.message);
 							that.flag = true;
-							setTimeout(function() {
-								uni.navigateBack({
-									delta: 1
-								})
-							}, 1000)
+							setTimeout(function(){
+								uni.navigateBack();
+							},1000)
 						},
 						fail: function(res) {
 							common.TostUtil(res.data.message);

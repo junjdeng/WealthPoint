@@ -49,12 +49,13 @@
 		<view class="section section3">
 			<view class="section_title">
 				<view>BTC行情</view>
-				<view class="flex1 rt " data-url="btc" @tap="navTo" >更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></view>
+				<view class="flex1 rt " data-url="btc" @tap="navTo">更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon>
+				</view>
 			</view>
 			<view class="total">
-			{{theNow}}
-			<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#FF5533"></uni-icon>
-			<uni-icon v-if="num<0" type="arrowthindown" size="18" color="green"></uni-icon>
+				${{theNow}}
+				<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#FF5533"></uni-icon>
+				<uni-icon v-if="num<0" type="arrowthindown" size="18" color="green"></uni-icon>
 			</view>
 			<view class="total_sub" v-if="num>=0">+{{num}} +{{cent}}%</view>
 			<view class="total_sub2" v-if="num<0">-{{num}} -{{cent}}%</view>
@@ -105,13 +106,21 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+<<<<<<< HEAD
 	import uCharts from '@/components/u-charts/u-charts.js';
 	import {djRequest} from '../../common/request.js'
 	import common from '../../common/common.js'
 	import {config} from '../../common/config.js'	
 	
+=======
+	import uCharts from '@/components/u-charts/u-charts.js';
+	import  '../../common/hmac-sha256.js'
+	import '../../common/base64.js'
+	/* console.log(CryptoJS.HmacSHA256("Message", "secret")) */
+	console.log(Base64.encode('我在这里'))
+>>>>>>> f68250cdc7488dee8dbe0e14b15ac68e9cdea39c
 	var _self;
-	var canvaColumn=null;
+	var canvaColumn = null;
 	var canvas = null;
 	export default {
 		data() {
@@ -127,26 +136,27 @@
 				das: [],
 				week: [],
 				webview: null,
-				cWidth2:'',
-				cHeight2:'',
-				serverData2:'',
-				das2:[],
-				week2:[],
+				cWidth2: '',
+				cHeight2: '',
+				serverData2: '',
+				das2: [],
+				week2: [],
 				//比特币
-				theNow:0,
-				low:0,
-				high:0,
-				amount:0,
-				opens:0,
-				cent:0,
-				num:0,
-				color:0
+				theNow: 0,
+				low: 0,
+				high: 0,
+				amount: 0,
+				opens: 0,
+				cent: 0,
+				num: 0,
+				color: 0
 			}
 		},
 		components: {
 			uniIcon,
 			//mpvueEcharts
 		},
+<<<<<<< HEAD
 		onShow(){
 			if(config.User != null){
 				this.showPop = true;
@@ -156,6 +166,13 @@
 		onLoad() {
 			common.balance();
 			this._data.das = [2, 2.2, 2.800, 3.400, 2.900, 3.000, 3.020];
+=======
+		onShow() {
+			this.getBTC();
+		},
+		onLoad() {
+			this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
+>>>>>>> f68250cdc7488dee8dbe0e14b15ac68e9cdea39c
 			this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04', ];
 			_self = this;
 			this.cWidth = uni.upx2px(680);
@@ -164,6 +181,7 @@
 			this._data.das2 = [100, 220, 280, 340, 290, 300, 320];
 			this.getServerData2();
 		},
+<<<<<<< HEAD
 		methods: {
 			getNews(){
 				var _this = this;
@@ -178,39 +196,48 @@
 				})					
 			},
 			getBTC(){
+=======
+		methods: {
+			getBTC() {
+>>>>>>> f68250cdc7488dee8dbe0e14b15ac68e9cdea39c
 				let that = this;
-				uni.request({
-					url: 'https://api.huobi.pro/market/detail', 
-					 data: { 
-						 symbol:'btcusdt', 
-						 /* Timestamp:'2019-07-06T10:19:30' ,
-						 SignatureMethod:'HmacSHA256',
-						 SignatureVersion:2, 
-						 SecretKey:'b258a5a1-ba1076ce-d7b9f9a7-d07e0', 
-						 AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6' */
-					 }, 
-					 header:{
-						 'Content-Type':'application/x-www-form-urlencoded',
-						 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-						 'timeout':8000
-					}, 
-					method:'GET',
-					success:function(res){
-						that.amount=Number(res.data.tick.amount).toFixed(2);
-						that.high = Number(res.data.tick.high).toFixed(2);
-						that.low = Number(res.data.tick.low).toFixed(2);
-						that.theNow =Number(res.data.tick.close).toFixed(2);
-						that.opens =Number(res.data.tick.open).toFixed(2);
-						that.num = Number(that.theNow - that.opens).toFixed(2);
-						that.cent = Number((that.num/that.opens)*100).toFixed(2);
-						that.color = Number(that.low-that.opens);
-					},
-					fail:function(res){
-						console.log(res,4)
-						//that.getBTC();
-					}
-				})
-							
+				
+				let Signature =
+					'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
+					uni.request({
+						url: 'https://api.huobi.pro/market/detail',
+						data: {
+							symbol: 'btcusdt',
+							/* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
+							SignatureVersion: 2,
+							SignatureMethod: 'HmacSHA256',*/
+							/* Signature:Base64.encode(CryptoJS(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85')), */
+							/* SecretKey: '533c1d05-e6745887-d192682d-90e85',
+							AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */
+						},
+						header: {
+							'Content-Type': 'application/x-www-form-urlencoded',
+							'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
+							'Accept-Language': 'zh-cn'
+						},
+						method: 'GET',
+						success: function(res) {
+							console.log(res)
+							that.amount = Number(res.data.tick.amount).toFixed(2);
+							that.high = Number(res.data.tick.high).toFixed(2);
+							that.low = Number(res.data.tick.low).toFixed(2);
+							that.theNow = Number(res.data.tick.close).toFixed(2);
+							that.opens = Number(res.data.tick.open).toFixed(2);
+							that.num = Number(that.theNow - that.opens).toFixed(2);
+							that.cent = Number((that.num / that.opens) * 100).toFixed(2);
+							that.color = Number(that.low - that.opens);
+						},
+						fail: function(res) {
+							console.log(res, 4)
+							//that.getBTC();
+						}
+					})
+
 			},
 			navTo(e) {
 				uni.navigateTo({
@@ -228,16 +255,16 @@
 				canvasData.series = [{
 					data: that._data.das,
 					name: '',
-					color: "#D03C29"
+					color: "#FF5533"
 				}];
 				that._data.das = canvasData.series[0].data;
 				_self.CanvasData("canvas", canvasData);
 			},
-			CanvasData(canvasId, chartData) {
+			CanvasData(canvasId1, chartData1) {
 				let that = this;
 				canvas = new uCharts({
 					$this: _self,
-					canvasId: canvasId,
+					canvasId: canvasId1,
 					type: 'line',
 					fontSize: 11,
 					legend: false,
@@ -246,8 +273,8 @@
 					background: 'transparent',
 					dataLineColor: '#333333',
 					pixelRatio: _self.pixelRatio,
-					categories: chartData.categories,
-					series: chartData.series,
+					categories: chartData1.categories,
+					series: chartData1.series,
 					animation: false,
 					xAxis: {
 						dashLength: 8,
@@ -255,10 +282,10 @@
 					},
 					yAxis: {
 						dashLength: 8,
-						splitNumber: 4,
+						splitNumber: 10,
 						min: 0,
 						disabled: false,
-						max: 8,
+						max: 2,
 						format: (val) => {
 							return val
 						}
@@ -275,15 +302,15 @@
 			touchCanvas(e) {
 				canvas.showToolTip(e, {
 					format: function(item, category) {
-						return /* category + ' ' + item.name + ':' + */ item.data+'%'
+						return /* category + ' ' + item.name + ':' + */ item.data + '%'
 					}
 				});
 			},
 			hidePop() {
 				this.showPop = false
 			},
-			
-			getServerData2(){
+
+			getServerData2() {
 				let that = this;
 				let Column = {
 					categories: [],
@@ -294,26 +321,25 @@
 				Column.series = [{
 					data: that._data.das2,
 					name: '',
-					color: "#D03C29"
+					color: "#FF5533"
 				}];
 				that._data.das2 = Column.series[0].data;
-				_self.showColumn("canvasColumn",Column);
-				
+				_self.showColumn("canvasColumn", Column);
 			},
-			showColumn(canvasId,chartData){
-				canvaColumn=new uCharts({
-					$this:_self,
+			showColumn(canvasId, chartData) {
+				canvaColumn = new uCharts({
+					$this: _self,
 					canvasId: canvasId,
 					type: 'column',
 					legend: false,
-					fontSize:11,
-					background:'#FFFFFF',
-					pixelRatio:_self.pixelRatio,
+					fontSize: 11,
+					background: '#FFFFFF',
+					pixelRatio: _self.pixelRatio,
 					animation: true,
 					categories: chartData.categories,
 					series: chartData.series,
 					xAxis: {
-						disableGrid:true,
+						disableGrid: true,
 					},
 					yAxis: {
 						dashLength: 8,
@@ -326,24 +352,24 @@
 						}
 					},
 					dataLabel: true,
-					width: _self.cWidth*_self.pixelRatio,
-					height: _self.cHeight*_self.pixelRatio,
+					width: _self.cWidth * _self.pixelRatio,
+					height: _self.cHeight * _self.pixelRatio,
 					extra: {
 						column: {
-							type:'group',
-							width: _self.cWidth*_self.pixelRatio*0.45/chartData.categories.length
+							type: 'group',
+							width: _self.cWidth * _self.pixelRatio * 0.45 / chartData.categories.length
 						}
-					  }
+					}
 				});
-				
+
 			},
-			touchColumn(e){
+			touchColumn(e) {
 				canvaColumn.showToolTip(e, {
-					format: function (item, category) {
-						if(typeof item.data === 'object'){
-							return category + ' ' + item.name + ':' + item.data.value 
-						}else{
-							return category + ' ' + item.name + ':' + item.data 
+					format: function(item, category) {
+						if (typeof item.data === 'object') {
+							return category + ' ' + item.name + ':' + item.data.value
+						} else {
+							return category + ' ' + item.name + ':' + item.data
 						}
 					}
 				});
@@ -429,14 +455,14 @@
 	}
 
 	.section_title {
-		width:100%;
+		width: 100%;
 		color: #333333;
-		display:flex;
+		display: flex;
 		justify-content: space-between;
-		align-items:center;
+		align-items: center;
 		font-size: 32upx;
 		font-weight: bold;
-		position:relative;
+		position: relative;
 	}
 
 
@@ -451,31 +477,35 @@
 		color: #FF5533;
 		text-align: center;
 	}
-	
+
 	.section3 .total_sub {
 		font-size: 28upx;
 		color: #FF5533;
 		text-align: center;
 	}
+
 	.section3 .total_sub2 {
 		font-size: 28upx;
 		color: green;
 		text-align: center;
 	}
-	.rt{
-		position:absolute;
-		right:-20upx;
-		top:5upx;
-		font-weight: normal!important;
-		color:#999!important;
-		font-size: 24upx!important;
+
+	.rt {
+		position: absolute;
+		right: -20upx;
+		top: 5upx;
+		font-weight: normal !important;
+		color: #999 !important;
+		font-size: 24upx !important;
 	}
+
 	.section3 .condition_card {
 		color: #999999;
 		font-size: 28upx;
 		text-align: center;
 		padding-top: 40upx;
 	}
+
 	.section4 {
 		padding: 20upx;
 		margin-bottom: 20upx;
