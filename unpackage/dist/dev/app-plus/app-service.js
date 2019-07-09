@@ -2524,7 +2524,7 @@ __wxAppCode__['pages/wealth/GoEvaluate.wxml']=$gwx('./pages/wealth/GoEvaluate.wx
 __wxAppCode__['pages/wealth/harvest.json']={"navigationBarTitleText":"分红中的AP","usingComponents":{}};
 __wxAppCode__['pages/wealth/harvest.wxml']=$gwx('./pages/wealth/harvest.wxml');
 
-__wxAppCode__['pages/wealth/myMoney.json']={"navigationBarTitleText":"我的收益","usingComponents":{}};
+__wxAppCode__['pages/wealth/myMoney.json']={"navigationBarTitleText":"我的收益","titleNView":{"buttons":[{"text":"分红中的AP","color":"#CCA366","fontSize":"16px","width":"100"}]},"usingComponents":{}};
 __wxAppCode__['pages/wealth/myMoney.wxml']=$gwx('./pages/wealth/myMoney.wxml');
 
 __wxAppCode__['pages/wealth/OrderConfirm.json']={"navigationBarTitleText":"订单支付详情","usingComponents":{}};
@@ -17300,7 +17300,6 @@ var canvas = null;var _default =
 
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\index\\index.vue:185");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -17311,7 +17310,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:196");
+          console.log(res, 4, " at pages\\index\\index.vue:195");
           //that.getBTC();
         } });
 

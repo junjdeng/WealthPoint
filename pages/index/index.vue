@@ -182,7 +182,6 @@
 						},
 						method: 'GET',
 						success: function(res) {
-							console.log(res)
 							that.amount = Number(res.data.tick.amount).toFixed(2);
 							that.high = Number(res.data.tick.high).toFixed(2);
 							that.low = Number(res.data.tick.low).toFixed(2);

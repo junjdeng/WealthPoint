@@ -127,7 +127,7 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "分红中的AP",
-							"color": "#CCA366",
+							"color": "#333",
 							"fontSize": "16px",
 							"width": "100"
 						}]

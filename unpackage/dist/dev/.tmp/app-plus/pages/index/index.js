@@ -282,7 +282,6 @@ var canvas = null;var _default =
 
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\index\\index.vue:185");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -293,7 +292,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:196");
+          console.log(res, 4, " at pages\\index\\index.vue:195");
           //that.getBTC();
         } });
 

@@ -9,7 +9,7 @@
 			</view>
 		</view>
 	
-		<view class="section2">
+		<!-- <view class="section2">
 			<view class="section_title">激活码明细</view>
 			<view class="list">
 				<view class="item  flex-start">
@@ -27,7 +27,7 @@
 					<view class="num  flex1">+1</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
