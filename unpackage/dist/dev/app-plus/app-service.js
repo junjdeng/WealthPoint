@@ -1285,16 +1285,22 @@ function gz$gwx_24(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_24)return __WXML_GLOBAL__.ops_cached.$gwx_24
 __WXML_GLOBAL__.ops_cached.$gwx_24=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'intro'])
-Z([[2,'=='],[[7],[3,'id']],[1,0]])
-Z([[2,'=='],[[7],[3,'id']],[1,1]])
-Z([[2,'=='],[[7],[3,'id']],[1,2]])
-Z([[2,'=='],[[7],[3,'id']],[1,3]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_24);return __WXML_GLOBAL__.ops_cached.$gwx_24
 }
 function gz$gwx_25(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_25)return __WXML_GLOBAL__.ops_cached.$gwx_25
 __WXML_GLOBAL__.ops_cached.$gwx_25=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'intro'])
+Z([[2,'=='],[[7],[3,'id']],[1,0]])
+Z([[2,'=='],[[7],[3,'id']],[1,1]])
+Z([[2,'=='],[[7],[3,'id']],[1,2]])
+Z([[2,'=='],[[7],[3,'id']],[1,3]])
+})(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
+}
+function gz$gwx_26(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_26)return __WXML_GLOBAL__.ops_cached.$gwx_26
+__WXML_GLOBAL__.ops_cached.$gwx_26=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'container'])
 Z([3,'__e'])
@@ -1388,12 +1394,6 @@ Z(z[18])
 Z(z[19])
 Z(z[6])
 Z([3,'9'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
-}
-function gz$gwx_26(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_26)return __WXML_GLOBAL__.ops_cached.$gwx_26
-__WXML_GLOBAL__.ops_cached.$gwx_26=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_26);return __WXML_GLOBAL__.ops_cached.$gwx_26
 }
 function gz$gwx_27(){
@@ -1418,6 +1418,12 @@ function gz$gwx_30(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_30)return __WXML_GLOBAL__.ops_cached.$gwx_30
 __WXML_GLOBAL__.ops_cached.$gwx_30=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
+}
+function gz$gwx_31(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
+__WXML_GLOBAL__.ops_cached.$gwx_31=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'dj_form'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'submit']],[[4],[[5],[[4],[[5],[[5],[1,'formSubmit']],[[4],[[5],[1,'$event']]]]]]]]]]])
@@ -1427,17 +1433,17 @@ Z([3,'#999999'])
 Z([3,'20'])
 Z([3,'forward'])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
-}
-function gz$gwx_31(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
-__WXML_GLOBAL__.ops_cached.$gwx_31=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_31);return __WXML_GLOBAL__.ops_cached.$gwx_31
 }
 function gz$gwx_32(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_32)return __WXML_GLOBAL__.ops_cached.$gwx_32
 __WXML_GLOBAL__.ops_cached.$gwx_32=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_32);return __WXML_GLOBAL__.ops_cached.$gwx_32
+}
+function gz$gwx_33(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_33)return __WXML_GLOBAL__.ops_cached.$gwx_33
+__WXML_GLOBAL__.ops_cached.$gwx_33=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'list'])
 Z([3,'__e'])
@@ -1460,12 +1466,6 @@ Z(z[7])
 Z(z[8])
 Z(z[6])
 Z([3,'2'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_32);return __WXML_GLOBAL__.ops_cached.$gwx_32
-}
-function gz$gwx_33(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_33)return __WXML_GLOBAL__.ops_cached.$gwx_33
-__WXML_GLOBAL__.ops_cached.$gwx_33=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
 }
 function gz$gwx_34(){
@@ -1496,6 +1496,12 @@ function gz$gwx_38(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_38)return __WXML_GLOBAL__.ops_cached.$gwx_38
 __WXML_GLOBAL__.ops_cached.$gwx_38=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_38);return __WXML_GLOBAL__.ops_cached.$gwx_38
+}
+function gz$gwx_39(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_39)return __WXML_GLOBAL__.ops_cached.$gwx_39
+__WXML_GLOBAL__.ops_cached.$gwx_39=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'#CCA366'])
 Z([3,'__l'])
 Z([3,'__e'])
@@ -1505,17 +1511,17 @@ Z([[4],[[5],[[4],[[5],[[5],[1,'^clickItem']],[[4],[[5],[[4],[[5],[1,'onClickItem
 Z([3,'text'])
 Z([[7],[3,'items']])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_38);return __WXML_GLOBAL__.ops_cached.$gwx_38
-}
-function gz$gwx_39(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_39)return __WXML_GLOBAL__.ops_cached.$gwx_39
-__WXML_GLOBAL__.ops_cached.$gwx_39=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_39);return __WXML_GLOBAL__.ops_cached.$gwx_39
 }
 function gz$gwx_40(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_40)return __WXML_GLOBAL__.ops_cached.$gwx_40
 __WXML_GLOBAL__.ops_cached.$gwx_40=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_40);return __WXML_GLOBAL__.ops_cached.$gwx_40
+}
+function gz$gwx_41(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_41)return __WXML_GLOBAL__.ops_cached.$gwx_41
+__WXML_GLOBAL__.ops_cached.$gwx_41=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'dj_form'])
@@ -1526,33 +1532,33 @@ Z([3,'#999999'])
 Z([3,'20'])
 Z([3,'forward'])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_40);return __WXML_GLOBAL__.ops_cached.$gwx_40
-}
-function gz$gwx_41(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_41)return __WXML_GLOBAL__.ops_cached.$gwx_41
-__WXML_GLOBAL__.ops_cached.$gwx_41=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_41);return __WXML_GLOBAL__.ops_cached.$gwx_41
 }
 function gz$gwx_42(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_42)return __WXML_GLOBAL__.ops_cached.$gwx_42
 __WXML_GLOBAL__.ops_cached.$gwx_42=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'data-v-7eafb9e4'])
-Z([[2,'==='],[[6],[[7],[3,'record']],[3,'status']],[1,'wait']])
-Z([[2,'==='],[[6],[[7],[3,'record']],[3,'status']],[1,'yes']])
-Z([[2,'==='],[[6],[[7],[3,'record']],[3,'status']],[1,'no']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_42);return __WXML_GLOBAL__.ops_cached.$gwx_42
 }
 function gz$gwx_43(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_43)return __WXML_GLOBAL__.ops_cached.$gwx_43
 __WXML_GLOBAL__.ops_cached.$gwx_43=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'data-v-7eafb9e4'])
+Z([[2,'==='],[[6],[[7],[3,'record']],[3,'status']],[1,'wait']])
+Z([[2,'==='],[[6],[[7],[3,'record']],[3,'status']],[1,'yes']])
+Z([[2,'==='],[[6],[[7],[3,'record']],[3,'status']],[1,'no']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_43);return __WXML_GLOBAL__.ops_cached.$gwx_43
 }
 function gz$gwx_44(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_44)return __WXML_GLOBAL__.ops_cached.$gwx_44
 __WXML_GLOBAL__.ops_cached.$gwx_44=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_44);return __WXML_GLOBAL__.ops_cached.$gwx_44
+}
+function gz$gwx_45(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_45)return __WXML_GLOBAL__.ops_cached.$gwx_45
+__WXML_GLOBAL__.ops_cached.$gwx_45=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'container'])
 Z([3,'#CCA366'])
@@ -1569,11 +1575,11 @@ Z([3,'temp'])
 Z([[6],[[7],[3,'$root']],[3,'l0']])
 Z(z[10])
 Z([[2,'==='],[[6],[[6],[[7],[3,'temp']],[3,'$orig']],[3,'type']],[1,'buy']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_44);return __WXML_GLOBAL__.ops_cached.$gwx_44
+})(__WXML_GLOBAL__.ops_cached.$gwx_45);return __WXML_GLOBAL__.ops_cached.$gwx_45
 }
-function gz$gwx_45(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_45)return __WXML_GLOBAL__.ops_cached.$gwx_45
-__WXML_GLOBAL__.ops_cached.$gwx_45=[];
+function gz$gwx_46(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_46)return __WXML_GLOBAL__.ops_cached.$gwx_46
+__WXML_GLOBAL__.ops_cached.$gwx_46=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'content'])
 Z([[6],[[7],[3,'obj']],[3,'harvestStatus']])
@@ -1581,12 +1587,6 @@ Z([3,'lf'])
 Z([[2,'==='],[[6],[[7],[3,'obj']],[3,'harvestStatus']],[1,'growing']])
 Z([[2,'==='],[[6],[[7],[3,'obj']],[3,'harvestStatus']],[1,'reward']])
 Z(z[3])
-})(__WXML_GLOBAL__.ops_cached.$gwx_45);return __WXML_GLOBAL__.ops_cached.$gwx_45
-}
-function gz$gwx_46(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_46)return __WXML_GLOBAL__.ops_cached.$gwx_46
-__WXML_GLOBAL__.ops_cached.$gwx_46=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_46);return __WXML_GLOBAL__.ops_cached.$gwx_46
 }
 function gz$gwx_47(){
@@ -1598,6 +1598,12 @@ __WXML_GLOBAL__.ops_cached.$gwx_47=[];
 function gz$gwx_48(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_48)return __WXML_GLOBAL__.ops_cached.$gwx_48
 __WXML_GLOBAL__.ops_cached.$gwx_48=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_48);return __WXML_GLOBAL__.ops_cached.$gwx_48
+}
+function gz$gwx_49(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_49)return __WXML_GLOBAL__.ops_cached.$gwx_49
+__WXML_GLOBAL__.ops_cached.$gwx_49=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[2,'!'],[[2,'=='],[[7],[3,'dist']],[1,2]]])
 Z([3,'index'])
@@ -1615,12 +1621,6 @@ Z([[4],[[5],[[5],[1,'bg-pay-code-wx flex-justify-center column']],[[2,'?:'],[[2,
 Z([[2,'&&'],[[2,'==='],[[6],[[7],[3,'item']],[3,'type']],[1,'alipay']],[[2,'==='],[[6],[[7],[3,'item']],[3,'status']],[1,'yes']]])
 Z([[2,'&&'],[[2,'==='],[[6],[[7],[3,'item']],[3,'type']],[1,'wechat']],[[2,'==='],[[6],[[7],[3,'item']],[3,'status']],[1,'yes']]])
 Z([[2,'==='],[[6],[[7],[3,'item']],[3,'status']],[1,'no']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_48);return __WXML_GLOBAL__.ops_cached.$gwx_48
-}
-function gz$gwx_49(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_49)return __WXML_GLOBAL__.ops_cached.$gwx_49
-__WXML_GLOBAL__.ops_cached.$gwx_49=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_49);return __WXML_GLOBAL__.ops_cached.$gwx_49
 }
 function gz$gwx_50(){
@@ -1633,6 +1633,12 @@ function gz$gwx_51(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_51)return __WXML_GLOBAL__.ops_cached.$gwx_51
 __WXML_GLOBAL__.ops_cached.$gwx_51=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_51);return __WXML_GLOBAL__.ops_cached.$gwx_51
+}
+function gz$gwx_52(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_52)return __WXML_GLOBAL__.ops_cached.$gwx_52
+__WXML_GLOBAL__.ops_cached.$gwx_52=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'#CCA366'])
 Z([3,'__l'])
 Z([3,'__e'])
@@ -1642,12 +1648,6 @@ Z([[4],[[5],[[4],[[5],[[5],[1,'^clickItem']],[[4],[[5],[[4],[[5],[1,'onClickItem
 Z([3,'text'])
 Z([[7],[3,'items']])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_51);return __WXML_GLOBAL__.ops_cached.$gwx_51
-}
-function gz$gwx_52(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_52)return __WXML_GLOBAL__.ops_cached.$gwx_52
-__WXML_GLOBAL__.ops_cached.$gwx_52=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_52);return __WXML_GLOBAL__.ops_cached.$gwx_52
 }
 function gz$gwx_53(){
@@ -1672,6 +1672,12 @@ function gz$gwx_56(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_56)return __WXML_GLOBAL__.ops_cached.$gwx_56
 __WXML_GLOBAL__.ops_cached.$gwx_56=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_56);return __WXML_GLOBAL__.ops_cached.$gwx_56
+}
+function gz$gwx_57(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_57)return __WXML_GLOBAL__.ops_cached.$gwx_57
+__WXML_GLOBAL__.ops_cached.$gwx_57=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'_span'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'navTo']],[[4],[[5],[1,'$event']]]]]]]]]]])
@@ -1682,13 +1688,13 @@ Z([3,'#999999'])
 Z([3,'20'])
 Z(z[5])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_56);return __WXML_GLOBAL__.ops_cached.$gwx_56
+})(__WXML_GLOBAL__.ops_cached.$gwx_57);return __WXML_GLOBAL__.ops_cached.$gwx_57
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/uni-icon/uni-icon.wxml','./components/uni-load-more/uni-load-more.wxml','./components/uni-popup/uni-popup.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/charity/charity.wxml','./pages/charity/charityDetail.wxml','./pages/charity/charityHelp.wxml','./pages/charity/charityList.wxml','./pages/index/btc.wxml','./pages/index/chart.wxml','./pages/index/customSuggest.wxml','./pages/index/index.wxml','./pages/index/newsList.wxml','./pages/index/sign.wxml','./pages/index/wwallet.wxml','./pages/login/finishRegisterInfo.wxml','./pages/login/login.wxml','./pages/login/register.wxml','./pages/login/waitAgree.wxml','./pages/mine/addAliPay.wxml','./pages/mine/addCode.wxml','./pages/mine/alipayEdit.wxml','./pages/mine/code.wxml','./pages/mine/getTool.wxml','./pages/mine/mine.wxml','./pages/mine/mine0.wxml','./pages/mine/mine1.wxml','./pages/mine/mine2.wxml','./pages/mine/mine3.wxml','./pages/mine/mine3Addbank.wxml','./pages/mine/mine4.wxml','./pages/mine/mine5.wxml','./pages/mine/mine5ResetPw.wxml','./pages/mine/mine6.wxml','./pages/mine/mine6Sell.wxml','./pages/mine/mine6Use.wxml','./pages/mine/mine7.wxml','./pages/mine/mine7Cards.wxml','./pages/mine/mine8.wxml','./pages/mine/reviseBank.wxml','./pages/wealth/GoEvaluate.wxml','./pages/wealth/OrderConfirm.wxml','./pages/wealth/buyAP.wxml','./pages/wealth/buyAPList.wxml','./pages/wealth/buyDetail.wxml','./pages/wealth/buyRecord.wxml','./pages/wealth/complaint.wxml','./pages/wealth/connectMember.wxml','./pages/wealth/harvest.wxml','./pages/wealth/sellAP.wxml','./pages/wealth/sellAPList.wxml','./pages/wealth/sellDetail.wxml','./pages/wealth/sellRecord.wxml','./pages/wealth/wallet.wxml','./pages/wealth/wallet1.wxml','./pages/wealth/wealth.wxml'];d_[x[0]]={}
+var x=['./components/uni-icon/uni-icon.wxml','./components/uni-load-more/uni-load-more.wxml','./components/uni-popup/uni-popup.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/charity/charity.wxml','./pages/charity/charityDetail.wxml','./pages/charity/charityHelp.wxml','./pages/charity/charityList.wxml','./pages/index/btc.wxml','./pages/index/chart.wxml','./pages/index/customSuggest.wxml','./pages/index/index.wxml','./pages/index/newsList.wxml','./pages/index/sign.wxml','./pages/index/wwallet.wxml','./pages/login/finishRegisterInfo.wxml','./pages/login/login.wxml','./pages/login/register.wxml','./pages/login/waitAgree.wxml','./pages/mine/addAliPay.wxml','./pages/mine/addCode.wxml','./pages/mine/alipayEdit.wxml','./pages/mine/code.wxml','./pages/mine/delCode.wxml','./pages/mine/getTool.wxml','./pages/mine/mine.wxml','./pages/mine/mine0.wxml','./pages/mine/mine1.wxml','./pages/mine/mine2.wxml','./pages/mine/mine3.wxml','./pages/mine/mine3Addbank.wxml','./pages/mine/mine4.wxml','./pages/mine/mine5.wxml','./pages/mine/mine5ResetPw.wxml','./pages/mine/mine6.wxml','./pages/mine/mine6Sell.wxml','./pages/mine/mine6Use.wxml','./pages/mine/mine7.wxml','./pages/mine/mine7Cards.wxml','./pages/mine/mine8.wxml','./pages/mine/reviseBank.wxml','./pages/wealth/GoEvaluate.wxml','./pages/wealth/OrderConfirm.wxml','./pages/wealth/buyAP.wxml','./pages/wealth/buyAPList.wxml','./pages/wealth/buyDetail.wxml','./pages/wealth/buyRecord.wxml','./pages/wealth/complaint.wxml','./pages/wealth/connectMember.wxml','./pages/wealth/harvest.wxml','./pages/wealth/sellAP.wxml','./pages/wealth/sellAPList.wxml','./pages/wealth/sellDetail.wxml','./pages/wealth/sellRecord.wxml','./pages/wealth/wallet.wxml','./pages/wealth/wallet1.wxml','./pages/wealth/wealth.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -1920,86 +1926,86 @@ e_[x[22]]={f:m22,j:[],i:[],ti:[],ic:[]}
 d_[x[23]]={}
 var m23=function(e,s,r,gg){
 var z=gz$gwx_24()
-var oVB=_n('view')
-_rz(z,oVB,'class',0,e,s,gg)
-var xWB=_v()
-_(oVB,xWB)
-if(_oz(z,1,e,s,gg)){xWB.wxVkey=1
-}
-var oXB=_v()
-_(oVB,oXB)
-if(_oz(z,2,e,s,gg)){oXB.wxVkey=1
-}
-var fYB=_v()
-_(oVB,fYB)
-if(_oz(z,3,e,s,gg)){fYB.wxVkey=1
-}
-var cZB=_v()
-_(oVB,cZB)
-if(_oz(z,4,e,s,gg)){cZB.wxVkey=1
-}
-xWB.wxXCkey=1
-oXB.wxXCkey=1
-fYB.wxXCkey=1
-cZB.wxXCkey=1
-_(r,oVB)
 return r
 }
 e_[x[23]]={f:m23,j:[],i:[],ti:[],ic:[]}
 d_[x[24]]={}
 var m24=function(e,s,r,gg){
 var z=gz$gwx_25()
-var o2B=_n('view')
-_rz(z,o2B,'class',0,e,s,gg)
-var c3B=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var o4B=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(c3B,o4B)
-_(o2B,c3B)
-var l5B=_n('view')
-_rz(z,l5B,'class',11,e,s,gg)
-var a6B=_mz(z,'view',['bindtap',12,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var t7B=_mz(z,'uni-icon',['bind:__l',16,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(a6B,t7B)
-_(l5B,a6B)
-var e8B=_mz(z,'view',['bindtap',22,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var b9B=_mz(z,'uni-icon',['bind:__l',26,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(e8B,b9B)
-_(l5B,e8B)
-var o0B=_mz(z,'view',['bindtap',32,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var xAC=_mz(z,'uni-icon',['bind:__l',36,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(o0B,xAC)
-_(l5B,o0B)
-var oBC=_mz(z,'view',['bindtap',42,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var fCC=_mz(z,'uni-icon',['bind:__l',46,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(oBC,fCC)
-_(l5B,oBC)
-_(o2B,l5B)
-var cDC=_n('view')
-_rz(z,cDC,'class',52,e,s,gg)
-var hEC=_mz(z,'view',['bindtap',53,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var oFC=_mz(z,'uni-icon',['bind:__l',57,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(hEC,oFC)
-_(cDC,hEC)
-var cGC=_mz(z,'view',['bindtap',63,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var oHC=_mz(z,'uni-icon',['bind:__l',67,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(cGC,oHC)
-_(cDC,cGC)
-var lIC=_mz(z,'view',['bindtap',73,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var aJC=_mz(z,'uni-icon',['bind:__l',77,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(lIC,aJC)
-_(cDC,lIC)
-var tKC=_mz(z,'view',['bindtap',83,'class',1,'data-event-opts',2],[],e,s,gg)
-var eLC=_mz(z,'uni-icon',['bind:__l',86,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(tKC,eLC)
-_(cDC,tKC)
-_(o2B,cDC)
-_(r,o2B)
+var xWB=_n('view')
+_rz(z,xWB,'class',0,e,s,gg)
+var oXB=_v()
+_(xWB,oXB)
+if(_oz(z,1,e,s,gg)){oXB.wxVkey=1
+}
+var fYB=_v()
+_(xWB,fYB)
+if(_oz(z,2,e,s,gg)){fYB.wxVkey=1
+}
+var cZB=_v()
+_(xWB,cZB)
+if(_oz(z,3,e,s,gg)){cZB.wxVkey=1
+}
+var h1B=_v()
+_(xWB,h1B)
+if(_oz(z,4,e,s,gg)){h1B.wxVkey=1
+}
+oXB.wxXCkey=1
+fYB.wxXCkey=1
+cZB.wxXCkey=1
+h1B.wxXCkey=1
+_(r,xWB)
 return r
 }
 e_[x[24]]={f:m24,j:[],i:[],ti:[],ic:[]}
 d_[x[25]]={}
 var m25=function(e,s,r,gg){
 var z=gz$gwx_26()
+var c3B=_n('view')
+_rz(z,c3B,'class',0,e,s,gg)
+var o4B=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var l5B=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(o4B,l5B)
+_(c3B,o4B)
+var a6B=_n('view')
+_rz(z,a6B,'class',11,e,s,gg)
+var t7B=_mz(z,'view',['bindtap',12,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var e8B=_mz(z,'uni-icon',['bind:__l',16,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(t7B,e8B)
+_(a6B,t7B)
+var b9B=_mz(z,'view',['bindtap',22,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var o0B=_mz(z,'uni-icon',['bind:__l',26,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(b9B,o0B)
+_(a6B,b9B)
+var xAC=_mz(z,'view',['bindtap',32,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var oBC=_mz(z,'uni-icon',['bind:__l',36,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(xAC,oBC)
+_(a6B,xAC)
+var fCC=_mz(z,'view',['bindtap',42,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var cDC=_mz(z,'uni-icon',['bind:__l',46,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(fCC,cDC)
+_(a6B,fCC)
+_(c3B,a6B)
+var hEC=_n('view')
+_rz(z,hEC,'class',52,e,s,gg)
+var oFC=_mz(z,'view',['bindtap',53,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var cGC=_mz(z,'uni-icon',['bind:__l',57,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(oFC,cGC)
+_(hEC,oFC)
+var oHC=_mz(z,'view',['bindtap',63,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var lIC=_mz(z,'uni-icon',['bind:__l',67,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(oHC,lIC)
+_(hEC,oHC)
+var aJC=_mz(z,'view',['bindtap',73,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var tKC=_mz(z,'uni-icon',['bind:__l',77,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(aJC,tKC)
+_(hEC,aJC)
+var eLC=_mz(z,'view',['bindtap',83,'class',1,'data-event-opts',2],[],e,s,gg)
+var bMC=_mz(z,'uni-icon',['bind:__l',86,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(eLC,bMC)
+_(hEC,eLC)
+_(c3B,hEC)
+_(r,c3B)
 return r
 }
 e_[x[25]]={f:m25,j:[],i:[],ti:[],ic:[]}
@@ -2024,39 +2030,39 @@ e_[x[28]]={f:m28,j:[],i:[],ti:[],ic:[]}
 d_[x[29]]={}
 var m29=function(e,s,r,gg){
 var z=gz$gwx_30()
-var cRC=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
-var hSC=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(cRC,hSC)
-_(r,cRC)
 return r
 }
 e_[x[29]]={f:m29,j:[],i:[],ti:[],ic:[]}
 d_[x[30]]={}
 var m30=function(e,s,r,gg){
 var z=gz$gwx_31()
+var hSC=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var oTC=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(hSC,oTC)
+_(r,hSC)
 return r
 }
 e_[x[30]]={f:m30,j:[],i:[],ti:[],ic:[]}
 d_[x[31]]={}
 var m31=function(e,s,r,gg){
 var z=gz$gwx_32()
-var oVC=_n('view')
-_rz(z,oVC,'class',0,e,s,gg)
-var lWC=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var aXC=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(lWC,aXC)
-_(oVC,lWC)
-var tYC=_mz(z,'view',['bindtap',11,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var eZC=_mz(z,'uni-icon',['bind:__l',15,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(tYC,eZC)
-_(oVC,tYC)
-_(r,oVC)
 return r
 }
 e_[x[31]]={f:m31,j:[],i:[],ti:[],ic:[]}
 d_[x[32]]={}
 var m32=function(e,s,r,gg){
 var z=gz$gwx_33()
+var lWC=_n('view')
+_rz(z,lWC,'class',0,e,s,gg)
+var aXC=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var tYC=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(aXC,tYC)
+_(lWC,aXC)
+var eZC=_mz(z,'view',['bindtap',11,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var b1C=_mz(z,'uni-icon',['bind:__l',15,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(eZC,b1C)
+_(lWC,eZC)
+_(r,lWC)
 return r
 }
 e_[x[32]]={f:m32,j:[],i:[],ti:[],ic:[]}
@@ -2087,121 +2093,121 @@ e_[x[36]]={f:m36,j:[],i:[],ti:[],ic:[]}
 d_[x[37]]={}
 var m37=function(e,s,r,gg){
 var z=gz$gwx_38()
-var h7C=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,h7C)
 return r
 }
 e_[x[37]]={f:m37,j:[],i:[],ti:[],ic:[]}
 d_[x[38]]={}
 var m38=function(e,s,r,gg){
 var z=gz$gwx_39()
+var o8C=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,o8C)
 return r
 }
 e_[x[38]]={f:m38,j:[],i:[],ti:[],ic:[]}
 d_[x[39]]={}
 var m39=function(e,s,r,gg){
 var z=gz$gwx_40()
-var o0C=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
-var lAD=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(o0C,lAD)
-_(r,o0C)
 return r
 }
 e_[x[39]]={f:m39,j:[],i:[],ti:[],ic:[]}
 d_[x[40]]={}
 var m40=function(e,s,r,gg){
 var z=gz$gwx_41()
+var lAD=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var aBD=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(lAD,aBD)
+_(r,lAD)
 return r
 }
 e_[x[40]]={f:m40,j:[],i:[],ti:[],ic:[]}
 d_[x[41]]={}
 var m41=function(e,s,r,gg){
 var z=gz$gwx_42()
-var eDD=_n('view')
-_rz(z,eDD,'class',0,e,s,gg)
-var bED=_v()
-_(eDD,bED)
-if(_oz(z,1,e,s,gg)){bED.wxVkey=1
-}
-var oFD=_v()
-_(eDD,oFD)
-if(_oz(z,2,e,s,gg)){oFD.wxVkey=1
-}
-var xGD=_v()
-_(eDD,xGD)
-if(_oz(z,3,e,s,gg)){xGD.wxVkey=1
-}
-bED.wxXCkey=1
-oFD.wxXCkey=1
-xGD.wxXCkey=1
-_(r,eDD)
 return r
 }
 e_[x[41]]={f:m41,j:[],i:[],ti:[],ic:[]}
 d_[x[42]]={}
 var m42=function(e,s,r,gg){
 var z=gz$gwx_43()
+var bED=_n('view')
+_rz(z,bED,'class',0,e,s,gg)
+var oFD=_v()
+_(bED,oFD)
+if(_oz(z,1,e,s,gg)){oFD.wxVkey=1
+}
+var xGD=_v()
+_(bED,xGD)
+if(_oz(z,2,e,s,gg)){xGD.wxVkey=1
+}
+var oHD=_v()
+_(bED,oHD)
+if(_oz(z,3,e,s,gg)){oHD.wxVkey=1
+}
+oFD.wxXCkey=1
+xGD.wxXCkey=1
+oHD.wxXCkey=1
+_(r,bED)
 return r
 }
 e_[x[42]]={f:m42,j:[],i:[],ti:[],ic:[]}
 d_[x[43]]={}
 var m43=function(e,s,r,gg){
 var z=gz$gwx_44()
-var cJD=_n('view')
-_rz(z,cJD,'class',0,e,s,gg)
-var hKD=_mz(z,'uni-segmented-control',['activeColor',1,'bind:__l',1,'bind:clickItem',2,'class',3,'current',4,'data-event-opts',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
-_(cJD,hKD)
-var oLD=_v()
-_(cJD,oLD)
-var cMD=function(lOD,oND,aPD,gg){
-var eRD=_v()
-_(aPD,eRD)
-if(_oz(z,14,lOD,oND,gg)){eRD.wxVkey=1
-}
-eRD.wxXCkey=1
-return aPD
-}
-oLD.wxXCkey=2
-_2z(z,12,cMD,e,s,gg,oLD,'temp','index','index')
-_(r,cJD)
 return r
 }
 e_[x[43]]={f:m43,j:[],i:[],ti:[],ic:[]}
 d_[x[44]]={}
 var m44=function(e,s,r,gg){
 var z=gz$gwx_45()
-var oTD=_n('view')
-_rz(z,oTD,'class',0,e,s,gg)
-var xUD=_v()
-_(oTD,xUD)
-if(_oz(z,1,e,s,gg)){xUD.wxVkey=1
-var fWD=_n('view')
-_rz(z,fWD,'class',2,e,s,gg)
-var cXD=_v()
-_(fWD,cXD)
-if(_oz(z,3,e,s,gg)){cXD.wxVkey=1
+var hKD=_n('view')
+_rz(z,hKD,'class',0,e,s,gg)
+var oLD=_mz(z,'uni-segmented-control',['activeColor',1,'bind:__l',1,'bind:clickItem',2,'class',3,'current',4,'data-event-opts',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
+_(hKD,oLD)
+var cMD=_v()
+_(hKD,cMD)
+var oND=function(aPD,lOD,tQD,gg){
+var bSD=_v()
+_(tQD,bSD)
+if(_oz(z,14,aPD,lOD,gg)){bSD.wxVkey=1
 }
-var hYD=_v()
-_(fWD,hYD)
-if(_oz(z,4,e,s,gg)){hYD.wxVkey=1
+bSD.wxXCkey=1
+return tQD
 }
-cXD.wxXCkey=1
-hYD.wxXCkey=1
-_(xUD,fWD)
-}
-var oVD=_v()
-_(oTD,oVD)
-if(_oz(z,5,e,s,gg)){oVD.wxVkey=1
-}
-xUD.wxXCkey=1
-oVD.wxXCkey=1
-_(r,oTD)
+cMD.wxXCkey=2
+_2z(z,12,oND,e,s,gg,cMD,'temp','index','index')
+_(r,hKD)
 return r
 }
 e_[x[44]]={f:m44,j:[],i:[],ti:[],ic:[]}
 d_[x[45]]={}
 var m45=function(e,s,r,gg){
 var z=gz$gwx_46()
+var xUD=_n('view')
+_rz(z,xUD,'class',0,e,s,gg)
+var oVD=_v()
+_(xUD,oVD)
+if(_oz(z,1,e,s,gg)){oVD.wxVkey=1
+var cXD=_n('view')
+_rz(z,cXD,'class',2,e,s,gg)
+var hYD=_v()
+_(cXD,hYD)
+if(_oz(z,3,e,s,gg)){hYD.wxVkey=1
+}
+var oZD=_v()
+_(cXD,oZD)
+if(_oz(z,4,e,s,gg)){oZD.wxVkey=1
+}
+hYD.wxXCkey=1
+oZD.wxXCkey=1
+_(oVD,cXD)
+}
+var fWD=_v()
+_(xUD,fWD)
+if(_oz(z,5,e,s,gg)){fWD.wxVkey=1
+}
+oVD.wxXCkey=1
+fWD.wxXCkey=1
+_(r,xUD)
 return r
 }
 e_[x[45]]={f:m45,j:[],i:[],ti:[],ic:[]}
@@ -2214,62 +2220,62 @@ e_[x[46]]={f:m46,j:[],i:[],ti:[],ic:[]}
 d_[x[47]]={}
 var m47=function(e,s,r,gg){
 var z=gz$gwx_48()
-var l3D=_n('view')
-_rz(z,l3D,'hidden',0,e,s,gg)
-var t5D=_v()
-_(l3D,t5D)
-var e6D=function(o8D,b7D,x9D,gg){
-var fAE=_v()
-_(x9D,fAE)
-if(_oz(z,5,o8D,b7D,gg)){fAE.wxVkey=1
-}
-fAE.wxXCkey=1
-return x9D
-}
-t5D.wxXCkey=2
-_2z(z,3,e6D,e,s,gg,t5D,'temp','index','index')
-var a4D=_v()
-_(l3D,a4D)
-if(_oz(z,6,e,s,gg)){a4D.wxVkey=1
-var cBE=_v()
-_(a4D,cBE)
-var hCE=function(cEE,oDE,oFE,gg){
-var aHE=_v()
-_(oFE,aHE)
-if(_oz(z,11,cEE,oDE,gg)){aHE.wxVkey=1
-var tIE=_n('view')
-_rz(z,tIE,'class',12,cEE,oDE,gg)
-var eJE=_v()
-_(tIE,eJE)
-if(_oz(z,13,cEE,oDE,gg)){eJE.wxVkey=1
-}
-var bKE=_v()
-_(tIE,bKE)
-if(_oz(z,14,cEE,oDE,gg)){bKE.wxVkey=1
-}
-var oLE=_v()
-_(tIE,oLE)
-if(_oz(z,15,cEE,oDE,gg)){oLE.wxVkey=1
-}
-eJE.wxXCkey=1
-bKE.wxXCkey=1
-oLE.wxXCkey=1
-_(aHE,tIE)
-}
-aHE.wxXCkey=1
-return oFE
-}
-cBE.wxXCkey=2
-_2z(z,9,hCE,e,s,gg,cBE,'item','index','index')
-}
-a4D.wxXCkey=1
-_(r,l3D)
 return r
 }
 e_[x[47]]={f:m47,j:[],i:[],ti:[],ic:[]}
 d_[x[48]]={}
 var m48=function(e,s,r,gg){
 var z=gz$gwx_49()
+var a4D=_n('view')
+_rz(z,a4D,'hidden',0,e,s,gg)
+var e6D=_v()
+_(a4D,e6D)
+var b7D=function(x9D,o8D,o0D,gg){
+var cBE=_v()
+_(o0D,cBE)
+if(_oz(z,5,x9D,o8D,gg)){cBE.wxVkey=1
+}
+cBE.wxXCkey=1
+return o0D
+}
+e6D.wxXCkey=2
+_2z(z,3,b7D,e,s,gg,e6D,'temp','index','index')
+var t5D=_v()
+_(a4D,t5D)
+if(_oz(z,6,e,s,gg)){t5D.wxVkey=1
+var hCE=_v()
+_(t5D,hCE)
+var oDE=function(oFE,cEE,lGE,gg){
+var tIE=_v()
+_(lGE,tIE)
+if(_oz(z,11,oFE,cEE,gg)){tIE.wxVkey=1
+var eJE=_n('view')
+_rz(z,eJE,'class',12,oFE,cEE,gg)
+var bKE=_v()
+_(eJE,bKE)
+if(_oz(z,13,oFE,cEE,gg)){bKE.wxVkey=1
+}
+var oLE=_v()
+_(eJE,oLE)
+if(_oz(z,14,oFE,cEE,gg)){oLE.wxVkey=1
+}
+var xME=_v()
+_(eJE,xME)
+if(_oz(z,15,oFE,cEE,gg)){xME.wxVkey=1
+}
+bKE.wxXCkey=1
+oLE.wxXCkey=1
+xME.wxXCkey=1
+_(tIE,eJE)
+}
+tIE.wxXCkey=1
+return lGE
+}
+hCE.wxXCkey=2
+_2z(z,9,oDE,e,s,gg,hCE,'item','index','index')
+}
+t5D.wxXCkey=1
+_(r,a4D)
 return r
 }
 e_[x[48]]={f:m48,j:[],i:[],ti:[],ic:[]}
@@ -2282,14 +2288,14 @@ e_[x[49]]={f:m49,j:[],i:[],ti:[],ic:[]}
 d_[x[50]]={}
 var m50=function(e,s,r,gg){
 var z=gz$gwx_51()
-var cPE=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,cPE)
 return r
 }
 e_[x[50]]={f:m50,j:[],i:[],ti:[],ic:[]}
 d_[x[51]]={}
 var m51=function(e,s,r,gg){
 var z=gz$gwx_52()
+var hQE=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,hQE)
 return r
 }
 e_[x[51]]={f:m51,j:[],i:[],ti:[],ic:[]}
@@ -2314,13 +2320,19 @@ e_[x[54]]={f:m54,j:[],i:[],ti:[],ic:[]}
 d_[x[55]]={}
 var m55=function(e,s,r,gg){
 var z=gz$gwx_56()
-var aVE=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
-var tWE=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(aVE,tWE)
-_(r,aVE)
 return r
 }
 e_[x[55]]={f:m55,j:[],i:[],ti:[],ic:[]}
+d_[x[56]]={}
+var m56=function(e,s,r,gg){
+var z=gz$gwx_57()
+var tWE=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
+var eXE=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(tWE,eXE)
+_(r,tWE)
+return r
+}
+e_[x[56]]={f:m56,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -2409,6 +2421,9 @@ __wxAppCode__['pages/mine/alipayEdit.wxml']=$gwx('./pages/mine/alipayEdit.wxml')
 
 __wxAppCode__['pages/mine/code.json']={"navigationBarTitleText":"收款码","titleNView":{"buttons":[{"text":"添加","color":"#333333","fontSize":"14px","width":"80"}]},"usingComponents":{}};
 __wxAppCode__['pages/mine/code.wxml']=$gwx('./pages/mine/code.wxml');
+
+__wxAppCode__['pages/mine/delCode.json']={"navigationBarTitleText":"二维码详情","titleNView":{"buttons":[{"text":"删除","color":"#333333","fontSize":"14px","width":"80"}]},"usingComponents":{}};
+__wxAppCode__['pages/mine/delCode.wxml']=$gwx('./pages/mine/delCode.wxml');
 
 __wxAppCode__['pages/mine/getTool.json']={"navigationBarTitleText":"购买道具","usingComponents":{}};
 __wxAppCode__['pages/mine/getTool.wxml']=$gwx('./pages/mine/getTool.wxml');
@@ -6875,6 +6890,23 @@ createPage(_alipayEdit.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _code = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/code.vue */ "../../../../test/WealthPoint/pages/mine/code.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_code.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FdelCode\"}":
+/*!*********************************************************************!*\
+  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2FdelCode"} ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _delCode = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/delCode.vue */ "../../../../test/WealthPoint/pages/mine/delCode.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_delCode.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
@@ -26818,6 +26850,212 @@ render._withStripped = true
 },[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fmine4\"}","common/runtime","common/vendor"]]]);
 });
 require('pages/mine/mine4.js');
+__wxRoute = 'pages/mine/delCode';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/mine/delCode.js';
+
+define('pages/mine/delCode.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/mine/delCode"],{
+
+/***/ "../../../../test/WealthPoint/pages/mine/delCode.vue":
+/*!**************************************************!*\
+  !*** D:/test/WealthPoint/pages/mine/delCode.vue ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _delCode_vue_vue_type_template_id_7480cbdc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./delCode.vue?vue&type=template&id=7480cbdc& */ "../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=template&id=7480cbdc&");
+/* harmony import */ var _delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./delCode.vue?vue&type=script&lang=js& */ "../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./delCode.vue?vue&type=style&index=0&lang=css& */ "../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _delCode_vue_vue_type_template_id_7480cbdc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _delCode_vue_vue_type_template_id_7480cbdc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "test/WealthPoint/pages/mine/delCode.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/mine/delCode.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./delCode.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=script&lang=js&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/mine/delCode.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./delCode.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=template&id=7480cbdc&":
+/*!*********************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/mine/delCode.vue?vue&type=template&id=7480cbdc& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_template_id_7480cbdc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./delCode.vue?vue&type=template&id=7480cbdc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=template&id=7480cbdc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_template_id_7480cbdc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_delCode_vue_vue_type_template_id_7480cbdc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/mine/delCode.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
+var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { src: '',
+      id: 0 };
+
+  },
+  methods: {
+    onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
+      var that = this;
+      /* 删除 */
+      (0, _request.djRequest)({
+        url: '/api/qrcode/delete',
+        method: 'GET',
+        data: {
+          Id: that.id },
+
+        success: function success(res) {
+          _common.default.TostUtil(res.data.message);
+          if (res.data.status === 200) {
+            setTimeout(function () {
+              uni.navigateBack({
+                delta: 1 });
+
+            }, 1000);
+          }
+
+        } });
+
+    } },
+
+  onLoad: function onLoad(options) {
+    var that = this;
+    that.id = options.id;
+    (0, _request.djRequest)({
+      url: '/api/qrcode/show',
+      method: 'GET',
+      data: {
+        Id: options.id },
+
+      success: function success(res) {
+        that.src = 'http://api.wealth-point.com/' + res.data.data.images;
+      } });
+
+  },
+  onShow: function onShow() {
+
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/mine/delCode.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/mine/delCode.vue?vue&type=template&id=7480cbdc&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/mine/delCode.vue?vue&type=template&id=7480cbdc& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ })
+
+},[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2FdelCode\"}","common/runtime","common/vendor"]]]);
+});
+require('pages/mine/delCode.js');
 __wxRoute = 'pages/mine/addAliPay';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/mine/addAliPay.js';
 
 define('pages/mine/addAliPay.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){

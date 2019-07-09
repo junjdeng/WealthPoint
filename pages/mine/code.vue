@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="img" v-for="(item,index) in list" :key="index" v-if="item.images !=''" >
+		<view class="img" v-for="(item,index) in list" :key="index" v-if="item.images !=''" :data-url="'delCode?id='+item.id"  @click="navTo">
 			<image :src="baseUrl+item.images"></image>
 		</view>
 	</view>

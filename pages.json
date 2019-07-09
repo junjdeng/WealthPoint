@@ -257,6 +257,22 @@
 			}
 		},
 		{
+			"path": "pages/mine/delCode",
+			"style": {
+				"navigationBarTitleText": "二维码详情",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "删除",
+							"color":"#333333",
+							"fontSize": "14px",
+							"width":"80"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/mine/addAliPay",
 			"style": {
 				"navigationBarTitleText": "添加支付宝"
