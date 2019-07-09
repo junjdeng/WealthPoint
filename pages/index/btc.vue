@@ -16,7 +16,7 @@
 					<text >+{{item.num}}</text>%
 				</view>
 				<view class="high red" v-else>
-				<text>-{{item.num}}</text>%
+				<text>{{item.num}}</text>%
 				</view>
 			</view>
 		</view>
