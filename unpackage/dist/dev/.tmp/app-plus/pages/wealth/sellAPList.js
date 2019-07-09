@@ -348,6 +348,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         success: function success(res) {
           _common.default.TostUtil(res.data.message);
           if (res.data.status === 200) {
+            _common.default.balance();
             that.getList('confirm');
           }
         } });

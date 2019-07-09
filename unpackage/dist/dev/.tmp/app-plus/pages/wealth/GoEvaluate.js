@@ -315,6 +315,7 @@ var _default = { data: function data() {return { flag: true, items: [{ value: '1
             if (res.data.status === 200) {
               that.flag = true;
               setTimeout(function () {
+                _common.default.balance();
                 uni.navigateBack();
               }, 1000);
             }

@@ -105,6 +105,10 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import uCharts from '@/components/u-charts/u-charts.js';
+	import  '../../common/hmac-sha256.js'
+	import '../../common/base64.js'
+	/* console.log(CryptoJS.HmacSHA256("Message", "secret")) */
+	console.log(Base64.encode('我在这里'))
 	var _self;
 	var canvaColumn = null;
 	var canvas = null;
@@ -157,6 +161,7 @@
 		methods: {
 			getBTC() {
 				let that = this;
+				
 				let Signature =
 					'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
 					uni.request({
@@ -165,9 +170,9 @@
 							symbol: 'btcusdt',
 							/* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
 							SignatureVersion: 2,
-							SignatureMethod: 'HmacSHA256',
-							Signature:SignatureMethod(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85'),
-							SecretKey: '533c1d05-e6745887-d192682d-90e85',
+							SignatureMethod: 'HmacSHA256',*/
+							/* Signature:Base64.encode(CryptoJS(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85')), */
+							/* SecretKey: '533c1d05-e6745887-d192682d-90e85',
 							AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */
 						},
 						header: {

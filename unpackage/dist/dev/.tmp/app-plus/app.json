@@ -16,6 +16,7 @@
     "pages/wealth/walletDetail",
     "pages/wealth/wallet1",
     "pages/wealth/buyAP",
+    "pages/wealth/myMoney",
     "pages/wealth/buyAPList",
     "pages/wealth/buyRecord",
     "pages/wealth/OrderConfirm",

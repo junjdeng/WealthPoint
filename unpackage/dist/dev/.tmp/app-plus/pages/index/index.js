@@ -204,7 +204,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
+var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
+__webpack_require__(/*! ../../common/hmac-sha256.js */ "../../../../test/WealthPoint/common/hmac-sha256.js");
+__webpack_require__(/*! ../../common/base64.js */ "../../../../test/WealthPoint/common/base64.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
+/* console.log(CryptoJS.HmacSHA256("Message", "secret")) */
+console.log(Base64.encode('我在这里'), " at pages\\index\\index.vue:111");
 var _self;
 var canvaColumn = null;
 var canvas = null;var _default =
@@ -257,6 +261,7 @@ var canvas = null;var _default =
   methods: {
     getBTC: function getBTC() {
       var that = this;
+
       var Signature =
       'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
       uni.request({
@@ -265,10 +270,10 @@ var canvas = null;var _default =
           symbol: 'btcusdt'
           /* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
                             SignatureVersion: 2,
-                            SignatureMethod: 'HmacSHA256',
-                            Signature:SignatureMethod(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85'),
-                            SecretKey: '533c1d05-e6745887-d192682d-90e85',
-                            AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */ },
+                            SignatureMethod: 'HmacSHA256',*/
+          /* Signature:Base64.encode(CryptoJS(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85')), */
+          /* SecretKey: '533c1d05-e6745887-d192682d-90e85',
+                                                                                                                     AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */ },
 
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -277,7 +282,7 @@ var canvas = null;var _default =
 
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\index\\index.vue:180");
+          console.log(res, " at pages\\index\\index.vue:185");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -288,7 +293,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:191");
+          console.log(res, 4, " at pages\\index\\index.vue:196");
           //that.getBTC();
         } });
 

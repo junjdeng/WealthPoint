@@ -188,11 +188,12 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
     uniIcon: uniIcon },
 
   onShow: function onShow() {
+    var that = this;
     (0, _request.djRequest)({
       url: '/api/member/balance',
       method: 'GET',
       success: function success(res) {
-        console.log(res, " at pages\\mine\\mine.vue:95");
+        console.log(res, " at pages\\mine\\mine.vue:96");
       } });
 
   },

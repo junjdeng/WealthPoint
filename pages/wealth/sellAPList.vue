@@ -117,6 +117,7 @@
 					success:function(res){
 						common.TostUtil(res.data.message);
 						if(res.data.status===200){
+							common.balance();
 							that.getList('confirm');
 						}
 					}

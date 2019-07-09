@@ -88,6 +88,7 @@
 			uniIcon
 		},
 		onShow() {
+			let that = this;
 			djRequest({
 				url: '/api/member/balance',
 				method: 'GET',

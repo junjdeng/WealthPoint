@@ -34,7 +34,7 @@
 						url: '/api/seed/harvest',
 						method: 'POST',
 						data: {
-							Id: that.id
+							Id: id
 						},
 						success: function(res) {
 							if (res.data.status === 200) {

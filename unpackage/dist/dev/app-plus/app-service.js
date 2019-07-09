@@ -1639,6 +1639,12 @@ function gz$gwx_52(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_52)return __WXML_GLOBAL__.ops_cached.$gwx_52
 __WXML_GLOBAL__.ops_cached.$gwx_52=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_52);return __WXML_GLOBAL__.ops_cached.$gwx_52
+}
+function gz$gwx_53(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_53)return __WXML_GLOBAL__.ops_cached.$gwx_53
+__WXML_GLOBAL__.ops_cached.$gwx_53=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'#CCA366'])
 Z([3,'__l'])
 Z([3,'__e'])
@@ -1648,12 +1654,6 @@ Z([[4],[[5],[[4],[[5],[[5],[1,'^clickItem']],[[4],[[5],[[4],[[5],[1,'onClickItem
 Z([3,'text'])
 Z([[7],[3,'items']])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_52);return __WXML_GLOBAL__.ops_cached.$gwx_52
-}
-function gz$gwx_53(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_53)return __WXML_GLOBAL__.ops_cached.$gwx_53
-__WXML_GLOBAL__.ops_cached.$gwx_53=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_53);return __WXML_GLOBAL__.ops_cached.$gwx_53
 }
 function gz$gwx_54(){
@@ -1684,23 +1684,29 @@ function gz$gwx_58(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_58)return __WXML_GLOBAL__.ops_cached.$gwx_58
 __WXML_GLOBAL__.ops_cached.$gwx_58=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_58);return __WXML_GLOBAL__.ops_cached.$gwx_58
+}
+function gz$gwx_59(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_59)return __WXML_GLOBAL__.ops_cached.$gwx_59
+__WXML_GLOBAL__.ops_cached.$gwx_59=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'_span'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'navTo']],[[4],[[5],[1,'$event']]]]]]]]]]])
-Z([3,'harvest'])
+Z([3,'myMoney'])
 Z([3,'__l'])
 Z([3,'forward'])
 Z([3,'#999999'])
 Z([3,'20'])
 Z(z[5])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_58);return __WXML_GLOBAL__.ops_cached.$gwx_58
+})(__WXML_GLOBAL__.ops_cached.$gwx_59);return __WXML_GLOBAL__.ops_cached.$gwx_59
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/uni-icon/uni-icon.wxml','./components/uni-load-more/uni-load-more.wxml','./components/uni-popup/uni-popup.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/charity/charity.wxml','./pages/charity/charityDetail.wxml','./pages/charity/charityHelp.wxml','./pages/charity/charityList.wxml','./pages/index/btc.wxml','./pages/index/chart.wxml','./pages/index/customSuggest.wxml','./pages/index/index.wxml','./pages/index/newsList.wxml','./pages/index/sign.wxml','./pages/index/wwallet.wxml','./pages/login/finishRegisterInfo.wxml','./pages/login/login.wxml','./pages/login/register.wxml','./pages/login/waitAgree.wxml','./pages/mine/addAliPay.wxml','./pages/mine/addCode.wxml','./pages/mine/alipayEdit.wxml','./pages/mine/code.wxml','./pages/mine/delCode.wxml','./pages/mine/getTool.wxml','./pages/mine/mine.wxml','./pages/mine/mine0.wxml','./pages/mine/mine1.wxml','./pages/mine/mine2.wxml','./pages/mine/mine3.wxml','./pages/mine/mine3Addbank.wxml','./pages/mine/mine4.wxml','./pages/mine/mine5.wxml','./pages/mine/mine5ResetPw.wxml','./pages/mine/mine6.wxml','./pages/mine/mine6Sell.wxml','./pages/mine/mine6Use.wxml','./pages/mine/mine7.wxml','./pages/mine/mine7Cards.wxml','./pages/mine/mine8.wxml','./pages/mine/reviseBank.wxml','./pages/wealth/GoEvaluate.wxml','./pages/wealth/OrderConfirm.wxml','./pages/wealth/buyAP.wxml','./pages/wealth/buyAPList.wxml','./pages/wealth/buyDetail.wxml','./pages/wealth/buyRecord.wxml','./pages/wealth/complaint.wxml','./pages/wealth/connectMember.wxml','./pages/wealth/harvest.wxml','./pages/wealth/sellAP.wxml','./pages/wealth/sellAPList.wxml','./pages/wealth/sellDetail.wxml','./pages/wealth/sellRecord.wxml','./pages/wealth/wallet.wxml','./pages/wealth/wallet1.wxml','./pages/wealth/walletDetail.wxml','./pages/wealth/wealth.wxml'];d_[x[0]]={}
+var x=['./components/uni-icon/uni-icon.wxml','./components/uni-load-more/uni-load-more.wxml','./components/uni-popup/uni-popup.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/charity/charity.wxml','./pages/charity/charityDetail.wxml','./pages/charity/charityHelp.wxml','./pages/charity/charityList.wxml','./pages/index/btc.wxml','./pages/index/chart.wxml','./pages/index/customSuggest.wxml','./pages/index/index.wxml','./pages/index/newsList.wxml','./pages/index/sign.wxml','./pages/index/wwallet.wxml','./pages/login/finishRegisterInfo.wxml','./pages/login/login.wxml','./pages/login/register.wxml','./pages/login/waitAgree.wxml','./pages/mine/addAliPay.wxml','./pages/mine/addCode.wxml','./pages/mine/alipayEdit.wxml','./pages/mine/code.wxml','./pages/mine/delCode.wxml','./pages/mine/getTool.wxml','./pages/mine/mine.wxml','./pages/mine/mine0.wxml','./pages/mine/mine1.wxml','./pages/mine/mine2.wxml','./pages/mine/mine3.wxml','./pages/mine/mine3Addbank.wxml','./pages/mine/mine4.wxml','./pages/mine/mine5.wxml','./pages/mine/mine5ResetPw.wxml','./pages/mine/mine6.wxml','./pages/mine/mine6Sell.wxml','./pages/mine/mine6Use.wxml','./pages/mine/mine7.wxml','./pages/mine/mine7Cards.wxml','./pages/mine/mine8.wxml','./pages/mine/reviseBank.wxml','./pages/wealth/GoEvaluate.wxml','./pages/wealth/OrderConfirm.wxml','./pages/wealth/buyAP.wxml','./pages/wealth/buyAPList.wxml','./pages/wealth/buyDetail.wxml','./pages/wealth/buyRecord.wxml','./pages/wealth/complaint.wxml','./pages/wealth/connectMember.wxml','./pages/wealth/harvest.wxml','./pages/wealth/myMoney.wxml','./pages/wealth/sellAP.wxml','./pages/wealth/sellAPList.wxml','./pages/wealth/sellDetail.wxml','./pages/wealth/sellRecord.wxml','./pages/wealth/wallet.wxml','./pages/wealth/wallet1.wxml','./pages/wealth/walletDetail.wxml','./pages/wealth/wealth.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -2300,14 +2306,14 @@ e_[x[50]]={f:m50,j:[],i:[],ti:[],ic:[]}
 d_[x[51]]={}
 var m51=function(e,s,r,gg){
 var z=gz$gwx_52()
-var hQE=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,hQE)
 return r
 }
 e_[x[51]]={f:m51,j:[],i:[],ti:[],ic:[]}
 d_[x[52]]={}
 var m52=function(e,s,r,gg){
 var z=gz$gwx_53()
+var oRE=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,oRE)
 return r
 }
 e_[x[52]]={f:m52,j:[],i:[],ti:[],ic:[]}
@@ -2338,13 +2344,19 @@ e_[x[56]]={f:m56,j:[],i:[],ti:[],ic:[]}
 d_[x[57]]={}
 var m57=function(e,s,r,gg){
 var z=gz$gwx_58()
-var eXE=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
-var bYE=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(eXE,bYE)
-_(r,eXE)
 return r
 }
 e_[x[57]]={f:m57,j:[],i:[],ti:[],ic:[]}
+d_[x[58]]={}
+var m58=function(e,s,r,gg){
+var z=gz$gwx_59()
+var bYE=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
+var oZE=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(bYE,oZE)
+_(r,bYE)
+return r
+}
+e_[x[58]]={f:m58,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -2362,7 +2374,7 @@ return root;
 
 
 
-__wxAppCode__['app.json']={"pages":["pages/index/index","pages/index/newsList","pages/index/btc","pages/index/customSuggest","pages/index/chart","pages/index/sign","pages/index/wwallet","pages/charity/charity","pages/charity/charityList","pages/charity/charityDetail","pages/charity/charityHelp","pages/wealth/wealth","pages/wealth/wallet","pages/wealth/wallet1","pages/wealth/buyAP","pages/wealth/buyAPList","pages/wealth/buyRecord","pages/wealth/OrderConfirm","pages/wealth/GoEvaluate","pages/wealth/complaint","pages/wealth/buyDetail","pages/wealth/sellRecord","pages/wealth/sellAP","pages/wealth/sellDetail","pages/wealth/harvest","pages/wealth/sellAPList","pages/wealth/connectMember","pages/mine/mine","pages/mine/mine0","pages/mine/mine1","pages/mine/mine2","pages/mine/mine3","pages/mine/mine4","pages/mine/delCode","pages/mine/addAliPay","pages/mine/alipayEdit","pages/mine/mine5","pages/mine/mine6","pages/mine/mine7","pages/mine/mine8","pages/mine/code","pages/mine/addCode","pages/mine/getTool","pages/mine/mine3Addbank","pages/mine/mine5ResetPw","pages/mine/mine6Sell","pages/mine/mine6Use","pages/mine/mine7Cards","pages/login/login","pages/login/finishRegisterInfo","pages/login/waitAgree","pages/login/register","pages/mine/reviseBank"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F5F5F5","bounce":"none"},"tabBar":{"color":"#999999","selectedColor":"#D03C29","borderStyle":"black","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","iconPath":"static/images/tabbar1.png","selectedIconPath":"static/images/tabbar1_seled.png","text":"首页"},{"pagePath":"pages/wealth/wealth","iconPath":"static/images/tabbar3.png","selectedIconPath":"static/images/tabbar3_seled.png","text":"财富"},{"pagePath":"pages/charity/charity","iconPath":"static/images/tabbar2.png","selectedIconPath":"static/images/tabbar2_seled.png","text":"公益"},{"pagePath":"pages/mine/mine","iconPath":"static/images/tabbar4.png","selectedIconPath":"static/images/tabbar4_seled.png","text":"我的"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Wealth Point","compilerVersion":"2.0.1","usingComponents":{}};
+__wxAppCode__['app.json']={"pages":["pages/index/index","pages/index/newsList","pages/index/btc","pages/index/customSuggest","pages/index/chart","pages/index/sign","pages/index/wwallet","pages/charity/charity","pages/charity/charityList","pages/charity/charityDetail","pages/charity/charityHelp","pages/wealth/wealth","pages/wealth/wallet","pages/wealth/walletDetail","pages/wealth/wallet1","pages/wealth/buyAP","pages/wealth/buyAPList","pages/wealth/buyRecord","pages/wealth/OrderConfirm","pages/wealth/GoEvaluate","pages/wealth/complaint","pages/wealth/buyDetail","pages/wealth/sellRecord","pages/wealth/sellAP","pages/wealth/sellDetail","pages/wealth/harvest","pages/wealth/sellAPList","pages/wealth/connectMember","pages/mine/mine","pages/mine/mine0","pages/mine/mine1","pages/mine/mine2","pages/mine/mine3","pages/mine/mine4","pages/mine/delCode","pages/mine/addAliPay","pages/mine/alipayEdit","pages/mine/mine5","pages/mine/mine6","pages/mine/mine7","pages/mine/mine8","pages/mine/code","pages/mine/addCode","pages/mine/getTool","pages/mine/mine3Addbank","pages/mine/mine5ResetPw","pages/mine/mine6Sell","pages/mine/mine6Use","pages/mine/mine7Cards","pages/login/login","pages/login/finishRegisterInfo","pages/login/waitAgree","pages/login/register","pages/mine/reviseBank"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F5F5F5","bounce":"none"},"tabBar":{"color":"#999999","selectedColor":"#D03C29","borderStyle":"black","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","iconPath":"static/images/tabbar1.png","selectedIconPath":"static/images/tabbar1_seled.png","text":"首页"},{"pagePath":"pages/wealth/wealth","iconPath":"static/images/tabbar3.png","selectedIconPath":"static/images/tabbar3_seled.png","text":"财富"},{"pagePath":"pages/charity/charity","iconPath":"static/images/tabbar2.png","selectedIconPath":"static/images/tabbar2_seled.png","text":"公益"},{"pagePath":"pages/mine/mine","iconPath":"static/images/tabbar4.png","selectedIconPath":"static/images/tabbar4_seled.png","text":"我的"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Wealth Point","compilerVersion":"2.0.1","usingComponents":{}};
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 __wxAppCode__['components/uni-icon/uni-icon.json']={"usingComponents":{},"component":true};
@@ -2512,6 +2524,9 @@ __wxAppCode__['pages/wealth/GoEvaluate.wxml']=$gwx('./pages/wealth/GoEvaluate.wx
 __wxAppCode__['pages/wealth/harvest.json']={"navigationBarTitleText":"分红中的AP","usingComponents":{}};
 __wxAppCode__['pages/wealth/harvest.wxml']=$gwx('./pages/wealth/harvest.wxml');
 
+__wxAppCode__['pages/wealth/myMoney.json']={"navigationBarTitleText":"我的收益","usingComponents":{}};
+__wxAppCode__['pages/wealth/myMoney.wxml']=$gwx('./pages/wealth/myMoney.wxml');
+
 __wxAppCode__['pages/wealth/OrderConfirm.json']={"navigationBarTitleText":"订单支付详情","usingComponents":{}};
 __wxAppCode__['pages/wealth/OrderConfirm.wxml']=$gwx('./pages/wealth/OrderConfirm.wxml');
 
@@ -2527,7 +2542,7 @@ __wxAppCode__['pages/wealth/sellDetail.wxml']=$gwx('./pages/wealth/sellDetail.wx
 __wxAppCode__['pages/wealth/sellRecord.json']={"navigationBarTitleText":"已退租记录","usingComponents":{}};
 __wxAppCode__['pages/wealth/sellRecord.wxml']=$gwx('./pages/wealth/sellRecord.wxml');
 
-__wxAppCode__['pages/wealth/wallet.json']={"navigationBarTitleText":"希望钱包","usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
+__wxAppCode__['pages/wealth/wallet.json']={"navigationBarTitleText":"希望钱包","titleNView":{"buttons":[{"text":"明细","color":"#CCA366","fontSize":"14px","width":"80"}]},"usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
 __wxAppCode__['pages/wealth/wallet.wxml']=$gwx('./pages/wealth/wallet.wxml');
 
 __wxAppCode__['pages/wealth/wallet1.json']={"navigationBarTitleText":"理财钱包","usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
@@ -2919,6 +2934,253 @@ define('common/runtime.js',function(require, module, exports, window, document, 
 define('common/vendor.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
+/***/ "../../../../test/WealthPoint/common/base64.js":
+/*!********************************************!*\
+  !*** D:/test/WealthPoint/common/base64.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__; /*
+               *  base64.js
+               *
+               *  Licensed under the BSD 3-Clause License.
+               *    http://opensource.org/licenses/BSD-3-Clause
+               *
+               *  References:
+               *    http://en.wikipedia.org/wiki/Base64
+               */
+;(function (global, factory) {
+   true ?
+  module.exports = factory(global) :
+  undefined;
+})(
+typeof self !== 'undefined' ? self :
+typeof window !== 'undefined' ? window :
+typeof global !== 'undefined' ? global : void 0,
+
+function (global) {
+  'use strict';
+  // existing version for noConflict()
+  global = global || {};
+  var _Base64 = global.Base64;
+  var version = "2.5.1";
+  // if node.js and NOT React Native, we use Buffer
+  var buffer;
+  if ( true && module.exports) {
+    try {
+      buffer = eval("require('buffer').Buffer");
+    } catch (err) {
+      buffer = undefined;
+    }
+  }
+  // constants
+  var b64chars =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var b64tab = function (bin) {
+    var t = {};
+    for (var i = 0, l = bin.length; i < l; i++) {t[bin.charAt(i)] = i;}
+    return t;
+  }(b64chars);
+  var fromCharCode = String.fromCharCode;
+  // encoder stuff
+  var cb_utob = function cb_utob(c) {
+    if (c.length < 2) {
+      var cc = c.charCodeAt(0);
+      return cc < 0x80 ? c :
+      cc < 0x800 ? fromCharCode(0xc0 | cc >>> 6) +
+      fromCharCode(0x80 | cc & 0x3f) :
+      fromCharCode(0xe0 | cc >>> 12 & 0x0f) +
+      fromCharCode(0x80 | cc >>> 6 & 0x3f) +
+      fromCharCode(0x80 | cc & 0x3f);
+    } else {
+      var cc = 0x10000 +
+      (c.charCodeAt(0) - 0xD800) * 0x400 + (
+      c.charCodeAt(1) - 0xDC00);
+      return fromCharCode(0xf0 | cc >>> 18 & 0x07) +
+      fromCharCode(0x80 | cc >>> 12 & 0x3f) +
+      fromCharCode(0x80 | cc >>> 6 & 0x3f) +
+      fromCharCode(0x80 | cc & 0x3f);
+    }
+  };
+  var re_utob = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g;
+  var utob = function utob(u) {
+    return u.replace(re_utob, cb_utob);
+  };
+  var cb_encode = function cb_encode(ccc) {
+    var padlen = [0, 2, 1][ccc.length % 3],
+    ord = ccc.charCodeAt(0) << 16 |
+    (ccc.length > 1 ? ccc.charCodeAt(1) : 0) << 8 | (
+    ccc.length > 2 ? ccc.charCodeAt(2) : 0),
+    chars = [
+    b64chars.charAt(ord >>> 18),
+    b64chars.charAt(ord >>> 12 & 63),
+    padlen >= 2 ? '=' : b64chars.charAt(ord >>> 6 & 63),
+    padlen >= 1 ? '=' : b64chars.charAt(ord & 63)];
+
+    return chars.join('');
+  };
+  var btoa = global.btoa ? function (b) {
+    return global.btoa(b);
+  } : function (b) {
+    return b.replace(/[\s\S]{1,3}/g, cb_encode);
+  };
+  var _encode = buffer ?
+  buffer.from && Uint8Array && buffer.from !== Uint8Array.from ?
+  function (u) {
+    return (u.constructor === buffer.constructor ? u : buffer.from(u)).
+    toString('base64');
+  } :
+  function (u) {
+    return (u.constructor === buffer.constructor ? u : new buffer(u)).
+    toString('base64');
+  } :
+  function (u) {return btoa(utob(u));};
+
+  var encode = function encode(u, urisafe) {
+    return !urisafe ?
+    _encode(String(u)) :
+    _encode(String(u)).replace(/[+\/]/g, function (m0) {
+      return m0 == '+' ? '-' : '_';
+    }).replace(/=/g, '');
+  };
+  var encodeURI = function encodeURI(u) {return encode(u, true);};
+  // decoder stuff
+  var re_btou = new RegExp([
+  '[\xC0-\xDF][\x80-\xBF]',
+  '[\xE0-\xEF][\x80-\xBF]{2}',
+  '[\xF0-\xF7][\x80-\xBF]{3}'].
+  join('|'), 'g');
+  var cb_btou = function cb_btou(cccc) {
+    switch (cccc.length) {
+      case 4:
+        var cp = (0x07 & cccc.charCodeAt(0)) << 18 |
+        (0x3f & cccc.charCodeAt(1)) << 12 |
+        (0x3f & cccc.charCodeAt(2)) << 6 |
+        0x3f & cccc.charCodeAt(3),
+        offset = cp - 0x10000;
+        return fromCharCode((offset >>> 10) + 0xD800) +
+        fromCharCode((offset & 0x3FF) + 0xDC00);
+      case 3:
+        return fromCharCode(
+        (0x0f & cccc.charCodeAt(0)) << 12 |
+        (0x3f & cccc.charCodeAt(1)) << 6 |
+        0x3f & cccc.charCodeAt(2));
+
+      default:
+        return fromCharCode(
+        (0x1f & cccc.charCodeAt(0)) << 6 |
+        0x3f & cccc.charCodeAt(1));}
+
+
+  };
+  var btou = function btou(b) {
+    return b.replace(re_btou, cb_btou);
+  };
+  var cb_decode = function cb_decode(cccc) {
+    var len = cccc.length,
+    padlen = len % 4,
+    n = (len > 0 ? b64tab[cccc.charAt(0)] << 18 : 0) | (
+    len > 1 ? b64tab[cccc.charAt(1)] << 12 : 0) | (
+    len > 2 ? b64tab[cccc.charAt(2)] << 6 : 0) | (
+    len > 3 ? b64tab[cccc.charAt(3)] : 0),
+    chars = [
+    fromCharCode(n >>> 16),
+    fromCharCode(n >>> 8 & 0xff),
+    fromCharCode(n & 0xff)];
+
+    chars.length -= [0, 0, 2, 1][padlen];
+    return chars.join('');
+  };
+  var _atob = global.atob ? function (a) {
+    return global.atob(a);
+  } : function (a) {
+    return a.replace(/\S{1,4}/g, cb_decode);
+  };
+  var atob = function atob(a) {
+    return _atob(String(a).replace(/[^A-Za-z0-9\+\/]/g, ''));
+  };
+  var _decode = buffer ?
+  buffer.from && Uint8Array && buffer.from !== Uint8Array.from ?
+  function (a) {
+    return (a.constructor === buffer.constructor ?
+    a : buffer.from(a, 'base64')).toString();
+  } :
+  function (a) {
+    return (a.constructor === buffer.constructor ?
+    a : new buffer(a, 'base64')).toString();
+  } :
+  function (a) {return btou(_atob(a));};
+  var decode = function decode(a) {
+    return _decode(
+    String(a).replace(/[-_]/g, function (m0) {return m0 == '-' ? '+' : '/';}).
+    replace(/[^A-Za-z0-9\+\/]/g, ''));
+
+  };
+  var noConflict = function noConflict() {
+    var Base64 = global.Base64;
+    global.Base64 = _Base64;
+    return Base64;
+  };
+  // export Base64
+  global.Base64 = {
+    VERSION: version,
+    atob: atob,
+    btoa: btoa,
+    fromBase64: decode,
+    toBase64: encode,
+    utob: utob,
+    encode: encode,
+    encodeURI: encodeURI,
+    btou: btou,
+    decode: decode,
+    noConflict: noConflict,
+    __buffer__: buffer };
+
+  // if ES5 is available, make Base64.extendString() available
+  if (typeof Object.defineProperty === 'function') {
+    var noEnum = function noEnum(v) {
+      return { value: v, enumerable: false, writable: true, configurable: true };
+    };
+    global.Base64.extendString = function () {
+      Object.defineProperty(
+      String.prototype, 'fromBase64', noEnum(function () {
+        return decode(this);
+      }));
+      Object.defineProperty(
+      String.prototype, 'toBase64', noEnum(function (urisafe) {
+        return encode(this, urisafe);
+      }));
+      Object.defineProperty(
+      String.prototype, 'toBase64URI', noEnum(function () {
+        return encode(this, true);
+      }));
+    };
+  }
+  //
+  // export Base64 to the namespace
+  //
+  if (global['Meteor']) {// Meteor.js
+    Base64 = global.Base64;
+  }
+  // module.exports and AMD are mutually exclusive.
+  // module.exports has precedence.
+  if ( true && module.exports) {
+    module.exports.Base64 = global.Base64;
+  } else
+  if (true) {
+    // AMD. Register as an anonymous module.
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {return global.Base64;}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  }
+  // that's it!
+  return { Base64: global.Base64 };
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../software/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "../../../../test/WealthPoint/common/common.js":
 /*!********************************************!*\
   !*** D:/test/WealthPoint/common/common.js ***!
@@ -3099,6 +3361,256 @@ var formatLeftDate = _vue.default.filter('formatLeftDate');var _default =
   formatDate: formatDate,
   yuan: yuan,
   formatLeftDate: formatLeftDate };exports.default = _default;
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/common/hmac-sha256.js":
+/*!*************************************************!*\
+  !*** D:/test/WealthPoint/common/hmac-sha256.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+ /*
+               CryptoJS v3.1.2
+               code.google.com/p/crypto-js
+               (c) 2009-2013 by Jeff Mott. All rights reserved.
+               code.google.com/p/crypto-js/wiki/License
+               */
+var CryptoJS = CryptoJS || function (h, s) {
+  var f = {},g = f.lib = {},q = function q() {
+  },m = g.Base = {
+    extend: function extend(a) {
+      q.prototype = this;
+      var c = new q();
+      a && c.mixIn(a);
+      c.hasOwnProperty("init") || (c.init = function () {
+        c.$super.init.apply(this, arguments);
+      });
+      c.init.prototype = c;
+      c.$super = this;
+      return c;
+    }, create: function create() {
+      var a = this.extend();
+      a.init.apply(a, arguments);
+      return a;
+    }, init: function init() {
+    }, mixIn: function mixIn(a) {
+      for (var c in a) {a.hasOwnProperty(c) && (this[c] = a[c]);}
+      a.hasOwnProperty("toString") && (this.toString = a.toString);
+    }, clone: function clone() {
+      return this.init.prototype.extend(this);
+    } },
+
+  r = g.WordArray = m.extend({
+    init: function init(a, c) {
+      a = this.words = a || [];
+      this.sigBytes = c != s ? c : 4 * a.length;
+    }, toString: function toString(a) {
+      return (a || k).stringify(this);
+    }, concat: function concat(a) {
+      var c = this.words,d = a.words,b = this.sigBytes;
+      a = a.sigBytes;
+      this.clamp();
+      if (b % 4) for (var e = 0; e < a; e++) {c[b + e >>> 2] |= (d[e >>> 2] >>> 24 - 8 * (e % 4) & 255) << 24 - 8 * ((b + e) % 4);} else if (65535 < d.length) for (e = 0; e < a; e += 4) {c[b + e >>> 2] = d[e >>> 2];} else c.push.apply(c, d);
+      this.sigBytes += a;
+      return this;
+    }, clamp: function clamp() {
+      var a = this.words,c = this.sigBytes;
+      a[c >>> 2] &= 4294967295 <<
+      32 - 8 * (c % 4);
+      a.length = h.ceil(c / 4);
+    }, clone: function clone() {
+      var a = m.clone.call(this);
+      a.words = this.words.slice(0);
+      return a;
+    }, random: function random(a) {
+      for (var c = [], d = 0; d < a; d += 4) {c.push(4294967296 * h.random() | 0);}
+      return new r.init(c, a);
+    } }),
+  l = f.enc = {},k = l.Hex = {
+    stringify: function stringify(a) {
+      var c = a.words;
+      a = a.sigBytes;
+      for (var d = [], b = 0; b < a; b++) {
+        var e = c[b >>> 2] >>> 24 - 8 * (b % 4) & 255;
+        d.push((e >>> 4).toString(16));
+        d.push((e & 15).toString(16));
+      }
+      return d.join("");
+    }, parse: function parse(a) {
+      for (var c = a.length, d = [], b = 0; b < c; b += 2) {d[b >>> 3] |= parseInt(a.substr(b,
+        2), 16) << 24 - 4 * (b % 8);}
+      return new r.init(d, c / 2);
+    } },
+  n = l.Latin1 = {
+    stringify: function stringify(a) {
+      var c = a.words;
+      a = a.sigBytes;
+      for (var d = [], b = 0; b < a; b++) {d.push(String.fromCharCode(c[b >>> 2] >>> 24 - 8 * (b % 4) & 255));}
+      return d.join("");
+    }, parse: function parse(a) {
+      for (var c = a.length, d = [],
+      b = 0; b < c; b++) {d[b >>> 2] |= (a.charCodeAt(b) & 255) << 24 - 8 * (b % 4);}
+      return new r.init(d, c);
+    } },
+  j = l.Utf8 = {
+    stringify: function stringify(a) {
+      try {
+        return decodeURIComponent(escape(n.stringify(a)));
+      } catch (c) {
+        throw Error("Malformed UTF-8 data");
+      }
+    }, parse: function parse(a) {
+      return n.parse(unescape(encodeURIComponent(a)));
+    } },
+
+  u = g.BufferedBlockAlgorithm = m.extend({
+    reset: function reset() {
+      this._data = new r.init();
+      this._nDataBytes = 0;
+    }, _append: function _append(a) {
+      "string" == typeof a && (a = j.parse(a));
+      this._data.concat(a);
+      this._nDataBytes += a.sigBytes;
+    }, _process: function _process(a) {
+      var c = this._data,d = c.words,b = c.sigBytes,e = this.blockSize,f = b / (4 * e),
+      f = a ? h.ceil(f) : h.max((f | 0) - this._minBufferSize, 0);
+      a = f * e;
+      b = h.min(4 * a, b);
+      if (a) {
+        for (var g = 0; g < a; g += e) {this._doProcessBlock(d, g);}
+        g = d.splice(0, a);
+        c.sigBytes -= b;
+      }
+      return new r.init(g, b);
+    }, clone: function clone() {
+      var a = m.clone.call(this);
+      a._data = this._data.clone();
+      return a;
+    }, _minBufferSize: 0 });
+
+  g.Hasher = u.extend({
+    cfg: m.extend(), init: function init(a) {
+      this.cfg = this.cfg.extend(a);
+      this.reset();
+    }, reset: function reset() {
+      u.reset.call(this);
+      this._doReset();
+    }, update: function update(a) {
+      this._append(a);
+      this._process();
+      return this;
+    }, finalize: function finalize(a) {
+      a && this._append(a);
+      return this._doFinalize();
+    }, blockSize: 16, _createHelper: function _createHelper(a) {
+      return function (c, d) {
+        return new a.init(d).finalize(c);
+      };
+    }, _createHmacHelper: function _createHmacHelper(a) {
+      return function (c, d) {
+        return new t.HMAC.init(a,
+        d).finalize(c);
+      };
+    } });
+
+  var t = f.algo = {};
+  return f;
+}(Math);
+(function (h) {
+  for (var s = CryptoJS, f = s.lib, g = f.WordArray, q = f.Hasher, f = s.algo, m = [], r = [], l = function l(a) {
+    return 4294967296 * (a - (a | 0)) | 0;
+  }, k = 2, n = 0; 64 > n;) {
+    var j;
+    a: {
+      j = k;
+      for (var u = h.sqrt(j), t = 2; t <= u; t++) {if (!(j % t)) {
+          j = !1;
+          break a;
+        }}
+      j = !0;
+    }
+    j && (8 > n && (m[n] = l(h.pow(k, 0.5))), r[n] = l(h.pow(k, 1 / 3)), n++);
+    k++;
+  }
+  var a = [],f = f.SHA256 = q.extend({
+    _doReset: function _doReset() {
+      this._hash = new g.init(m.slice(0));
+    }, _doProcessBlock: function _doProcessBlock(c, d) {
+      for (var b = this._hash.words, e = b[0], f = b[1], g = b[2], j = b[3], h = b[4], m = b[5], n = b[6],
+      q = b[7], p = 0; 64 > p; p++) {
+        if (16 > p) a[p] =
+        c[d + p] | 0;else {
+          var k = a[p - 15],l = a[p - 2];
+          a[p] = ((k << 25 | k >>> 7) ^ (k << 14 | k >>> 18) ^ k >>> 3) + a[p - 7] + ((l << 15 | l >>> 17) ^ (l << 13 | l >>> 19) ^ l >>> 10) + a[p - 16];
+        }
+        k = q + ((h << 26 | h >>> 6) ^ (h << 21 | h >>> 11) ^ (h << 7 | h >>> 25)) + (h & m ^ ~h & n) + r[p] + a[p];
+        l = ((e << 30 | e >>> 2) ^ (e << 19 | e >>> 13) ^ (e << 10 | e >>> 22)) + (e & f ^ e & g ^ f & g);
+        q = n;
+        n = m;
+        m = h;
+        h = j + k | 0;
+        j = g;
+        g = f;
+        f = e;
+        e = k + l | 0;
+      }
+      b[0] = b[0] + e | 0;
+      b[1] = b[1] + f | 0;
+      b[2] = b[2] + g | 0;
+      b[3] = b[3] + j | 0;
+      b[4] = b[4] + h | 0;
+      b[5] = b[5] + m | 0;
+      b[6] = b[6] + n | 0;
+      b[7] = b[7] + q | 0;
+    }, _doFinalize: function _doFinalize() {
+      var a = this._data,d = a.words,b = 8 * this._nDataBytes,e = 8 * a.sigBytes;
+      d[e >>> 5] |= 128 << 24 - e % 32;
+      d[(e + 64 >>> 9 << 4) + 14] = h.floor(b / 4294967296);
+      d[(e + 64 >>> 9 << 4) + 15] = b;
+      a.sigBytes = 4 * d.length;
+      this._process();
+      return this._hash;
+    }, clone: function clone() {
+      var a = q.clone.call(this);
+      a._hash = this._hash.clone();
+      return a;
+    } });
+
+  s.SHA256 = q._createHelper(f);
+  s.HmacSHA256 = q._createHmacHelper(f);
+})(Math);
+(function () {
+  var h = CryptoJS,s = h.enc.Utf8;
+  h.algo.HMAC = h.lib.Base.extend({
+    init: function init(f, g) {
+      f = this._hasher = new f.init();
+      "string" == typeof g && (g = s.parse(g));
+      var h = f.blockSize,m = 4 * h;
+      g.sigBytes > m && (g = f.finalize(g));
+      g.clamp();
+      for (var r = this._oKey = g.clone(), l = this._iKey = g.clone(), k = r.words, n = l.words,
+      j = 0; j < h; j++) {k[j] ^= 1549556828, n[j] ^= 909522486;}
+      r.sigBytes = l.sigBytes = m;
+      this.reset();
+    }, reset: function reset() {
+      var f = this._hasher;
+      f.reset();
+      f.update(this._iKey);
+    }, update: function update(f) {
+      this._hasher.update(f);
+      return this;
+    }, finalize: function finalize(f) {
+      var g =
+      this._hasher;
+      f = g.finalize(f);
+      g.reset();
+      return g.finalize(this._oKey.clone().concat(f));
+    } });
+
+})();
 
 /***/ }),
 
@@ -7364,6 +7876,23 @@ createPage(_connectMember.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _harvest = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/harvest.vue */ "../../../../test/WealthPoint/pages/wealth/harvest.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_harvest.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FmyMoney\"}":
+/*!***********************************************************************!*\
+  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FmyMoney"} ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _myMoney = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/myMoney.vue */ "../../../../test/WealthPoint/pages/wealth/myMoney.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_myMoney.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
@@ -16693,7 +17222,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
+var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
+__webpack_require__(/*! ../../common/hmac-sha256.js */ "../../../../test/WealthPoint/common/hmac-sha256.js");
+__webpack_require__(/*! ../../common/base64.js */ "../../../../test/WealthPoint/common/base64.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
+/* console.log(CryptoJS.HmacSHA256("Message", "secret")) */
+console.log(Base64.encode('我在这里'), " at pages\\index\\index.vue:111");
 var _self;
 var canvaColumn = null;
 var canvas = null;var _default =
@@ -16746,6 +17279,7 @@ var canvas = null;var _default =
   methods: {
     getBTC: function getBTC() {
       var that = this;
+
       var Signature =
       'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
       uni.request({
@@ -16754,10 +17288,10 @@ var canvas = null;var _default =
           symbol: 'btcusdt'
           /* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
                             SignatureVersion: 2,
-                            SignatureMethod: 'HmacSHA256',
-                            Signature:SignatureMethod(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85'),
-                            SecretKey: '533c1d05-e6745887-d192682d-90e85',
-                            AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */ },
+                            SignatureMethod: 'HmacSHA256',*/
+          /* Signature:Base64.encode(CryptoJS(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85')), */
+          /* SecretKey: '533c1d05-e6745887-d192682d-90e85',
+                                                                                                                     AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */ },
 
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -16766,7 +17300,7 @@ var canvas = null;var _default =
 
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\index\\index.vue:180");
+          console.log(res, " at pages\\index\\index.vue:185");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -16777,7 +17311,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:191");
+          console.log(res, 4, " at pages\\index\\index.vue:196");
           //that.getBTC();
         } });
 
@@ -20603,6 +21137,271 @@ render._withStripped = true
 },[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyAP\"}","common/runtime","common/vendor"]]]);
 });
 require('pages/wealth/buyAP.js');
+__wxRoute = 'pages/wealth/myMoney';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/wealth/myMoney.js';
+
+define('pages/wealth/myMoney.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/wealth/myMoney"],{
+
+/***/ "../../../../test/WealthPoint/pages/wealth/myMoney.vue":
+/*!****************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/myMoney.vue ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _myMoney_vue_vue_type_template_id_5196ca70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./myMoney.vue?vue&type=template&id=5196ca70& */ "../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=template&id=5196ca70&");
+/* harmony import */ var _myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./myMoney.vue?vue&type=script&lang=js& */ "../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./myMoney.vue?vue&type=style&index=0&lang=css& */ "../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _myMoney_vue_vue_type_template_id_5196ca70___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _myMoney_vue_vue_type_template_id_5196ca70___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "test/WealthPoint/pages/wealth/myMoney.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/myMoney.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./myMoney.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=script&lang=js&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/myMoney.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./myMoney.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=template&id=5196ca70&":
+/*!***********************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/myMoney.vue?vue&type=template&id=5196ca70& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_template_id_5196ca70___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./myMoney.vue?vue&type=template&id=5196ca70& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=template&id=5196ca70&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_template_id_5196ca70___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_myMoney_vue_vue_type_template_id_5196ca70___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/wealth/myMoney.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
+var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [] };}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(550);this.cHeight = uni.upx2px(500);this.getServerData();},
+  mounted: function mounted() {
+    _self = this;
+    this.cWidth = uni.upx2px(550);
+    this.cHeight = uni.upx2px(500);
+    this.getServerData();
+  },
+  methods: {
+    getServerData: function getServerData() {
+
+      (0, _request.djRequest)({
+        url: '/api/statistics/index',
+        method: 'GET',
+        success: function success(res) {
+          console.log(res, " at pages\\wealth\\myMoney.vue:63");
+
+          var x = res.data.data.buyOrderTotal;
+          var y = res.data.data.sellOrderTotal;
+          var z = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4); //总资产
+          var Pie = { series: [] };
+          Pie.series = [
+          { dat: y, name: '总卖出' },
+          { dat: z, name: '待卖出' },
+          { dat: x, name: '总买入' }];
+
+          _self.showPie("canvasPie", Pie);
+        } });
+
+      /* uni.request({
+              	url: 'https://www.easy-mock.com/mock/5cc586b64fc5576cba3d647b/uni-wx-charts/chartsdata2',
+              	data:{
+              	},
+              	success: function(res) {
+              		console.log(res.data.data)
+              		let Pie={series:[]};
+              		//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
+              		Pie.series=res.data.data.Pie.series;
+              		
+              	},
+              	fail: () => {
+              		_self.tips="网络错误，小程序端请检查合法域名";
+              	},
+              }); */
+    },
+    showPie: function showPie(canvasId, chartData) {
+      canvaPie = new _uCharts.default({
+        $this: _self,
+        canvasId: canvasId,
+        type: 'pie',
+        fontSize: 11,
+        legend: false,
+        background: '#FFFFFF',
+        pixelRatio: _self.pixelRatio,
+        series: chartData.series,
+        animation: true,
+        width: _self.cWidth * _self.pixelRatio,
+        height: _self.cHeight * _self.pixelRatio,
+        dataLabel: true,
+        extra: {
+          pie: {
+            lableWidth: 15 } } });
+
+
+
+      this.piearr = canvaPie.opts.series;
+    },
+    touchPie: function touchPie(e) {
+      canvaPie.showToolTip(e, {
+        format: function format(item) {
+          return item.name + ':' + item.dat;
+        } });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/wealth/myMoney.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/myMoney.vue?vue&type=template&id=5196ca70&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/wealth/myMoney.vue?vue&type=template&id=5196ca70& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ })
+
+},[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FmyMoney\"}","common/runtime","common/vendor"]]]);
+});
+require('pages/wealth/myMoney.js');
 __wxRoute = 'pages/wealth/buyAPList';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/wealth/buyAPList.js';
 
 define('pages/wealth/buyAPList.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
@@ -22485,6 +23284,7 @@ var _default = { data: function data() {return { flag: true, items: [{ value: '1
             if (res.data.status === 200) {
               that.flag = true;
               setTimeout(function () {
+                _common.default.balance();
                 uni.navigateBack();
               }, 1000);
             }
@@ -25001,7 +25801,7 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
           url: '/api/seed/harvest',
           method: 'POST',
           data: {
-            Id: that.id },
+            Id: id },
 
           success: function success(res) {
             if (res.data.status === 200) {
@@ -25494,6 +26294,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         success: function success(res) {
           _common.default.TostUtil(res.data.message);
           if (res.data.status === 200) {
+            _common.default.balance();
             that.getList('confirm');
           }
         } });
@@ -26204,11 +27005,12 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
     uniIcon: uniIcon },
 
   onShow: function onShow() {
+    var that = this;
     (0, _request.djRequest)({
       url: '/api/member/balance',
       method: 'GET',
       success: function success(res) {
-        console.log(res, " at pages\\mine\\mine.vue:95");
+        console.log(res, " at pages\\mine\\mine.vue:96");
       } });
 
   },

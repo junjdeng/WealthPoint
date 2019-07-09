@@ -265,7 +265,7 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
           url: '/api/seed/harvest',
           method: 'POST',
           data: {
-            Id: that.id },
+            Id: id },
 
           success: function success(res) {
             if (res.data.status === 200) {

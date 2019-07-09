@@ -120,6 +120,12 @@
 			}
 		},
 		{
+			"path": "pages/wealth/myMoney",
+			"style": {
+				"navigationBarTitleText": "我的收益"
+			}
+		},
+		{
 			"path": "pages/wealth/buyAPList",
 			"style": {
 				"navigationBarTitleText": "承租记录",

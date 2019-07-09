@@ -1,5 +1,5 @@
 
-.section1{width: 750rpx; padding: 40rpx 0; background: -webkit-gradient(linear,left top, left bottom,from(#CEA15A),to(#F3CB84)); background: -webkit-linear-gradient(#CEA15A,#F3CB84); background: -o-linear-gradient(#CEA15A,#F3CB84); background: linear-gradient(#CEA15A,#F3CB84);text-align: center;}
+.section1{width: 750rpx; padding: 80rpx 0; background: -webkit-gradient(linear,left top, left bottom,from(#CEA15A),to(#F3CB84)); background: -webkit-linear-gradient(#CEA15A,#F3CB84); background: -o-linear-gradient(#CEA15A,#F3CB84); background: linear-gradient(#CEA15A,#F3CB84);text-align: center;}
 .section1 .title{font-size: 32rpx; color: #ffffff; line-height: 1.6em; margin-top: 10rpx;
 }
 .section1 .num{font-size: 64rpx;color: #ffffff; line-height: 1.6em; font-weight: bold; margin-bottom: 30rpx;}

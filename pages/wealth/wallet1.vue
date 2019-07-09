@@ -3,10 +3,10 @@
 		<view class="section1">
 			<view class="title">AP数量</view>
 			<view class="num wpgold">{{wallet}}</view>
-			<span class="want" data-url="buyAP" @tap="navTo">转到希望钱包</span>
+			<!-- <span class="want" data-url="buyAP" @tap="navTo">转到希望钱包</span> -->
 		</view>
 	
-		<view class="section2">
+		<!-- <view class="section2">
 			<view class="section_title">收益记录</view>
 			<view class="list">
 				<view class="item flex-start">
@@ -18,7 +18,7 @@
 					<view class="num flex1">+1</view>
 				</view>	
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -57,7 +57,7 @@
 </script>
 
 <style>
-.section1{width: 750upx; padding: 40upx 0; background: linear-gradient(#CEA15A,#F3CB84);text-align: center;}
+.section1{width: 750upx; padding: 80upx 0; background: linear-gradient(#CEA15A,#F3CB84);text-align: center;}
 .section1 .title{font-size: 32upx; color: #ffffff; line-height: 1.6em; margin-top: 10upx; }
 .section1 .num{font-size: 64upx;color: #ffffff; line-height: 1.6em; font-weight: bold; margin-bottom: 30upx;}
 .section1 .want{color: #FFFFFF;font-size: 32upx; border:1px solid #FFFFFF; border-radius: 16upx;

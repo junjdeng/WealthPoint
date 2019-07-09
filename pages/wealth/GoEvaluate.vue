@@ -84,6 +84,7 @@
 							if (res.data.status === 200) {
 								that.flag = true;
 								setTimeout(function() {
+									common.balance();
 									uni.navigateBack();
 								}, 1000)
 							}
