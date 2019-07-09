@@ -1,47 +1,7 @@
 
-.wallet-title,
-.bonus-title,
-.list {
-	width: 750rpx;
-	display: -webkit-box!important;
-	display: -webkit-flex!important;
-	display: -ms-flexbox!important;
-	display: flex!important;
-	-webkit-justify-content: space-around!important;
-	    -ms-flex-pack: distribute!important;
-	        justify-content: space-around!important;
-	-webkit-box-align: center!important;
-	-webkit-align-items: center!important;
-	    -ms-flex-align: center!important;
-	        align-items: center!important;
-	background: #fff;
-	padding: 20rpx 0;
-	font-size: 28rpx;
-}
-.list {
-	border-top: 2rpx solid #f7f7f7;
-	font-size: 28rpx;
-}
-.wt>.wallet-title>view,.wt>.list>view{
-	width:33.3%;
-	text-align: center;
-	overflow:hidden;
-	-o-text-overflow: ellipsis;
-	   text-overflow: ellipsis;
-	white-space: nowrap;
-}
-.bs>.bonus-title>view,
-.bs>.list>view{
-	width:25%;
-	text-align: center;
-	overflow:hidden;
-	-o-text-overflow: ellipsis;
-	   text-overflow: ellipsis;
-	white-space: nowrap;
-}
 .section1 {
 	width: 750rpx;
-	padding: 40rpx 0;
+	padding: 80rpx 0;
 	background: -webkit-linear-gradient(313deg, #CEA15A, #F3CB84);
 	background: -o-linear-gradient(313deg, #CEA15A, #F3CB84);
 	background: linear-gradient(137deg, #CEA15A, #F3CB84);
@@ -60,13 +20,20 @@
 	font-weight: bold;
 	margin-bottom: 30rpx;
 }
-.section1 .want {
+.want {
 	color: #FFFFFF;
+	width:710rpx;
 	font-size: 32rpx;
-	border: 1px solid #FFFFFF;
-	-webkit-border-radius: 16rpx;
-	        border-radius: 16rpx;
-	padding: 10rpx 40rpx;
+	text-align: center;
+	-webkit-border-radius: 12rpx;
+	        border-radius: 12rpx;
+	background: -webkit-linear-gradient(313deg, #CEA15A, #F3CB84);
+	background: -o-linear-gradient(313deg, #CEA15A, #F3CB84);
+	background: linear-gradient(137deg, #CEA15A, #F3CB84);
+	padding: 20rpx 40rpx;
+	margin-top:80rpx;
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
 }
 .section_title {
 	color: #333333;
@@ -77,25 +44,6 @@
 	        box-sizing:border-box;
 	width:750rpx;
 }
-.section2 {
-	width: 750rpx;
-}
-.section2 .item {
-	background: #FFFFFF;
-	margin-bottom: 20rpx;
-	padding: 20rpx;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
-	color: #333333;
-	font-size: 28rpx;
-	line-height: 2em;
-}
-.section2 .item .flex1 {
-	text-align: right;
-}
-.section2 .item .time,
-.section2 .item .status {
-	color: #999999;
-	font-size: 24rpx;
-}
+
+
 

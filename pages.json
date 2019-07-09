@@ -5,10 +5,10 @@
 			"style": {
 				"navigationBarTitleText": "首页",
 				"navigationStyle": "custom",
-				"app-plus":{
-					"titleNView":false	
+				"app-plus": {
+					"titleNView": false
 				}
-			}	
+			}
 		},
 		{
 			"path": "pages/index/newsList",
@@ -42,9 +42,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "签到记录",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -89,10 +89,25 @@
 		{
 			"path": "pages/wealth/wallet",
 			"style": {
-				"navigationBarTitleText": "希望钱包"
+				"navigationBarTitleText": "希望钱包",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "明细",
+							"color": "#CCA366",
+							"fontSize": "14px",
+							"width": "80"
+						}]
+					}
+				}
 			}
 		},
 		{
+			"path": "pages/wealth/walletDetail",
+			"style": {
+				"navigationBarTitleText": "明细"
+			}
+		}, {
 			"path": "pages/wealth/wallet1",
 			"style": {
 				"navigationBarTitleText": "理财钱包"
@@ -112,9 +127,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "已完成",
-							"color":"#CCA366",
+							"color": "#CCA366",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -182,9 +197,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "已完成",
-							"color":"#CCA366",
+							"color": "#CCA366",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -201,8 +216,8 @@
 			"style": {
 				"navigationBarTitleText": "我的",
 				"navigationStyle": "custom",
-				"app-plus":{
-					"titleNView":false	
+				"app-plus": {
+					"titleNView": false
 				}
 			}
 		},
@@ -232,9 +247,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "添加",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -248,9 +263,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "添加",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -264,9 +279,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "删除",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -287,9 +302,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "删除",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -315,9 +330,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "我的道具",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -337,9 +352,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "添加",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"80"
+							"width": "80"
 						}]
 					}
 				}
@@ -386,7 +401,7 @@
 			"style": {
 				"navigationBarTitleText": "我的道具"
 			}
-		},{
+		}, {
 			"path": "pages/login/login",
 			"style": {}
 		},
@@ -416,9 +431,9 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "删除",
-							"color":"#333333",
+							"color": "#333333",
 							"fontSize": "14px",
-							"width":"60"
+							"width": "60"
 						}]
 					}
 				}
@@ -430,9 +445,9 @@
 		"navigationBarTitleText": "",
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#F5F5F5",
-		"app-plus":{
+		"app-plus": {
 			// 将回弹属性关掉
-			"bounce":"none"
+			"bounce": "none"
 		}
 	},
 	"condition": { //模式配置，仅开发期间生效
@@ -442,7 +457,7 @@
 			"path": "pages/index/index" //启动页面，必选
 		}]
 	},
-	
+
 	"tabBar": {
 		"color": "#999999",
 		"selectedColor": "#D03C29",

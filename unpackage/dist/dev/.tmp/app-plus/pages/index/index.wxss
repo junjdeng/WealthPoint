@@ -63,23 +63,23 @@
 	line-height: 50rpx;
 }
 .section_title {
-	width:100%;
+	width: 100%;
 	color: #333333;
-	display:-webkit-box;
-	display:-webkit-flex;
-	display:-ms-flexbox;
-	display:flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	-webkit-box-align:center;
-	-webkit-align-items:center;
-	    -ms-flex-align:center;
-	        align-items:center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	font-size: 32rpx;
 	font-weight: bold;
-	position:relative;
+	position: relative;
 }
 .section3 {
 	padding: 20rpx;
@@ -101,13 +101,13 @@
 	color: green;
 	text-align: center;
 }
-.rt{
-	position:absolute;
-	right:-20rpx;
-	top:5rpx;
-	font-weight: normal!important;
-	color:#999!important;
-	font-size: 24rpx!important;
+.rt {
+	position: absolute;
+	right: -20rpx;
+	top: 5rpx;
+	font-weight: normal !important;
+	color: #999 !important;
+	font-size: 24rpx !important;
 }
 .section3 .condition_card {
 	color: #999999;

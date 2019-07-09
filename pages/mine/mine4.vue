@@ -54,6 +54,7 @@
 					url: '/api/qrcode',
 					method: 'GET',
 					success: function(res) {
+						console.log(res)
 						/* res.data.data.forEach(item=>{
 							item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
 						}) */

@@ -203,6 +203,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
 var _self;
 var canvaColumn = null;
@@ -244,7 +245,7 @@ var canvas = null;var _default =
     this.getBTC();
   },
   onLoad: function onLoad() {
-    this._data.das = [2, 2.2, 2.800, 3.400, 2.900, 3.000, 3.020];
+    this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
     this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04'];
     _self = this;
     this.cWidth = uni.upx2px(680);
@@ -256,23 +257,27 @@ var canvas = null;var _default =
   methods: {
     getBTC: function getBTC() {
       var that = this;
+      var Signature =
+      'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
       uni.request({
         url: 'https://api.huobi.pro/market/detail',
         data: {
           symbol: 'btcusdt'
-          /* Timestamp:'2019-07-06T10:19:30' ,
-                            SignatureMethod:'HmacSHA256',
-                            SignatureVersion:2, 
-                            SecretKey:'b258a5a1-ba1076ce-d7b9f9a7-d07e0', 
-                            AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6' */ },
+          /* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
+                            SignatureVersion: 2,
+                            SignatureMethod: 'HmacSHA256',
+                            Signature:SignatureMethod(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85'),
+                            SecretKey: '533c1d05-e6745887-d192682d-90e85',
+                            AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */ },
 
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-          'timeout': 8000 },
+          'Accept-Language': 'zh-cn' },
 
         method: 'GET',
         success: function success(res) {
+          console.log(res, " at pages\\index\\index.vue:180");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -283,7 +288,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:186");
+          console.log(res, 4, " at pages\\index\\index.vue:191");
           //that.getBTC();
         } });
 
@@ -305,16 +310,16 @@ var canvas = null;var _default =
       canvasData.series = [{
         data: that._data.das,
         name: '',
-        color: "#D03C29" }];
+        color: "#FF5533" }];
 
       that._data.das = canvasData.series[0].data;
       _self.CanvasData("canvas", canvasData);
     },
-    CanvasData: function CanvasData(canvasId, chartData) {
+    CanvasData: function CanvasData(canvasId1, chartData1) {
       var that = this;
       canvas = new _uCharts.default({
         $this: _self,
-        canvasId: canvasId,
+        canvasId: canvasId1,
         type: 'line',
         fontSize: 11,
         legend: false,
@@ -323,8 +328,8 @@ var canvas = null;var _default =
         background: 'transparent',
         dataLineColor: '#333333',
         pixelRatio: _self.pixelRatio,
-        categories: chartData.categories,
-        series: chartData.series,
+        categories: chartData1.categories,
+        series: chartData1.series,
         animation: false,
         xAxis: {
           dashLength: 8,
@@ -332,10 +337,10 @@ var canvas = null;var _default =
 
         yAxis: {
           dashLength: 8,
-          splitNumber: 4,
+          splitNumber: 10,
           min: 0,
           disabled: false,
-          max: 8,
+          max: 2,
           format: function format(val) {
             return val;
           } },
@@ -371,11 +376,10 @@ var canvas = null;var _default =
       Column.series = [{
         data: that._data.das2,
         name: '',
-        color: "#D03C29" }];
+        color: "#FF5533" }];
 
       that._data.das2 = Column.series[0].data;
       _self.showColumn("canvasColumn", Column);
-
     },
     showColumn: function showColumn(canvasId, chartData) {
       canvaColumn = new _uCharts.default({

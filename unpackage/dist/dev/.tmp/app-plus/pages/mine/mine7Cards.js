@@ -331,7 +331,15 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
         success: function success(res) {
           if (res.data.status === 200) {
-            that.arr1 = res.data.data.data;
+            var arr = res.data.data.data;
+            var arr1 = [];
+            arr.forEach(function (item) {
+              if (item.operate !== 'deduct') {
+                arr1.push(item);
+              }
+            });
+            console.log(res, " at pages\\mine\\mine7Cards.vue:110");
+            that.arr1 = arr1;
           }
         } });
 

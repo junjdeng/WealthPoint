@@ -1678,6 +1678,12 @@ function gz$gwx_57(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_57)return __WXML_GLOBAL__.ops_cached.$gwx_57
 __WXML_GLOBAL__.ops_cached.$gwx_57=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_57);return __WXML_GLOBAL__.ops_cached.$gwx_57
+}
+function gz$gwx_58(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_58)return __WXML_GLOBAL__.ops_cached.$gwx_58
+__WXML_GLOBAL__.ops_cached.$gwx_58=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'_span'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'navTo']],[[4],[[5],[1,'$event']]]]]]]]]]])
@@ -1688,13 +1694,13 @@ Z([3,'#999999'])
 Z([3,'20'])
 Z(z[5])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_57);return __WXML_GLOBAL__.ops_cached.$gwx_57
+})(__WXML_GLOBAL__.ops_cached.$gwx_58);return __WXML_GLOBAL__.ops_cached.$gwx_58
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/uni-icon/uni-icon.wxml','./components/uni-load-more/uni-load-more.wxml','./components/uni-popup/uni-popup.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/charity/charity.wxml','./pages/charity/charityDetail.wxml','./pages/charity/charityHelp.wxml','./pages/charity/charityList.wxml','./pages/index/btc.wxml','./pages/index/chart.wxml','./pages/index/customSuggest.wxml','./pages/index/index.wxml','./pages/index/newsList.wxml','./pages/index/sign.wxml','./pages/index/wwallet.wxml','./pages/login/finishRegisterInfo.wxml','./pages/login/login.wxml','./pages/login/register.wxml','./pages/login/waitAgree.wxml','./pages/mine/addAliPay.wxml','./pages/mine/addCode.wxml','./pages/mine/alipayEdit.wxml','./pages/mine/code.wxml','./pages/mine/delCode.wxml','./pages/mine/getTool.wxml','./pages/mine/mine.wxml','./pages/mine/mine0.wxml','./pages/mine/mine1.wxml','./pages/mine/mine2.wxml','./pages/mine/mine3.wxml','./pages/mine/mine3Addbank.wxml','./pages/mine/mine4.wxml','./pages/mine/mine5.wxml','./pages/mine/mine5ResetPw.wxml','./pages/mine/mine6.wxml','./pages/mine/mine6Sell.wxml','./pages/mine/mine6Use.wxml','./pages/mine/mine7.wxml','./pages/mine/mine7Cards.wxml','./pages/mine/mine8.wxml','./pages/mine/reviseBank.wxml','./pages/wealth/GoEvaluate.wxml','./pages/wealth/OrderConfirm.wxml','./pages/wealth/buyAP.wxml','./pages/wealth/buyAPList.wxml','./pages/wealth/buyDetail.wxml','./pages/wealth/buyRecord.wxml','./pages/wealth/complaint.wxml','./pages/wealth/connectMember.wxml','./pages/wealth/harvest.wxml','./pages/wealth/sellAP.wxml','./pages/wealth/sellAPList.wxml','./pages/wealth/sellDetail.wxml','./pages/wealth/sellRecord.wxml','./pages/wealth/wallet.wxml','./pages/wealth/wallet1.wxml','./pages/wealth/wealth.wxml'];d_[x[0]]={}
+var x=['./components/uni-icon/uni-icon.wxml','./components/uni-load-more/uni-load-more.wxml','./components/uni-popup/uni-popup.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/charity/charity.wxml','./pages/charity/charityDetail.wxml','./pages/charity/charityHelp.wxml','./pages/charity/charityList.wxml','./pages/index/btc.wxml','./pages/index/chart.wxml','./pages/index/customSuggest.wxml','./pages/index/index.wxml','./pages/index/newsList.wxml','./pages/index/sign.wxml','./pages/index/wwallet.wxml','./pages/login/finishRegisterInfo.wxml','./pages/login/login.wxml','./pages/login/register.wxml','./pages/login/waitAgree.wxml','./pages/mine/addAliPay.wxml','./pages/mine/addCode.wxml','./pages/mine/alipayEdit.wxml','./pages/mine/code.wxml','./pages/mine/delCode.wxml','./pages/mine/getTool.wxml','./pages/mine/mine.wxml','./pages/mine/mine0.wxml','./pages/mine/mine1.wxml','./pages/mine/mine2.wxml','./pages/mine/mine3.wxml','./pages/mine/mine3Addbank.wxml','./pages/mine/mine4.wxml','./pages/mine/mine5.wxml','./pages/mine/mine5ResetPw.wxml','./pages/mine/mine6.wxml','./pages/mine/mine6Sell.wxml','./pages/mine/mine6Use.wxml','./pages/mine/mine7.wxml','./pages/mine/mine7Cards.wxml','./pages/mine/mine8.wxml','./pages/mine/reviseBank.wxml','./pages/wealth/GoEvaluate.wxml','./pages/wealth/OrderConfirm.wxml','./pages/wealth/buyAP.wxml','./pages/wealth/buyAPList.wxml','./pages/wealth/buyDetail.wxml','./pages/wealth/buyRecord.wxml','./pages/wealth/complaint.wxml','./pages/wealth/connectMember.wxml','./pages/wealth/harvest.wxml','./pages/wealth/sellAP.wxml','./pages/wealth/sellAPList.wxml','./pages/wealth/sellDetail.wxml','./pages/wealth/sellRecord.wxml','./pages/wealth/wallet.wxml','./pages/wealth/wallet1.wxml','./pages/wealth/walletDetail.wxml','./pages/wealth/wealth.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -2326,13 +2332,19 @@ e_[x[55]]={f:m55,j:[],i:[],ti:[],ic:[]}
 d_[x[56]]={}
 var m56=function(e,s,r,gg){
 var z=gz$gwx_57()
-var tWE=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
-var eXE=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(tWE,eXE)
-_(r,tWE)
 return r
 }
 e_[x[56]]={f:m56,j:[],i:[],ti:[],ic:[]}
+d_[x[57]]={}
+var m57=function(e,s,r,gg){
+var z=gz$gwx_58()
+var eXE=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
+var bYE=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(eXE,bYE)
+_(r,eXE)
+return r
+}
+e_[x[57]]={f:m57,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -2350,7 +2362,7 @@ return root;
 
 
 
-__wxAppCode__['app.json']={"pages":["pages/index/index","pages/index/newsList","pages/index/btc","pages/index/customSuggest","pages/index/chart","pages/index/sign","pages/index/wwallet","pages/charity/charity","pages/charity/charityList","pages/charity/charityDetail","pages/charity/charityHelp","pages/wealth/wealth","pages/wealth/wallet","pages/wealth/wallet1","pages/wealth/buyAP","pages/wealth/buyAPList","pages/wealth/buyRecord","pages/wealth/OrderConfirm","pages/wealth/GoEvaluate","pages/wealth/complaint","pages/wealth/buyDetail","pages/wealth/sellRecord","pages/wealth/sellAP","pages/wealth/sellDetail","pages/wealth/harvest","pages/wealth/sellAPList","pages/wealth/connectMember","pages/mine/mine","pages/mine/mine0","pages/mine/mine1","pages/mine/mine2","pages/mine/mine3","pages/mine/mine4","pages/mine/addAliPay","pages/mine/alipayEdit","pages/mine/mine5","pages/mine/mine6","pages/mine/mine7","pages/mine/mine8","pages/mine/code","pages/mine/addCode","pages/mine/getTool","pages/mine/mine3Addbank","pages/mine/mine5ResetPw","pages/mine/mine6Sell","pages/mine/mine6Use","pages/mine/mine7Cards","pages/login/login","pages/login/finishRegisterInfo","pages/login/waitAgree","pages/login/register","pages/mine/reviseBank"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F5F5F5","bounce":"none"},"tabBar":{"color":"#999999","selectedColor":"#D03C29","borderStyle":"black","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","iconPath":"static/images/tabbar1.png","selectedIconPath":"static/images/tabbar1_seled.png","text":"首页"},{"pagePath":"pages/wealth/wealth","iconPath":"static/images/tabbar3.png","selectedIconPath":"static/images/tabbar3_seled.png","text":"财富"},{"pagePath":"pages/charity/charity","iconPath":"static/images/tabbar2.png","selectedIconPath":"static/images/tabbar2_seled.png","text":"公益"},{"pagePath":"pages/mine/mine","iconPath":"static/images/tabbar4.png","selectedIconPath":"static/images/tabbar4_seled.png","text":"我的"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Wealth Point","compilerVersion":"2.0.1","usingComponents":{}};
+__wxAppCode__['app.json']={"pages":["pages/index/index","pages/index/newsList","pages/index/btc","pages/index/customSuggest","pages/index/chart","pages/index/sign","pages/index/wwallet","pages/charity/charity","pages/charity/charityList","pages/charity/charityDetail","pages/charity/charityHelp","pages/wealth/wealth","pages/wealth/wallet","pages/wealth/wallet1","pages/wealth/buyAP","pages/wealth/buyAPList","pages/wealth/buyRecord","pages/wealth/OrderConfirm","pages/wealth/GoEvaluate","pages/wealth/complaint","pages/wealth/buyDetail","pages/wealth/sellRecord","pages/wealth/sellAP","pages/wealth/sellDetail","pages/wealth/harvest","pages/wealth/sellAPList","pages/wealth/connectMember","pages/mine/mine","pages/mine/mine0","pages/mine/mine1","pages/mine/mine2","pages/mine/mine3","pages/mine/mine4","pages/mine/delCode","pages/mine/addAliPay","pages/mine/alipayEdit","pages/mine/mine5","pages/mine/mine6","pages/mine/mine7","pages/mine/mine8","pages/mine/code","pages/mine/addCode","pages/mine/getTool","pages/mine/mine3Addbank","pages/mine/mine5ResetPw","pages/mine/mine6Sell","pages/mine/mine6Use","pages/mine/mine7Cards","pages/login/login","pages/login/finishRegisterInfo","pages/login/waitAgree","pages/login/register","pages/mine/reviseBank"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F5F5F5","bounce":"none"},"tabBar":{"color":"#999999","selectedColor":"#D03C29","borderStyle":"black","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","iconPath":"static/images/tabbar1.png","selectedIconPath":"static/images/tabbar1_seled.png","text":"首页"},{"pagePath":"pages/wealth/wealth","iconPath":"static/images/tabbar3.png","selectedIconPath":"static/images/tabbar3_seled.png","text":"财富"},{"pagePath":"pages/charity/charity","iconPath":"static/images/tabbar2.png","selectedIconPath":"static/images/tabbar2_seled.png","text":"公益"},{"pagePath":"pages/mine/mine","iconPath":"static/images/tabbar4.png","selectedIconPath":"static/images/tabbar4_seled.png","text":"我的"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Wealth Point","compilerVersion":"2.0.1","usingComponents":{}};
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 __wxAppCode__['components/uni-icon/uni-icon.json']={"usingComponents":{},"component":true};
@@ -2520,6 +2532,9 @@ __wxAppCode__['pages/wealth/wallet.wxml']=$gwx('./pages/wealth/wallet.wxml');
 
 __wxAppCode__['pages/wealth/wallet1.json']={"navigationBarTitleText":"理财钱包","usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
 __wxAppCode__['pages/wealth/wallet1.wxml']=$gwx('./pages/wealth/wallet1.wxml');
+
+__wxAppCode__['pages/wealth/walletDetail.json']={"navigationBarTitleText":"明细","usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
+__wxAppCode__['pages/wealth/walletDetail.wxml']=$gwx('./pages/wealth/walletDetail.wxml');
 
 __wxAppCode__['pages/wealth/wealth.json']={"navigationBarTitleText":"财富","usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
 __wxAppCode__['pages/wealth/wealth.wxml']=$gwx('./pages/wealth/wealth.wxml');
@@ -7455,6 +7470,23 @@ createPage(_wallet.default);
 
 /***/ }),
 
+/***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FwalletDetail\"}":
+/*!****************************************************************************!*\
+  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FwalletDetail"} ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _walletDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/walletDetail.vue */ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_walletDetail.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwealth\"}":
 /*!**********************************************************************!*\
   !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2Fwealth"} ***!
@@ -7989,7 +8021,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -14187,7 +14219,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -14208,14 +14240,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -14284,7 +14316,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -16660,6 +16692,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
 var _self;
 var canvaColumn = null;
@@ -16701,7 +16734,7 @@ var canvas = null;var _default =
     this.getBTC();
   },
   onLoad: function onLoad() {
-    this._data.das = [2, 2.2, 2.800, 3.400, 2.900, 3.000, 3.020];
+    this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
     this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04'];
     _self = this;
     this.cWidth = uni.upx2px(680);
@@ -16713,23 +16746,27 @@ var canvas = null;var _default =
   methods: {
     getBTC: function getBTC() {
       var that = this;
+      var Signature =
+      'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
       uni.request({
         url: 'https://api.huobi.pro/market/detail',
         data: {
           symbol: 'btcusdt'
-          /* Timestamp:'2019-07-06T10:19:30' ,
-                            SignatureMethod:'HmacSHA256',
-                            SignatureVersion:2, 
-                            SecretKey:'b258a5a1-ba1076ce-d7b9f9a7-d07e0', 
-                            AccessKeyId:'21f68a3d-dbye2sf5t7-0d9f06ee-d04e6' */ },
+          /* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
+                            SignatureVersion: 2,
+                            SignatureMethod: 'HmacSHA256',
+                            Signature:SignatureMethod(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85'),
+                            SecretKey: '533c1d05-e6745887-d192682d-90e85',
+                            AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */ },
 
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-          'timeout': 8000 },
+          'Accept-Language': 'zh-cn' },
 
         method: 'GET',
         success: function success(res) {
+          console.log(res, " at pages\\index\\index.vue:180");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -16740,7 +16777,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:186");
+          console.log(res, 4, " at pages\\index\\index.vue:191");
           //that.getBTC();
         } });
 
@@ -16762,16 +16799,16 @@ var canvas = null;var _default =
       canvasData.series = [{
         data: that._data.das,
         name: '',
-        color: "#D03C29" }];
+        color: "#FF5533" }];
 
       that._data.das = canvasData.series[0].data;
       _self.CanvasData("canvas", canvasData);
     },
-    CanvasData: function CanvasData(canvasId, chartData) {
+    CanvasData: function CanvasData(canvasId1, chartData1) {
       var that = this;
       canvas = new _uCharts.default({
         $this: _self,
-        canvasId: canvasId,
+        canvasId: canvasId1,
         type: 'line',
         fontSize: 11,
         legend: false,
@@ -16780,8 +16817,8 @@ var canvas = null;var _default =
         background: 'transparent',
         dataLineColor: '#333333',
         pixelRatio: _self.pixelRatio,
-        categories: chartData.categories,
-        series: chartData.series,
+        categories: chartData1.categories,
+        series: chartData1.series,
         animation: false,
         xAxis: {
           dashLength: 8,
@@ -16789,10 +16826,10 @@ var canvas = null;var _default =
 
         yAxis: {
           dashLength: 8,
-          splitNumber: 4,
+          splitNumber: 10,
           min: 0,
           disabled: false,
-          max: 8,
+          max: 2,
           format: function format(val) {
             return val;
           } },
@@ -16828,11 +16865,10 @@ var canvas = null;var _default =
       Column.series = [{
         data: that._data.das2,
         name: '',
-        color: "#D03C29" }];
+        color: "#FF5533" }];
 
       that._data.das2 = Column.series[0].data;
       _self.showColumn("canvasColumn", Column);
-
     },
     showColumn: function showColumn(canvasId, chartData) {
       canvaColumn = new _uCharts.default({
@@ -17115,6 +17151,96 @@ __wxRoute = 'pages/index/btc';__wxRouteBegin = true;__wxAppCurrentFile__ = 'page
 define('pages/index/btc.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/index/btc"],{
 
+/***/ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue":
+/*!************************************************************!*\
+  !*** D:/test/WealthPoint/components/uni-icon/uni-icon.vue ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _uni_icon_vue_vue_type_template_id_54edea7e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./uni-icon.vue?vue&type=template&id=54edea7e& */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=template&id=54edea7e&");
+/* harmony import */ var _uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./uni-icon.vue?vue&type=script&lang=js& */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./uni-icon.vue?vue&type=style&index=0&lang=css& */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _uni_icon_vue_vue_type_template_id_54edea7e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _uni_icon_vue_vue_type_template_id_54edea7e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "test/WealthPoint/components/uni-icon/uni-icon.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** D:/test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./uni-icon.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=script&lang=js&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=style&index=0&lang=css&":
+/*!*********************************************************************************************!*\
+  !*** D:/test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./uni-icon.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=template&id=54edea7e&":
+/*!*******************************************************************************************!*\
+  !*** D:/test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=template&id=54edea7e& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_template_id_54edea7e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./uni-icon.vue?vue&type=template&id=54edea7e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=template&id=54edea7e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_template_id_54edea7e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_uni_icon_vue_vue_type_template_id_54edea7e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "../../../../test/WealthPoint/pages/index/btc.vue":
 /*!***********************************************!*\
   !*** D:/test/WealthPoint/pages/index/btc.vue ***!
@@ -17205,6 +17331,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+var _default =
+{
+  name: 'uni-icon',
+  props: {
+    /**
+            * 图标类型
+            */
+    type: String,
+    /**
+                   * 图标颜色
+                   */
+    color: String,
+    /**
+                    * 图标大小
+                    */
+    size: [Number, String] },
+
+  computed: {
+    fontSize: function fontSize() {
+      return "".concat(this.size, "px");
+    } },
+
+  methods: {
+    onClick: function onClick() {
+      this.$emit('click');
+    } } };exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/index/btc.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/index/btc.vue?vue&type=script&lang=js& ***!
@@ -17213,68 +17380,96 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      list: [] };
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
-  },
-  onShow: function onShow() {
-    var that = this;
-    uni.request({
-      url: 'https://api.huobi.pro/market/tickers',
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-        'timeout': 8000 },
 
-      method: 'GET',
-      success: function success(res) {
-        var arr = res.data.data;
-        arr.forEach(function (item) {
-          if (item.symbol == 'btcusdt' || item.symbol == 'ethusdt' || item.symbol == 'eosusdt' || item.symbol ==
-          'xrpusdt' || item.symbol == 'bchusdt' || item.symbol == 'etcusdt' || item.symbol == 'ltcusdt' ||
-          item.symbol == 'bsvusdt') {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { list: [] };}, onShow: function onShow() {var that = this;that.list = [];uni.request({ url: 'https://api.huobi.pro/market/tickers', header: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 'timeout': 8000 }, method: 'GET', success: function success(res) {console.log(res, " at pages\\index\\btc.vue:48");var arr = res.data.data;arr.forEach(function (item) {if (item.symbol == 'usdt') {console.log(item.open, " at pages\\index\\btc.vue:52");}if (item.symbol == 'btcusdt' || item.symbol == 'ethusdt' || item.symbol == 'eosusdt' || item.symbol == 'xrpusdt' || item.symbol == 'bchusdt' || item.symbol == 'etcusdt' || item.symbol == 'ltcusdt' || item.symbol == 'bsvusdt') {
             if (!item.hasOwnProperty('cat')) {
               item.cat = item.symbol.slice(0, 3).toUpperCase();
             }
+            if (!item.hasOwnProperty('num')) {
+              item.num = ((Number(Number(item.close) - Number(item.open)) / Number(item.open)).toFixed(4) * 100).toFixed(2);
+            }
             item.high = Number(item.high).toFixed(2);
             item.low = Number(item.low).toFixed(2);
-            item.amount = Number(item.amount / 10000).toFixed(2) + '万';
             item.close = Number(item.close).toFixed(2);
+            if (!item.hasOwnProperty('price')) {
+              item.price = (item.close * 6.86).toFixed(2);
+            }
             that.list.push(item);
           }
         });
       },
       fail: function fail(res) {
-        console.log(res, 4, " at pages\\index\\btc.vue:57");
+        console.log(res, 4, " at pages\\index\\btc.vue:74");
         //that.getBTC();
       } });
 
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=style&index=0&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -17286,6 +17481,29 @@ var _default =
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=template&id=54edea7e&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/components/uni-icon/uni-icon.vue?vue&type=template&id=54edea7e& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -19451,37 +19669,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
@@ -19501,6 +19688,19 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   components: {
     uniIcon: uniIcon },
 
+  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
+    var that = this;
+    if (that.type == 1) {
+      uni.navigateTo({
+        url: 'walletDetail?type=1' });
+
+
+    } else if (that.type == 2) {
+      uni.navigateTo({
+        url: 'walletDetail?type=2' });
+
+    }
+  },
   onLoad: function onLoad(options) {
     this.type = options.type;
     if (options.type == 1) {
@@ -19512,48 +19712,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         title: '奖金钱包' });
 
     }
+    this.wallets();
   },
-  onShow: function onShow() {
-    var that = this;
-    that.wallets();
-    if (that.type == 2) {//奖金明细
-      (0, _request.djRequest)({
-        url: '/api/recommend',
-        method: 'POST',
-        data: {
-          start: 0,
-          length: 500 },
 
-        success: function success(res) {
-          if (res.data.status === 200) {
-            that.listBonus = res.data.data.data;
-          }
-        } });
-
-    } else if (that.type == 1) {//希望钱包明细
-      (0, _request.djRequest)({
-        url: '/api/seed',
-        data: {
-          start: 0,
-          length: 500 },
-
-        method: 'POST',
-        success: function success(res) {
-          var arr1 = res.data.data.data,
-          arr = [];
-          arr1.forEach(function (item) {
-            if (item.status === 'reward') {
-              if (!item.hasOwnProperty('total')) {
-                item.total = (Number(item.number) + Number(item.harvestNumber)).toFixed(4);
-              }
-              arr.push(item);
-            }
-          });
-          that.listWallet = arr;
-        } });
-
-    }
-  },
   methods: {
     navTo: function navTo(e) {
       var that = this;
@@ -19600,6 +19761,264 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ })
+
+},[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwallet\"}","common/runtime","common/vendor"]]]);
+});
+require('pages/wealth/wallet.js');
+__wxRoute = 'pages/wealth/walletDetail';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/wealth/walletDetail.js';
+
+define('pages/wealth/walletDetail.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/wealth/walletDetail"],{
+
+/***/ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue":
+/*!*********************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/walletDetail.vue ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _walletDetail_vue_vue_type_template_id_711c0906___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./walletDetail.vue?vue&type=template&id=711c0906& */ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=template&id=711c0906&");
+/* harmony import */ var _walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./walletDetail.vue?vue&type=script&lang=js& */ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./walletDetail.vue?vue&type=style&index=0&lang=css& */ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _walletDetail_vue_vue_type_template_id_711c0906___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _walletDetail_vue_vue_type_template_id_711c0906___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "test/WealthPoint/pages/wealth/walletDetail.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./walletDetail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=script&lang=js&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=style&index=0&lang=css&":
+/*!******************************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=style&index=0&lang=css& ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./walletDetail.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_software_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_software_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_software_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=template&id=711c0906&":
+/*!****************************************************************************************!*\
+  !*** D:/test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=template&id=711c0906& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_template_id_711c0906___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../software/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!./walletDetail.vue?vue&type=template&id=711c0906& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=template&id=711c0906&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_template_id_711c0906___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_software_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_software_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_walletDetail_vue_vue_type_template_id_711c0906___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
+var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+
+
+{
+  data: function data() {
+    return {
+      type: 1,
+      listWallet: [],
+      listBonus: [] };
+
+  },
+  components: {
+    uniIcon: uniIcon },
+
+  onShow: function onShow() {
+    var that = this;
+    if (that.type == 2) {//奖金明细
+      (0, _request.djRequest)({
+        url: '/api/recommend',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 500 },
+
+        success: function success(res) {
+          console.log(res, " at pages\\wealth\\walletDetail.vue:63");
+          if (res.data.status === 200) {
+            that.listBonus = res.data.data.data;
+          }
+        } });
+
+
+    } else if (that.type == 1) {//希望钱包明细
+      (0, _request.djRequest)({
+        url: '/api/seed',
+        data: {
+          start: 0,
+          length: 500 },
+
+        method: 'POST',
+        success: function success(res) {
+          var arr1 = res.data.data.data,
+          arr = [];
+          arr1.forEach(function (item) {
+            if (item.status === 'reward') {
+              if (!item.hasOwnProperty('total')) {
+                item.total = (Number(item.number) + Number(item.harvestNumber)).toFixed(4);
+              }
+              arr.push(item);
+            }
+          });
+          that.listWallet = arr;
+        } });
+
+    }
+  },
+  onLoad: function onLoad(options) {
+    this.type = options.type;
+    console.log(options, " at pages\\wealth\\walletDetail.vue:96");
+    if (options.type == 1) {
+      uni.setNavigationBarTitle({
+        title: '希望钱包明细' });
+
+    } else if (options.type == 2) {
+      uni.setNavigationBarTitle({
+        title: '奖金钱包明细' });
+
+    }
+  },
+  methods: {
+    hope: function hope() {
+
+    },
+    bonus: function bonus() {
+      var that = this;
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=style&index=0&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=style&index=0&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!../../../../test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=template&id=711c0906&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!D:/test/WealthPoint/pages/wealth/walletDetail.vue?vue&type=template&id=711c0906& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
   var l0 = _vm.listWallet.map(function(item, index) {
     var f0 = _vm._f("formatDate")(item.harvestTime, 2)
 
@@ -19633,9 +20052,9 @@ render._withStripped = true
 
 /***/ })
 
-},[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2Fwallet\"}","common/runtime","common/vendor"]]]);
+},[["../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FwalletDetail\"}","common/runtime","common/vendor"]]]);
 });
-require('pages/wealth/wallet.js');
+require('pages/wealth/walletDetail.js');
 __wxRoute = 'pages/wealth/wallet1';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/wealth/wallet1.js';
 
 define('pages/wealth/wallet1.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
@@ -26802,9 +27221,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         url: '/api/qrcode',
         method: 'GET',
         success: function success(res) {
+          console.log(res, " at pages\\mine\\mine4.vue:57");
           /* res.data.data.forEach(item=>{
-                                        	item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
-                                        }) */
+                                                             	item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
+                                                             }) */
           that.list = res.data.data;
         } });
 
@@ -27266,9 +27686,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {
-              uni.navigateBack({
-                delta: 1 });
-
+              uni.navigateBack();
             }, 1000);
 
           },
@@ -27534,9 +27952,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {
-              uni.navigateBack({
-                delta: 1 });
-
+              uni.navigateBack();
             }, 1000);
           },
           fail: function fail(res) {
@@ -29537,6 +29953,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
               that.bankNumber = '';
               _common.default.TostUtil(res.data.message);
               that.flag = true;
+              setTimeout(function () {
+                uni.navigateBack();
+              }, 1000);
             }
           } });
 
@@ -30709,7 +31128,15 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
         success: function success(res) {
           if (res.data.status === 200) {
-            that.arr1 = res.data.data.data;
+            var arr = res.data.data.data;
+            var arr1 = [];
+            arr.forEach(function (item) {
+              if (item.operate !== 'deduct') {
+                arr1.push(item);
+              }
+            });
+            console.log(res, " at pages\\mine\\mine7Cards.vue:110");
+            that.arr1 = arr1;
           }
         } });
 
@@ -31878,16 +32305,19 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           bankName: that.bankName,
           bankNumber: that.bankNumber,
           bankAddress: that.bankAddress,
+          bankAccountName: that.userName,
           status: 'yes' },
 
         method: 'POST',
         success: function success(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:181");
-          _common.default.TostUtil('3');
+          _common.default.TostUtil(res.data.message);
           that.flag = true;
+          setTimeout(function () {
+            uni.navigateBack();
+          }, 1000);
         },
         fail: function fail(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:186");
+          console.log(res, " at pages\\mine\\reviseBank.vue:189");
         } });
 
     } } };exports.default = _default;

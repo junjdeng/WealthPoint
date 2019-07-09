@@ -205,9 +205,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {
-              uni.navigateBack({
-                delta: 1 });
-
+              uni.navigateBack();
             }, 1000);
 
           },

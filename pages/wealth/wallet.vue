@@ -3,39 +3,8 @@
 		<view class="section1">
 			<view class="title">AP数量</view>
 			<view class="num wpgold">{{wallet}}</view>
-			<span class="want" data-url="sellAP" @tap="navTo">退租AP</span>
 		</view>
-
-		<view class="section2">
-			<view class="wt" v-if="type==1">
-				<view class="section_title">希望钱包明细</view>
-				<view class="wallet-title">
-					<view>日期</view>
-					<view>交易类型</view>
-					<view>数量</view>
-				</view>
-				<view class="list" v-for="(item,index) in listWallet" :key="index">
-					<view>{{item.harvestTime | formatDate(2)}}</view>
-					<view>提取分红</view>
-					<view>{{item.total}}</view>
-				</view>
-			</view>
-			<view class="bs" v-else>
-				<view class="section_title">奖金钱包明细</view>
-				<view class="bonus-title">
-					<view class="">日期</view>
-					<view class="">交易类型</view>
-					<view class="">用户</view>
-					<view class="">数量</view>
-				</view>
-				<view class="list" v-for="(temp,index) in listBonus" :key="index">
-					<view class="">{{temp.Time | formatDate(2)}}</view>
-					<view class="">承租</view>
-					<view class="">{{temp.recommendUsername}}</view>
-					<view class="">{{temp.bonus}}</view>
-				</view>
-			</view>
-		</view>
+		<view class="want" data-url="sellAP" @tap="navTo">退租AP</view>
 	</view>
 </template>
 
@@ -60,8 +29,21 @@
 		components: {
 			uniIcon
 		},
+		onNavigationBarButtonTap(e) {
+			let that=this;
+			if(that.type==1){
+				uni.navigateTo({
+					url:'walletDetail?type=1'
+				})
+				
+			}else if(that.type ==2){
+				uni.navigateTo({
+					url:'walletDetail?type=2'
+				})
+			}
+		},
 		onLoad(options) {
-			this.type = options.type
+			this.type = options.type;
 			if (options.type == 1) {
 				uni.setNavigationBarTitle({
 					title: '希望钱包'
@@ -71,48 +53,9 @@
 					title: '奖金钱包'
 				});
 			}
+			this.wallets();
 		},
-		onShow() {
-			let that = this;
-			that.wallets();
-			if (that.type == 2) { //奖金明细
-				djRequest({
-					url: '/api/recommend',
-					method: 'POST',
-					data: {
-						start: 0,
-						length: 500
-					},
-					success: function(res) {
-						if (res.data.status === 200) {
-							that.listBonus = res.data.data.data;
-						}
-					}
-				})
-			} else if (that.type == 1) { //希望钱包明细
-				djRequest({
-					url: '/api/seed',
-					data: {
-						start: 0,
-						length: 500
-					},
-					method: 'POST',
-					success: function(res) {
-						let arr1 = res.data.data.data,
-							arr = [];
-						arr1.forEach(item => {
-							if (item.status === 'reward') {
-								if (!item.hasOwnProperty('total')) {
-									item.total = (Number(item.number) + Number(item.harvestNumber)).toFixed(4);
-								}
-								arr.push(item);
-							}
-						});
-						that.listWallet = arr;
-					}
-				})
-			}
-		},
+		
 		methods: {
 			navTo(e) {
 				let that = this;
@@ -134,40 +77,9 @@
 </script>
 
 <style>
-	.wallet-title,
-	.bonus-title,
-	.list {
-		width: 750upx;
-		display: flex!important;
-		justify-content: space-around!important;
-		align-items: center!important;
-		background: #fff;
-		padding: 20upx 0;
-		font-size: 28upx;
-	}
-
-	.list {
-		border-top: 2upx solid #f7f7f7;
-		font-size: 28upx;
-	}
-	.wt>.wallet-title>view,.wt>.list>view{
-		width:33.3%;
-		text-align: center;
-		overflow:hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-	.bs>.bonus-title>view,
-	.bs>.list>view{
-		width:25%;
-		text-align: center;
-		overflow:hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	} 
 	.section1 {
 		width: 750upx;
-		padding: 40upx 0;
+		padding: 80upx 0;
 		background: linear-gradient(137deg, #CEA15A, #F3CB84);
 		text-align: center;
 	}
@@ -187,12 +99,16 @@
 		margin-bottom: 30upx;
 	}
 
-	.section1 .want {
+	.want {
 		color: #FFFFFF;
+		width:710upx;
 		font-size: 32upx;
-		border: 1px solid #FFFFFF;
-		border-radius: 16upx;
-		padding: 10upx 40upx;
+		text-align: center;
+		border-radius: 12upx;
+		background: linear-gradient(137deg, #CEA15A, #F3CB84);
+		padding: 20upx 40upx;
+		margin-top:80upx;
+		box-sizing:border-box;
 	}
 
 	.section_title {
@@ -204,27 +120,5 @@
 		width:750upx;
 	}
 
-	.section2 {
-		width: 750upx;
-	}
-
-	.section2 .item {
-		background: #FFFFFF;
-		margin-bottom: 20upx;
-		padding: 20upx;
-		border-radius: 8upx;
-		color: #333333;
-		font-size: 28upx;
-		line-height: 2em;
-	}
-
-	.section2 .item .flex1 {
-		text-align: right;
-	}
-
-	.section2 .item .time,
-	.section2 .item .status {
-		color: #999999;
-		font-size: 24upx;
-	}
+	
 </style>

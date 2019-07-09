@@ -110,37 +110,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
@@ -160,6 +129,19 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   components: {
     uniIcon: uniIcon },
 
+  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
+    var that = this;
+    if (that.type == 1) {
+      uni.navigateTo({
+        url: 'walletDetail?type=1' });
+
+
+    } else if (that.type == 2) {
+      uni.navigateTo({
+        url: 'walletDetail?type=2' });
+
+    }
+  },
   onLoad: function onLoad(options) {
     this.type = options.type;
     if (options.type == 1) {
@@ -171,48 +153,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         title: '奖金钱包' });
 
     }
+    this.wallets();
   },
-  onShow: function onShow() {
-    var that = this;
-    that.wallets();
-    if (that.type == 2) {//奖金明细
-      (0, _request.djRequest)({
-        url: '/api/recommend',
-        method: 'POST',
-        data: {
-          start: 0,
-          length: 500 },
 
-        success: function success(res) {
-          if (res.data.status === 200) {
-            that.listBonus = res.data.data.data;
-          }
-        } });
-
-    } else if (that.type == 1) {//希望钱包明细
-      (0, _request.djRequest)({
-        url: '/api/seed',
-        data: {
-          start: 0,
-          length: 500 },
-
-        method: 'POST',
-        success: function success(res) {
-          var arr1 = res.data.data.data,
-          arr = [];
-          arr1.forEach(function (item) {
-            if (item.status === 'reward') {
-              if (!item.hasOwnProperty('total')) {
-                item.total = (Number(item.number) + Number(item.harvestNumber)).toFixed(4);
-              }
-              arr.push(item);
-            }
-          });
-          that.listWallet = arr;
-        } });
-
-    }
-  },
   methods: {
     navTo: function navTo(e) {
       var that = this;
@@ -259,31 +202,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var l0 = _vm.listWallet.map(function(item, index) {
-    var f0 = _vm._f("formatDate")(item.harvestTime, 2)
-
-    return {
-      $orig: _vm.__get_orig(item),
-      f0: f0
-    }
-  })
-  var l1 = _vm.listBonus.map(function(temp, index) {
-    var f1 = _vm._f("formatDate")(temp.Time, 2)
-
-    return {
-      $orig: _vm.__get_orig(temp),
-      f1: f1
-    }
-  })
-  _vm.$mp.data = Object.assign(
-    {},
-    {
-      $root: {
-        l0: l0,
-        l1: l1
-      }
-    }
-  )
 }
 var staticRenderFns = []
 render._withStripped = true

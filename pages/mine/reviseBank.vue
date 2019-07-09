@@ -174,13 +174,16 @@
 						bankName: that.bankName,
 						bankNumber: that.bankNumber,
 						bankAddress: that.bankAddress,
-						status: 'yes',
+						bankAccountName:that.userName,
+						status: 'yes'
 					},
 					method: 'POST',
 					success: function(res) {
-						console.log(res)
-						common.TostUtil('3');
+						common.TostUtil(res.data.message);
 						that.flag = true;
+						setTimeout(function(){
+							uni.navigateBack();
+						},1000)
 					},
 					fail: function(res) {
 						console.log(res)

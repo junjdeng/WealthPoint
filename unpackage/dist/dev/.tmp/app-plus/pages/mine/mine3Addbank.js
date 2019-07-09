@@ -243,6 +243,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
               that.bankNumber = '';
               _common.default.TostUtil(res.data.message);
               that.flag = true;
+              setTimeout(function () {
+                uni.navigateBack();
+              }, 1000);
             }
           } });
 

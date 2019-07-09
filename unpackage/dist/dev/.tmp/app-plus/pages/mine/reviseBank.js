@@ -274,16 +274,19 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           bankName: that.bankName,
           bankNumber: that.bankNumber,
           bankAddress: that.bankAddress,
+          bankAccountName: that.userName,
           status: 'yes' },
 
         method: 'POST',
         success: function success(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:181");
-          _common.default.TostUtil('3');
+          _common.default.TostUtil(res.data.message);
           that.flag = true;
+          setTimeout(function () {
+            uni.navigateBack();
+          }, 1000);
         },
         fail: function fail(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:186");
+          console.log(res, " at pages\\mine\\reviseBank.vue:189");
         } });
 
     } } };exports.default = _default;

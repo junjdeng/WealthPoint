@@ -13,6 +13,7 @@
     "pages/charity/charityHelp",
     "pages/wealth/wealth",
     "pages/wealth/wallet",
+    "pages/wealth/walletDetail",
     "pages/wealth/wallet1",
     "pages/wealth/buyAP",
     "pages/wealth/buyAPList",
