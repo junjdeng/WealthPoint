@@ -106,19 +106,13 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
-<<<<<<< HEAD
 	import uCharts from '@/components/u-charts/u-charts.js';
 	import {djRequest} from '../../common/request.js'
 	import common from '../../common/common.js'
-	import {config} from '../../common/config.js'	
-	
-=======
-	import uCharts from '@/components/u-charts/u-charts.js';
+	import {config} from '../../common/config.js'
 	import  '../../common/hmac-sha256.js'
 	import '../../common/base64.js'
-	/* console.log(CryptoJS.HmacSHA256("Message", "secret")) */
-	console.log(Base64.encode('我在这里'))
->>>>>>> f68250cdc7488dee8dbe0e14b15ac68e9cdea39c
+
 	var _self;
 	var canvaColumn = null;
 	var canvas = null;
@@ -156,23 +150,15 @@
 			uniIcon,
 			//mpvueEcharts
 		},
-<<<<<<< HEAD
 		onShow(){
 			if(config.User != null){
 				this.showPop = true;
 			}
 			this.getBTC();
 		},
-		onLoad() {
+		onLoad(){
 			common.balance();
-			this._data.das = [2, 2.2, 2.800, 3.400, 2.900, 3.000, 3.020];
-=======
-		onShow() {
-			this.getBTC();
-		},
-		onLoad() {
 			this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
->>>>>>> f68250cdc7488dee8dbe0e14b15ac68e9cdea39c
 			this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04', ];
 			_self = this;
 			this.cWidth = uni.upx2px(680);
@@ -181,7 +167,7 @@
 			this._data.das2 = [100, 220, 280, 340, 290, 300, 320];
 			this.getServerData2();
 		},
-<<<<<<< HEAD
+
 		methods: {
 			getNews(){
 				var _this = this;
@@ -196,12 +182,7 @@
 				})					
 			},
 			getBTC(){
-=======
-		methods: {
-			getBTC() {
->>>>>>> f68250cdc7488dee8dbe0e14b15ac68e9cdea39c
-				let that = this;
-				
+				let that = this;			
 				let Signature =
 					'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
 					uni.request({
