@@ -96,8 +96,16 @@
 			uniSegmentedControl,
 			uniLoadMore
 		},
-		created() {
-			this.getList('match')
+		onShow() {
+			if(this.current==0){
+				this.getList('match');
+			}else if(this.current==1){
+				this.getList('pay');
+			}else if(this.current==2){
+				this.getList('confirm');
+			}else if(this.current==3){
+				this.getList('evaluate');
+			}
 		},
 		methods: {
 			navTo(e) {

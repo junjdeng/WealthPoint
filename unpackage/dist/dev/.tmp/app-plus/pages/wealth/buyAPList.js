@@ -327,8 +327,16 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     uniSegmentedControl: uniSegmentedControl,
     uniLoadMore: uniLoadMore },
 
-  created: function created() {
-    this.getList('match');
+  onShow: function onShow() {
+    if (this.current == 0) {
+      this.getList('match');
+    } else if (this.current == 1) {
+      this.getList('pay');
+    } else if (this.current == 2) {
+      this.getList('confirm');
+    } else if (this.current == 3) {
+      this.getList('evaluate');
+    }
   },
   methods: {
     navTo: function navTo(e) {
@@ -368,7 +376,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             name: 'files',
             success: function success(result) {
               var res = JSON.parse(result.data);
-              console.log(res, " at pages\\wealth\\buyAPList.vue:140");
+              console.log(res, " at pages\\wealth\\buyAPList.vue:148");
               if (res.status == 200) {
                 that.gif = false;
                 that.sucs = true;
@@ -403,7 +411,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           data: data,
           method: 'POST',
           success: function success(res) {
-            console.log(res, " at pages\\wealth\\buyAPList.vue:175");
+            console.log(res, " at pages\\wealth\\buyAPList.vue:183");
             that.flag = true;
             that.showOrHide = !that.showOrHide;
             that.sucs = false;

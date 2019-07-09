@@ -298,9 +298,16 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   components: {
     uniSegmentedControl: uniSegmentedControl },
 
-  created: function created() {
-    this.getList('match');
-
+  onShow: function onShow() {
+    if (this.current == 0) {
+      this.getList('match');
+    } else if (this.current == 1) {
+      this.getList('pay');
+    } else if (this.current == 2) {
+      this.getList('confirm');
+    } else if (this.current == 3) {
+      this.getList('evaluate');
+    }
   },
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
     uni.navigateTo({
@@ -325,7 +332,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       var ars = ['match', 'pay', 'confirm', 'evaluate'];
       if (this.current !== index) {
         this.current = index;
-
         that.getList(ars[index]);
       }
     },

@@ -61,6 +61,9 @@
 				<view class="item" data-url="/pages/index/customSuggest" @tap="navTo">
 					意见反馈<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
 				</view>
+				<view class="item" @tap="goOut">
+					退出登陆<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -99,6 +102,12 @@
 					url: e.currentTarget.dataset.url
 				})
 			},
+			goOut(){
+				uni.clearStorageSync();
+				uni.navigateTo({
+					url:'../login/login'
+				})
+			}
 		}
 	}
 </script>

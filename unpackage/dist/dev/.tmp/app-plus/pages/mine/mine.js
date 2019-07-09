@@ -168,6 +168,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 
 
@@ -189,7 +192,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
       url: '/api/member/balance',
       method: 'GET',
       success: function success(res) {
-        console.log(res, " at pages\\mine\\mine.vue:92");
+        console.log(res, " at pages\\mine\\mine.vue:95");
       } });
 
   },
@@ -197,6 +200,12 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
     navTo: function navTo(e) {
       uni.navigateTo({
         url: e.currentTarget.dataset.url });
+
+    },
+    goOut: function goOut() {
+      uni.clearStorageSync();
+      uni.navigateTo({
+        url: '../login/login' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
