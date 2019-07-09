@@ -35,15 +35,17 @@
 				</view>
 			</view>
 		</view>
-
+		
 		<view class="section section2">
 			<view class="notice flex-start">
 				<uni-icon type="sound" class="sound_icon" size="14" color="#CCA366"></uni-icon>
 				<text class="ellipsis flex5">
-					年末大礼：uni-app1.4 新增百度、支付宝小程序。插件市场重磅上线！</text>
+					{{news}}
+				</text>
 				<span class="flex1" data-url="newsList" @tap="navTo">更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></span></span>
 			</view>
 		</view>
+
 		<view class="section section3">
 			<view class="section_title">
 				<view>BTC行情</view>
@@ -94,9 +96,9 @@
 			</view>
 		</view>
 		<view class="cover" v-if="showPop" @tap="hidePop()">
-			<view class="pop_wrap">
+			<view class="pop_wrap" style="background-image: url('../../static/images/main11.jpg');">
 				<view class="text">签到领红包</view>
-				<view class="signBtn">签到</view>
+				<view class="signBtn" data-url="sign" @tap="navTo">去签到</view>
 			</view>
 		</view>
 	</view>
@@ -105,16 +107,19 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import uCharts from '@/components/u-charts/u-charts.js';
+	import {djRequest} from '../../common/request.js'
+	import common from '../../common/common.js'
+	import {config} from '../../common/config.js'
 	import  '../../common/hmac-sha256.js'
 	import '../../common/base64.js'
-	/* console.log(CryptoJS.HmacSHA256("Message", "secret")) */
-	console.log(Base64.encode('我在这里'))
+
 	var _self;
 	var canvaColumn = null;
 	var canvas = null;
 	export default {
 		data() {
 			return {
+				news:'暂无公告',
 				// echarts: echarts,
 				updateStatus: false,
 				showPop: false,
@@ -145,10 +150,14 @@
 			uniIcon,
 			//mpvueEcharts
 		},
-		onShow() {
+		onShow(){
+			if(config.User != null){
+				this.showPop = true;
+			}
 			this.getBTC();
 		},
-		onLoad() {
+		onLoad(){
+			common.balance();
 			this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
 			this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04', ];
 			_self = this;
@@ -158,10 +167,22 @@
 			this._data.das2 = [100, 220, 280, 340, 290, 300, 320];
 			this.getServerData2();
 		},
+
 		methods: {
-			getBTC() {
-				let that = this;
-				
+			getNews(){
+				var _this = this;
+				djRequest({
+					url:'/api/news',
+					data:{'start': 0,'length': 1},
+					success:function(res) {
+						if (res.data.status == 200 && res.data.data.data.length >0 ) {
+							_this.news = res.data.data.data[0].title;
+						} 
+					}
+				})					
+			},
+			getBTC(){
+				let that = this;			
 				let Signature =
 					'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
 					uni.request({
@@ -486,7 +507,6 @@
 	.pop_wrap {
 		text-align: center;
 		width: 470upx;
-		background-image: url("../../static/images/main11.jpg");
 		background-size: 100% 100%;
 		padding: 20upx;
 		margin: 20upx auto;

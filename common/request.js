@@ -38,6 +38,7 @@ const djRequest = async function (opt){
 			}			
 		},
 		fail: (res) =>{
+			console.log(res);
             uni.showToast({
                 title: '请稍后重试'
             });
