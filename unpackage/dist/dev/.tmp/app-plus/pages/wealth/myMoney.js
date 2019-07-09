@@ -120,6 +120,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -146,49 +157,48 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [] };}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(550);this.cHeight = uni.upx2px(500);this.getServerData();},
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [], zer: 0, buy: 0, sell: 0, totalRevenue: 0 };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.navigateTo({ url: 'harvest' });}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(750);this.cHeight = uni.upx2px(500);var that = this;(0, _request.djRequest)({ url: '/api/member/balance', method: 'GET',
+      success: function success(res) {
+        that.zer = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4); //总资产;
+      } });
+
+    (0, _request.djRequest)({
+      url: '/api/statistics/index',
+      method: 'GET',
+      success: function success(res) {
+        that.buy = res.data.data.buyOrderTotal;
+        that.sell = res.data.data.sellOrderTotal;
+        that.totalRevenue = (parseFloat(res.data.data.growingSeedTotal) + parseFloat(res.data.data.rewardSeedTotal)).toFixed(4);
+      } });
+
+  },
   mounted: function mounted() {
-    _self = this;
-    this.cWidth = uni.upx2px(550);
-    this.cHeight = uni.upx2px(500);
-    this.getServerData();
+    var that = this;
+    setTimeout(function () {
+      that.getServerData();
+    }, 300);
+
   },
   methods: {
     getServerData: function getServerData() {
+      var that = this;
+      var Pie = { series: [
+        { data: Number(that.sell), name: '总卖出(' + that.sell + ')', color: '#ee8622' },
+        { data: Number(that.zer), name: '待卖出(' + that.zer + ')', color: '#efb964' },
+        { data: Number(that.buy), name: '总买入(' + that.buy + ')', color: '#f7ac1a' }] };
 
-      (0, _request.djRequest)({
-        url: '/api/statistics/index',
-        method: 'GET',
-        success: function success(res) {
-          console.log(res, " at pages\\wealth\\myMoney.vue:63");
-
-          var x = res.data.data.buyOrderTotal;
-          var y = res.data.data.sellOrderTotal;
-          var z = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4); //总资产
-          var Pie = { series: [] };
-          Pie.series = [
-          { dat: y, name: '总卖出' },
-          { dat: z, name: '待卖出' },
-          { dat: x, name: '总买入' }];
-
-          _self.showPie("canvasPie", Pie);
-        } });
-
-      /* uni.request({
-              	url: 'https://www.easy-mock.com/mock/5cc586b64fc5576cba3d647b/uni-wx-charts/chartsdata2',
-              	data:{
-              	},
-              	success: function(res) {
-              		console.log(res.data.data)
-              		let Pie={series:[]};
-              		//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-              		Pie.series=res.data.data.Pie.series;
-              		
-              	},
-              	fail: () => {
-              		_self.tips="网络错误，小程序端请检查合法域名";
-              	},
-              }); */
+      _self.showPie("canvasPie", Pie);
     },
     showPie: function showPie(canvasId, chartData) {
       canvaPie = new _uCharts.default({
@@ -196,7 +206,7 @@ var _self;var canvaPie = null;var _default = { data: function data() {return { c
         canvasId: canvasId,
         type: 'pie',
         fontSize: 11,
-        legend: false,
+        legend: true,
         background: '#FFFFFF',
         pixelRatio: _self.pixelRatio,
         series: chartData.series,
@@ -210,12 +220,11 @@ var _self;var canvaPie = null;var _default = { data: function data() {return { c
 
 
 
-      this.piearr = canvaPie.opts.series;
     },
     touchPie: function touchPie(e) {
       canvaPie.showToolTip(e, {
         format: function format(item) {
-          return item.name + ':' + item.dat;
+          return item.name + ':' + Number(item.data);
         } });
 
     } } };exports.default = _default;

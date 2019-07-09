@@ -36,7 +36,7 @@
 		</view>
 
 		<view class="section section2">
-			<view class="section_title">我的收益<span data-url="myMoney" @tap="navTo">收益专区<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon></span></span></view>
+			<view class="section_title">我的收益<span data-url="myMoney" @tap="navTo">分红收益<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon></span></span></view>
 			<view class="flex-start condition_card">
 				<view class="flex1">
 					<view>总收益</view>

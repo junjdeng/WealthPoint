@@ -3,18 +3,29 @@
 		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
 			<view class="qiun-title-dot-light">我的总收益</view>
 		</view>
-		<view class="qiun-charts qiun-rows" >
-			<canvas canvas-id="canvasPie" id="canvasPie" class="charts-pie" @touchstart="touchPie"></canvas>
-			<view class="qiun-bg-white charts-right">
-				<view>
-					<block v-for="(item, index) in piearr" :key="index">
-						<view class="qiun-rows legend-itme">
-							<view class="legend-itme-point" :style="{'background-color':item.color}"></view>
-							<view class="legend-itme-text">{{item.name}}:{{item.dat}}人</view>
-						</view>
-					</block>
-				</view>
-			</view>
+		<view class="profit-main">
+        <view class="profit-main-left">
+          <view class="profit-number">{{totalRevenue}}</view>
+          <view>我的总收益</view>
+        </view>
+        <view class="profit-main-right">
+          <view style="font-size: 50upx;color:#CCA366;height: 40upx;position:absolute;left:-10upx;top:-10upx;">*</view>
+          <view>
+            <view>AP每天的收益分红</view>
+            <!--<view>{{buyNumber}}&lt;!&ndash;<span class="txt">AP</span>&ndash;&gt;</view>-->
+          </view>
+          <view>
+            <view>系统赠送</view>
+            <!--<view>{{sellNumber}}&lt;!&ndash;<span class="txt">AP</span>&ndash;&gt;</view>-->
+          </view>
+          <view>
+            <view>奖励</view>
+            <!--<view>{{forSell}}&lt;!&ndash;<span class="txt">AP</span>&ndash;&gt;</view>-->
+          </view>
+        </view>
+      </view>
+		<view class="qiun-charts" >
+			<canvas canvas-id="canvasPie" id="canvasPie" class="charts" @touchstart="touchPie($event)"></canvas>
 		</view>
 	</view>
 </template>
@@ -38,56 +49,55 @@
 				cHeight:'',
 				pixelRatio:1,
 				serverData:'',
-				piearr:[]
+				piearr:[],
+				zer:0,
+				buy:0,
+				sell:0,
+				totalRevenue:0
 			}
+		},
+		onNavigationBarButtonTap(e) {
+			uni.navigateTo({
+				url: 'harvest'
+			})
 		},
 		onLoad() {
 			_self = this;
-			this.cWidth=uni.upx2px(550);
+			this.cWidth=uni.upx2px(750);
 			this.cHeight=uni.upx2px(500);
-			this.getServerData();
+			let that = this;
+			djRequest({
+				url: '/api/member/balance',
+				method: 'GET',
+				success: function(res) {
+					that.zer = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4);//总资产;
+				}
+			})
+			djRequest({
+				url:'/api/statistics/index',
+				method:'GET',
+				success:function(res){
+					that.buy=res.data.data.buyOrderTotal;
+					that.sell=res.data.data.sellOrderTotal;
+					that.totalRevenue=(parseFloat(res.data.data.growingSeedTotal)+parseFloat(res.data.data.rewardSeedTotal)).toFixed(4);
+				}
+			})
 		},
 		mounted(){
-			_self = this;
-			this.cWidth=uni.upx2px(550);
-			this.cHeight=uni.upx2px(500);
-			this.getServerData();
+			let that = this;
+			setTimeout(function(){
+				that.getServerData();
+			},300)
+			
 		},
 		methods: {
 			getServerData(){
-								djRequest({
-					url:'/api/statistics/index',
-					method:'GET',
-					success:function(res){
-						console.log(res);
-						
-						let x=res.data.data.buyOrderTotal;
-						let y=res.data.data.sellOrderTotal;
-						let z = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4);//总资产
-						let Pie={series:[]};
-						Pie.series=[
-						  {dat:y, name:'总卖出'},
-						  {dat:z, name:'待卖出'},
-						  {dat:x,name:'总买入'}
-						];
-						_self.showPie("canvasPie",Pie);
-					}
-				})
-				/* uni.request({
-					url: 'https://www.easy-mock.com/mock/5cc586b64fc5576cba3d647b/uni-wx-charts/chartsdata2',
-					data:{
-					},
-					success: function(res) {
-						console.log(res.data.data)
-						let Pie={series:[]};
-						//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-						Pie.series=res.data.data.Pie.series;
-						
-					},
-					fail: () => {
-						_self.tips="网络错误，小程序端请检查合法域名";
-					},
-				}); */
+				let that = this;				let Pie={series:[
+				  {data:Number(that.sell), name:'总卖出('+that.sell+')', color:'#ee8622'},
+				  {data:Number(that.zer), name:'待卖出('+that.zer+')', color:'#efb964'},
+				  {data:Number(that.buy),name:'总买入('+that.buy+')', color:'#f7ac1a'}
+				]};
+				_self.showPie("canvasPie",Pie);
 			},
 			showPie(canvasId,chartData){
 				canvaPie=new uCharts({
@@ -95,7 +105,7 @@
 					canvasId: canvasId,
 					type: 'pie',
 					fontSize:11,
-					legend:false,
+					legend:true,
 					background:'#FFFFFF',
 					pixelRatio:_self.pixelRatio,
 					series: chartData.series,
@@ -109,12 +119,11 @@
 						}
 					},
 				});
-				this.piearr=canvaPie.opts.series;
 			},
 			touchPie(e){
 				canvaPie.showToolTip(e, {
 					format: function (item) {
-						return item.name + ':' + item.dat 
+						return item.name + ':' + Number(item.data) 
 					}
 				});
 			},
@@ -131,11 +140,39 @@ page{background:#F2F2F2;width: 750upx;overflow-x: hidden;}
 .qiun-common-mt{margin-top:10upx;}
 .qiun-bg-white{background:#FFFFFF;}
 .qiun-title-bar{width:96%; padding:10upx 2%; flex-wrap:nowrap;}
-.qiun-title-dot-light{border-left: 10upx solid #0ea391; padding-left: 10upx; font-size: 32upx;color: #000000}
+.qiun-title-dot-light{border-left: 10upx solid #CCA366; padding-left: 10upx; font-size: 32upx;color: #000000}
 .qiun-charts{width: 750upx; height:500upx;background-color: #FFFFFF;}
-.charts-pie{width: 550upx; height:500upx;background-color: #FFFFFF;}
-.charts-right{display:flex;align-items:center;width: 250upx; height:500upx;background-color: #FFFFFF;}
-.legend-itme{width: 200upx; margin-left: 30upx; height:50upx;align-items:center;}
-.legend-itme-point{width: 20upx; height:20upx; margin: 15upx;  border: 1px solid #FFFFFF; border-radius: 20upx;background-color: #000000;}
-.legend-itme-text{height:50upx;line-height: 50upx;color: #666666;font-size: 26upx;}
+.charts{width: 750upx; height:500upx;background-color: #FFFFFF;}
+.profit-main {
+    color: #565656;
+    width: 86%;
+    padding: 20upx 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	background: #fff;
+  }
+
+  .profit-main > view {
+    width: 40%;
+    font-size: 28upx;
+  }
+
+  .profit-main > view:last-child {
+    width: 50%;
+    border-left: 2upx solid #f2f2f2;
+    padding-left: 20upx;
+    position:relative;
+  }
+.profit-number {
+    color: #CCA366;
+    font-size: 40upx;
+  }
+  .profit-main-right > view {
+    display: flex;
+	padding-left:60upx;
+	box-sizing:border-box;
+    justify-content: flex-start;
+    align-items: center;
+  }
 </style>

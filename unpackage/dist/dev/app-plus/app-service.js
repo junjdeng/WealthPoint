@@ -2374,7 +2374,7 @@ return root;
 
 
 
-__wxAppCode__['app.json']={"pages":["pages/index/index","pages/index/newsList","pages/index/btc","pages/index/customSuggest","pages/index/chart","pages/index/sign","pages/index/wwallet","pages/charity/charity","pages/charity/charityList","pages/charity/charityDetail","pages/charity/charityHelp","pages/wealth/wealth","pages/wealth/wallet","pages/wealth/walletDetail","pages/wealth/wallet1","pages/wealth/buyAP","pages/wealth/buyAPList","pages/wealth/buyRecord","pages/wealth/OrderConfirm","pages/wealth/GoEvaluate","pages/wealth/complaint","pages/wealth/buyDetail","pages/wealth/sellRecord","pages/wealth/sellAP","pages/wealth/sellDetail","pages/wealth/harvest","pages/wealth/sellAPList","pages/wealth/connectMember","pages/mine/mine","pages/mine/mine0","pages/mine/mine1","pages/mine/mine2","pages/mine/mine3","pages/mine/mine4","pages/mine/delCode","pages/mine/addAliPay","pages/mine/alipayEdit","pages/mine/mine5","pages/mine/mine6","pages/mine/mine7","pages/mine/mine8","pages/mine/code","pages/mine/addCode","pages/mine/getTool","pages/mine/mine3Addbank","pages/mine/mine5ResetPw","pages/mine/mine6Sell","pages/mine/mine6Use","pages/mine/mine7Cards","pages/login/login","pages/login/finishRegisterInfo","pages/login/waitAgree","pages/login/register","pages/mine/reviseBank"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F5F5F5","bounce":"none"},"tabBar":{"color":"#999999","selectedColor":"#D03C29","borderStyle":"black","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","iconPath":"static/images/tabbar1.png","selectedIconPath":"static/images/tabbar1_seled.png","text":"首页"},{"pagePath":"pages/wealth/wealth","iconPath":"static/images/tabbar3.png","selectedIconPath":"static/images/tabbar3_seled.png","text":"财富"},{"pagePath":"pages/charity/charity","iconPath":"static/images/tabbar2.png","selectedIconPath":"static/images/tabbar2_seled.png","text":"公益"},{"pagePath":"pages/mine/mine","iconPath":"static/images/tabbar4.png","selectedIconPath":"static/images/tabbar4_seled.png","text":"我的"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Wealth Point","compilerVersion":"2.0.1","usingComponents":{}};
+__wxAppCode__['app.json']={"pages":["pages/index/index","pages/index/newsList","pages/index/btc","pages/index/customSuggest","pages/index/chart","pages/index/sign","pages/index/wwallet","pages/charity/charity","pages/charity/charityList","pages/charity/charityDetail","pages/charity/charityHelp","pages/wealth/wealth","pages/wealth/wallet","pages/wealth/walletDetail","pages/wealth/wallet1","pages/wealth/buyAP","pages/wealth/myMoney","pages/wealth/buyAPList","pages/wealth/buyRecord","pages/wealth/OrderConfirm","pages/wealth/GoEvaluate","pages/wealth/complaint","pages/wealth/buyDetail","pages/wealth/sellRecord","pages/wealth/sellAP","pages/wealth/sellDetail","pages/wealth/harvest","pages/wealth/sellAPList","pages/wealth/connectMember","pages/mine/mine","pages/mine/mine0","pages/mine/mine1","pages/mine/mine2","pages/mine/mine3","pages/mine/mine4","pages/mine/delCode","pages/mine/addAliPay","pages/mine/alipayEdit","pages/mine/mine5","pages/mine/mine6","pages/mine/mine7","pages/mine/mine8","pages/mine/code","pages/mine/addCode","pages/mine/getTool","pages/mine/mine3Addbank","pages/mine/mine5ResetPw","pages/mine/mine6Sell","pages/mine/mine6Use","pages/mine/mine7Cards","pages/login/login","pages/login/finishRegisterInfo","pages/login/waitAgree","pages/login/register","pages/mine/reviseBank"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F5F5F5","bounce":"none"},"tabBar":{"color":"#999999","selectedColor":"#D03C29","borderStyle":"black","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","iconPath":"static/images/tabbar1.png","selectedIconPath":"static/images/tabbar1_seled.png","text":"首页"},{"pagePath":"pages/wealth/wealth","iconPath":"static/images/tabbar3.png","selectedIconPath":"static/images/tabbar3_seled.png","text":"财富"},{"pagePath":"pages/charity/charity","iconPath":"static/images/tabbar2.png","selectedIconPath":"static/images/tabbar2_seled.png","text":"公益"},{"pagePath":"pages/mine/mine","iconPath":"static/images/tabbar4.png","selectedIconPath":"static/images/tabbar4_seled.png","text":"我的"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Wealth Point","compilerVersion":"2.0.1","usingComponents":{}};
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 __wxAppCode__['components/uni-icon/uni-icon.json']={"usingComponents":{},"component":true};
@@ -21262,6 +21262,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -21288,49 +21299,48 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [] };}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(550);this.cHeight = uni.upx2px(500);this.getServerData();},
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [], zer: 0, buy: 0, sell: 0, totalRevenue: 0 };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.navigateTo({ url: 'harvest' });}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(750);this.cHeight = uni.upx2px(500);var that = this;(0, _request.djRequest)({ url: '/api/member/balance', method: 'GET',
+      success: function success(res) {
+        that.zer = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4); //总资产;
+      } });
+
+    (0, _request.djRequest)({
+      url: '/api/statistics/index',
+      method: 'GET',
+      success: function success(res) {
+        that.buy = res.data.data.buyOrderTotal;
+        that.sell = res.data.data.sellOrderTotal;
+        that.totalRevenue = (parseFloat(res.data.data.growingSeedTotal) + parseFloat(res.data.data.rewardSeedTotal)).toFixed(4);
+      } });
+
+  },
   mounted: function mounted() {
-    _self = this;
-    this.cWidth = uni.upx2px(550);
-    this.cHeight = uni.upx2px(500);
-    this.getServerData();
+    var that = this;
+    setTimeout(function () {
+      that.getServerData();
+    }, 300);
+
   },
   methods: {
     getServerData: function getServerData() {
+      var that = this;
+      var Pie = { series: [
+        { data: Number(that.sell), name: '总卖出(' + that.sell + ')', color: '#ee8622' },
+        { data: Number(that.zer), name: '待卖出(' + that.zer + ')', color: '#efb964' },
+        { data: Number(that.buy), name: '总买入(' + that.buy + ')', color: '#f7ac1a' }] };
 
-      (0, _request.djRequest)({
-        url: '/api/statistics/index',
-        method: 'GET',
-        success: function success(res) {
-          console.log(res, " at pages\\wealth\\myMoney.vue:63");
-
-          var x = res.data.data.buyOrderTotal;
-          var y = res.data.data.sellOrderTotal;
-          var z = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4); //总资产
-          var Pie = { series: [] };
-          Pie.series = [
-          { dat: y, name: '总卖出' },
-          { dat: z, name: '待卖出' },
-          { dat: x, name: '总买入' }];
-
-          _self.showPie("canvasPie", Pie);
-        } });
-
-      /* uni.request({
-              	url: 'https://www.easy-mock.com/mock/5cc586b64fc5576cba3d647b/uni-wx-charts/chartsdata2',
-              	data:{
-              	},
-              	success: function(res) {
-              		console.log(res.data.data)
-              		let Pie={series:[]};
-              		//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-              		Pie.series=res.data.data.Pie.series;
-              		
-              	},
-              	fail: () => {
-              		_self.tips="网络错误，小程序端请检查合法域名";
-              	},
-              }); */
+      _self.showPie("canvasPie", Pie);
     },
     showPie: function showPie(canvasId, chartData) {
       canvaPie = new _uCharts.default({
@@ -21338,7 +21348,7 @@ var _self;var canvaPie = null;var _default = { data: function data() {return { c
         canvasId: canvasId,
         type: 'pie',
         fontSize: 11,
-        legend: false,
+        legend: true,
         background: '#FFFFFF',
         pixelRatio: _self.pixelRatio,
         series: chartData.series,
@@ -21352,12 +21362,11 @@ var _self;var canvaPie = null;var _default = { data: function data() {return { c
 
 
 
-      this.piearr = canvaPie.opts.series;
     },
     touchPie: function touchPie(e) {
       canvaPie.showToolTip(e, {
         format: function format(item) {
-          return item.name + ':' + item.dat;
+          return item.name + ':' + Number(item.data);
         } });
 
     } } };exports.default = _default;
