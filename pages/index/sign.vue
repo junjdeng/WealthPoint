@@ -2,20 +2,21 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">签到红包</view>
-			<view class="num wpgold">318元</view>
-			<span class="want" data-url="sellAP" @tap="navTo">红包兑换AP</span>
+			<view class="num wpgold">{{signNum}}元</view>
+			<span class="want" @tap="change">红包兑换AP</span>
 		</view>
 	
 		<view class=" section section2">
-			<view class="section_title">签到日历<switch checked @change="switch1Change" color="#CCA366" /><span>签到提醒</span></view>
+			<!-- <switch checked @change="switch1Change" color="#CCA366" /><span>签到提醒</span> -->
+			<view class="section_title">签到日历</view>
 			<view class="list flex-start">
 				<view class="flex1 item">
-					<view class="num">+5</view>
+					<view class="num" :class="signList[1] ? '':'cover'">+{{signList[1] ? signList[1].integral : '5'}}</view>
 					<view class="point"></view>
-					<view calss="date">05.20</view>
+					<view calss="date">昨天</view>
 				</view>
-				<view class="flex1 item">
-					<view class="num">+5</view>
+				<view class="flex1 item" :class="signList[0] ? '':'cover'">
+					<view class="num">+{{signList[0] ? signList[0].integral : '5'}}</view>
 					<view class="point"></view>
 					<view calss="date">今天</view>
 				</view>
@@ -45,27 +46,113 @@
 					<view calss="date">05.20</view>
 				</view>
 			</view>
-			<view class="line"></view>
+			<!-- <view class="line"></view> -->
 		</view>
 	
-	    <view class="signBtn">签到领红包</view>
+	    <view class="signBtn" @tap="sign" >{{signTxt}}</view>
 	
 	</view>
 </template>
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import {djRequest} from '../../common/request.js'
+	import common from '../../common/common.js'
+	import {config} from '../../common/config.js'	
 	
 	export default {
 		data() {
 			return {
-
+				signTxt:"签到领红包",
+				signNum:0,
+				signList:[],
 			}
 		},
 		components: {
 			uniIcon
 		},
+		onLoad() {
+			this.signNum = config.User.bonus;
+			this.getSignData();
+			var _this = this;
+			uni.getStorage({
+				key: 'isTodaySign',
+				success: function (res) {
+					if (res.data) {
+						_this.signTxt = "今日已签到";
+					}
+				}
+			});
+		},
 		methods: {
+			change(){
+				if (this.signNum == 0) {
+					common.TostUtil('暂无可兑换的红包');
+					return;
+				}
+				var _this = this;
+				uni.showModal({
+					title: '签到红包兑换',
+					content: '确定将您的签到红包兑换AP？',
+					success: function (res) {
+						if (res.confirm) {
+							djRequest({
+								url:'api/sign/exchange',
+								data:{},
+								success:function(res) {
+									console.log(res);												
+									if (res.data.status == 200){
+										common.TostUtil(res.data.message);
+										_this.signNum = 0;
+									}	
+								}
+							})	
+						} else if (res.cancel) {
+							// console.log('用户点击取消');
+						}
+					}
+				});
+				
+			},
+			sign(){
+				if (this.signTxt == "今日已签到") {
+					return;
+				}
+				
+				var _this = this;
+				djRequest({
+					url:'/api/sign',
+					data:{},
+					success:function(res) {
+						console.log(res);												
+						if (res.data.status == 200){
+							common.TostUtil(res.data.message);
+							_this.signTxt = "今日已签到";
+							uni.setStorage({
+								key: 'isTodaySign',
+								data: true,
+								success: function () {
+									//console.log('success');
+								}
+							});
+							_this.getSignData();
+						}	
+					}
+				})	
+			},
+			getSignData(){
+				var _this = this;
+				djRequest({
+					url:'/api/sign/sign_list',
+					data:{'start':0,'length':7},
+					success:function(res) {
+						//console.log(res);												
+						if (res.data.status == 200){
+							_this.signList = res.data.data;
+						}	
+					}
+				})	
+			},
 			navTo(e) {
 				uni.navigateTo({
 					url:e.currentTarget.dataset.url
@@ -90,7 +177,7 @@
 .section_title {color: #333333;font-size: 28upx;font-weight: bold;line-height: 3em;padding: 0 10upx;}
 .section_title switch,.section_title span{float: right; margin-right: 10upx;}
 .section_title switch{transform: scale(0.8);}
-.item{text-align: center; font-size: 8upx;color: #333333; padding: 10upx 0;}
+.item{text-align: center; font-size: 12upx;color: #333333; padding: 20upx 0;}
 .item.cover{opacity: 0.3;}
 .item .num{width: 70upx; height: 70upx; line-height: 70upx; margin: 0 auto; font-size: 32upx; background: #CCA366; color: #FFFFFF;border-radius: 35upx; text-align: center;}
 .item .point{width: 20upx; height: 20upx;margin: 10upx auto;border-radius: 10upx; background: #FF5533; z-index: 100;}
@@ -98,6 +185,4 @@
 .line{height: 1px; background: #E6E6E6;width: 600upx; position: absolute; bottom: 58upx; left: 50upx;z-index: 0;}
 .signBtn{background: linear-gradient(180deg,#EA6F53,#D03C29); width: 270upx; height: 270upx; border-radius: 50%;
 color: #FFFFFF; line-height: 270upx; font-size:32upx; text-align: center; }
-
-
 </style>
