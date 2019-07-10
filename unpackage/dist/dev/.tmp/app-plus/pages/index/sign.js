@@ -174,7 +174,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
   },
   onShow: function onShow() {
-
+    _common.default.balance();
   },
   components: {
     uniIcon: uniIcon },

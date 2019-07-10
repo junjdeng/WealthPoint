@@ -154,10 +154,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         url: '/api/qrcode',
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\mine\\mine4.vue:57");
           /* res.data.data.forEach(item=>{
-                                                             	item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
-                                                             }) */
+                                        	item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
+                                        }) */
           that.list = res.data.data;
         } });
 

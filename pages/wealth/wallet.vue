@@ -29,6 +29,9 @@
 		components: {
 			uniIcon
 		},
+		onShow(){
+			common.balance();
+		},
 		onNavigationBarButtonTap(e) {
 			let that=this;
 			if(that.type==1){

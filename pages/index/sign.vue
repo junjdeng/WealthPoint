@@ -74,7 +74,7 @@
 			})
 		},
 		onShow(){
-			
+			common.balance();
 		},
 		components: {
 			uniIcon

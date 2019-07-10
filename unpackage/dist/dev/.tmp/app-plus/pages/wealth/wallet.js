@@ -129,6 +129,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   components: {
     uniIcon: uniIcon },
 
+  onShow: function onShow() {
+    _common.default.balance();
+  },
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
     var that = this;
     if (that.type == 1) {

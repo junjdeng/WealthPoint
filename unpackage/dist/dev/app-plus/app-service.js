@@ -17560,7 +17560,7 @@ var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-i
 //
 //
 //
-var _default = { data: function data() {return { list: [] };}, onShow: function onShow() {var that = this;that.list = [];uni.request({ url: 'https://api.huobi.pro/market/tickers', header: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 'timeout': 8000 }, method: 'GET', success: function success(res) {console.log(res, " at pages\\index\\btc.vue:48");var arr = res.data.data;arr.forEach(function (item) {if (item.symbol == 'usdt') {console.log(item.open, " at pages\\index\\btc.vue:52");}if (item.symbol == 'btcusdt' || item.symbol == 'ethusdt' || item.symbol == 'eosusdt' || item.symbol == 'xrpusdt' || item.symbol == 'bchusdt' || item.symbol == 'etcusdt' || item.symbol == 'ltcusdt' || item.symbol == 'bsvusdt') {
+var _default = { data: function data() {return { list: [] };}, onShow: function onShow() {var that = this;that.list = [];uni.request({ url: 'https://api.huobi.pro/market/tickers', header: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 'timeout': 8000 }, method: 'GET', success: function success(res) {/* console.log(res) */var arr = res.data.data;arr.forEach(function (item) {if (item.symbol == 'usdt') {console.log(item.open, " at pages\\index\\btc.vue:52");}if (item.symbol == 'btcusdt' || item.symbol == 'ethusdt' || item.symbol == 'eosusdt' || item.symbol == 'xrpusdt' || item.symbol == 'bchusdt' || item.symbol == 'etcusdt' || item.symbol == 'ltcusdt' || item.symbol == 'bsvusdt') {
             if (!item.hasOwnProperty('cat')) {
               item.cat = item.symbol.slice(0, 3).toUpperCase();
             }
@@ -18342,7 +18342,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
   },
   onShow: function onShow() {
-
+    _common.default.balance();
   },
   components: {
     uniIcon: uniIcon },
@@ -20326,6 +20326,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   components: {
     uniIcon: uniIcon },
 
+  onShow: function onShow() {
+    _common.default.balance();
+  },
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
     var that = this;
     if (that.type == 1) {
@@ -27112,10 +27115,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 
 
-var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
 
 
 
@@ -27129,14 +27133,15 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
     uniIcon: uniIcon },
 
   onShow: function onShow() {
+    _common.default.balance();
     /* let that = this;
-                             djRequest({
-                             	url: '/api/member/balance',
-                             	method: 'GET',
-                             	success: function(res) {
-                             		console.log(res);
-                             	}
-                             }) */
+                               djRequest({
+                               	url: '/api/member/balance',
+                               	method: 'GET',
+                               	success: function(res) {
+                               		console.log(res);
+                               	}
+                               }) */
   },
   methods: {
     navTo: function navTo(e) {
@@ -28154,10 +28159,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         url: '/api/qrcode',
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\mine\\mine4.vue:57");
           /* res.data.data.forEach(item=>{
-                                                             	item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
-                                                             }) */
+                                        	item.name=item.name.substring(0,3)+'******'+item.name.substring(item.name.length-4);
+                                        }) */
           that.list = res.data.data;
         } });
 

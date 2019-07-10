@@ -45,7 +45,7 @@
 				},
 				method: 'GET',
 				success: function(res) {
-					console.log(res)
+					/* console.log(res) */
 					let arr = res.data.data
 					arr.forEach(item => {
 						if(item.symbol=='usdt'){

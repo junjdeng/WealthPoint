@@ -71,6 +71,7 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import common from '../../common/common.js'
 	import {
 		djRequest
 	} from '../../common/request.js'
@@ -88,6 +89,7 @@
 			uniIcon
 		},
 		onShow() {
+			common.balance();
 			/* let that = this;
 			djRequest({
 				url: '/api/member/balance',
