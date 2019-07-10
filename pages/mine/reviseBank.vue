@@ -39,8 +39,12 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
-	import { config } from '../../common/config.js'
-	import { djRequest } from '../../common/request.js'
+	import {
+		config
+	} from '../../common/config.js'
+	import {
+		djRequest
+	} from '../../common/request.js'
 	export default {
 		data() {
 			return {
@@ -102,21 +106,33 @@
 			},
 			del() {
 				let that = this;
-				djRequest({
-					url: '/api/bank/delete',
-					data: {
-						"Id": that.id,
-					},
-					method: "GET",
+				uni.showModal({
+					title: '删除',
+					content: '确定删除此银行卡？',
 					success: function(res) {
-						if (res.data.status === 200) {
-							common.TostUtil(res.data.message);
-							uni.navigateBack({
-								delta: 1
-							});
+						if (res.confirm) {
+							djRequest({
+								url: '/api/bank/delete',
+								data: {
+									"Id": that.id,
+								},
+								method: "GET",
+								success: function(res) {
+									if (res.data.status === 200) {
+										common.TostUtil(res.data.message);
+										setTimeout(function(){
+											uni.navigateBack({
+											delta: 1
+										});
+										},1000)
+										
+									}
+								}
+							})
 						}
 					}
 				})
+
 			},
 			/* 展示数据 */
 			getBank() {
@@ -174,16 +190,16 @@
 						bankName: that.bankName,
 						bankNumber: that.bankNumber,
 						bankAddress: that.bankAddress,
-						bankAccountName:that.userName,
+						bankAccountName: that.userName,
 						status: 'yes'
 					},
 					method: 'POST',
 					success: function(res) {
 						common.TostUtil(res.data.message);
 						that.flag = true;
-						setTimeout(function(){
+						setTimeout(function() {
 							uni.navigateBack();
-						},1000)
+						}, 1000)
 					},
 					fail: function(res) {
 						console.log(res)

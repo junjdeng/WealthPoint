@@ -9,7 +9,7 @@
 			
 			<view class="uni-form-item uni-column flex-start">
 				<span class="flex2 title">安全密码</span>
-                <input class="uni-input flex5" v-model.trim="pwd" type="number" placeholder="请输入六位安全密码" />
+                <input class="uni-input flex5" v-model.trim="pwd" type="password" placeholder="请输入六位安全密码" />
 			</view>
 			
 			<view class="uni-btn-v">
@@ -28,8 +28,13 @@
 		data() {
 			return {
 				realName:'',
-				pwd:0
+				pwd:''
 			}
+		},
+		onNavigationBarButtonTap(e) {
+			uni.switchTab({
+				url: '../index/index'
+			})
 		},
 		methods: {
 			submit(){

@@ -68,13 +68,13 @@
 			uniSegmentedControl
 		},
 		onShow() {
-			if(this.current==0){
+			if (this.current == 0) {
 				this.getList('match');
-			}else if(this.current==1){
+			} else if (this.current == 1) {
 				this.getList('pay');
-			}else if(this.current==2){
+			} else if (this.current == 2) {
 				this.getList('confirm');
-			}else if(this.current==3){
+			} else if (this.current == 3) {
 				this.getList('evaluate');
 			}
 		},
@@ -107,21 +107,30 @@
 			/* 确认收款 */
 			confirmPay(id) {
 				let that = this;
-				djRequest({
-					url:'/api/order/confirm',
-					method:'POST',
-					data:{
-						Id: id,
-						status: 'success'
-					},
-					success:function(res){
-						common.TostUtil(res.data.message);
-						if(res.data.status===200){
-							common.balance();
-							that.getList('confirm');
+				uni.showModal({
+					title: '确认',
+					content: '确定已收款？',
+					success: function(res) {
+						if (res.confirm) {
+							djRequest({
+								url: '/api/order/confirm',
+								method: 'POST',
+								data: {
+									Id: id,
+									status: 'success'
+								},
+								success: function(res) {
+									common.TostUtil(res.data.message);
+									if (res.data.status === 200) {
+										common.balance();
+										that.getList('confirm');
+									}
+								}
+							})
 						}
 					}
 				})
+
 			},
 			//获取数据
 			getList(idx) {

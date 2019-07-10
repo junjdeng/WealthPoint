@@ -338,20 +338,29 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     /* 确认收款 */
     confirmPay: function confirmPay(id) {
       var that = this;
-      (0, _request.djRequest)({
-        url: '/api/order/confirm',
-        method: 'POST',
-        data: {
-          Id: id,
-          status: 'success' },
-
+      uni.showModal({
+        title: '确认',
+        content: '确定已收款？',
         success: function success(res) {
-          _common.default.TostUtil(res.data.message);
-          if (res.data.status === 200) {
-            _common.default.balance();
-            that.getList('confirm');
+          if (res.confirm) {
+            (0, _request.djRequest)({
+              url: '/api/order/confirm',
+              method: 'POST',
+              data: {
+                Id: id,
+                status: 'success' },
+
+              success: function success(res) {
+                _common.default.TostUtil(res.data.message);
+                if (res.data.status === 200) {
+                  _common.default.balance();
+                  that.getList('confirm');
+                }
+              } });
+
           }
         } });
+
 
     },
     //获取数据

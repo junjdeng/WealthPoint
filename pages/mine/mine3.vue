@@ -57,10 +57,13 @@
 					method:'GET',
 					success:function(res){
 						let arr = res.data.data;
-						arr.forEach(item=>{
+						if(arr.length>0){
+							arr.forEach(item=>{
 							item.bankNumber=item.bankNumber.substring(0,4)+'******'+item.bankNumber.substring(item.bankNumber.length-4);
 						})
 						that.list = arr;
+						}
+						
 					}
 				})
 			}

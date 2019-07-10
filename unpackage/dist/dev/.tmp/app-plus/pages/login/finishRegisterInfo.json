@@ -1,4 +1,14 @@
 {
   "navigationBarTitleText": "完善资料",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "跳过",
+        "color": "#333333",
+        "fontSize": "14px",
+        "width": "60"
+      }
+    ]
+  },
   "usingComponents": {}
 }

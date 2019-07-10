@@ -23,7 +23,7 @@
 				</view>
 
 				<view class="uni-btn-v">
-					<button formType="submit">{{flag?"完成":"处理中..."}}</button>
+					<button formType="submit">{{flag?"提交":"处理中..."}}</button>
 				</view>
 			</form>
 		</view>

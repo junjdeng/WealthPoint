@@ -23,8 +23,12 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
-	import { config } from '../../common/config.js'
-	import { djRequest } from '../../common/request.js'
+	import {
+		config
+	} from '../../common/config.js'
+	import {
+		djRequest
+	} from '../../common/request.js'
 	export default {
 		data() {
 			return {
@@ -41,25 +45,34 @@
 		onNavigationBarButtonTap(e) {
 			let that = this;
 			/* 删除 */
-			djRequest({
-				url: '/api/qrcode/delete',
-				method: 'GET',
-				data: {
-					Id: that.id
-				},
+			uni.showModal({
+				title: '删除',
+				content: '确定删除此支付宝帐号？',
 				success: function(res) {
-					console.log(res)
-					common.TostUtil(res.data.message);
-					if (res.data.status === 200) {
-						setTimeout(function() {
-							uni.navigateBack({
-								delta: 1
-							})
-						}, 1000)
-					}
+					if (res.confirm) {
+						djRequest({
+							url: '/api/qrcode/delete',
+							method: 'GET',
+							data: {
+								Id: that.id
+							},
+							success: function(res) {
+								console.log(res)
+								common.TostUtil(res.data.message);
+								if (res.data.status === 200) {
+									setTimeout(function() {
+										uni.navigateBack({
+											delta: 1
+										})
+									}, 1000)
+								}
 
+							}
+						})
+					}
 				}
 			})
+
 		},
 		onLoad(options) {
 			this.id = options.id;
@@ -108,9 +121,9 @@
 							console.log(res);
 							common.TostUtil(res.data.message);
 							that.flag = true;
-							setTimeout(function(){
+							setTimeout(function() {
 								uni.navigateBack();
-							},1000)
+							}, 1000)
 						},
 						fail: function(res) {
 							common.TostUtil(res.data.message);

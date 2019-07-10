@@ -6,7 +6,7 @@
 		</view>
 		<view class="list" v-for="(item,index) in list" :key="index">
 			<view>{{item.time | formatDate(2)}}</view>
-			<view>{{item.integral}}</view>
+			<view>+{{item.integral}}</view>
 		</view>
 		<view class="title">
 			<view>合计</view>

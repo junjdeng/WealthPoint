@@ -11,8 +11,10 @@
 				<text>购买数量:</text><text>1 张</text>
 			</view>
 			<view>
-				<text>付款钱包:</text><label @click="change" class="radio"><radio value="ecash" :checked="!sel" color="#CCA366"  />希望钱包</label>
-                <label @click="change" class="radio"><radio  value="bonus" :checked="sel" color="#CCA366"  />奖金钱包</label>
+				<text>付款钱包:</text><label @click="change" class="radio">
+					<radio value="ecash" :checked="!sel" color="#CCA366" />希望钱包</label>
+				<label @click="change" class="radio">
+					<radio value="bonus" :checked="sel" color="#CCA366" />奖金钱包</label>
 			</view>
 			<view class="intro">
 				<view>*使用说明</view>
@@ -44,18 +46,22 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
-	import { config } from '../../common/config.js'
-	import { djRequest } from '../../common/request.js'
+	import {
+		config
+	} from '../../common/config.js'
+	import {
+		djRequest
+	} from '../../common/request.js'
 	export default {
 		data() {
 			return {
 				text: '',
 				price: 0,
-				id:0,
-				selName:'',
-				sel:false,
-				source:'ecash',
-				flag:true
+				id: 0,
+				selName: '',
+				sel: false,
+				source: 'ecash',
+				flag: true
 			}
 		},
 		onLoad(options) {
@@ -64,42 +70,51 @@
 			this.id = options.id;
 			this.selName = options.name;
 		},
-		methods:{
-			change(){//选择钱包
-				this.sel=!this.sel;
-				if(this.sel){
-					this.source="bonus";
-				}else{
-					this.source="ecash";
+		methods: {
+			change() { //选择钱包
+				this.sel = !this.sel;
+				if (this.sel) {
+					this.source = "bonus";
+				} else {
+					this.source = "ecash";
 				}
 			},
-			submit () {
+			submit() {
 				let that = this;
-				if(that.flag){
-					that.flag=false;
-					djRequest({
-						url:'/api/gift/buy',
-						method:'POST',
-						data:{
-							name:that.selName,
-							source: that.source,
-							quantity:1
-						},
-						success:function(res){
-							common.TostUtil(res.data.message);
-							that.flag=true;
-							if(res.data.status===200){
-								common.balance();
-								setTimeout(function(){
-									uni.navigateTo({
-									url:'mine7Cards'
+				uni.showModal({
+					title: '购买',
+					content: '确定购买1张' + that.text + '?',
+					success: function(res) {
+						if (res.confirm) {
+							if (that.flag) {
+								that.flag = false;
+								djRequest({
+									url: '/api/gift/buy',
+									method: 'POST',
+									data: {
+										name: that.selName,
+										source: that.source,
+										quantity: 1
+									},
+									success: function(res) {
+										common.TostUtil(res.data.message);
+										that.flag = true;
+										if (res.data.status === 200) {
+											common.balance();
+											setTimeout(function() {
+												uni.navigateTo({
+													url: 'mine7Cards'
+												})
+											}, 1000)
+
+										}
+									}
 								})
-								},1000)
-								
 							}
 						}
-					})
-				}
+					}
+				})
+
 			}
 		}
 	}
@@ -143,22 +158,24 @@
 		width: 94%;
 		margin: 30upx auto;
 		background: #CCA366;
-		color:#fff;
-		border-radius:10upx;
-		overflow:hidden;
-	}
-	.uni-btn-v button{
-		background: #CCA366;
-		border:none;
-		outline:none;
-		color:#fff;
-		
+		color: #fff;
+		border-radius: 10upx;
+		overflow: hidden;
 	}
 
-	.uni-radio-wrapper{
-		transform:scale(0.5)
+	.uni-btn-v button {
+		background: #CCA366;
+		border: none;
+		outline: none;
+		color: #fff;
+
 	}
-	label{
-		margin-right:10upx;
+
+	.uni-radio-wrapper {
+		transform: scale(0.5)
+	}
+
+	label {
+		margin-right: 10upx;
 	}
 </style>

@@ -157,10 +157,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         method: 'GET',
         success: function success(res) {
           var arr = res.data.data;
-          arr.forEach(function (item) {
-            item.bankNumber = item.bankNumber.substring(0, 4) + '******' + item.bankNumber.substring(item.bankNumber.length - 4);
-          });
-          that.list = arr;
+          if (arr.length > 0) {
+            arr.forEach(function (item) {
+              item.bankNumber = item.bankNumber.substring(0, 4) + '******' + item.bankNumber.substring(item.bankNumber.length - 4);
+            });
+            that.list = arr;
+          }
+
         } });
 
     } } };exports.default = _default;

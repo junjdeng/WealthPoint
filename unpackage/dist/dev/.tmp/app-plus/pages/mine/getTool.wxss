@@ -326,23 +326,23 @@
 	width: 94%;
 	margin: 30rpx auto;
 	background: #CCA366;
-	color:#fff;
-	-webkit-border-radius:10rpx;
-	        border-radius:10rpx;
-	overflow:hidden;
+	color: #fff;
+	-webkit-border-radius: 10rpx;
+	        border-radius: 10rpx;
+	overflow: hidden;
 }
-.uni-btn-v button{
+.uni-btn-v button {
 	background: #CCA366;
-	border:none;
-	outline:none;
-	color:#fff;
+	border: none;
+	outline: none;
+	color: #fff;
 }
-.uni-radio-wrapper{
-	-webkit-transform:scale(0.5);
-	    -ms-transform:scale(0.5);
-	        transform:scale(0.5)
+.uni-radio-wrapper {
+	-webkit-transform: scale(0.5);
+	    -ms-transform: scale(0.5);
+	        transform: scale(0.5)
 }
-label{
-	margin-right:10rpx;
+label {
+	margin-right: 10rpx;
 }
 

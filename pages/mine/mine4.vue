@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="list_wrap">
 			<view class="list">
-				<view class="item flex-start" v-for="(temp,index) in list" :key="index" :data-url="'alipayEdit?id='+temp.id+'&name='+temp.name"
+				<view class="item flex-start" v-for="(temp,index) in list" :key="index" v-if="temp.name!==''" :data-url="'alipayEdit?id='+temp.id+'&name='+temp.name"
 				 @click="navTo">
 					<view class="flex1">
 						<image src="../../static/images/bg112.jpg"></image>

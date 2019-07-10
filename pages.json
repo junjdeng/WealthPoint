@@ -436,7 +436,17 @@
 		{
 			"path": "pages/login/finishRegisterInfo",
 			"style": {
-				"navigationBarTitleText": "完善资料"
+				"navigationBarTitleText": "完善资料",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "跳过",
+							"color": "#333333",
+							"fontSize": "14px",
+							"width": "60"
+						}]
+					}
+				}
 			}
 		},
 		{

@@ -1451,6 +1451,11 @@ function gz$gwx_34(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_34)return __WXML_GLOBAL__.ops_cached.$gwx_34
 __WXML_GLOBAL__.ops_cached.$gwx_34=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'index'])
+Z([3,'temp'])
+Z([[7],[3,'list']])
+Z(z[0])
+Z([[2,'!=='],[[6],[[7],[3,'temp']],[3,'name']],[1,'']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_34);return __WXML_GLOBAL__.ops_cached.$gwx_34
 }
 function gz$gwx_35(){
@@ -2082,23 +2087,35 @@ e_[x[32]]={f:m32,j:[],i:[],ti:[],ic:[]}
 d_[x[33]]={}
 var m33=function(e,s,r,gg){
 var z=gz$gwx_34()
+var aXC=_v()
+_(r,aXC)
+var tYC=function(b1C,eZC,o2C,gg){
+var o4C=_v()
+_(o2C,o4C)
+if(_oz(z,4,b1C,eZC,gg)){o4C.wxVkey=1
+}
+o4C.wxXCkey=1
+return o2C
+}
+aXC.wxXCkey=2
+_2z(z,2,tYC,e,s,gg,aXC,'temp','index','index')
 return r
 }
 e_[x[33]]={f:m33,j:[],i:[],ti:[],ic:[]}
 d_[x[34]]={}
 var m34=function(e,s,r,gg){
 var z=gz$gwx_35()
-var tYC=_n('view')
-_rz(z,tYC,'class',0,e,s,gg)
-var eZC=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var b1C=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(eZC,b1C)
-_(tYC,eZC)
-var o2C=_mz(z,'view',['bindtap',11,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var x3C=_mz(z,'uni-icon',['bind:__l',15,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(o2C,x3C)
-_(tYC,o2C)
-_(r,tYC)
+var c6C=_n('view')
+_rz(z,c6C,'class',0,e,s,gg)
+var h7C=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var o8C=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(h7C,o8C)
+_(c6C,h7C)
+var c9C=_mz(z,'view',['bindtap',11,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var o0C=_mz(z,'uni-icon',['bind:__l',15,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(c9C,o0C)
+_(c6C,c9C)
+_(r,c6C)
 return r
 }
 e_[x[34]]={f:m34,j:[],i:[],ti:[],ic:[]}
@@ -2135,8 +2152,8 @@ e_[x[39]]={f:m39,j:[],i:[],ti:[],ic:[]}
 d_[x[40]]={}
 var m40=function(e,s,r,gg){
 var z=gz$gwx_41()
-var o0C=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,o0C)
+var xGD=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,xGD)
 return r
 }
 e_[x[40]]={f:m40,j:[],i:[],ti:[],ic:[]}
@@ -2149,10 +2166,10 @@ e_[x[41]]={f:m41,j:[],i:[],ti:[],ic:[]}
 d_[x[42]]={}
 var m42=function(e,s,r,gg){
 var z=gz$gwx_43()
-var tCD=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
-var eDD=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(tCD,eDD)
-_(r,tCD)
+var cJD=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var hKD=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(cJD,hKD)
+_(r,cJD)
 return r
 }
 e_[x[42]]={f:m42,j:[],i:[],ti:[],ic:[]}
@@ -2165,24 +2182,24 @@ e_[x[43]]={f:m43,j:[],i:[],ti:[],ic:[]}
 d_[x[44]]={}
 var m44=function(e,s,r,gg){
 var z=gz$gwx_45()
-var xGD=_n('view')
-_rz(z,xGD,'class',0,e,s,gg)
-var oHD=_v()
-_(xGD,oHD)
-if(_oz(z,1,e,s,gg)){oHD.wxVkey=1
+var oND=_n('view')
+_rz(z,oND,'class',0,e,s,gg)
+var lOD=_v()
+_(oND,lOD)
+if(_oz(z,1,e,s,gg)){lOD.wxVkey=1
 }
-var fID=_v()
-_(xGD,fID)
-if(_oz(z,2,e,s,gg)){fID.wxVkey=1
+var aPD=_v()
+_(oND,aPD)
+if(_oz(z,2,e,s,gg)){aPD.wxVkey=1
 }
-var cJD=_v()
-_(xGD,cJD)
-if(_oz(z,3,e,s,gg)){cJD.wxVkey=1
+var tQD=_v()
+_(oND,tQD)
+if(_oz(z,3,e,s,gg)){tQD.wxVkey=1
 }
-oHD.wxXCkey=1
-fID.wxXCkey=1
-cJD.wxXCkey=1
-_(r,xGD)
+lOD.wxXCkey=1
+aPD.wxXCkey=1
+tQD.wxXCkey=1
+_(r,oND)
 return r
 }
 e_[x[44]]={f:m44,j:[],i:[],ti:[],ic:[]}
@@ -2195,55 +2212,55 @@ e_[x[45]]={f:m45,j:[],i:[],ti:[],ic:[]}
 d_[x[46]]={}
 var m46=function(e,s,r,gg){
 var z=gz$gwx_47()
-var cMD=_n('view')
-_rz(z,cMD,'class',0,e,s,gg)
-var oND=_mz(z,'uni-segmented-control',['activeColor',1,'bind:__l',1,'bind:clickItem',2,'class',3,'current',4,'data-event-opts',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
-_(cMD,oND)
-var lOD=_v()
-_(cMD,lOD)
-var aPD=function(eRD,tQD,bSD,gg){
-var xUD=_v()
-_(bSD,xUD)
-if(_oz(z,14,eRD,tQD,gg)){xUD.wxVkey=1
+var oTD=_n('view')
+_rz(z,oTD,'class',0,e,s,gg)
+var xUD=_mz(z,'uni-segmented-control',['activeColor',1,'bind:__l',1,'bind:clickItem',2,'class',3,'current',4,'data-event-opts',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
+_(oTD,xUD)
+var oVD=_v()
+_(oTD,oVD)
+var fWD=function(hYD,cXD,oZD,gg){
+var o2D=_v()
+_(oZD,o2D)
+if(_oz(z,14,hYD,cXD,gg)){o2D.wxVkey=1
 }
-xUD.wxXCkey=1
-return bSD
+o2D.wxXCkey=1
+return oZD
 }
-lOD.wxXCkey=2
-_2z(z,12,aPD,e,s,gg,lOD,'temp','index','index')
-_(r,cMD)
+oVD.wxXCkey=2
+_2z(z,12,fWD,e,s,gg,oVD,'temp','index','index')
+_(r,oTD)
 return r
 }
 e_[x[46]]={f:m46,j:[],i:[],ti:[],ic:[]}
 d_[x[47]]={}
 var m47=function(e,s,r,gg){
 var z=gz$gwx_48()
-var fWD=_n('view')
-_rz(z,fWD,'class',0,e,s,gg)
-var cXD=_v()
-_(fWD,cXD)
-if(_oz(z,1,e,s,gg)){cXD.wxVkey=1
-var oZD=_n('view')
-_rz(z,oZD,'class',2,e,s,gg)
-var c1D=_v()
-_(oZD,c1D)
-if(_oz(z,3,e,s,gg)){c1D.wxVkey=1
+var a4D=_n('view')
+_rz(z,a4D,'class',0,e,s,gg)
+var t5D=_v()
+_(a4D,t5D)
+if(_oz(z,1,e,s,gg)){t5D.wxVkey=1
+var b7D=_n('view')
+_rz(z,b7D,'class',2,e,s,gg)
+var o8D=_v()
+_(b7D,o8D)
+if(_oz(z,3,e,s,gg)){o8D.wxVkey=1
 }
-var o2D=_v()
-_(oZD,o2D)
-if(_oz(z,4,e,s,gg)){o2D.wxVkey=1
+var x9D=_v()
+_(b7D,x9D)
+if(_oz(z,4,e,s,gg)){x9D.wxVkey=1
 }
-c1D.wxXCkey=1
-o2D.wxXCkey=1
-_(cXD,oZD)
+o8D.wxXCkey=1
+x9D.wxXCkey=1
+_(t5D,b7D)
 }
-var hYD=_v()
-_(fWD,hYD)
-if(_oz(z,5,e,s,gg)){hYD.wxVkey=1
+var e6D=_v()
+_(a4D,e6D)
+if(_oz(z,5,e,s,gg)){e6D.wxVkey=1
 }
-cXD.wxXCkey=1
-hYD.wxXCkey=1
-_(r,fWD)
+t5D.wxXCkey=1
+e6D.wxXCkey=1
+_(r,a4D)
 return r
 }
 e_[x[47]]={f:m47,j:[],i:[],ti:[],ic:[]}
@@ -2262,56 +2279,56 @@ e_[x[49]]={f:m49,j:[],i:[],ti:[],ic:[]}
 d_[x[50]]={}
 var m50=function(e,s,r,gg){
 var z=gz$gwx_51()
-var e6D=_n('view')
-_rz(z,e6D,'hidden',0,e,s,gg)
-var o8D=_v()
-_(e6D,o8D)
-var x9D=function(fAE,o0D,cBE,gg){
-var oDE=_v()
-_(cBE,oDE)
-if(_oz(z,5,fAE,o0D,gg)){oDE.wxVkey=1
-}
-oDE.wxXCkey=1
-return cBE
-}
-o8D.wxXCkey=2
-_2z(z,3,x9D,e,s,gg,o8D,'temp','index','index')
-var b7D=_v()
-_(e6D,b7D)
-if(_oz(z,6,e,s,gg)){b7D.wxVkey=1
+var hCE=_n('view')
+_rz(z,hCE,'hidden',0,e,s,gg)
 var cEE=_v()
-_(b7D,cEE)
+_(hCE,cEE)
 var oFE=function(aHE,lGE,tIE,gg){
 var bKE=_v()
 _(tIE,bKE)
-if(_oz(z,11,aHE,lGE,gg)){bKE.wxVkey=1
-var oLE=_n('view')
-_rz(z,oLE,'class',12,aHE,lGE,gg)
-var xME=_v()
-_(oLE,xME)
-if(_oz(z,13,aHE,lGE,gg)){xME.wxVkey=1
-}
-var oNE=_v()
-_(oLE,oNE)
-if(_oz(z,14,aHE,lGE,gg)){oNE.wxVkey=1
-}
-var fOE=_v()
-_(oLE,fOE)
-if(_oz(z,15,aHE,lGE,gg)){fOE.wxVkey=1
-}
-xME.wxXCkey=1
-oNE.wxXCkey=1
-fOE.wxXCkey=1
-_(bKE,oLE)
+if(_oz(z,5,aHE,lGE,gg)){bKE.wxVkey=1
 }
 bKE.wxXCkey=1
 return tIE
 }
 cEE.wxXCkey=2
-_2z(z,9,oFE,e,s,gg,cEE,'item','index','index')
+_2z(z,3,oFE,e,s,gg,cEE,'temp','index','index')
+var oDE=_v()
+_(hCE,oDE)
+if(_oz(z,6,e,s,gg)){oDE.wxVkey=1
+var oLE=_v()
+_(oDE,oLE)
+var xME=function(fOE,oNE,cPE,gg){
+var oRE=_v()
+_(cPE,oRE)
+if(_oz(z,11,fOE,oNE,gg)){oRE.wxVkey=1
+var cSE=_n('view')
+_rz(z,cSE,'class',12,fOE,oNE,gg)
+var oTE=_v()
+_(cSE,oTE)
+if(_oz(z,13,fOE,oNE,gg)){oTE.wxVkey=1
 }
-b7D.wxXCkey=1
-_(r,e6D)
+var lUE=_v()
+_(cSE,lUE)
+if(_oz(z,14,fOE,oNE,gg)){lUE.wxVkey=1
+}
+var aVE=_v()
+_(cSE,aVE)
+if(_oz(z,15,fOE,oNE,gg)){aVE.wxVkey=1
+}
+oTE.wxXCkey=1
+lUE.wxXCkey=1
+aVE.wxXCkey=1
+_(oRE,cSE)
+}
+oRE.wxXCkey=1
+return cPE
+}
+oLE.wxXCkey=2
+_2z(z,9,xME,e,s,gg,oLE,'item','index','index')
+}
+oDE.wxXCkey=1
+_(r,hCE)
 return r
 }
 e_[x[50]]={f:m50,j:[],i:[],ti:[],ic:[]}
@@ -2336,8 +2353,8 @@ e_[x[53]]={f:m53,j:[],i:[],ti:[],ic:[]}
 d_[x[54]]={}
 var m54=function(e,s,r,gg){
 var z=gz$gwx_55()
-var oTE=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,oTE)
+var x1E=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,x1E)
 return r
 }
 e_[x[54]]={f:m54,j:[],i:[],ti:[],ic:[]}
@@ -2374,10 +2391,10 @@ e_[x[59]]={f:m59,j:[],i:[],ti:[],ic:[]}
 d_[x[60]]={}
 var m60=function(e,s,r,gg){
 var z=gz$gwx_61()
-var x1E=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
-var o2E=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(x1E,o2E)
-_(r,x1E)
+var o8E=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
+var l9E=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(o8E,l9E)
+_(r,o8E)
 return r
 }
 e_[x[60]]={f:m60,j:[],i:[],ti:[],ic:[]}
@@ -2452,7 +2469,7 @@ __wxAppCode__['pages/index/signRecord.wxml']=$gwx('./pages/index/signRecord.wxml
 __wxAppCode__['pages/index/wwallet.json']={"navigationBarTitleText":"W钱包","usingComponents":{"uni-icon":"/components/uni-icon/uni-icon"}};
 __wxAppCode__['pages/index/wwallet.wxml']=$gwx('./pages/index/wwallet.wxml');
 
-__wxAppCode__['pages/login/finishRegisterInfo.json']={"navigationBarTitleText":"完善资料","usingComponents":{}};
+__wxAppCode__['pages/login/finishRegisterInfo.json']={"navigationBarTitleText":"完善资料","titleNView":{"buttons":[{"text":"跳过","color":"#333333","fontSize":"14px","width":"60"}]},"usingComponents":{}};
 __wxAppCode__['pages/login/finishRegisterInfo.wxml']=$gwx('./pages/login/finishRegisterInfo.wxml');
 
 __wxAppCode__['pages/login/login.json']={"usingComponents":{}};
@@ -26381,20 +26398,29 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     /* 确认收款 */
     confirmPay: function confirmPay(id) {
       var that = this;
-      (0, _request.djRequest)({
-        url: '/api/order/confirm',
-        method: 'POST',
-        data: {
-          Id: id,
-          status: 'success' },
-
+      uni.showModal({
+        title: '确认',
+        content: '确定已收款？',
         success: function success(res) {
-          _common.default.TostUtil(res.data.message);
-          if (res.data.status === 200) {
-            _common.default.balance();
-            that.getList('confirm');
+          if (res.confirm) {
+            (0, _request.djRequest)({
+              url: '/api/order/confirm',
+              method: 'POST',
+              data: {
+                Id: id,
+                status: 'success' },
+
+              success: function success(res) {
+                _common.default.TostUtil(res.data.message);
+                if (res.data.status === 200) {
+                  _common.default.balance();
+                  that.getList('confirm');
+                }
+              } });
+
           }
         } });
+
 
     },
     //获取数据
@@ -27918,10 +27944,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         method: 'GET',
         success: function success(res) {
           var arr = res.data.data;
-          arr.forEach(function (item) {
-            item.bankNumber = item.bankNumber.substring(0, 4) + '******' + item.bankNumber.substring(item.bankNumber.length - 4);
-          });
-          that.list = arr;
+          if (arr.length > 0) {
+            arr.forEach(function (item) {
+              item.bankNumber = item.bankNumber.substring(0, 4) + '******' + item.bankNumber.substring(item.bankNumber.length - 4);
+            });
+            that.list = arr;
+          }
+
         } });
 
     } } };exports.default = _default;
@@ -28302,23 +28331,32 @@ var _default = { data: function data() {return { src: '',
     onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
       var that = this;
       /* 删除 */
-      (0, _request.djRequest)({
-        url: '/api/qrcode/delete',
-        method: 'GET',
-        data: {
-          Id: that.id },
-
+      uni.showModal({
+        title: '删除',
+        content: '确定删除此二维码？',
         success: function success(res) {
-          _common.default.TostUtil(res.data.message);
-          if (res.data.status === 200) {
-            setTimeout(function () {
-              uni.navigateBack({
-                delta: 1 });
+          if (res.confirm) {
+            (0, _request.djRequest)({
+              url: '/api/qrcode/delete',
+              method: 'GET',
+              data: {
+                Id: that.id },
 
-            }, 1000);
+              success: function success(res) {
+                _common.default.TostUtil(res.data.message);
+                if (res.data.status === 200) {
+                  setTimeout(function () {
+                    uni.navigateBack({
+                      delta: 1 });
+
+                  }, 1000);
+                }
+
+              } });
+
           }
-
         } });
+
 
     } },
 
@@ -28771,7 +28809,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+
+
 {
   data: function data() {
     return {
@@ -28788,24 +28830,33 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
     var that = this;
     /* 删除 */
-    (0, _request.djRequest)({
-      url: '/api/qrcode/delete',
-      method: 'GET',
-      data: {
-        Id: that.id },
-
+    uni.showModal({
+      title: '删除',
+      content: '确定删除此支付宝帐号？',
       success: function success(res) {
-        console.log(res, " at pages\\mine\\alipayEdit.vue:51");
-        _common.default.TostUtil(res.data.message);
-        if (res.data.status === 200) {
-          setTimeout(function () {
-            uni.navigateBack({
-              delta: 1 });
+        if (res.confirm) {
+          (0, _request.djRequest)({
+            url: '/api/qrcode/delete',
+            method: 'GET',
+            data: {
+              Id: that.id },
 
-          }, 1000);
+            success: function success(res) {
+              console.log(res, " at pages\\mine\\alipayEdit.vue:60");
+              _common.default.TostUtil(res.data.message);
+              if (res.data.status === 200) {
+                setTimeout(function () {
+                  uni.navigateBack({
+                    delta: 1 });
+
+                }, 1000);
+              }
+
+            } });
+
         }
-
       } });
+
 
   },
   onLoad: function onLoad(options) {
@@ -28852,7 +28903,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             status: 'yes' },
 
           success: function success(res) {
-            console.log(res, " at pages\\mine\\alipayEdit.vue:108");
+            console.log(res, " at pages\\mine\\alipayEdit.vue:121");
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {
@@ -30475,9 +30526,13 @@ var _default =
 
 
 
+
+
 var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -30521,18 +30576,29 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
+//
+//
 var _default = { data: function data() {return { text: '', price: 0, id: 0, selName: '', sel: false, source: 'ecash', flag: true };}, onLoad: function onLoad(options) {this.text = options.text;this.price = options.price;this.id = options.id;this.selName = options.name;}, methods: { change: function change() {//选择钱包
-      this.sel = !this.sel;if (this.sel) {this.source = "bonus";} else {this.source = "ecash";}}, submit: function submit() {var that = this;if (that.flag) {that.flag = false;(0, _request.djRequest)({ url: '/api/gift/buy', method: 'POST', data: { name: that.selName, source: that.source, quantity: 1 }, success: function success(res) {_common.default.TostUtil(res.data.message);that.flag = true;if (res.data.status === 200) {_common.default.balance();
-              setTimeout(function () {
-                uni.navigateTo({
-                  url: 'mine7Cards' });
+      this.sel = !this.sel;if (this.sel) {this.source = "bonus";} else {this.source = "ecash";}}, submit: function submit() {var that = this;uni.showModal({ title: '购买', content: '确定购买1张' + that.text + '?', success: function success(res) {if (res.confirm) {if (that.flag) {that.flag = false;(0, _request.djRequest)({ url: '/api/gift/buy', method: 'POST', data: { name: that.selName, source: that.source, quantity: 1 },
+                success: function success(res) {
+                  _common.default.TostUtil(res.data.message);
+                  that.flag = true;
+                  if (res.data.status === 200) {
+                    _common.default.balance();
+                    setTimeout(function () {
+                      uni.navigateTo({
+                        url: 'mine7Cards' });
 
-              }, 1000);
+                    }, 1000);
+
+                  }
+                } });
 
             }
-          } });
+          }
+        } });
 
-      }
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -32554,7 +32620,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { realName: '', pwd: 0 };}, methods: { submit: function submit() {var that = this;(0, _request.djRequest)({ url: '/api/member/update', method: 'POST', data: { type: 'realname', value: that.realName }, success: function success(res) {if (res.data.status === 200) {_config.config.User.realName = that.realName;_common.default.TostUtil(res.data.message);setTimeout(function () {
+var _default = { data: function data() {return { realName: '', pwd: '' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.switchTab({ url: '../index/index' });}, methods: { submit: function submit() {var that = this;(0, _request.djRequest)({ url: '/api/member/update', method: 'POST', data: { type: 'realname', value: that.realName },
+        success: function success(res) {
+          if (res.data.status === 200) {
+            _config.config.User.realName = that.realName;
+            _common.default.TostUtil(res.data.message);
+            setTimeout(function () {
               uni.switchTab({
                 url: '/pages/index/index' });
 
@@ -33131,7 +33202,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+
+
 {
   data: function data() {
     return {
@@ -33193,20 +33268,32 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     },
     del: function del() {
       var that = this;
-      (0, _request.djRequest)({
-        url: '/api/bank/delete',
-        data: {
-          "Id": that.id },
-
-        method: "GET",
+      uni.showModal({
+        title: '删除',
+        content: '确定删除此银行卡？',
         success: function success(res) {
-          if (res.data.status === 200) {
-            _common.default.TostUtil(res.data.message);
-            uni.navigateBack({
-              delta: 1 });
+          if (res.confirm) {
+            (0, _request.djRequest)({
+              url: '/api/bank/delete',
+              data: {
+                "Id": that.id },
+
+              method: "GET",
+              success: function success(res) {
+                if (res.data.status === 200) {
+                  _common.default.TostUtil(res.data.message);
+                  setTimeout(function () {
+                    uni.navigateBack({
+                      delta: 1 });
+
+                  }, 1000);
+
+                }
+              } });
 
           }
         } });
+
 
     },
     /* 展示数据 */
@@ -33277,7 +33364,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           }, 1000);
         },
         fail: function fail(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:189");
+          console.log(res, " at pages\\mine\\reviseBank.vue:205");
         } });
 
     } } };exports.default = _default;

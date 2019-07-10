@@ -123,23 +123,32 @@ var _default = { data: function data() {return { src: '',
     onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
       var that = this;
       /* 删除 */
-      (0, _request.djRequest)({
-        url: '/api/qrcode/delete',
-        method: 'GET',
-        data: {
-          Id: that.id },
-
+      uni.showModal({
+        title: '删除',
+        content: '确定删除此二维码？',
         success: function success(res) {
-          _common.default.TostUtil(res.data.message);
-          if (res.data.status === 200) {
-            setTimeout(function () {
-              uni.navigateBack({
-                delta: 1 });
+          if (res.confirm) {
+            (0, _request.djRequest)({
+              url: '/api/qrcode/delete',
+              method: 'GET',
+              data: {
+                Id: that.id },
 
-            }, 1000);
+              success: function success(res) {
+                _common.default.TostUtil(res.data.message);
+                if (res.data.status === 200) {
+                  setTimeout(function () {
+                    uni.navigateBack({
+                      delta: 1 });
+
+                  }, 1000);
+                }
+
+              } });
+
           }
-
         } });
+
 
     } },
 

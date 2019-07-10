@@ -140,7 +140,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+
+
 {
   data: function data() {
     return {
@@ -202,20 +206,32 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     },
     del: function del() {
       var that = this;
-      (0, _request.djRequest)({
-        url: '/api/bank/delete',
-        data: {
-          "Id": that.id },
-
-        method: "GET",
+      uni.showModal({
+        title: '删除',
+        content: '确定删除此银行卡？',
         success: function success(res) {
-          if (res.data.status === 200) {
-            _common.default.TostUtil(res.data.message);
-            uni.navigateBack({
-              delta: 1 });
+          if (res.confirm) {
+            (0, _request.djRequest)({
+              url: '/api/bank/delete',
+              data: {
+                "Id": that.id },
+
+              method: "GET",
+              success: function success(res) {
+                if (res.data.status === 200) {
+                  _common.default.TostUtil(res.data.message);
+                  setTimeout(function () {
+                    uni.navigateBack({
+                      delta: 1 });
+
+                  }, 1000);
+
+                }
+              } });
 
           }
         } });
+
 
     },
     /* 展示数据 */
@@ -286,7 +302,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           }, 1000);
         },
         fail: function fail(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:189");
+          console.log(res, " at pages\\mine\\reviseBank.vue:205");
         } });
 
     } } };exports.default = _default;
