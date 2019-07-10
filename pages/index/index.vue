@@ -27,7 +27,7 @@
 				</view>
 				<view class="flex1 item" data-url="wwallet" @tap="navTo">
 					<image src="../../static/images/main5.png"></image>
-					<view>W钱包</view>
+					<view>W云链</view>
 				</view>
 				<view class="flex1 item" data-url="../wealth/wallet?type=2" @click="navTo">
 					<image src="../../static/images/main6.png"></image>
@@ -272,7 +272,7 @@
 					},
 					yAxis: {
 						dashLength: 8,
-						splitNumber: 10,
+						splitNumber: 5,
 						min: 0,
 						disabled: false,
 						max: 2,

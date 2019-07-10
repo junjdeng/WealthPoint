@@ -55,7 +55,7 @@
 								'xrpusdt') || (item.symbol == 'bchusdt') || (item.symbol == 'etcusdt') || (item.symbol == 'ltcusdt') || (
 								item.symbol == 'bsvusdt')) {
 							if (!item.hasOwnProperty('cat')) {
-								item.cat = item.symbol.slice(0, 3).toUpperCase();
+								item.cat = item.symbol.slice(0,3).toUpperCase();
 							}
 							if (!item.hasOwnProperty('num')) {
 								item.num = (((Number(Number(item.close) - Number(item.open)) / (Number(item.open))).toFixed(4)) * 100).toFixed(2);
