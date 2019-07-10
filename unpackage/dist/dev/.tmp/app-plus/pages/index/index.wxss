@@ -93,12 +93,12 @@
 }
 .section3 .total_sub {
 	font-size: 28rpx;
-	color: #FF5533;
+	
 	text-align: center;
 }
 .section3 .total_sub2 {
 	font-size: 28rpx;
-	color: green;
+	
 	text-align: center;
 }
 .rt {
@@ -232,5 +232,11 @@
 	width: 375px;
 	height: 250px;
 	background-color: #FFFFFF;
+}
+.red{
+	color:#FF3333!important;
+}
+.green{
+	color:green!important;
 }
 

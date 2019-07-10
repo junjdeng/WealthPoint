@@ -53,12 +53,12 @@
 				</view>
 			</view>
 			<view class="total">
-				${{theNow}}
-				<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#FF5533"></uni-icon>
-				<uni-icon v-if="num<0" type="arrowthindown" size="18" color="green"></uni-icon>
+				<text :class="num>=0?'wpgreen':'wpred'">${{theNow}}</text>
+				<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="green"></uni-icon>
+				<uni-icon v-if="num<0" type="arrowthindown" size="18" color="#FF5533"></uni-icon>
 			</view>
-			<view class="total_sub" v-if="num>=0">+{{num}} +{{cent}}%</view>
-			<view class="total_sub2" v-if="num<0">-{{num}} -{{cent}}%</view>
+			<view class="total_sub2 wpgreen" v-if="num>=0">+{{num}} +{{cent}}%</view>
+			<view class="total_sub wpred" v-if="num<0">{{num}} {{cent}}%</view>
 			<view class="flex-start condition_card">
 				<view class="flex1">
 					<view>最高</view>
@@ -461,13 +461,13 @@
 
 	.section3 .total_sub {
 		font-size: 28upx;
-		color: #FF5533;
+		
 		text-align: center;
 	}
 
 	.section3 .total_sub2 {
 		font-size: 28upx;
-		color: green;
+		
 		text-align: center;
 	}
 
@@ -591,5 +591,11 @@
 		width: 375px;
 		height: 250px;
 		background-color: #FFFFFF;
+	}
+	.red{
+		color:#FF3333!important;
+	}
+	.green{
+		color:green!important;
 	}
 </style>

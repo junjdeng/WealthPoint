@@ -354,4 +354,10 @@
 .green {
 	background: green;
 }
+.imgs{
+	display:inline-block;
+	width:32rpx;
+	height:32rpx;
+	margin-right:10rpx;
+}
 
