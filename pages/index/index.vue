@@ -151,9 +151,20 @@
 			//mpvueEcharts
 		},
 		onShow(){
+
 			if(config.User != null){
-				this.showPop = true;
-			}
+				uni.getStorage({
+					key: 'isTodaySign',
+					success: function (res) {
+						if(res.data){
+							this.showPop = false;
+						}else{
+							this.showPop = true;
+						}
+					}
+				});
+			}			
+			
 			this.getBTC();
 		},
 		onLoad(){
