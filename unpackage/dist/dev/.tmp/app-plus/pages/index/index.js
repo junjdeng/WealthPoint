@@ -252,7 +252,16 @@ var canvas = null;var _default =
   },
   onShow: function onShow() {
     if (_config.config.User != null) {
-      this.showPop = true;
+      uni.getStorage({
+        key: 'isTodaySign',
+        success: function success(res) {
+          if (res.data) {
+            this.showPop = false;
+          } else {
+            this.showPop = true;
+          }
+        } });
+
     }
     this.getBTC();
   },
@@ -303,7 +312,7 @@ var canvas = null;var _default =
 
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\index\\index.vue:206");
+          console.log(res, " at pages\\index\\index.vue:215");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -314,7 +323,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:217");
+          console.log(res, 4, " at pages\\index\\index.vue:226");
           //that.getBTC();
         } });
 

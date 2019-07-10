@@ -284,7 +284,8 @@ var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-i
 //
 //
 //
-var _default = { data: function data() {return { list: [] };}, onShow: function onShow() {var that = this;that.list = [];uni.request({ url: 'https://api.huobi.pro/market/tickers', header: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 'timeout': 8000 }, method: 'GET', success: function success(res) {/* console.log(res) */var arr = res.data.data;arr.forEach(function (item) {if (item.symbol == 'usdt') {console.log(item.open, " at pages\\index\\btc.vue:52");}if (item.symbol == 'btcusdt' || item.symbol == 'ethusdt' || item.symbol == 'eosusdt' || item.symbol == 'xrpusdt' || item.symbol == 'bchusdt' || item.symbol == 'etcusdt' || item.symbol == 'ltcusdt' || item.symbol == 'bsvusdt' || item.symbol == 'dashusdt' || item.symbol == 'adausdt' || item.symbol == 'trxusdt' ||
+var _default = { data: function data() {return { list: [] };}, onShow: function onShow() {var that = this;that.list = [];uni.request({ url: 'https://api.huobi.pro/market/tickers', header: { 'Content-Type': 'application/x-www-form-urlencoded', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36', 'timeout': 8000 }, method: 'GET', success: function success(res) {/* console.log(res) */var arr = res.data.data;arr.forEach(function (item) {if (item.symbol == 'usdt') {console.log(item.open, " at pages\\index\\btc.vue:53");}if (item.symbol == 'btcusdt' || item.symbol == 'ethusdt' || item.symbol == 'eosusdt' || item.symbol == 'xrpusdt' || item.symbol == 'bchusdt' || item.symbol == 'etcusdt' || item.symbol == 'ltcusdt' ||
+          item.symbol == 'bsvusdt' || item.symbol == 'dashusdt' || item.symbol == 'adausdt' || item.symbol == 'trxusdt' ||
           item.symbol == 'atomusdt' || item.symbol == 'omgusdt' || item.symbol == 'neousdt') {
             if (!item.hasOwnProperty('icon')) {
               switch (item.symbol) {
@@ -350,7 +351,7 @@ var _default = { data: function data() {return { list: [] };}, onShow: function 
         });
       },
       fail: function fail(res) {
-        console.log(res, 4, " at pages\\index\\btc.vue:122");
+        console.log(res, 4, " at pages\\index\\btc.vue:123");
         //that.getBTC();
       } });
 
