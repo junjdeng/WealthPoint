@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view>
-			<view class="lf">退租</view>
+			<view class="lf">卖出</view>
 			<view class="rt">
 				<span class="fw">{{obj.number}}</span>
 				<span class="sm">AP</span>

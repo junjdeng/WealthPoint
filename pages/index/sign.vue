@@ -1,9 +1,9 @@
 <template>
 	<view class="container">
 		<view class="section1">
-			<view class="title">签到红包</view>
-			<view class="num wpgold">{{signNum}}元</view>
-			<span class="want" @tap="change">红包兑换AP</span>
+			<view class="title">签到积分</view>
+			<view class="num wpgold">{{signNum}}积分</view>
+			<span class="want" data-url="exchange" @tap="navTo">积分兑换AP</span>
 		</view>
 	
 		<view class=" section section2">
@@ -63,16 +63,24 @@
 	export default {
 		data() {
 			return {
-				signTxt:"签到领红包",
+				signTxt:"签到领积分",
 				signNum:0,
 				signList:[],
 			}
+		},
+		onNavigationBarButtonTap(e) {
+			uni.navigateTo({
+				url: 'signRecord'
+			})
+		},
+		onShow(){
+			
 		},
 		components: {
 			uniIcon
 		},
 		onLoad() {
-			this.signNum = config.User.bonus;
+			this.signNum = config.balance.sign;
 			this.getSignData();
 			var _this = this;
 			uni.getStorage({
@@ -85,35 +93,12 @@
 			});
 		},
 		methods: {
-			change(){
-				if (this.signNum == 0) {
-					common.TostUtil('暂无可兑换的红包');
-					return;
-				}
-				var _this = this;
-				uni.showModal({
-					title: '签到红包兑换',
-					content: '确定将您的签到红包兑换AP？',
-					success: function (res) {
-						if (res.confirm) {
-							djRequest({
-								url:'api/sign/exchange',
-								data:{},
-								success:function(res) {
-									console.log(res);												
-									if (res.data.status == 200){
-										common.TostUtil(res.data.message);
-										_this.signNum = 0;
-									}	
-								}
-							})	
-						} else if (res.cancel) {
-							// console.log('用户点击取消');
-						}
-					}
-				});
-				
+			navTo(e) {
+				uni.navigateTo({
+					url:e.currentTarget.dataset.url
+				})
 			},
+			
 			sign(){
 				if (this.signTxt == "今日已签到") {
 					return;
@@ -152,11 +137,6 @@
 						}	
 					}
 				})	
-			},
-			navTo(e) {
-				uni.navigateTo({
-					url:e.currentTarget.dataset.url
-				})
 			},
 			switch1Change: function (e) {
 				console.log('switch1 发生 change 事件，携带值为', e.target.value)

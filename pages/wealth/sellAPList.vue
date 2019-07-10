@@ -97,10 +97,10 @@
 			},
 			onClickItem(index) {
 				let that = this;
-				that.list = [];
 				let ars = ['match', 'pay', 'confirm', 'evaluate'];
 				if (this.current !== index) {
 					this.current = index;
+					that.list = [];
 					that.getList(ars[index]);
 				}
 			},
@@ -137,6 +137,7 @@
 						type: 'sell'
 					},
 					success: function(res) {
+						that.list = [];
 						if (res.data.status === 200) {
 							let arr = res.data.data.data;
 							let arr1 = [];

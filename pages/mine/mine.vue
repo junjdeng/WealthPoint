@@ -5,7 +5,7 @@
 				<view class="flex-between" style="width:100%;align-items:center;box-sizing:border-box;">
 					<view style="width:70%" class="flex-start">
 						<view class="flex1">
-							<image src="../../static/images/bg112.jpg"></image>
+							<image src="../../static/images/ft.png"></image>
 						</view>
 						<view class="flex4">
 							<view class="name">{{user.username}}</view>
@@ -88,14 +88,14 @@
 			uniIcon
 		},
 		onShow() {
-			let that = this;
+			/* let that = this;
 			djRequest({
 				url: '/api/member/balance',
 				method: 'GET',
 				success: function(res) {
 					console.log(res);
 				}
-			})
+			}) */
 		},
 		methods: {
 			navTo(e) {

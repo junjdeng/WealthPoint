@@ -6,7 +6,7 @@
 		<view class="content">
 			<view>
 				<view class="list" v-show="current===0">
-					<view class="item flex-start" v-for="(temp,index) in arr1" :key="index" v-show="temp.operate=='add'" >
+					<view class="item flex-start" v-for="(temp,index) in arr1" :key="index" v-show="temp.type!=='code'" >
 						<view class="flex2">
 							<image v-show="temp.type==='name'" :src="icon1"></image>
 							<image v-show="temp.type==='phone'" :src="icon2"></image>
@@ -107,7 +107,6 @@
 									arr1.push(item)
 								}
 							})
-							console.log(res)
 							that.arr1 = arr1;
 						}
 					}

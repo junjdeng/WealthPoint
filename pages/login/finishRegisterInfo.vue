@@ -4,12 +4,12 @@
 		<form class="login_form" @submit="formSubmit">
 			<view class="uni-form-item uni-column flex-start">
 				<span class="flex2 title">真实姓名</span>
-                <input class="uni-input flex5" type="text" placeholder="请输入真实姓名" />
+                <input class="uni-input flex5" type="text" v-model.trim="realName" placeholder="请输入真实姓名" />
 			</view>
 			
 			<view class="uni-form-item uni-column flex-start">
 				<span class="flex2 title">安全密码</span>
-                <input class="uni-input flex5" type="number" placeholder="请输入六位安全密码" />
+                <input class="uni-input flex5" v-model.trim="pwd" type="number" placeholder="请输入六位安全密码" />
 			</view>
 			
 			<view class="uni-btn-v">
@@ -21,18 +21,69 @@
 </template>
 
 <script>
+	import common from '../../common/common.js'
+	import {config} from '../../common/config.js'	
+	import {djRequest} from '../../common/request.js'
 	export default {
 		data() {
 			return {
-				
+				realName:'',
+				pwd:0
 			}
 		},
 		methods: {
+			submit(){
+				let that = this;
+				djRequest({
+					url:'/api/member/update',
+					method:'POST',
+					data:{
+						type:'realname',
+						value:that.realName
+					},
+					success:function(res){
+						 if (res.data.status === 200) {
+						config.User.realName=that.realName;
+						common.TostUtil(res.data.message);
+						setTimeout(function(){
+							uni.switchTab({
+								url: '/pages/index/index'
+							});
+						},400)
+					  }
+					}
+				})
+			},
 			formSubmit(e){
-				console.log(e);
-				uni.switchTab({
-					url: '/pages/index/index'
-				});
+				let that = this;
+				if (that.pwd === '') {
+					common.TostUtil('请输入安全密码！');
+					return;
+				}
+				if (that.realName === '') {
+					common.TostUtil('真实姓名！');
+					return;
+				}
+				djRequest({ //校验安全密码
+					url: '/api/member/verify_security',
+					data: {
+						password: that.pwd
+					},
+					success: function(res) {
+						if (res.data.status === 200) { //安仔密码正确
+							that.submit();
+						} else { //错误提示用户信息
+							common.TostUtil(res.data.message);
+							that.pwd = '';
+							return;
+						}
+					},
+					fail: function(res) {
+						that.pwd = '';
+						common.TostUtil(res.data.message);
+					}
+				})
+				
 			}
 		}
 	}

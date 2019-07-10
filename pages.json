@@ -51,6 +51,18 @@
 			}
 		},
 		{
+			"path": "pages/index/signRecord",
+			"style": {
+				"navigationBarTitleText": "签到记录"
+			}
+		},
+		{
+			"path": "pages/index/exchange",
+			"style": {
+				"navigationBarTitleText": "兑换AP"
+			}
+		},
+		{
 			"path": "pages/index/wwallet",
 			"style": {
 				"navigationBarTitleText": "W钱包"
@@ -116,7 +128,7 @@
 		{
 			"path": "pages/wealth/buyAP",
 			"style": {
-				"navigationBarTitleText": "承租AP"
+				"navigationBarTitleText": "买入AP"
 			}
 		},
 		{
@@ -138,7 +150,7 @@
 		{
 			"path": "pages/wealth/buyAPList",
 			"style": {
-				"navigationBarTitleText": "承租记录",
+				"navigationBarTitleText": "买入记录",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -154,7 +166,7 @@
 		{
 			"path": "pages/wealth/buyRecord",
 			"style": {
-				"navigationBarTitleText": "已承租记录"
+				"navigationBarTitleText": "已买入记录"
 			}
 		},
 		{
@@ -184,13 +196,13 @@
 		{
 			"path": "pages/wealth/sellRecord",
 			"style": {
-				"navigationBarTitleText": "已退租记录"
+				"navigationBarTitleText": "已卖出记录"
 			}
 		},
 		{
 			"path": "pages/wealth/sellAP",
 			"style": {
-				"navigationBarTitleText": "退租AP"
+				"navigationBarTitleText": "卖出AP"
 			}
 		},
 		{
@@ -208,7 +220,7 @@
 		{
 			"path": "pages/wealth/sellAPList",
 			"style": {
-				"navigationBarTitleText": "退租记录",
+				"navigationBarTitleText": "卖出记录",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{

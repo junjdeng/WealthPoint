@@ -1,0 +1,1 @@
+<view class="coms"><textarea class="area" placeholder="请输入您要投诉的内容" data-event-opts="{{[['input',[['__set_model',['','txt','$event',['trim']]]]],['blur',[['$forceUpdate']]]]}}" value="{{txt}}" bindinput="__e" bindblur="__e"></textarea><view data-event-opts="{{[['tap',[['submit',['$event']]]]]}}" class="submit" bindtap="__e">{{flag?'提交':'处理中...'}}</view></view>

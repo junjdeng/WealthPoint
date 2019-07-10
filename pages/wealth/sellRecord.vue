@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="item" :data-url="'sellDetail?id='+item.id" v-for="(item,index) in list" :key="index"  v-show="item.type==='sell'"  @tap="navTo">
 			<view class="lf">
-				<view class="lf-top">退租AP</view>
+				<view class="lf-top">卖出AP</view>
 				<view class="lf-time">{{item.finishTime|formatDate(1)}}</view>
 			</view>
 			<view class="rt">

@@ -8,7 +8,7 @@
 		<view class="form_wrap">
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
-					<span class="flex2 title">退租数量</span>
+					<span class="flex2 title">卖出数量</span>
 					<input class="uni-input flex5" type="number" v-model="APNumber" />
 				</view>
 

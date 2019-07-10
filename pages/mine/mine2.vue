@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">当前会员等级</view>
-			<view class="num wpgold">V6</view>
+			<view class="num wpgold">{{dj}}</view>
 			<span class="flex1 want" data-url="buyAP" @tap="navTo">等级规则</span>
 		</view>
 	
@@ -30,10 +30,14 @@
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import common from '../../common/common.js'
+	import {
+		config
+	} from '../../common/config.js'
 	export default {
 		data() {
 			return {
-
+				dj:config.User.levelName
 			}
 		},
 		components: {

@@ -4,7 +4,7 @@
 			<view class="title">AP数量</view>
 			<view class="num wpgold">{{wallet}}</view>
 		</view>
-		<view class="want" data-url="sellAP" @tap="navTo">退租AP</view>
+		<view class="want" data-url="sellAP" @tap="navTo">卖出</view>
 	</view>
 </template>
 
@@ -78,10 +78,12 @@
 
 <style>
 	.section1 {
-		width: 750upx;
+		width: 710upx;
 		padding: 80upx 0;
 		background: linear-gradient(137deg, #CEA15A, #F3CB84);
 		text-align: center;
+		border-radius: 12upx;
+		margin-top:10upx;
 	}
 
 	.section1 .title {

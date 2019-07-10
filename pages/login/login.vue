@@ -56,7 +56,6 @@
 						if (res.data.status == 406) {
 							common.TostUtil(res.data.message);
 						} 
-						
 						if (res.data.status == 200){
 							uni.setStorage({
 								key:'sessionid',
@@ -78,9 +77,16 @@
 							})
 							config.User = res.data.data;
 							common.balance();
-							uni.switchTab({
+							if(res.data.data.realName==""){
+								uni.navigateTo({
+									url:'finishRegisterInfo'
+								})
+							}else{
+								uni.switchTab({
 								url: '/pages/index/index'
 							});
+							}
+							
 						}	
 					},
 				})	

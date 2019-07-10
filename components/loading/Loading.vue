@@ -1,25 +1,24 @@
 <template>
-  <div class="loading" v-show="loading">
-    <div style="width: 170px;height: 85px;text-align: center;background: #fff;padding:10px 20px;box-sizing: border-box;border-radius:8px;">
-      <img src="/static/images/loading.gif">
-      <div>正在加载中...</div>
-    </div>
-
-  </div>
+  <view class="loading" v-show="loading">
+    <view style="width: 170px;height: 85px;text-align: center;background: #fff;padding:10px 20px;box-sizing: border-box;border-radius:8px;">
+      <image src="/static/images/loading.gif"></image>
+      <view>正在加载中...</view>
+    </view>
+  </view>
 </template>
 <script>
   export default {
     name: 'loading',
     data() {
       return {
-        loading: false
+        loading: true
       }
     },
     created() {
-      let that = this;
+      /* let that = this;
       this.$bus.$on('loading', function (data) {
         that.loading = !!data;
-      })
+      }) */
     }
   }
 </script>
@@ -43,7 +42,7 @@
     color: #fff;
     font-size: .16rem;
   }
-  img {
+  image {
     width: 1.5rem;
     height: 1.5rem;
   }

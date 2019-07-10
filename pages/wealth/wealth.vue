@@ -36,8 +36,8 @@
 		</view>
 
 		<view class="section section2">
-			<view class="section_title">我的收益<span data-url="myMoney" @tap="navTo">分红收益<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon></span></span></view>
-			<view class="flex-start condition_card">
+			<view class="section_title">财务中心<span data-url="myMoney" @tap="navTo">分红收益<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon></span></span></view>
+			<!-- <view class="flex-start condition_card">
 				<view class="flex1">
 					<view>总收益</view>
 					<view class="wpred">{{totalRevenue}}</view>
@@ -46,10 +46,10 @@
 					<view>今日收益</view>
 					<view class="wpred">0.50</view>
 				</view>
-			</view>
+			</view> -->
 
 			<view class="want_wrap">
-				<span class="want" data-url="buyAP" @tap="navTo">我要承租</span>
+				<span class="want" data-url="buyAP" @tap="navTo">我要买入</span>
 			</view>
 		</view>
 
@@ -60,24 +60,25 @@
 						<image src="../../static/images/wealth2.jpg"></image>
 						<view class="color" v-show="buyFlag"></view>
 					</view>
-					<view class="title">承租AP</view>
+					<view class="title" style="color:#ff3333;">AP订单</view>
 				</view>
 				<view class="flex1" data-url="sellAPList" @tap="navTo">
 					<view class="father">
 						<image src="../../static/images/wealth1.jpg"></image>
 						<view class="color" v-show="sellFlag"></view>
 					</view>
-					<view class="title">退租AP</view>
+					<view class="title" style="color:#3481F5;">AP订单</view>
 				</view>
 			</view>
 		</view>
-
+		<!-- <loading></loading> -->
 	</view>
 </template>
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
+	/* import loading from '@components/loading/Loading.vue' */
 	import { config } from '../../common/config.js'
 	import { djRequest } from '../../common/request.js'
 	export default {
@@ -97,7 +98,8 @@
 			}
 		},
 		components: {
-			uniIcon
+			uniIcon,
+			/* loading */
 		},
 		methods: {
 			navTo(e) {
@@ -236,10 +238,10 @@
 	}
 
 	.want_wrap .want {
-		color: #CCA366;
+		color: #FF5533;
 		font-size: 32upx;
 		font-weight: 400;
-		border: 1px solid #CCA366;
+		border: 1px solid #FF5533;
 		border-radius: 8upx;
 		padding: 10upx 40upx;
 	}

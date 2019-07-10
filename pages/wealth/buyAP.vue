@@ -14,8 +14,8 @@
 		<view class="form_wrap">
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
-					<span class="flex2 title">承租数量</span>
-					<input class="uni-input flex5" v-model="APNumber" placeholder="您当前等级可承租AP数量为1个到10个" type="number" />
+					<span class="flex2 title">买入数量</span>
+					<input class="uni-input flex5" v-model="APNumber" placeholder="您当前等级可买入AP数量为1个到10个" type="number" />
 				</view>
 
 				<view class="uni-form-item uni-column flex-start">

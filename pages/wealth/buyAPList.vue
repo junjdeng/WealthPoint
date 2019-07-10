@@ -212,13 +212,13 @@
 				let ars = ['match', 'pay', 'confirm', 'evaluate'];
 				if (this.current !== index) {
 					this.current = index;
+					that.list=[];
 					that.getList(ars[index]);
 				}
 			},
 			//获取数据
 			getList(idx) {
 				let that = this;
-				that.list = [];
 				djRequest({
 					url: '/api/order',
 					method: 'POST',
@@ -229,6 +229,7 @@
 						type: 'buy'
 					},
 					success: function(res) {
+						that.list = [];
 						if (res.data.status === 200) {
 							let arr = res.data.data.data;
 							let time24ms = 24 * 3600 * 1000;
