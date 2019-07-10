@@ -4,7 +4,7 @@
 			<view class="list">
 				<view class="item flex-start" v-for="(item,index) in list" :key="index" :data-url="'reviseBank?id='+item.id"  @click="navTo">
 					<view class="flex1">
-						<image src="../../static/images/bg112.jpg"></image>
+						<image src="../../static/images/bank1.png"></image>
 					</view>
 					<view class="flex5">
 						<view class="name">{{item.bankName}}</view>

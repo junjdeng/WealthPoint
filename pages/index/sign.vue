@@ -75,6 +75,7 @@
 		},
 		onShow(){
 			common.balance();
+			this.signNum = config.balance.sign;
 		},
 		components: {
 			uniIcon
@@ -113,11 +114,17 @@
 						if (res.data.status == 200){
 							common.TostUtil(res.data.message);
 							_this.signTxt = "今日已签到";
+							common.balance();
+							setTimeout(function(){
+								_this.signNum = config.balance.sign;
+							},300)
+							
 							uni.setStorage({
 								key: 'isTodaySign',
 								data: true,
 								success: function () {
 									//console.log('success');
+									
 								}
 							});
 							_this.getSignData();

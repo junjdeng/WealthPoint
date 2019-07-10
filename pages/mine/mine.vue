@@ -90,6 +90,7 @@
 		},
 		onShow() {
 			common.balance();
+			this.user=config.User;
 			/* let that = this;
 			djRequest({
 				url: '/api/member/balance',

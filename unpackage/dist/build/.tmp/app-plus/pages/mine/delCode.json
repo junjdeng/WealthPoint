@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "二维码详情",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "删除",
+        "color": "#333333",
+        "fontSize": "14px",
+        "width": "80"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

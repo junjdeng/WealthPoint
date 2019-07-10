@@ -54,7 +54,7 @@
 			</view>
 			<view class="total">
 				<text :class="num>=0?'wpgreen':'wpred'">${{theNow}}</text>
-				<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="green"></uni-icon>
+				<uni-icon v-if="num>=0" type="arrowthinup" size="18" color="#7ED321"></uni-icon>
 				<uni-icon v-if="num<0" type="arrowthindown" size="18" color="#FF5533"></uni-icon>
 			</view>
 			<view class="total_sub2 wpgreen" v-if="num>=0">+{{num}} +{{cent}}%</view>
@@ -62,11 +62,11 @@
 			<view class="flex-start condition_card">
 				<view class="flex1">
 					<view>最高</view>
-					<view class="wpred">{{high}}</view>
+					<view class="wpgreen">{{high}}</view>
 				</view>
 				<view class="flex1">
 					<view>最低</view>
-					<view :class="color>=0?'wpred':'wpgreen'">{{low}}</view>
+					<view :class="color>=0?'wpgreen':'wpred'">{{low}}</view>
 				</view>
 				<view class="flex1">
 					<view>成交量</view>

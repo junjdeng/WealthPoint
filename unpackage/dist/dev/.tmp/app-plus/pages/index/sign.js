@@ -175,6 +175,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
   },
   onShow: function onShow() {
     _common.default.balance();
+    this.signNum = _config.config.balance.sign;
   },
   components: {
     uniIcon: uniIcon },
@@ -209,15 +210,21 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         url: '/api/sign',
         data: {},
         success: function success(res) {
-          console.log(res, " at pages\\index\\sign.vue:112");
+          console.log(res, " at pages\\index\\sign.vue:113");
           if (res.data.status == 200) {
             _common.default.TostUtil(res.data.message);
             _this.signTxt = "今日已签到";
+            _common.default.balance();
+            setTimeout(function () {
+              _this.signNum = _config.config.balance.sign;
+            }, 300);
+
             uni.setStorage({
               key: 'isTodaySign',
               data: true,
               success: function success() {
                 //console.log('success');
+
               } });
 
             _this.getSignData();
@@ -239,7 +246,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
     },
     switch1Change: function switch1Change(e) {
-      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:142");
+      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:149");
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

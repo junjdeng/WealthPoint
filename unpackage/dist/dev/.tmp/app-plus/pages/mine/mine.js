@@ -190,14 +190,15 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
   onShow: function onShow() {
     _common.default.balance();
+    this.user = _config.config.User;
     /* let that = this;
-                               djRequest({
-                               	url: '/api/member/balance',
-                               	method: 'GET',
-                               	success: function(res) {
-                               		console.log(res);
-                               	}
-                               }) */
+                                     djRequest({
+                                     	url: '/api/member/balance',
+                                     	method: 'GET',
+                                     	success: function(res) {
+                                     		console.log(res);
+                                     	}
+                                     }) */
   },
   methods: {
     navTo: function navTo(e) {

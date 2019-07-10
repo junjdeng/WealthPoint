@@ -36,9 +36,9 @@
 					<input class="uni-input flex5"  placeholder="请输入个性签名" value="人生天地间,忽如远行客" />
 				</view>
 				
-				<view class="uni-btn-v">
+				<!-- <view class="uni-btn-v">
 					<button formType="submit">编辑</button>
-				</view>
+				</view> -->
 			</form>
 		</view>
 	</view>

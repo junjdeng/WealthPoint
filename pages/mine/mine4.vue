@@ -5,7 +5,7 @@
 				<view class="item flex-start" v-for="(temp,index) in list" :key="index" v-if="temp.name!==''" :data-url="'alipayEdit?id='+temp.id+'&name='+temp.name"
 				 @click="navTo">
 					<view class="flex1">
-						<image src="../../static/images/bg112.jpg"></image>
+						<image src="../../static/images/ali1.png"></image>
 					</view>
 					<view class="flex5">
 						<view class="name">支付宝账号</view>
