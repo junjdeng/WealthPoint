@@ -27,7 +27,7 @@
 		data () {
 			return {
 				total:0,
-				integral:0
+				integral:''
 			}
 		},
 		onShow(){
@@ -104,7 +104,7 @@
 	}
 	.title>view:last-child{
 		font-size: 50upx;
-		color:#D03C29;
+		color:#FF3333;
 		text-align: right;
 		padding-right:40upx;
 		box-sizing:border-box;
@@ -129,7 +129,7 @@
 		padding: 20upx;
 		margin-top: 1em;
 		font-size: 24upx;
-		color: #D03C29;
+		color: #FF3333;
 	}
 	.main{
 		width:600upx;
@@ -146,9 +146,9 @@
 		padding:10upx 10upx;
 	}
 	.main>view:last-child{
-		color: #D03C29;
+		color: #FF3333;
 		font-size: 28upx;
-		 border:1px solid #D03C29; 
+		 border:1px solid #FF3333; 
 		 border-radius: 16upx;
 		 padding:12upx 20upx;
 		 margin-left:20upx;

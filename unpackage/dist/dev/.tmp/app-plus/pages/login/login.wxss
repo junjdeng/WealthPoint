@@ -1,0 +1,10 @@
+
+page{background: #ffffff;}
+.logo{text-align: center; font-size: 48rpx; color: #333333; margin-top: 250rpx;}
+.login_form{margin: 100rpx 75rpx; display: inline-block; width: 600rpx;}
+.login_form .uni-form-item{margin-top: 40rpx;}
+.login_form .uni-input{color: #333333; font-size: 32rpx; border-bottom: 1px solid #999999;}
+.login_form .uni-btn-v{margin-top: 100rpx;}
+.login_form .uni-btn-v button{background: #CCA366; font-size: 32rpx; color: #ffffff;}
+.register{color: #CCA366; font-size: 32rpx; text-align: center;}
+

@@ -4,7 +4,7 @@
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">头像</span>
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/ft.png"></image>
 				</view>
 				
 				<view class="uni-form-item uni-column flex-start">
