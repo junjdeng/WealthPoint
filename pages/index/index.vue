@@ -151,7 +151,6 @@
 			//mpvueEcharts
 		},
 		onShow(){
-
 			if(config.User != null){
 				uni.getStorage({
 					key: 'isTodaySign',
@@ -163,8 +162,7 @@
 						}
 					}
 				});
-			}			
-			
+			}					
 			this.getBTC();
 		},
 		onLoad(){
