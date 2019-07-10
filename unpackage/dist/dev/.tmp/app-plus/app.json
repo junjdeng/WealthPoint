@@ -85,12 +85,6 @@
         "text": "财富"
       },
       {
-        "pagePath": "pages/charity/charity",
-        "iconPath": "static/images/tabbar2.png",
-        "selectedIconPath": "static/images/tabbar2_seled.png",
-        "text": "公益"
-      },
-      {
         "pagePath": "pages/mine/mine",
         "iconPath": "static/images/tabbar4.png",
         "selectedIconPath": "static/images/tabbar4_seled.png",

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App'
 import './common/filter.js'
 Vue.config.productionTip = false
-Vue.prototype.$bus = new Vue;
 App.mpType = 'app'
 
 const app = new Vue({

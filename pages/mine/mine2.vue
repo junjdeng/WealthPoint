@@ -7,7 +7,7 @@
 		</view>
 	
 		<view class="section2">
-			<view class="section_title">我的爱心会员</view>
+			<view class="section_title">我的积分会员</view>
 			<view class="list">
 				<view class="item flex-start">
 					<view class="flex1">
@@ -53,7 +53,7 @@
 </script>
 
 <style>
-.section1{width: 750upx; padding: 40upx 0; background: linear-gradient(306deg,#FE9F6C,#FD5450);text-align: center;}
+.section1{width: 750upx; padding: 40upx 0;background: linear-gradient(137deg, #CEA15A, #F3CB84);text-align: center;}
 .section1 .title{font-size: 32upx; color: #ffffff; line-height: 1.6em; margin-top: 10upx; }
 .section1 .num{font-size: 64upx;color: #ffffff; line-height: 1.6em; font-weight: bold; margin-bottom: 30upx;}
 .section1 .want{color: #FFFFFF;font-size: 32upx; border:1px solid #FFFFFF; border-radius: 16upx;

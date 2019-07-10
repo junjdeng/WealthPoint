@@ -2,12 +2,12 @@
 	<view class="container">
 		<view class="section1">
 			<view class="circel">
-				<view class="title">W钻数量</view>
-			    <view class="num wpgold">318.05</view>
+				<view class="title">W云链</view>
+			    <view class="num wpgold">待开放</view>
 			</view>
 		</view>
 	
-		<view class="section2">
+		<!-- <view class="section2">
 			<view class="section_title">W钻记录</view>
 			<view class="list">
 				<view class="item flex-start">
@@ -29,7 +29,7 @@
 					</view>	
 				</view>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 

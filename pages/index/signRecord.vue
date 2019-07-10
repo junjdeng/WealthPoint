@@ -2,7 +2,7 @@
 	<view class="content">
 		<view class="title">
 			<view>签到时间</view>
-			<view>获取积分</view>
+			<view>云积分</view>
 		</view>
 		<view class="list" v-for="(item,index) in list" :key="index">
 			<view>{{item.time | formatDate(2)}}</view>
@@ -10,7 +10,7 @@
 		</view>
 		<view class="title">
 			<view>合计</view>
-			<view>{{total}}</view>
+			<view style="font-size:40upx;color:#D03C29;">{{total}}</view>
 		</view>
 	</view>
 </template>

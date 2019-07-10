@@ -1,9 +1,9 @@
 <template>
 	<view class="container">
 		<view class="section1">
-			<view class="title">签到积分</view>
-			<view class="num wpgold">{{signNum}}积分</view>
-			<span class="want" data-url="exchange" @tap="navTo">积分兑换AP</span>
+			<view class="title">云积分</view>
+			<view class="num wpgold">{{signNum}}</view>
+			<span class="want" data-url="exchange" @tap="navTo">兑换AP</span>
 		</view>
 	
 		<view class=" section section2">
