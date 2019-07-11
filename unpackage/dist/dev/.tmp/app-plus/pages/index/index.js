@@ -206,6 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
@@ -226,15 +227,9 @@ var canvas = null;var _default =
       cWidth: '',
       cHeight: '',
       pixelRatio: 0.98, //放大位数
-      serverData: '',
       das: [],
       week: [],
-      webview: null,
-      cWidth2: '',
-      cHeight2: '',
-      serverData2: '',
       das2: [],
-      week2: [],
       //比特币
       theNow: 0,
       low: 0,
@@ -251,24 +246,48 @@ var canvas = null;var _default =
     //mpvueEcharts
   },
   onShow: function onShow() {
-    if (_config.config.User != null) {
-      uni.getStorage({
-        key: 'isTodaySign',
-        success: function success(res) {
-          if (res.data) {
-            this.showPop = false;
-          } else {
-            this.showPop = true;
-          }
-        } });
+    var that = this;
+    (0, _request.djRequest)({
+      url: '/api/sign/sign_list',
+      method: 'POST',
+      data: {
+        start: 0,
+        length: 50 },
 
-    }
+      success: function success(res) {
+        if (res.data.data.data.length == 0) {
+          that.showPop = true;
+        } else {
+          var timer = res.data.data.data[0].time;
+          var date = new Date(timer * 1000);
+          var YY = date.getFullYear();
+          var d = date.getDate();
+          d = d < 10 ? '0' + d : d;
+          var date1 = new Date();
+          var d1 = date1.getDate();
+          d1 = d1 < 10 ? '0' + d1 : d1;
+          if (d !== d1) {
+            that.showPop = true;
+          } else {
+            that.showPop = false;
+          }
+        }
+
+      } });
+
     this.getBTC();
   },
   onLoad: function onLoad() {
+    var dq = [];
     _common.default.balance();
+    var cycle = 24 * 3600 * 1000;
+    var das = Number(new Date()) + cycle;
+    for (var i = 7; i > 0; i--) {
+      var ds = this.nowDate(das - cycle * i);
+      dq.push(ds);
+    }
     this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
-    this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04'];
+    this._data.week = dq;
     _self = this;
     this.cWidth = uni.upx2px(680);
     this.cHeight = uni.upx2px(460);
@@ -278,6 +297,12 @@ var canvas = null;var _default =
   },
 
   methods: {
+    nowDate: function nowDate(value) {
+      var date = new Date(Number(value));
+      var MM = date.getMonth() + 1;
+      var d = date.getDate();
+      return MM + '.' + d;
+    },
     getNews: function getNews() {
       var _this = this;
       (0, _request.djRequest)({
@@ -312,7 +337,6 @@ var canvas = null;var _default =
 
         method: 'GET',
         success: function success(res) {
-          console.log(res, " at pages\\index\\index.vue:215");
           that.amount = Number(res.data.tick.amount).toFixed(2);
           that.high = Number(res.data.tick.high).toFixed(2);
           that.low = Number(res.data.tick.low).toFixed(2);
@@ -323,7 +347,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:226");
+          console.log(res, 4, " at pages\\index\\index.vue:250");
           //that.getBTC();
         } });
 

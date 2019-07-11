@@ -157,15 +157,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
+
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+
+
 
 {
   data: function data() {
     return {
       signTxt: "签到领积分",
       signNum: 0,
-      signList: [] };
+      list: [],
+      dateList: [] };
 
   },
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
@@ -176,22 +181,42 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
   onShow: function onShow() {
     _common.default.balance();
     this.signNum = _config.config.balance.sign;
+    var that = this;
+    (0, _request.djRequest)({
+      url: '/api/sign/sign_list',
+      method: 'POST',
+      data: {
+        start: 0,
+        length: 50 },
+
+      success: function success(res) {
+        if (res.data.data.data.length == 0) {
+          that.signTxt = "签到领积分";
+        } else {
+          var timer = res.data.data.data[0].time;
+          var date = new Date(timer * 1000);
+          var YY = date.getFullYear();
+          var d = date.getDate();
+          d = d < 10 ? '0' + d : d;
+          var date1 = new Date();
+          var d1 = date1.getDate();
+          d1 = d1 < 10 ? '0' + d1 : d1;
+          if (d !== d1) {
+            that.signTxt = "签到领积分";
+          } else {
+            that.signTxt = "今日已签到";
+          }
+        }
+      } });
+
   },
   components: {
     uniIcon: uniIcon },
 
   onLoad: function onLoad() {
-    this.signNum = _config.config.balance.sign;
-    this.getSignData();
     var _this = this;
-    uni.getStorage({
-      key: 'isTodaySign',
-      success: function success(res) {
-        if (res.data) {
-          _this.signTxt = "今日已签到";
-        }
-      } });
-
+    _this.getDate();
+    _this.signNum = _config.config.balance.sign;
   },
   methods: {
     navTo: function navTo(e) {
@@ -199,18 +224,29 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         url: e.currentTarget.dataset.url });
 
     },
-
+    getDate: function getDate() {
+      var currentDate = new Date();
+      var timesStamp = currentDate.getTime();
+      var currenDay = currentDate.getDay();
+      var dates = [];
+      for (var i = 0; i < 7; i++) {
+        var item = new Date(timesStamp + 24 * 60 * 60 * 1000 * (i - (currenDay + 6) % 7)).toLocaleDateString().replace(
+        /\//g, '.').slice(5);
+        dates.push(item);
+      }
+      console.log(dates, " at pages\\index\\sign.vue:137");
+      /* return dates */
+    },
     sign: function sign() {
       if (this.signTxt == "今日已签到") {
         return;
       }
-
       var _this = this;
       (0, _request.djRequest)({
         url: '/api/sign',
         data: {},
         success: function success(res) {
-          console.log(res, " at pages\\index\\sign.vue:113");
+          console.log(res, " at pages\\index\\sign.vue:149");
           if (res.data.status == 200) {
             _common.default.TostUtil(res.data.message);
             _this.signTxt = "今日已签到";
@@ -219,34 +255,14 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
               _this.signNum = _config.config.balance.sign;
             }, 300);
 
-            uni.setStorage({
-              key: 'isTodaySign',
-              data: true,
-              success: function success() {
-                //console.log('success');
-
-              } });
-
-            _this.getSignData();
-          }
-        } });
-
-    },
-    getSignData: function getSignData() {
-      var _this = this;
-      (0, _request.djRequest)({
-        url: '/api/sign/sign_list',
-        data: { 'start': 0, 'length': 7 },
-        success: function success(res) {
-          //console.log(res);												
-          if (res.data.status == 200) {
-            _this.signList = res.data.data;
+          } else {
+            _common.default.TostUtil(res.data.message);
           }
         } });
 
     },
     switch1Change: function switch1Change(e) {
-      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:149");
+      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:165");
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

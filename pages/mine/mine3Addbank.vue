@@ -25,7 +25,7 @@
 					<input class="uni-input flex5" v-model="bankAddress" placeholder="请输入开户行" />
 				</view>
 				<view class="tips">
-					*请务必确保银行信息正确，如因错误的银行信息导致收款失败，会员自行承担责任。
+					*请务必确保银行信息正确，如因错误的银行信息导致收款失败，云用户自行承担责任。
 				</view>
 				
 				<view class="uni-btn-v">

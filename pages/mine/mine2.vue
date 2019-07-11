@@ -1,14 +1,14 @@
 <template>
 	<view class="container">
 		<view class="section1">
-			<view class="title">当前会员等级</view>
+			<view class="title">当前云用户等级</view>
 			<view class="num wpgold">{{dj}}</view>
 			<span class="flex1 want" data-url="buyAP" @tap="navTo">等级规则</span>
 		</view>
 	
 		<view class="section2">
-			<view class="section_title">我的积分会员</view>
-			<view class="list">
+			<view class="section_title">我的云用户</view>
+			<!-- <view class="list">
 				<view class="item flex-start">
 					<view class="flex1">
 						<image  src="../../static/images/bg112.jpg"></image>
@@ -23,7 +23,7 @@
 					<view class="flex2">马晓云</view>
 					<view class="flex2 time">2019-09-09</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>

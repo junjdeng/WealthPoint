@@ -4,7 +4,7 @@
 			<view>签到时间</view>
 			<view>云积分</view>
 		</view>
-		<view class="list" v-for="(item,index) in list" :key="index">
+		<view class="list" v-if="list.length>0" v-for="(item,index) in list" :key="index">
 			<view>{{item.time | formatDate(2)}}</view>
 			<view>+{{item.integral}}</view>
 		</view>
@@ -71,6 +71,9 @@
 		color:#666;
 	}
 	.title:first-child{
+		border-bottom:2upx solid #f7f7f7;
+	}
+	.list{
 		border-bottom:2upx solid #f7f7f7;
 	}
 </style>

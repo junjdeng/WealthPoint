@@ -141,7 +141,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { total: 0, integral: '' };}, onShow: function onShow() {this.record();}, methods: { change: function change() {if (this.total < 5000) {_common.default.TostUtil('积分不足,无法兑换');return;}if (this.integral < 5000) {_common.default.TostUtil('输入积分须是5000的整数倍');return;
+var _default = { data: function data() {return { total: 0, integral: '' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.navigateTo({ url: 'alreadyfinish' });}, onShow: function onShow() {this.record();}, methods: { change: function change() {if (this.total < 5000) {_common.default.TostUtil('积分不足,无法兑换');
+        return;
+      }
+      if (this.integral < 5000) {
+        _common.default.TostUtil('输入积分须是5000的整数倍');
+        return;
       }
       var _this = this;
       uni.showModal({
@@ -156,14 +161,11 @@ var _default = { data: function data() {return { total: 0, integral: '' };}, onS
 
               method: 'POST',
               success: function success(res) {
-                console.log(res, " at pages\\index\\exchange.vue:59");
                 if (res.data.status == 200) {
                   _common.default.TostUtil(res.data.message);
                   _this.total -= Number(_this.integral);
                 } else {
-                  uni.showToast({
-                    title: res.data.message });
-
+                  _common.default.TostUtil(res.data.message);
                 }
               } });
 
@@ -174,12 +176,13 @@ var _default = { data: function data() {return { total: 0, integral: '' };}, onS
     },
     record: function record() {
       var that = this;
+      that.total = 0;
       (0, _request.djRequest)({
         url: '/api/sign/sign_list',
         method: 'POST',
         data: {
           start: 0,
-          length: 50 },
+          length: 5000 },
 
         success: function success(res) {
           res.data.data.data.forEach(function (item) {

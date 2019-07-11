@@ -166,14 +166,13 @@ var _default = { data: function data() {return { user: '', pwd: '' };}, onLoad: 
               key: 'userpwd',
               data: data });
 
+            uni.setStorage({
+              key: 'time',
+              data: JSON.stringify(new Date().getTime()) });
 
             uni.setStorage({
               key: 'loginInfo',
               data: JSON.stringify(res.data.data) });
-
-            uni.setStorage({
-              key: 'time',
-              data: JSON.stringify(new Date().getTime()) });
 
             _config.config.User = res.data.data;
             _common.default.balance();

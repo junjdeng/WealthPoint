@@ -3,13 +3,13 @@
 		<view class="form_wrap">
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
-					<span class="flex2 title">会员用户名</span>
-					<input class="uni-input flex5" v-model.trim="userName" placeholder="请输入会员用户名" />
+					<span class="flex2 title">云用户名</span>
+					<input class="uni-input flex5" v-model.trim="userName" placeholder="请输入云用户的用户名" />
 				</view>
 
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">转码个数</span>
-					<input class="uni-input flex5" v-model.trim="num" type="number" placeholder="请输入转码个数" />
+					<input class="uni-input flex5" v-model.trim="num" type="number" placeholder="请输入转码数量" />
 				</view>
 
 				<view class="uni-form-item uni-column flex-start">
@@ -18,7 +18,7 @@
 				</view>
 
 				<view class="tips">
-					*激活码200元每个（新注册账号需要一个激活码激活。激活后立即返0.2个AP即400元到用户的希望钱包）<br />
+					*激活码200元每个（新注册账号需要一个激活码激活。激活后立即返0.2个AP即400元到云用户的希望钱包）<br />
 					*激活码获取途径：1.向推荐人购买。2.系统奖励。
 				</view>
 

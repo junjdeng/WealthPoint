@@ -19,15 +19,15 @@
 				</view>
 				<view class="flex-start level">
 					<view class="flex2" data-url="mine1" @tap="navTo">
-						<view class="num">90.7</view>
-						<view class="title">AP信用</view>
+						<view class="num">5</view>
+						<view class="title">云信用</view>
 					</view>
 					<view class="flex1" style="text-align: center;">
 						<span class="line"></span>
 					</view>
 					<view class="flex2" data-url="mine2" @tap="navTo">
 						<view class="num">{{user.levelName}}</view>
-						<view class="title">AP会员</view>
+						<view class="title">云用户</view>
 					</view>
 				</view>
 			</view>

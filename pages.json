@@ -57,9 +57,31 @@
 			}
 		},
 		{
+			"path": "pages/index/alreadyfinish",
+			"style": {
+				"navigationBarTitleText": "兑换记录"
+			}
+		},
+		{
 			"path": "pages/index/exchange",
 			"style": {
-				"navigationBarTitleText": "兑换AP"
+				"navigationBarTitleText": "兑换AP",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "兑换记录",
+							"color": "#333",
+							"fontSize": "14px",
+							"width": "80"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/index/shop",
+			"style": {
+				"navigationBarTitleText": "云商城"
 			}
 		},
 		{
@@ -258,13 +280,13 @@
 		{
 			"path": "pages/mine/mine1",
 			"style": {
-				"navigationBarTitleText": "AP信用"
+				"navigationBarTitleText": "云信用"
 			}
 		},
 		{
 			"path": "pages/mine/mine2",
 			"style": {
-				"navigationBarTitleText": "AP会员"
+				"navigationBarTitleText": "云用户"
 			}
 		},
 		{

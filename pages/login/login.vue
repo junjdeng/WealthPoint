@@ -66,14 +66,13 @@
 								key:'userpwd',
 								data:data
 							})							
-																																		
-							uni.setStorage({
-								key:'loginInfo',
-								data:JSON.stringify(res.data.data)
-							})
 							uni.setStorage({
 								key:'time',
 								data:JSON.stringify(new Date().getTime())
+							})																										
+							uni.setStorage({
+								key:'loginInfo',
+								data:JSON.stringify(res.data.data)
 							})
 							config.User = res.data.data;
 							common.balance();

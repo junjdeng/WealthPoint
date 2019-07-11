@@ -25,13 +25,14 @@
 					<image src="../../static/images/main4.png"></image>
 					<view>签到</view>
 				</view>
+				
+				<view class="flex1 item" data-url="shop" @click="navTo">
+					<image src="../../static/images/main6.png"></image>
+					<view>云商城</view>
+				</view>
 				<view class="flex1 item" data-url="wwallet" @tap="navTo">
 					<image src="../../static/images/main5.png"></image>
 					<view>W云链</view>
-				</view>
-				<view class="flex1 item" data-url="../wealth/wallet?type=2" @click="navTo">
-					<image src="../../static/images/main6.png"></image>
-					<view>奖金钱包</view>
 				</view>
 			</view>
 		</view>
@@ -126,15 +127,9 @@
 				cWidth: '',
 				cHeight: '',
 				pixelRatio: 0.98, //放大位数
-				serverData: '',
 				das: [],
 				week: [],
-				webview: null,
-				cWidth2: '',
-				cHeight2: '',
-				serverData2: '',
 				das2: [],
-				week2: [],
 				//比特币
 				theNow: 0,
 				low: 0,
@@ -151,24 +146,48 @@
 			//mpvueEcharts
 		},
 		onShow(){
-			if(config.User != null){
-				uni.getStorage({
-					key: 'isTodaySign',
-					success: function (res) {
-						if(res.data){
-							this.showPop = false;
+			let that = this;
+			djRequest({
+				url:'/api/sign/sign_list',
+				method:'POST',
+				data:{
+					start:0,
+					length:50
+				},
+				success:function(res){
+					if(res.data.data.data.length==0){
+						that.showPop = true;
+					}else{
+						let timer= res.data.data.data[0].time;
+						let date =new Date(timer*1000);
+						let YY = date.getFullYear();
+						let d = date.getDate();
+						d = d < 10 ? ('0' + d) : d;
+						let date1=new Date();
+						let d1=date1.getDate();
+						d1 = d1 < 10 ? ('0' + d1) : d1;
+						if(d!==d1){
+						that.showPop = true;
 						}else{
-							this.showPop = true;
+							that.showPop =false ;
 						}
 					}
-				});
-			}					
+					
+				}
+			})			
 			this.getBTC();
 		},
 		onLoad(){
+			let dq=[];
 			common.balance();
+			let cycle=24*3600*1000;
+			let das = Number(new Date())+cycle;
+			for(let i=7;i>0;i--){
+				let ds=this.nowDate(das-cycle*i)
+				dq.push(ds);
+			}
 			this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
-			this._data.week = ['5.29', '5.30', '5.31', '6.01', '6.02', '6.03', '6.04', ];
+			this._data.week = dq;
 			_self = this;
 			this.cWidth = uni.upx2px(680);
 			this.cHeight = uni.upx2px(460);
@@ -178,6 +197,12 @@
 		},
 
 		methods: {
+			nowDate(value){
+				let date = new Date(Number(value));
+				let MM = date.getMonth() + 1;
+				let d = date.getDate();
+				return MM+'.'+d
+			},
 			getNews(){
 				var _this = this;
 				djRequest({
@@ -212,7 +237,6 @@
 						},
 						method: 'GET',
 						success: function(res) {
-							console.log(res)
 							that.amount = Number(res.data.tick.amount).toFixed(2);
 							that.high = Number(res.data.tick.high).toFixed(2);
 							that.low = Number(res.data.tick.low).toFixed(2);
@@ -386,7 +410,6 @@
 	.header image:last-child {
 		width: 50upx;
 		height: 50upx;
-		;
 		position: absolute;
 		z-index: 1000;
 		top: 58upx;

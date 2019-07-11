@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import './common/filter.js'
+
 Vue.config.productionTip = false
 App.mpType = 'app'
 
@@ -20,7 +21,6 @@ uni.getStorage({//如果存在sessionid则跳到首页，否则去登陆页
 		})
 	}
 })
-
 let times=null;
 uni.getStorage({
 	key:'time',

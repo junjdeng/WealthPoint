@@ -8,7 +8,7 @@
 			<view class="input">
 				<input type="number" v-model.trim="integral" placeholder="请输入您要兑换的积分">
 			</view>
-			<view class="btn" @click="change">兑换积分</view>
+			<view class="btn" @click="change">兑换AP</view>
 		</view>
 		<view class="tips">
 			*兑换的积分，必须是大于5000且是5000的倍数<br/>
@@ -29,6 +29,11 @@
 				total:0,
 				integral:''
 			}
+		},
+		onNavigationBarButtonTap(e) {
+			uni.navigateTo({
+				url: 'alreadyfinish'
+			})
 		},
 		onShow(){
 			this.record();
@@ -55,15 +60,12 @@
 									integral:Number(_this.integral)
 								},
 								method:'POST',
-								success:function(res) {
-									console.log(res);												
+								success:function(res) {											
 									if (res.data.status == 200){
 										common.TostUtil(res.data.message);
 										_this.total-= Number(_this.integral);
 									}else{
-										uni.showToast({
-										    title: res.data.message
-										});
+										common.TostUtil(res.data.message);
 									}
 								}
 							})	
@@ -74,12 +76,13 @@
 			},
 			record () {
 				let that = this;
+				that.total=0
 				djRequest({
 					url:'/api/sign/sign_list',
 					method:'POST',
 					data:{
 						start:0,
-						length:50
+						length:5000
 					},
 					success:function(res){
 						res.data.data.data.forEach(item=>{

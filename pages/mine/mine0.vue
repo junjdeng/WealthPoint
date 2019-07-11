@@ -18,7 +18,7 @@
 				</view>
 				
 				<view class="uni-form-item uni-column flex-start">
-					<span class="flex2 title">会员级别</span>
+					<span class="flex2 title">云用户级别</span>
 					<input class="uni-input flex5"  disabled v-model="obj.levelName" />
 				</view>
 				<view class="uni-form-item uni-column flex-start">
@@ -26,10 +26,10 @@
 					<input class="uni-input flex5" type="number" disabled v-model="obj.phone" />
 				</view>
 				
-				<view class="uni-form-item uni-column flex-start">
+				<!-- <view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">出生日期</span>
 					<input class="uni-input flex5"   value="2018-09-09" />
-				</view>
+				</view> -->
 				
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">个性签名</span>

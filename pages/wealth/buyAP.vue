@@ -7,7 +7,7 @@
 				<span>{{h}}</span>时
 				<span>{{m}}</span>分
 			</view>
-			<view>承租次数</view>
+			<view>买入次数</view>
 			<view class="title wpred">{{count}}次</view>
 		</view>
 

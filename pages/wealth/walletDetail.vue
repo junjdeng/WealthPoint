@@ -21,7 +21,7 @@
 			</view>
 			<view class="list" v-for="(temp,index) in listBonus" :key="index">
 				<view class="">{{temp.Time | formatDate(2)}}</view>
-				<view class="">承租</view>
+				<view class="">买入</view>
 				<view class="">{{temp.recommendUsername}}</view>
 				<view class="">{{temp.bonus}}</view>
 			</view>

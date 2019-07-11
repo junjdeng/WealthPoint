@@ -2,16 +2,16 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">当前信用评分</view>
-			<view class="num wpgold">98.05</view>
-			<view class="flex-center">
-				<span class="flex1 want" data-url="buyAP" @tap="navTo">平台信用积分</span>
-				<span class="flex1 want" data-url="buyAP" @tap="navTo">常见问题</span>
+			<view class="num wpgold">5</view>
+			<view class="flex-center" style="width:50%;margin:0 auto;">
+				<span class="flex1 want" data-url="buyAP" @tap="navTo">云信用评分规则</span>
+				<!-- <span class="flex1 want" data-url="buyAP" @tap="navTo">常见问题</span> -->
 			</view>
 		</view>
 	
 		<view class="section2">
-			<view class="section_title">我的信用记录</view>
-			<view class="list">
+			<view class="section_title">我的云信用记录</view>
+			<!-- <view class="list">
 				<view class="item">
 					<view class="title">AP信用分已更新！<span>2019-01-08</span></view>
 					<view class="time">本月结果为90.88分</view>
@@ -20,7 +20,7 @@
 					<view class="title">AP信用分已更新！<span>2019-01-08</span></view>
 					<view class="time">本月结果为90.88分</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>

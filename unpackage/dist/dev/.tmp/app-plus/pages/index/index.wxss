@@ -14,7 +14,6 @@
 .header image:last-child {
 	width: 50rpx;
 	height: 50rpx;
-	
 	position: absolute;
 	z-index: 1000;
 	top: 58rpx;
