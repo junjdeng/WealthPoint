@@ -41,6 +41,11 @@
 								that.getData();
 							}
 							common.TostUtil(res.data.message);
+							setTimeout(function(){
+								uni.navigateTo({
+									url:'myMoney'
+								})
+							},500)
 						}
 					})
 
@@ -52,6 +57,7 @@
 			},
 			getData() {
 				let that = this;
+				
 				djRequest({
 					url: '/api/seed',
 					method: 'POST',

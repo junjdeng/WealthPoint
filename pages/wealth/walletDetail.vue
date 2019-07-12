@@ -60,7 +60,6 @@
 					length: 500
 				},
 				success: function(res) {
-					console.log(res)
 					if (res.data.status === 200) {
 						that.listBonus = res.data.data.data;
 					}

@@ -128,9 +128,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       list: [] };
 
   },
-  created: function created() {
-
-  },
   components: {
     uniIcon: uniIcon },
 
@@ -151,7 +148,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     },
     bankList: function bankList() {
       var that = this;
-
       (0, _request.djRequest)({
         url: '/api/bank',
         method: 'GET',

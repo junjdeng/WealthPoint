@@ -28,9 +28,6 @@
 				list:[]
 			}
 		},
-		created(){
-		
-		},
 		components: {
 			uniIcon
 		},
@@ -51,7 +48,6 @@
 			},
 			bankList(){
 				let that = this;
-				
 				djRequest({
 					url:'/api/bank',
 					method:'GET',

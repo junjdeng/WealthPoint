@@ -149,14 +149,12 @@ __webpack_require__.r(__webpack_exports__);
     uniIcon: uniIcon },
 
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
-
     uni.navigateTo({
       url: 'mine7Cards' });
 
   },
   methods: {
     navTo: function navTo(e) {
-      console.log(e, 3, " at pages\\mine\\mine8.vue:59");
       uni.navigateTo({
         url: e.currentTarget.dataset.url });
 

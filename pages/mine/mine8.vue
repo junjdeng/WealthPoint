@@ -49,14 +49,12 @@
 			uniIcon
 		},
 		onNavigationBarButtonTap(e){
-			
 			uni.navigateTo({
 				url:'mine7Cards'
 			})
 		},
 		methods: {
 			navTo(e) {
-				console.log(e,3)
 				uni.navigateTo({
 					url:e.currentTarget.dataset.url
 				})

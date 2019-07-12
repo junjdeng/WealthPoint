@@ -1,15 +1,19 @@
 
-.img{
-	width:90%;
-	margin:20rpx auto;
+.img {
+	width: 650rpx;
+	margin: 0 auto 40rpx;
 	text-align: center;
-	-webkit-box-sizing:border-box;
-	        box-sizing:border-box;
-	padding:20rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding: 20rpx;
+	height: 740rpx;
+	box-sizing: border-box;
 }
-.img image{
-	width:100%;
-	margin:0 auto;
-	display:block;
+.img image {
+	width: 100%;
+	display: block;
+	height: 700rpx;
+	margin: 0 auto;
+	display: block;
 }
 

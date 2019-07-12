@@ -3,7 +3,7 @@
 		<view class="main">
 			<view class="main-top">
 				<view class="img">
-					<image src="/static/images/bg112.jpg"></image>
+					<image src="../../static/images/ft.png"></image>
 				</view>
 				<view class="nick">
 					<view>用户昵称: <text>{{buyerName}}</text></view>
@@ -92,6 +92,7 @@
 				</view>
 			</view>
 		</view>
+		<!-- <savefile v-if="isShowPhoto" @hide="hidePhoto" url="/static/images/bg112.jpg"></savefile> -->
 	</view>
 </template>
 
@@ -115,6 +116,7 @@
 				list2: [],
 				show: false,
 				alipayList: [],
+				isShowPhoto:false,
 				len:0
 			}
 		},
@@ -129,6 +131,9 @@
 			this.getInfo();
 		},
 		methods: {
+			hidePhoto(){
+				this.isShowPhoto=!this.isShowPhoto
+			},
 			copy(txt){
 				uni.setClipboardData({
 					data:txt

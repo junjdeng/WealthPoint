@@ -82,7 +82,7 @@
 	export default {
 		data() {
 			return {
-				user: config.User
+				user: null
 			}
 		},
 		components: {
@@ -91,14 +91,6 @@
 		onShow() {
 			common.balance();
 			this.user=config.User;
-			/* let that = this;
-			djRequest({
-				url: '/api/member/balance',
-				method: 'GET',
-				success: function(res) {
-					console.log(res);
-				}
-			}) */
 		},
 		methods: {
 			navTo(e) {

@@ -255,6 +255,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -277,12 +279,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-/* import Util from './../common/util';
- import TostUtil from './../common/tostUtil'; */var _default = { data: function data() {return { record: {}, id: 0 };}, onLoad: function onLoad(options) {this.id = options.id;console.log(this.id, " at pages\\wealth\\OrderConfirm.vue:39");this.getData();}, created: function created() {}, methods: { getData: function getData() {var that = this;(0, _request.djRequest)({ url: '/api/payment/show',
-        data: {
-          Id: Number(that.id),
-          type: 'order' },
-
+var _default = { data: function data() {return { record: {}, id: 0 };}, onLoad: function onLoad(options) {this.id = options.id;this.getData();}, methods: { getData: function getData() {var that = this;(0, _request.djRequest)({ url: '/api/payment/show', data: { Id: Number(that.id), type: 'order' },
         method: 'GET',
         success: function success(res) {
           if (res.data.status === 200) {

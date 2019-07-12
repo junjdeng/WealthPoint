@@ -105,7 +105,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
+
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
 
@@ -115,11 +117,16 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { src: '',
-      id: 0 };
+//
+var _default = { data: function data() {return { srcs: '', id: 0,
+      isShowPhoto: false };
 
   },
   methods: {
+    /* hidePhoto(){
+             this.isShowPhoto = true;
+             
+             }, */
     onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
       var that = this;
       /* 删除 */
@@ -152,6 +159,11 @@ var _default = { data: function data() {return { src: '',
 
     } },
 
+  created: function created() {
+    var that = this;
+
+
+  },
   onLoad: function onLoad(options) {
     var that = this;
     that.id = options.id;
@@ -159,10 +171,11 @@ var _default = { data: function data() {return { src: '',
       url: '/api/qrcode/show',
       method: 'GET',
       data: {
-        Id: options.id },
+        Id: that.id },
 
       success: function success(res) {
-        that.src = 'http://api.wealth-point.com/' + res.data.data.images;
+        that.srcs = 'http://api.wealth-point.com' + res.data.data.images;
+        console.log(that.srcs, 4, " at pages\\mine\\delCode.vue:78");
       } });
 
   },

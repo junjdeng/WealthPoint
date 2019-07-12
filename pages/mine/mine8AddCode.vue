@@ -59,12 +59,6 @@
 		components: {
 			uniIcon
 		},
-		onLoad() {
-			console.log(999);
-		},
-		onShow() {
-			console.log('888')
-		},
 		methods: {
 			bindPickerChange: function(e) {
 				this.index = e.target.value

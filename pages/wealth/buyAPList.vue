@@ -27,8 +27,6 @@
 							<view>剩余时间：<text class='time'>{{temp.rever | formatLeftDate}}</text></view>
 							<view>合计: <text class="money">{{temp.number * 2000 | yuan}}</text>元</view>
 						</view>
-
-
 						<view class="contect">
 							<view @click="connect(temp,2)" v-show="current!==0"> 联系会员</view>
 							<!--v-show="current!==0">  -->
@@ -145,7 +143,6 @@
 							name: 'files',
 							success: function(result) {
 								var res = JSON.parse(result.data);
-								console.log(res);
 								if (res.status == 200) {
 									that.gif=false;
 									that.sucs=true;
@@ -180,7 +177,6 @@
 						data: data,
 						method: 'POST',
 						success: function(res) {
-							console.log(res)
 							that.flag = true;
 							that.showOrHide=!that.showOrHide;
 							that.sucs=false;

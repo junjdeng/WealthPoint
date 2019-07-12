@@ -175,12 +175,14 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       userName: '' //开户人
     };
   },
+  onShow: function onShow() {
+    this.userName = _config.config.User.realName;
+  },
   components: {
     uniIcon: uniIcon },
 
   created: function created() {
     var that = this;
-    that.getUserName();
     that.bankName = that.array[that.index];
   },
   methods: {

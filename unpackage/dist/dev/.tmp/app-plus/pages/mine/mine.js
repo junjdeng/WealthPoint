@@ -182,7 +182,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 {
   data: function data() {
     return {
-      user: _config.config.User };
+      user: null };
 
   },
   components: {
@@ -191,14 +191,6 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
   onShow: function onShow() {
     _common.default.balance();
     this.user = _config.config.User;
-    /* let that = this;
-                                     djRequest({
-                                     	url: '/api/member/balance',
-                                     	method: 'GET',
-                                     	success: function(res) {
-                                     		console.log(res);
-                                     	}
-                                     }) */
   },
   methods: {
     navTo: function navTo(e) {

@@ -10,7 +10,7 @@
 			<view>-{{item.integral}}</view>
 			<view>+{{item.number}}</view>
 		</view>
-		<view class="title">
+		<view class="title"  v-if="list.length>0">
 			<view>合计</view>
 			<view style="font-size:40upx;color:#7ED321;">-{{total}}</view>
 			<view style="font-size:40upx;color:#D03C29;">+{{num}}</view>

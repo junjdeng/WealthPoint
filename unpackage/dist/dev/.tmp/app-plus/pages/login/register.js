@@ -98,54 +98,162 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
-  },
-  methods: {
-    login: function login() {
-      uni.navigateBack({});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
+var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { show: true, count: '', timer: null, choose: true, userName: '', userPwd: '', userPhone: '', userCode: '' };}, methods: { login: function login() {uni.navigateTo({ url: 'login' });}, formSubmit: function formSubmit() {console.log(3, " at pages\\login\\register.vue:58");var that = this;if (!_common.default.RegUtil.isMatchMix(that.userName)) {_common.default.TostUtil('请输入正确格式的用户名！');return;}if (!_common.default.RegUtil.isMatchPwd(that.userPwd)) {
+        _common.default.TostUtil('密码格式不正确！');
+        return;
+      }
+      if (!_common.default.RegUtil.isMatchPhoneNumber(that.userPhone)) {
+        _common.default.TostUtil('手机号码格式不正确！');
+        return;
+      }
+      if (that.userCode === '') {
+        _common.default.TostUtil('请输入验证码！');
+        return;
+      }
+      (0, _request.djRequest)({
+        url: '/api/register/ajax',
+        method: 'GET',
+        data: {
+          key: 'username' || false || false,
+          value: that.userName || that.userPhone },
+
+        success: function success(res) {
+          if (res.data.status === 200) {
+            that.secondAjax(res.data.status);
+          } else {
+            _common.default.TostUtil(res.data.message);
+          }
+        } });
 
     },
-    formSubmit: function formSubmit(e) {
-      console.log(e, " at pages\\login\\register.vue:45");
-      uni.navigateTo({
-        url: '/pages/login/finishRegisterInfo' });
+    goMess: function goMess() {//yanzhengma
+      var that = this;
+      /*Util.ajax.checkGetAuth(function(){*/
+      if (!_common.default.RegUtil.isMatchPhoneNumber(that.userPhone)) {
+        _common.default.TostUtil('请输入正确的手机号码！');
+        return false;
+      } else {
+        var TIME_COUNT = 60;
+        clearInterval(that.timer);
+        if (!that.timer) {
+          (0, _request.djRequest)({
+            url: '/api/register/sms',
+            data: {
+              phone: that.userPhone },
 
+            method: 'POST',
+            success: function success(res) {
+              if (res.data.status === 200) {
+                that.count = TIME_COUNT;
+                that.show = false;
+                that.timer = setInterval(function () {
+                  if (that.count > 0 && that.count <= TIME_COUNT) {
+                    that.count--;
+                  } else {
+                    that.show = true;
+                    clearInterval(that.timer);
+                    that.timer = null;
+                  }
+                }, 1000);
+                _common.default.TostUtil(res.data.message);
+              } else {
+                that.show = true;
+                _common.default.TostUtil(res.data.message);
+                return false;
+              }
+            } });
+
+
+        }
+      }
+    },
+    secondAjax: function secondAjax(num) {
+      var that = this;
+      if (num === 200) {
+        (0, _request.djRequest)({
+          url: '/api/register',
+          method: 'POST',
+          data: {
+            username: that.userName,
+            password: that.userPwd,
+            phone: that.userPhone,
+            sms_code: that.userCode },
+
+          success: function success(res1) {
+            if (res1.data.status === 200) {
+              _common.default.TostUtil(res1.data.message);
+              uni.navigateTo({
+                url: 'login' });
+
+            } else {
+              _common.default.TostUtil(res1.data.message);
+            }
+          } });
+
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

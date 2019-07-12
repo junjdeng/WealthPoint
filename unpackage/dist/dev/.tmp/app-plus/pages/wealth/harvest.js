@@ -229,7 +229,7 @@ var _default =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -272,6 +272,11 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
               that.getData();
             }
             _common.default.TostUtil(res.data.message);
+            setTimeout(function () {
+              uni.navigateTo({
+                url: 'myMoney' });
+
+            }, 500);
           } });
 
 
@@ -283,6 +288,7 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
     },
     getData: function getData() {
       var that = this;
+
       (0, _request.djRequest)({
         url: '/api/seed',
         method: 'POST',
@@ -331,6 +337,7 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
         } });
 
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

@@ -12,15 +12,12 @@
           <view style="font-size: 50upx;color:#CCA366;height: 40upx;position:absolute;left:-10upx;top:-10upx;">*</view>
           <view>
             <view>AP每天的收益分红</view>
-            <!--<view>{{buyNumber}}&lt;!&ndash;<span class="txt">AP</span>&ndash;&gt;</view>-->
           </view>
           <view>
             <view>系统赠送</view>
-            <!--<view>{{sellNumber}}&lt;!&ndash;<span class="txt">AP</span>&ndash;&gt;</view>-->
           </view>
           <view>
             <view>奖励</view>
-            <!--<view>{{forSell}}&lt;!&ndash;<span class="txt">AP</span>&ndash;&gt;</view>-->
           </view>
         </view>
       </view>
@@ -55,6 +52,9 @@
 				sell:0,
 				totalRevenue:0
 			}
+		},
+		onShow(){
+			common.balance();
 		},
 		onNavigationBarButtonTap(e) {
 			uni.navigateTo({

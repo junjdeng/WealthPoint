@@ -7,9 +7,9 @@
 					<view class="num wpgold">{{totalAssets}}</view>
 				</view>
 				<view class="flex1 count">
-					<view>承租AP总数<span>{{buyNumber}}</span></view>
-					<view>已退租AP数<span>{{sellNumber}}</span></view>
-					<view>待退租AP数<span>{{forSell}}</span></view>
+					<view>买入AP总数<span>{{buyNumber}}</span></view>
+					<view>已卖出AP数<span>{{sellNumber}}</span></view>
+					<view>待卖出AP数<span>{{forSell}}</span></view>
 				</view>
 			</view>
 

@@ -121,7 +121,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
@@ -146,8 +145,8 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-//
-var _default = { data: function data() {return { user: '', pwd: '' };}, onLoad: function onLoad() {var _this = this;uni.getStorage({ key: 'userpwd', success: function success(res) {_this.login(res.data);} });}, methods: { registre: function registre() {uni.navigateTo({ url: '/pages/login/register' });},
+var _default = { data: function data() {return { user: '', pwd: '' };}, onLoad: function onLoad() {var _this = this;uni.getStorage({ key: 'userpwd', success: function success(res) {_this.login(res.data);} });}, methods: { registre: function registre() {uni.navigateTo({ url: '/pages/login/register' });
+    },
     login: function login(data) {
       (0, _request.djRequest)({
         url: '/api/login',

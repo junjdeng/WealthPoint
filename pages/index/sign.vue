@@ -2,6 +2,7 @@
 	<view class="container">
 		<view class="section1">
 			<view class="title">云积分</view>
+			<view class="tip" @click="getKnow">签到说明 <text class="crl">!</text></view>
 			<view class="num wpgold">{{signNum}}</view>
 			<span class="want" data-url="exchange" @tap="navTo">兑换AP</span>
 		</view>
@@ -50,7 +51,24 @@
 		</view>
 
 		<view class="signBtn" @tap="sign">{{signTxt}}</view>
+		<view class="eject" v-show="know" @click="inKnow">
+			<view class="box">
+				<view>每日签到说明
+				</view>
+				<view>1. 每日签到可获得相应云积分奖励
+					<br/>
+					2. 云积分奖励大小根据签到连续性、购买AP付款时间、购买金额来判断
 
+						<br/>
+						3. 云积分累计到一定额度可兑换AP、商品、云链等
+
+							<br/>
+							4. 本签到积分最终解释权归W云积分生态系统所有
+
+					</view>
+				<view>我知道了</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -70,7 +88,8 @@
 				signTxt: "签到领积分",
 				signNum: 0,
 				list: [],
-				dateList: []
+				dateList: [],
+				know:false
 			}
 		},
 		onNavigationBarButtonTap(e) {
@@ -119,6 +138,12 @@
 			_this.signNum = config.balance.sign;
 		},
 		methods: {
+			getKnow(){
+				this.know = true;
+			},
+			inKnow(){
+				this.know = !this.know;
+			},
 			navTo(e) {
 				uni.navigateTo({
 					url: e.currentTarget.dataset.url
@@ -169,6 +194,52 @@
 </script>
 
 <style>
+	.eject {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background: rgba(0, 0, 0, .5)
+	}
+
+	.box {
+		width: 600upx;
+		max-height:580upx;
+		background: #fff;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		border-radius: 20upx;
+	}
+
+	.box>view {
+		width: 560upx;
+		margin: 0 auto;
+	}
+	.box>view:nth-child(1){
+		font-size: 32upx;
+		color:#333;
+		text-align: center;
+		padding:20upx 0;
+	}
+	.box>view:nth-child(2){
+		font-size: 28upx;
+		color:#888;
+		text-align: left;
+		line-height: 2;
+	}
+	.box>view:nth-child(3){
+		font-size: 32upx;
+		color:#CCA366;
+		text-align: center;
+		margin-top:20upx;
+		border-top:2upx solid #f7f7f7;
+		padding:20upx 0;
+	}
 	.section1 {
 		width: 750upx;
 		height: 360upx;
@@ -177,6 +248,17 @@
 		padding: 40upx 0;
 		background: linear-gradient(#CEA15A, #F3CB84);
 		text-align: center;
+		position: relative;
+	}
+
+	.tip {
+		width: 180upx;
+		position: absolute;
+		right: 0;
+		top: 20upx;
+		text-align: center;
+		color: #fff;
+		font-size: 28upx;
 	}
 
 	.section1 .title {
@@ -280,5 +362,16 @@
 		line-height: 270upx;
 		font-size: 32upx;
 		text-align: center;
+	}
+	.tip .crl{
+		display:inline-block;
+		width:30upx;
+		height:30upx;
+		background: #fff;
+		border-radius:50%;
+		text-align: center;
+		line-height: 30upx;
+		color:#CCA366;
+		margin-left:5upx;
 	}
 </style>

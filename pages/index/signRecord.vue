@@ -8,7 +8,7 @@
 			<view>{{item.time | formatDate(2)}}</view>
 			<view>+{{item.integral}}</view>
 		</view>
-		<view class="title">
+		<view class="title"  v-if="list.length>0">
 			<view>合计</view>
 			<view style="font-size:40upx;color:#D03C29;">{{total}}</view>
 		</view>

@@ -1,10 +1,5 @@
 <template>
 	<view class="container">
-		<view class="header">
-			<image mode="aspectFit" src="../../static/images/maintopbg.png"></image>
-			<image src="../../static/images/message.png"></image>
-		</view>
-
 		<view class="section section1">
 			<view class="flex-start section_row">
 				<view class="flex1 item">
@@ -39,11 +34,12 @@
 		
 		<view class="section section2">
 			<view class="notice flex-start">
-				<uni-icon type="sound" class="sound_icon" size="14" color="#CCA366"></uni-icon>
-				<text class="ellipsis flex5">
+				<uni-icon type="sound" class="sound_icon" size="14" color="#CCA366" style="position:relative;top:-5upx!important;"></uni-icon>
+				<text style="color:#CCA366!important;font-weight:500;">云头条</text>
+				<text class="ellipsis ">
 					{{news}}
 				</text>
-				<span class="flex1" data-url="newsList" @tap="navTo">更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></span></span>
+				<text class="" data-url="newsList" @tap="navTo">更多<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon></text>
 			</view>
 		</view>
 
@@ -86,7 +82,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="section section4">
+		<!-- <view class="section section4">
 			<view class="section_title">AP成交量</view>
 			<view class="trend">
 				<view class="qiun-columns">
@@ -95,7 +91,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		<view class="cover" v-if="showPop" @tap="hidePop()">
 			<view class="pop_wrap" style="background-image: url('../../static/images/main11.jpg');">
 				<view class="text">签到领红包</view>
@@ -142,8 +138,12 @@
 			}
 		},
 		components: {
-			uniIcon,
-			//mpvueEcharts
+			uniIcon
+		},
+		onNavigationBarButtonTap(e) {
+			uni.navigateTo({
+				url:'message'
+			})
 		},
 		onShow(){
 			let that = this;
@@ -172,7 +172,6 @@
 							that.showPop =false ;
 						}
 					}
-					
 				}
 			})			
 			this.getBTC();
@@ -186,7 +185,7 @@
 				let ds=this.nowDate(das-cycle*i)
 				dq.push(ds);
 			}
-			this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
+			this._data.das = [1, 1, 1.002, 1.020, 1.0, 1.0, 1.0];
 			this._data.week = dq;
 			_self = this;
 			this.cWidth = uni.upx2px(680);
@@ -271,6 +270,20 @@
 					name: '',
 					color: "#FF5533"
 				}];
+				djRequest({
+					url:'/api/statistics/income',
+					method:'GET',
+					success:function(res){
+						/* console.log(res,3)
+						let arr = res.data.data.split(0,1);
+						
+						console.log(arr)
+						for(let i=0;i<arr.length;i++){
+							console.log(arr[i])
+						} */
+						/* canvasData.series[0].data; */
+					}
+				})
 				that._data.das = canvasData.series[0].data;
 				_self.CanvasData("canvas", canvasData);
 			},
@@ -448,17 +461,9 @@
 		width: 50upx;
 	}
 
-	.notice text {
-		font-size: 24upx;
-		color: #333333;
-		display: inline-block;
-		width: 570upx;
-		height: 50upx;
-		text-indent: 1em;
-		line-height: 50upx;
-	}
+	
 
-	.notice span {
+	.notice text {
 		font-size: 24upx;
 		color: #888888;
 		display: inline-block;
@@ -466,7 +471,17 @@
 		height: 50upx;
 		line-height: 50upx;
 	}
-
+		.notice text:nth-child(3) {
+		font-size: 24upx;
+		color: #333333;
+		display: block;
+		width: 520upx!important;
+		text-align:left;
+		padding-left:20upx;
+		height: 50upx;
+		
+		line-height: 50upx;
+	}
 	.section_title {
 		width: 100%;
 		color: #333333;

@@ -75,12 +75,14 @@
 				userName: '',//开户人
 			}
 		},
+		onShow(){
+			this.userName=config.User.realName
+		},
 		components: {
 			uniIcon
 		},
 		created () {
 			let that = this;
-			that.getUserName();
 			that.bankName = that.array[that.index];
 		},
 		methods: {

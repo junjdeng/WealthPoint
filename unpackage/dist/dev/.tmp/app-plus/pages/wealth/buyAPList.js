@@ -291,8 +291,6 @@ var _default =
 
 
 
-
-
 var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -376,7 +374,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             name: 'files',
             success: function success(result) {
               var res = JSON.parse(result.data);
-              console.log(res, " at pages\\wealth\\buyAPList.vue:148");
               if (res.status == 200) {
                 that.gif = false;
                 that.sucs = true;
@@ -411,7 +408,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           data: data,
           method: 'POST',
           success: function success(res) {
-            console.log(res, " at pages\\wealth\\buyAPList.vue:183");
             that.flag = true;
             that.showOrHide = !that.showOrHide;
             that.sucs = false;

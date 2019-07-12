@@ -23,6 +23,9 @@ Vue.filter('formatDate',function(value,type){
 			case 3:
 			return h + ':' + m + ':' + s;
 			break;
+			case 4:
+			return MM + '-' + d;
+			break;
 		}
 })
 Vue.filter('yuan',function(value){

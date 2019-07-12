@@ -2,32 +2,19 @@
 	<view class="wrap">
 		<textarea placeholder="请输入您的意见" v-model.trim="text"></textarea>
 		<view class="bottomBtn"  @tap="submit">提交</view>
-		<uni-popup :show="showPop" position="middle" mode="fixed" @hidePopup="hidePop">
-			<view class="pop_wrap">
-				<uni-icon type="checkbox-filled" class="forward" size="56" color="#CCA366"></uni-icon>
-				<view>提交成功</view>
-				<view class="text">您的意见已经收到，我们会及时跟进反馈</view>
-				<view class="close" >返回</view>
-			</view>
-		</uni-popup>	
 	</view>
 </template>
-
 <script>
-	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
 	import { config } from '../../common/config.js'
 	import { djRequest } from '../../common/request.js'
-
 	export default {
 		components: {
-			uniIcon,
-			uniPopup
+			uniIcon
 		},
 		data() {
 			return {
-				showPop: false,
 				type:"",
 				text:''
 			}
@@ -45,14 +32,15 @@
 					success:function(res){
 						if(res.data.status===200){
 							that.text="";
-							that.showPop=true;
+							common.TostUtil(res.data.message);
+							setTimeout(function(){
+								uni.switchTab({
+									url:'index'
+								})
+							},1000)
+							
 						}
 					}
-				})
-			},
-			hidePop(){
-				uni.switchTab({
-					url:'index'
 				})
 			}
 		}

@@ -436,7 +436,6 @@ var _default = { data: function data() {return { list: [] };}, methods: { getLis
 
     },
     navTo: function navTo(e) {
-
       uni.navigateTo({
         url: e.currentTarget.dataset.url });
 

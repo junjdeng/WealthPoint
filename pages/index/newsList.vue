@@ -1,9 +1,9 @@
 <template>
 	<view class="list">
-		<view class="item" v-for="item in list" :key="item.id">
-			<view class="flex-start">
-				<view class="title ellipsis flex5">{{item.title}}</view>
-				<span class="time flex1">{{item.time | dateTimeFormat('MM-dd')}}</span>
+		<view class="item" v-for="item in list" :key="item.id" :data-url="'newDetail?id='+item.id" @click="navTo">
+			<view class="flex-between">
+				<view class="title  flex5">{{item.title}}</view>
+				<view class="time flex1" >{{item.time | formatDate(4)}}</view>
 			</view>
 			<view class="content ellipsis2">{{item.content}}</view>
 		</view>
@@ -14,7 +14,9 @@
 <script>
 	import {djRequest} from '../../common/request.js'
 	import common from '../../common/common.js'
-	
+	import {
+		config
+	} from '../../common/config.js'
 	export default {
 		data() {
 			return {
@@ -27,7 +29,6 @@
 				url:'/api/news',
 				data:{'start': 0,'length': 10},
 				success:function(res) {
-					console.log(res);
 					if (res.data.status == 200) {
 						_this.list = res.data.data.data;
 					}
@@ -35,15 +36,19 @@
 			})				
 		},
 		methods: {
-			
+			navTo(e) {
+				uni.navigateTo({
+					url:e.currentTarget.dataset.url
+				})
+			},
 		}
 	}
 </script>
 
 <style>
 	.item{background: #ffffff; padding: 10upx 20upx; margin-top: 20upx;}
-	.item .title{font-size: 28upx; color: #333333; line-height: 2em;}
+	.item .title{font-size: 28upx; color: #333333; line-height: 2em;width:70%;}
 	.item .content{font-size: 24upx; color: #999999; line-height: 1.6em;}
-	.item .time{font-size: 28upx; color: #999999; line-height: 1.6em; text-align: right;}
+	.item .time{font-size: 24upx; color: #999999; line-height: 1.6em;  text-align: right;}
 	.more{font-size: 24upx; text-align: center; color: #888888; margin-top: 20upx;}
 </style>

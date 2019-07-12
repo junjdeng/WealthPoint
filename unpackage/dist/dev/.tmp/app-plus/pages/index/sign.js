@@ -156,6 +156,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 
 
@@ -170,7 +188,8 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
       signTxt: "签到领积分",
       signNum: 0,
       list: [],
-      dateList: [] };
+      dateList: [],
+      know: false };
 
   },
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
@@ -219,6 +238,12 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
     _this.signNum = _config.config.balance.sign;
   },
   methods: {
+    getKnow: function getKnow() {
+      this.know = true;
+    },
+    inKnow: function inKnow() {
+      this.know = !this.know;
+    },
     navTo: function navTo(e) {
       uni.navigateTo({
         url: e.currentTarget.dataset.url });
@@ -234,7 +259,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         /\//g, '.').slice(5);
         dates.push(item);
       }
-      console.log(dates, " at pages\\index\\sign.vue:137");
+      console.log(dates, " at pages\\index\\sign.vue:162");
       /* return dates */
     },
     sign: function sign() {
@@ -246,7 +271,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         url: '/api/sign',
         data: {},
         success: function success(res) {
-          console.log(res, " at pages\\index\\sign.vue:149");
+          console.log(res, " at pages\\index\\sign.vue:174");
           if (res.data.status == 200) {
             _common.default.TostUtil(res.data.message);
             _this.signTxt = "今日已签到";
@@ -262,7 +287,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
     },
     switch1Change: function switch1Change(e) {
-      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:165");
+      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:190");
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

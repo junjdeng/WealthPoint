@@ -1,7 +1,7 @@
 
 .item{background: #ffffff; padding: 10rpx 20rpx; margin-top: 20rpx;}
-.item .title{font-size: 28rpx; color: #333333; line-height: 2em;}
+.item .title{font-size: 28rpx; color: #333333; line-height: 2em;width:70%;}
 .item .content{font-size: 24rpx; color: #999999; line-height: 1.6em;}
-.item .time{font-size: 28rpx; color: #999999; line-height: 1.6em; text-align: right;}
+.item .time{font-size: 24rpx; color: #999999; line-height: 1.6em;  text-align: right;}
 .more{font-size: 24rpx; text-align: center; color: #888888; margin-top: 20rpx;}
 

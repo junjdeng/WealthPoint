@@ -165,7 +165,8 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
   },
   onShow: function onShow() {
-    this.getUserName();
+
+    this.userName = _config.config.User.realName;
   },
   methods: {
     /* 获取用户名 */
@@ -202,11 +203,22 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             status: 'yes' },
 
           success: function success(res) {
-            _common.default.TostUtil(res.data.message);
+            if (res.data.status === 406) {
+              _common.default.TostUtil(res.data.message);
+              if (res.data.message === '请完善个人资料，填写真实姓名') {
+                uni.navigateTo({
+                  url: './../login/finishRegisterInfo' });
+
+              }}
             that.flag = true;
-            setTimeout(function () {
-              uni.navigateBack();
-            }, 1000);
+            if (res.data.status === 200) {
+              that.bankNumber = '';
+              _common.default.TostUtil(res.data.message);
+              that.flag = true;
+              setTimeout(function () {
+                uni.navigateBack();
+              }, 1000);
+            }
 
           },
           fail: function fail(res) {

@@ -1,10 +1,9 @@
 <template>
-	<view>
-		<view class="logo">欢迎登录WEALTH POINT</view>
-
+	<view style="padding-bottom:30upx;">
+		<image src="/static/images/logo.png"></image>
 		<form class="login_form" @submit="formSubmit">
 			<view class="uni-form-item uni-column">
-                <input class="uni-input" name="username" type="text" v-model="user" placeholder="手机号／邮箱"  />
+                <input class="uni-input" name="username" type="text" v-model="user" placeholder="用户名"  />
 			</view>
 			
 			<view class="uni-form-item uni-column">
@@ -103,11 +102,17 @@
 
 <style>
 	page{background: #ffffff;}
-	.logo{text-align: center; font-size: 48upx; color: #333333; margin-top: 250upx;}
-	.login_form{margin: 100upx 75upx; display: inline-block; width: 600upx;}
+	.logo{text-align: center; font-size: 48upx; color: #333333; margin-top: 50upx;}
+	.login_form{margin: 50upx 75upx; display: inline-block; width: 600upx;}
 	.login_form .uni-form-item{margin-top: 40upx;}
 	.login_form .uni-input{color: #333333; font-size: 32upx; border-bottom: 1px solid #999999;}
 	.login_form .uni-btn-v{margin-top: 100upx;}
 	.login_form .uni-btn-v button{background: #CCA366; font-size: 32upx; color: #ffffff;}
 	.register{color: #CCA366; font-size: 32rpx; text-align: center;}
+	image{
+		display:block;
+		width:240upx;
+		height:200upx;
+		margin:80upx auto 30upx;
+	}
 </style>

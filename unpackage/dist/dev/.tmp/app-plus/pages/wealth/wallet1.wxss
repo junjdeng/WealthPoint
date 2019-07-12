@@ -6,17 +6,4 @@
 .section1 .want{color: #FFFFFF;font-size: 32rpx; border:1px solid #FFFFFF; -webkit-border-radius: 16rpx; border-radius: 16rpx;
  padding:10rpx 40rpx;}
 .section_title {color: #333333;font-size: 28rpx;font-weight: bold;line-height: 2em;}
-.section2{margin: 20rpx;width: 710rpx;}
-.section2 .item {
-	background: #FFFFFF;
-	margin-bottom: 20rpx;
-	padding: 20rpx;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
-	color: #333333;
-	font-size: 28rpx;
-	line-height: 2em;
-}
-.section2 .item .flex1{text-align: right;}
-.section2 .item .time{color: #999999; font-size: 24rpx;}
 

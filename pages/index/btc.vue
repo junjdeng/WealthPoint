@@ -1,12 +1,12 @@
 <template>
 	<view class="main">
 		<view class="title">
-			<view>币种/流通市值</view>
+			<view>币种<!-- /流通市值 --></view>
 			<view>最新价</view>
 			<view>24H涨幅</view>
 		</view>
 		<view class="title fz" v-for="(item,index) in list" :key="index">
-			<view style="display:flex;justify-content:center;align-items:center;"><image class="imgs" :src="item.icon"></image><view>{{item.cat}}</view></view>
+			<view style="display:flex;justify-content:center;align-items:center;"><!-- <image class="imgs" :src="item.icon"></image> --><view>{{item.cat}}</view></view>
 			<view>
 				<view style="font-size:28upx;color:#333;text-align:center;width:100%;font-weight:bold;">￥{{item.price}}</view>
 				<view style="font-size:24upx;color:#666;text-align:center;width:100%;">${{item.close}}</view>
@@ -56,52 +56,7 @@
 								'xrpusdt') || (item.symbol == 'bchusdt') || (item.symbol == 'etcusdt') || (item.symbol == 'ltcusdt') || (
 								item.symbol == 'bsvusdt'|| (item.symbol == 'dashusdt')|| (item.symbol == 'adausdt')|| (item.symbol == 'trxusdt')
 								|| (item.symbol == 'atomusdt')|| (item.symbol == 'omgusdt')|| (item.symbol == 'neousdt'))) {
-									if(!item.hasOwnProperty('icon')){
-										switch(item.symbol){
-											case 'btcusdt':
-											item.icon = '../../static/images/coin/BTC.png';
-											break;
-											case 'ethusdt':
-											item.icon = '../../static/images/coin/ETH.png';
-											break;
-											case 'ltcusdt':
-											item.icon = '../../static/images/coin/LTC.png';
-											break;
-											case 'neousdt':
-											item.icon = '../../static/images/coin/NEO.png';
-											break;
-											case 'omgusdt':
-											item.icon = '../../static/images/coin/OMG.png';
-											break;
-											case 'atomusdt':
-											item.icon = '../../static/images/coin/atom.png';
-											break;
-											case 'eosusdt':
-											item.icon = '../../static/images/coin/EOS.png';
-											break;
-											case 'adausdt':
-											item.icon = '../../static/images/coin/ADA.png';
-											break;
-											case 'etcusdt':
-											item.icon = '../../static/images/coin/ETC.png';
-											break;
-											case 'bsvusdt':
-											item.icon = '../../static/images/coin/BCH.png';
-											break;
-											case 'bchusdt':
-											item.icon = '../../static/images/coin/BCH.png';
-											break;
-											case 'dashusdt':
-											item.icon = '../../static/images/coin/DASH.png';
-											break;
-											case 'xrpusdt':
-											item.icon = '../../static/images/coin/XRP.png';
-											break;
-											case 'trxusdt':
-											item.icon = '../../static/images/coin/trx.png';
-											break;
-										}
-									}
+									
 							if (!item.hasOwnProperty('cat')) {
 								item.cat = item.symbol.replace(/usdt/g,'').toUpperCase();
 								
@@ -183,7 +138,7 @@
 	}
 
 	.green {
-		background: green;
+		background: #7ED321;
 	}
 	.imgs{
 		display:inline-block;

@@ -252,16 +252,16 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
     },
     /* 获取用户名 */
-    getUserName: function getUserName() {
-      var that = this;
-      uni.getStorage({
-        key: 'loginInfo',
-        success: function success(e) {
-          that.userName = JSON.parse(e.data).realName;
-          that.sessionid = JSON.parse(e.data).sessionId;
-        } });
-
-    },
+    /* getUserName() {
+                	let that = this;
+                	uni.getStorage({
+                		key: 'loginInfo',
+                		success(e) {
+                			that.userName = JSON.parse(e.data).realName;
+                			that.sessionid = JSON.parse(e.data).sessionId;
+                		}
+                	})
+                }, */
     /* 修改银行卡 */
     formSubmit: function formSubmit() {//确定提交
       var that = this;

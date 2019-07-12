@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/saveFile/saveFile"],{1543:function(e,t,n){},2820:function(e,t,n){"use strict";n.r(t);var o=n("73c4"),s=n("833e");for(var c in s)"default"!==c&&function(e){n.d(t,e,function(){return s[e]})}(c);n("4cf0");var u=n("2877"),a=Object(u["a"])(s["default"],o["a"],o["b"],!1,null,null,null);t["default"]=a.exports},"4cf0":function(e,t,n){"use strict";var o=n("1543"),s=n.n(o);s.a},"73c4":function(e,t,n){"use strict";var o=function(){var e=this,t=e.$createElement;e._self._c},s=[];n.d(t,"a",function(){return o}),n.d(t,"b",function(){return s})},"833e":function(e,t,n){"use strict";n.r(t);var o=n("f0c8"),s=n.n(o);for(var c in o)"default"!==c&&function(e){n.d(t,e,function(){return o[e]})}(c);t["default"]=s.a},f0c8:function(e,t,n){"use strict";(function(e){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n={props:{url:{type:String,default:""}},data:function(){return{}},methods:{hide:function(){this.$emit("hide")},save:function(){console.log("url:",this.url," at components\\saveFile\\saveFile.vue:42"),e.getImageInfo({src:this.url,success:function(t){console.log("图片信息：",JSON.stringify(t)," at components\\saveFile\\saveFile.vue:46"),e.saveImageToPhotosAlbum({filePath:t.path,success:function(){console.log("save success"," at components\\saveFile\\saveFile.vue:50"),e.showToast({title:"图片保存成功",icon:"none",duration:2200})}})}})},toSave:function(){var t=this;e.showModal({title:"图片保存",content:"确定要保存图片吗",success:function(e){e["confirm"]&&t.save()}})}},created:function(){}};t.default=n}).call(this,n("6e42")["default"])}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/saveFile/saveFile-create-component',
+    {
+        'components/saveFile/saveFile-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('6e42')['createComponent'](__webpack_require__("2820"))
+        })
+    },
+    [['components/saveFile/saveFile-create-component']]
+]);                

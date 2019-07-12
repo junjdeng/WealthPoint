@@ -5,6 +5,12 @@
     "pages/index/btc",
     "pages/index/customSuggest",
     "pages/index/chart",
+    "pages/index/newDetail",
+    "pages/index/message",
+    "pages/index/complaint",
+    "pages/index/complaintDetail",
+    "pages/index/mailDetail",
+    "pages/index/mail",
     "pages/index/sign",
     "pages/index/signRecord",
     "pages/index/alreadyfinish",
@@ -35,6 +41,8 @@
     "pages/wealth/connectMember",
     "pages/mine/mine",
     "pages/mine/mine0",
+    "pages/mine/phone",
+    "pages/mine/ownName",
     "pages/mine/mine1",
     "pages/mine/mine2",
     "pages/mine/mine3",
@@ -101,5 +109,7 @@
   },
   "appname": "Wealth Point",
   "compilerVersion": "2.0.1",
-  "usingComponents": {}
+  "usingComponents": {
+    "savefile": "/components/saveFile/saveFile"
+  }
 }

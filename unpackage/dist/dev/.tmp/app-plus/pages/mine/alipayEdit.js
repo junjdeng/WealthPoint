@@ -157,7 +157,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
               Id: that.id },
 
             success: function success(res) {
-              console.log(res, " at pages\\mine\\alipayEdit.vue:60");
               _common.default.TostUtil(res.data.message);
               if (res.data.status === 200) {
                 setTimeout(function () {
@@ -218,7 +217,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             status: 'yes' },
 
           success: function success(res) {
-            console.log(res, " at pages\\mine\\alipayEdit.vue:121");
+            console.log(res, " at pages\\mine\\alipayEdit.vue:120");
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {

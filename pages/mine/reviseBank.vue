@@ -152,7 +152,7 @@
 				})
 			},
 			/* 获取用户名 */
-			getUserName() {
+			/* getUserName() {
 				let that = this;
 				uni.getStorage({
 					key: 'loginInfo',
@@ -161,7 +161,7 @@
 						that.sessionid = JSON.parse(e.data).sessionId;
 					}
 				})
-			},
+			}, */
 			/* 修改银行卡 */
 			formSubmit() { //确定提交
 				let that = this;

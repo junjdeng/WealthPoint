@@ -3,13 +3,20 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页",
-				"navigationStyle": "custom",
+				"navigationBarTitleText": "云积分",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue6af",
+							"fontSrc":"/static/font/iconfont.ttf",
+							"fontSize": "24px",
+							"color":"#ff3333"
+						}]
+					}
 				}
 			}
 		},
+		
 		{
 			"path": "pages/index/newsList",
 			"style": {
@@ -32,6 +39,42 @@
 			"path": "pages/index/chart",
 			"style": {
 				"navigationBarTitleText": "走势图"
+			}
+		},
+		{
+			"path": "pages/index/newDetail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/index/message",
+			"style": {
+				"navigationBarTitleText": "消息列表"
+			}
+		},
+		{
+			"path": "pages/index/complaint",
+			"style": {
+				"navigationBarTitleText": "投诉信息列表"
+			}
+		},
+		{
+			"path": "pages/index/complaintDetail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/index/mailDetail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/index/mail",
+			"style": {
+				"navigationBarTitleText": "留言信息"
 			}
 		},
 		{
@@ -278,6 +321,18 @@
 			}
 		},
 		{
+			"path": "pages/mine/phone",
+			"style": {
+				"navigationBarTitleText": "修改手机号"
+			}
+		},
+		{
+			"path": "pages/mine/ownName",
+			"style": {
+				"navigationBarTitleText": "修改真实姓名"
+			}
+		},
+		{
 			"path": "pages/mine/mine1",
 			"style": {
 				"navigationBarTitleText": "云信用"
@@ -453,7 +508,9 @@
 			}
 		}, {
 			"path": "pages/login/login",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
 		},
 		{
 			"path": "pages/login/finishRegisterInfo",

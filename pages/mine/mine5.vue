@@ -16,11 +16,6 @@
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	export default {
-		data() {
-			return {
-
-			}
-		},
 		components: {
 			uniIcon
 		},

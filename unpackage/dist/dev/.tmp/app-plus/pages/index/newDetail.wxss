@@ -1,0 +1,41 @@
+
+.title{
+    text-align: center;
+}
+page,page{
+	  width:100%;
+	  height:100%;
+	  background: #fff;
+}
+.main{
+	  width:100%;
+	  height:100%;
+	  background: #fff;
+	  padding:20rpx;
+	  -webkit-box-sizing:border-box;
+	          box-sizing:border-box;
+}
+.title{
+    font-size:36rpx;
+    font-weight:500;
+    color:#333;
+    margin-bottom:10rpx;
+}
+.sendTime{
+    font-size:24rpx;
+    color:#ccc;
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+}
+.content{
+    font-size:32rpx;
+    color:#666;
+    width:100%;
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+    word-wrap: break-word;
+    word-break:break-all;
+    text-indent:2em;
+    line-height:1.5;
+}
+

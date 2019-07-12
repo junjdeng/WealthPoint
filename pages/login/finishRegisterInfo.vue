@@ -11,12 +11,10 @@
 				<span class="flex2 title">安全密码</span>
                 <input class="uni-input flex5" v-model.trim="pwd" type="password" placeholder="请输入六位安全密码" />
 			</view>
-			
 			<view class="uni-btn-v">
 				<button formType="submit">完成</button>
 			</view>
 		</form>
-
 	</view>
 </template>
 
@@ -50,6 +48,7 @@
 						 if (res.data.status === 200) {
 						config.User.realName=that.realName;
 						common.TostUtil(res.data.message);
+						
 						setTimeout(function(){
 							uni.switchTab({
 								url: '/pages/index/index'

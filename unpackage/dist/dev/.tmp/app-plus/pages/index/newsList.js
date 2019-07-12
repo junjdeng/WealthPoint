@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -113,7 +113,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
-var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
@@ -126,15 +127,21 @@ var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common
 //
 //
 //
-var _default = { data: function data() {return { list: [] };}, onLoad: function onLoad() {var _this = this;(0, _request.djRequest)({ url: '/api/news', data: { 'start': 0, 'length': 10 }, success: function success(res) {
-        console.log(res, " at pages\\index\\newsList.vue:30");
+var _default = { data: function data() {return { list: [] };}, onLoad: function onLoad() {var _this = this;(0, _request.djRequest)({ url: '/api/news', data: { 'start': 0, 'length': 10 },
+      success: function success(res) {
         if (res.data.status == 200) {
           _this.list = res.data.data.data;
         }
       } });
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    navTo: function navTo(e) {
+      uni.navigateTo({
+        url: e.currentTarget.dataset.url });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -165,7 +172,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   var l0 = _vm.list.map(function(item, __i0__) {
-    var f0 = _vm._f("dateTimeFormat")(item.time, "MM-dd")
+    var f0 = _vm._f("formatDate")(item.time, 4)
 
     return {
       $orig: _vm.__get_orig(item),

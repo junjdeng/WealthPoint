@@ -167,12 +167,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { wallet: 0, type: '', status: 0, flag: true, pwd: '', APNumber: 0, cash: 2000 };}, onShow: function onShow() {var that = this;that.wallets();}, onLoad: function onLoad(options) {this.status = options.type;}, components: {}, methods: { /* 当前钱包资产 */wallets: function wallets() {var that = this;_common.default.balance({ success: function success(res) {_config.config.balance = res;if (that.status == 1) {that.wallet = parseFloat(_config.config.balance.ecash).toFixed(4); //希望钱包
+var _default = { data: function data() {return { wallet: 0, type: '', status: 0, flag: true, pwd: '', APNumber: 0, cash: 2000 };}, onShow: function onShow() {var that = this;that.wallets();}, onLoad: function onLoad(options) {this.status = options.type;}, methods: { /* 当前钱包资产 */wallets: function wallets() {var that = this;_common.default.balance({ success: function success(res) {_config.config.balance = res;if (that.status == 1) {that.wallet = parseFloat(_config.config.balance.ecash).toFixed(4); //希望钱包
             that.type = 'ecash';} else if (that.status == 2) {that.wallet = parseFloat(_config.config.balance.bonus).toFixed(4); //奖金钱包
-            that.type = 'bonus';
-          }
-        } });
-
+            that.type = 'bonus';}} });
     },
     /* 判断钱包并判断规则 */
     getRule: function getRule() {
@@ -204,12 +201,6 @@ var _default = { data: function data() {return { wallet: 0, type: '', status: 0,
             that.flag = true;
             return;
           }
-          // if (parseFloat(that.APNumber) < 1) {
-          // 	common.TostUtil('最少1个！');
-          // 	that.APNumber = '';
-          // 	that.flag = true;
-          // 	return;
-          // }
           if (_config.config.balance.ecashLock !== 'no') {//希望钱包是否被锁定
             _common.default.TostUtil('希望钱包中AP已被锁定，不能卖出！');
             that.flag = true;
@@ -254,7 +245,6 @@ var _default = { data: function data() {return { wallet: 0, type: '', status: 0,
         method: 'POST',
         success: function success(res) {
           if (res.data.status === 200) {
-            //console.log(999);
             that.wallets();
           }
           that.APNumber = '';

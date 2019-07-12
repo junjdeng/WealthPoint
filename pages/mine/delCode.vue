@@ -1,11 +1,13 @@
 <template>
 	<view class="content">
-		<image :src="src"></image>
+		<!-- <savefile v-if="isShowPhoto" :url="srcs" @hide="hidePhoto"></savefile> -->
+		<image :src="srcs" ></image>
 	</view>
 </template>
 
 <script>
 	import common from '../../common/common.js'
+	
 	import {
 		config
 	} from '../../common/config.js'
@@ -15,11 +17,16 @@
 	export default {
 		data() {
 			return {
-				src: '',
-				id: 0
+				srcs: '',
+				id: 0,
+				isShowPhoto:false,
 			}
 		},
 		methods: {
+			/* hidePhoto(){
+			this.isShowPhoto = true;
+			
+			}, */
 			onNavigationBarButtonTap(e) {
 				let that = this;
 				/* 删除 */
@@ -52,19 +59,25 @@
 
 			},
 		},
+		created(){
+			let that = this;
+				
+			
+		},
 		onLoad(options) {
 			let that = this;
 			that.id = options.id;
 			djRequest({
-				url: '/api/qrcode/show',
-				method: 'GET',
-				data: {
-					Id: options.id
-				},
-				success: function(res) {
-					that.src = 'http://api.wealth-point.com/' + res.data.data.images;
-				}
-			})
+					url: '/api/qrcode/show',
+					method: 'GET',
+					data: {
+						Id: that.id
+					},
+					success: function(res) {
+						that.srcs = 'http://api.wealth-point.com' + res.data.data.images;
+						console.log(that.srcs,4)
+					}
+				})
 		},
 		onShow() {
 
@@ -76,10 +89,13 @@
 	.content {
 		width: 80%;
 		margin: 20upx auto;
+		height: 700upx;
+		overflow:hidden;
 	}
 
 	.content image {
 		width: 100%;
+		height: 700upx;
 		display: block;
 	}
 </style>

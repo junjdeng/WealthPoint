@@ -11,7 +11,7 @@
 			<view class="btn" @click="change">兑换AP</view>
 		</view>
 		<view class="tips">
-			*兑换的积分，必须是大于5000且是5000的倍数<br/>
+			*兑换的积分，必须是大于等于5000且是5000的倍数<br/>
 			*每5000积分可兑换0.25AP
 		</view>
 	</view>

@@ -279,6 +279,18 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -288,6 +300,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     return {
       items: ['待使用', '已使用'],
       current: 0,
+      phone: 0.,
+      name: 0,
+      jf: 0,
+      cjjf: 0,
       icon1: '/static/images/shop1.png',
       icon2: '/static/images/shop2.png',
       icon3: '/static/images/shop3.png',
@@ -301,9 +317,15 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
   onShow: function onShow() {
     var that = this;
+
     if (that.current === 0) {
-      that.hasGet();
+      _common.default.balance();
+      that.phone = _config.config.balance.phone;
+      that.name = _config.config.balance.name;
+      that.jf = _config.config.balance.unblock;
+      that.cjjf = _config.config.balance.super_unblock;
     } else {
+      _common.default.balance();
       that.hasUse();
     }
   },
@@ -318,30 +340,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           that.hasGet();
         }
       }
-    },
-    //已有
-    hasGet: function hasGet() {
-      var that = this;
-      (0, _request.djRequest)({
-        url: '/api/gift/receive',
-        method: 'POST',
-        data: {
-          start: 0,
-          length: 100 },
-
-        success: function success(res) {
-          if (res.data.status === 200) {
-            var arr = res.data.data.data;
-            var arr1 = [];
-            arr.forEach(function (item) {
-              if (item.operate !== 'deduct') {
-                arr1.push(item);
-              }
-            });
-            that.arr1 = arr1;
-          }
-        } });
-
     },
     //已使用
     hasUse: function hasUse() {
@@ -423,7 +421,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var l0 = _vm.arr1.map(function(temp, index) {
+  var l0 = _vm.arr2.map(function(temp, index) {
     var f0 = _vm._f("formatDate")(temp.time, 1)
 
     return {
@@ -431,20 +429,11 @@ var render = function() {
       f0: f0
     }
   })
-  var l1 = _vm.arr2.map(function(temp, index) {
-    var f1 = _vm._f("formatDate")(temp.time, 1)
-
-    return {
-      $orig: _vm.__get_orig(temp),
-      f1: f1
-    }
-  })
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
-        l0: l0,
-        l1: l1
+        l0: l0
       }
     }
   )

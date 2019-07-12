@@ -203,10 +203,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
@@ -242,8 +238,12 @@ var canvas = null;var _default =
 
   },
   components: {
-    uniIcon: uniIcon
-    //mpvueEcharts
+    uniIcon: uniIcon },
+
+  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
+    uni.navigateTo({
+      url: 'message' });
+
   },
   onShow: function onShow() {
     var that = this;
@@ -272,7 +272,6 @@ var canvas = null;var _default =
             that.showPop = false;
           }
         }
-
       } });
 
     this.getBTC();
@@ -286,7 +285,7 @@ var canvas = null;var _default =
       var ds = this.nowDate(das - cycle * i);
       dq.push(ds);
     }
-    this._data.das = [0.1, 0.2, 0.800, 0.400, 0.900, 0.900, 0.60];
+    this._data.das = [1, 1, 1.002, 1.020, 1.0, 1.0, 1.0];
     this._data.week = dq;
     _self = this;
     this.cWidth = uni.upx2px(680);
@@ -347,7 +346,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:250");
+          console.log(res, 4, " at pages\\index\\index.vue:249");
           //that.getBTC();
         } });
 
@@ -370,6 +369,20 @@ var canvas = null;var _default =
         data: that._data.das,
         name: '',
         color: "#FF5533" }];
+
+      (0, _request.djRequest)({
+        url: '/api/statistics/income',
+        method: 'GET',
+        success: function success(res) {
+          /* console.log(res,3)
+                                        let arr = res.data.data.split(0,1);
+                                        
+                                        console.log(arr)
+                                        for(let i=0;i<arr.length;i++){
+                                        	console.log(arr[i])
+                                        } */
+          /* canvasData.series[0].data; */
+        } });
 
       that._data.das = canvasData.series[0].data;
       _self.CanvasData("canvas", canvasData);

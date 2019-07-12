@@ -157,7 +157,6 @@ __webpack_require__.r(__webpack_exports__);
     uniIcon: uniIcon },
 
   onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
-
     uni.navigateTo({
       url: 'mine7Cards' });
 

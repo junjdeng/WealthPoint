@@ -128,9 +128,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -165,10 +162,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-//
-//
-//
-var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [], zer: 0, buy: 0, sell: 0, totalRevenue: 0 };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.navigateTo({ url: 'harvest' });}, onLoad: function onLoad() {_self = this;this.cWidth = uni.upx2px(750);this.cHeight = uni.upx2px(500);var that = this;(0, _request.djRequest)({ url: '/api/member/balance', method: 'GET',
+var _self;var canvaPie = null;var _default = { data: function data() {return { cWidth: '', cHeight: '', pixelRatio: 1, serverData: '', piearr: [], zer: 0, buy: 0, sell: 0, totalRevenue: 0 };}, onShow: function onShow() {_common.default.balance();}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.navigateTo({ url: 'harvest' });}, onLoad: function onLoad() {_self = this;
+    this.cWidth = uni.upx2px(750);
+    this.cHeight = uni.upx2px(500);
+    var that = this;
+    (0, _request.djRequest)({
+      url: '/api/member/balance',
+      method: 'GET',
       success: function success(res) {
         that.zer = (parseFloat(res.data.data.ecash) + parseFloat(res.data.data.bonus)).toFixed(4); //总资产;
       } });

@@ -46,19 +46,21 @@
 }
 .notice text {
 	font-size: 24rpx;
-	color: #333333;
-	display: inline-block;
-	width: 570rpx;
-	height: 50rpx;
-	text-indent: 1em;
-	line-height: 50rpx;
-}
-.notice ._span {
-	font-size: 24rpx;
 	color: #888888;
 	display: inline-block;
 	text-align: right;
 	height: 50rpx;
+	line-height: 50rpx;
+}
+.notice text:nth-child(3) {
+	font-size: 24rpx;
+	color: #333333;
+	display: block;
+	width: 520rpx!important;
+	text-align:left;
+	padding-left:20rpx;
+	height: 50rpx;
+	
 	line-height: 50rpx;
 }
 .section_title {

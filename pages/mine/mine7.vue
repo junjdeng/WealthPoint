@@ -57,7 +57,6 @@
 			uniIcon
 		},
 		onNavigationBarButtonTap(e){
-			
 			uni.navigateTo({
 				url:'mine7Cards'
 			})

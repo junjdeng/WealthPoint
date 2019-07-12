@@ -160,7 +160,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           length: 500 },
 
         success: function success(res) {
-          console.log(res, " at pages\\wealth\\walletDetail.vue:63");
           if (res.data.status === 200) {
             that.listBonus = res.data.data.data;
           }
@@ -193,7 +192,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   },
   onLoad: function onLoad(options) {
     this.type = options.type;
-    console.log(options, " at pages\\wealth\\walletDetail.vue:96");
+    console.log(options, " at pages\\wealth\\walletDetail.vue:95");
     if (options.type == 1) {
       uni.setNavigationBarTitle({
         title: '希望钱包明细' });

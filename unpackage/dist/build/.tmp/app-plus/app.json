@@ -5,9 +5,16 @@
     "pages/index/btc",
     "pages/index/customSuggest",
     "pages/index/chart",
+    "pages/index/newDetail",
+    "pages/index/message",
+    "pages/index/complaint",
+    "pages/index/mailDetail",
+    "pages/index/mail",
     "pages/index/sign",
     "pages/index/signRecord",
+    "pages/index/alreadyfinish",
     "pages/index/exchange",
+    "pages/index/shop",
     "pages/index/wwallet",
     "pages/charity/charity",
     "pages/charity/charityList",
@@ -99,5 +106,7 @@
   },
   "appname": "Wealth Point",
   "compilerVersion": "2.0.1",
-  "usingComponents": {}
+  "usingComponents": {
+    "savefile": "/components/saveFile/saveFile"
+  }
 }

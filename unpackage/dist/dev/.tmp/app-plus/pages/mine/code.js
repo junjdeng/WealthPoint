@@ -107,7 +107,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
+
+
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js"); //
 //
 //
@@ -116,9 +119,8 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { list: [], baseUrl: _config.config.BASE_URL };}, onLoad: function onLoad() {
-
-  },
+//
+var _default = { data: function data() {return { list: [], baseUrl: _config.config.BASE_URL };},
   onShow: function onShow() {
     this.getQrcodeList();
   },
@@ -139,7 +141,6 @@ var _default = { data: function data() {return { list: [], baseUrl: _config.conf
         url: '/api/qrcode',
         method: 'GET',
         success: function success(res) {
-          //console.log(res);
           _this.list = res.data.data;
         } });
 

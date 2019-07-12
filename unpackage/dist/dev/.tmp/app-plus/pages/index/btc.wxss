@@ -352,7 +352,7 @@
 	background: #FF5533;
 }
 .green {
-	background: green;
+	background: #7ED321;
 }
 .imgs{
 	display:inline-block;

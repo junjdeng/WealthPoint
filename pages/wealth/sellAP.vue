@@ -54,9 +54,6 @@
 		onLoad(options) {
 			this.status = options.type;
 		},
-		components: {},
-
-
 		methods: {
 			/* 当前钱包资产 */
 			wallets () {
@@ -104,12 +101,6 @@
 							that.flag = true;
 							return;
 						}
-						// if (parseFloat(that.APNumber) < 1) {
-						// 	common.TostUtil('最少1个！');
-						// 	that.APNumber = '';
-						// 	that.flag = true;
-						// 	return;
-						// }
 						if (config.balance.ecashLock !== 'no') { //希望钱包是否被锁定
 							common.TostUtil('希望钱包中AP已被锁定，不能卖出！');
 							that.flag = true;
@@ -154,7 +145,6 @@
 					method: 'POST',
 					success: function(res) {
 						if (res.data.status === 200) {
-							//console.log(999);
 							that.wallets();
 						}
 						that.APNumber = '';

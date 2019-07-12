@@ -119,8 +119,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
@@ -143,13 +141,14 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-//
-//
-var _default = { data: function data() {return { realName: '', pwd: '' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.switchTab({ url: '../index/index' });}, methods: { submit: function submit() {var that = this;(0, _request.djRequest)({ url: '/api/member/update', method: 'POST', data: { type: 'realname', value: that.realName },
+var _default = { data: function data() {return { realName: '', pwd: '' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {uni.switchTab({ url: '../index/index' });}, methods: { submit: function submit() {var that = this;(0, _request.djRequest)({ url: '/api/member/update', method: 'POST', data: { type: 'realname',
+          value: that.realName },
+
         success: function success(res) {
           if (res.data.status === 200) {
             _config.config.User.realName = that.realName;
             _common.default.TostUtil(res.data.message);
+
             setTimeout(function () {
               uni.switchTab({
                 url: '/pages/index/index' });

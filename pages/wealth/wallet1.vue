@@ -3,22 +3,7 @@
 		<view class="section1">
 			<view class="title">AP数量</view>
 			<view class="num wpgold">{{wallet}}</view>
-			<!-- <span class="want" data-url="buyAP" @tap="navTo">转到希望钱包</span> -->
 		</view>
-	
-		<!-- <view class="section2">
-			<view class="section_title">收益记录</view>
-			<view class="list">
-				<view class="item flex-start">
-					<view class="time flex4">2019-01-08</view>
-					<view class="num flex1">+1</view>
-				</view>
-				<view class="item flex-start">
-					<view class="time flex4">2019-01-08</view>
-					<view class="num flex1">+1</view>
-				</view>	
-			</view>
-		</view> -->
 	</view>
 </template>
 
@@ -64,16 +49,4 @@
  padding:10upx 40upx;}
 
 .section_title {color: #333333;font-size: 28upx;font-weight: bold;line-height: 2em;}
-.section2{margin: 20upx;width: 710upx;}
-.section2 .item {
-	background: #FFFFFF;
-	margin-bottom: 20upx;
-	padding: 20upx;
-	border-radius: 8upx;
-	color: #333333;
-	font-size: 28upx;
-	line-height: 2em;
-}
-.section2 .item .flex1{text-align: right;}
-.section2 .item .time{color: #999999; font-size: 24upx;}
 </style>

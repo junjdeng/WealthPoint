@@ -65,7 +65,8 @@
 
 		},
 		onShow() {
-			this.getUserName();
+			
+			this.userName=config.User.realName
 		},
 		methods: {
 			/* 获取用户名 */
@@ -102,11 +103,22 @@
 							status: 'yes'
 						},
 						success: function(res) {
-							common.TostUtil(res.data.message);
+							if(res.data.status===406){
+								common.TostUtil(res.data.message);
+								if(res.data.message==='请完善个人资料，填写真实姓名'){
+									uni.navigateTo({
+										url:'./../login/finishRegisterInfo'
+									})
+								}}
 							that.flag = true;
-							setTimeout(function(){
-								uni.navigateBack();
-							},1000)
+							if(res.data.status===200){
+							  that.bankNumber='';
+							  common.TostUtil(res.data.message);
+							  that.flag=true;
+							  setTimeout(function(){
+							  	uni.navigateBack();
+							  },1000)
+							}
 
 						},
 						fail: function(res) {
