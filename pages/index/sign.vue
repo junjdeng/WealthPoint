@@ -183,13 +183,12 @@
 							_this.getDate();
 							_this.signTxt = "今日已签到";
 							// common.balance();
-							(function(opt) {
+							(function() {
 								djRequest({
 									url: '/api/member/balance',
 									method: 'GET',
 									success: function(res) {
 										if (res.data.status === 200) {
-											opt.success(res.data.data);
 											config.balance = res.data.data;
 											_this.signNum = config.balance.sign;
 										}

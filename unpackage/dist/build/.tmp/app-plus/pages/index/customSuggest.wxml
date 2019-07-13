@@ -1,0 +1,1 @@
+<view class="wrap"><textarea placeholder="请输入您的意见" data-event-opts="{{[['input',[['__set_model',['','text','$event',['trim']]]]],['blur',[['$forceUpdate']]]]}}" value="{{text}}" bindinput="__e" bindblur="__e"></textarea><view data-event-opts="{{[['tap',[['submit',['$event']]]]]}}" class="bottomBtn" bindtap="__e">提交</view></view>

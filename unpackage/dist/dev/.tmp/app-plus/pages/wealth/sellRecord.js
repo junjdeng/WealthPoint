@@ -403,6 +403,7 @@ var _default2 =
 
 
 
+
 var _uniLoadMore = _interopRequireDefault(__webpack_require__(/*! @/components/uni-load-more/uni-load-more.vue */ "../../../../test/WealthPoint/components/uni-load-more/uni-load-more.vue"));
 var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
@@ -424,13 +425,33 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { list: [] };}, methods: { getList: function getList() {var that = this;(0, _request.djRequest)({ url: '/api/order', data: { start: 0,
-          length: 200,
+//
+var _default = { data: function data() {return { list: [], start: 0, length: 30, isMore: true };}, onPullDownRefresh: function onPullDownRefresh() {this.start = 0;this.list = [];this.getList();},
+  onReachBottom: function onReachBottom() {
+    if (this.isMore) {
+      this.getList();
+    }
+  },
+  methods: {
+    getList: function getList() {
+      var that = this;
+      (0, _request.djRequest)({
+        url: '/api/order',
+        data: {
+          start: that.start,
+          length: that.length,
           status: 'finish',
           type: 'sell' },
 
         success: function success(res) {
-          that.list = res.data.data.data;
+          uni.stopPullDownRefresh();
+          if (res.data.data.data.length < that.length / 2) {
+            that.isMore = false;
+          } else {
+            that.isMore = true;
+          }
+          that.list = that.list.concat(res.data.data.data);
+          that.start = that.list.length;
         } });
 
 

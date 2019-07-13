@@ -12,7 +12,7 @@
 			<view class="uni-form-item uni-column codes" style="position: relative;">
 				<input class="uni-input"  type="number" v-model.trim="userCode" placeholder="验证码" />
 				<text class="getcode" @click="goMess" v-if="show">获取验证码</text>
-				<text class="getcode" v-else>重新发送({{count}})</text>
+				<text class="getcode" style="font-size:28upx!important" v-else>重新发送({{count}})</text>
 			</view>
 
 			<view class="uni-form-item uni-column">
@@ -217,7 +217,7 @@
 		border: none;
 		color: #CCA366;
 		z-index:10000;
-		
+		white-space: nowrap;
 	}
 	.codes{
 		display:flex;

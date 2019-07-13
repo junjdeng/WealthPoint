@@ -369,6 +369,70 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.config = v
 
 /***/ }),
 
+/***/ "../../../../test/WealthPoint/common/filter.js":
+/*!********************************************!*\
+  !*** D:/test/WealthPoint/common/filter.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+//全局过滤器
+_vue.default.filter('formatDate', function (value, type) {
+  var date = new Date(Number(value) * 1000);
+  var YY = date.getFullYear();
+  var MM = date.getMonth() + 1;
+  var d = date.getDate();
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+  MM = MM < 10 ? '0' + MM : MM;
+  d = d < 10 ? '0' + d : d;
+  h = h < 10 ? '0' + h : h;
+  m = m < 10 ? '0' + m : m;
+  s = s < 10 ? '0' + s : s;
+  switch (type) {
+    case 1:
+      return YY + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s;
+      break;
+    case 2:
+      return YY + '-' + MM + '-' + d;
+      break;
+    case 3:
+      return h + ':' + m + ':' + s;
+      break;
+    case 4:
+      return MM + '-' + d;
+      break;}
+
+});
+_vue.default.filter('yuan', function (value) {
+  return isNaN(value) ? 0.00 : parseFloat(value).toFixed(2);
+});
+_vue.default.filter('formatLeftDate', function (value) {
+  var totalSeconds = value / 1000;
+  var h = Math.floor(totalSeconds / (60 * 60));
+  totalSeconds = totalSeconds - h * 60 * 60;
+  var m = Math.floor(totalSeconds / 60);
+  totalSeconds = totalSeconds - m * 60;
+  var s = Math.floor(totalSeconds);
+
+  h = h < 10 ? '0' + h : h;
+  m = m < 10 ? '0' + m : m;
+  s = s < 10 ? '0' + s : s;
+  return ' ' + h + ':' + m + ':' + s;
+});
+var formatDate = _vue.default.filter('formatDate');
+var yuan = _vue.default.filter('yuan');
+var formatLeftDate = _vue.default.filter('formatLeftDate');var _default =
+{
+  formatDate: formatDate,
+  yuan: yuan,
+  formatLeftDate: formatLeftDate };exports.default = _default;
+
+/***/ }),
+
 /***/ "../../../../test/WealthPoint/common/hmac-sha256.js":
 /*!*************************************************!*\
   !*** D:/test/WealthPoint/common/hmac-sha256.js ***!
@@ -650,15 +714,13 @@ var djRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PUR
             opt.header.authorization = _config.config.Authorization;case 14:
 
 
-            //console.log(opt);
-
             uni.request({
               url: _config.config.BASE_URL + opt.url + '?t=' + Date.now(),
               data: opt.data,
               header: opt.header,
               method: opt.method,
               success: function success(res) {
-                if (res.data.status == 403) {
+                if (res.data.status == 403 && _config.config.User == null) {
                   uni.reLaunch({
                     url: '/pages/login/login' });
 
@@ -667,7 +729,7 @@ var djRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PUR
                 }
               },
               fail: function fail(res) {
-                console.log(res, " at common\\request.js:41");
+                console.log(res, " at common\\request.js:39");
                 uni.showToast({
                   title: '请稍后重试' });
 
@@ -4059,9 +4121,54 @@ module.exports = Charts;
   !*** D:/test/WealthPoint/main.js ***!
   \***********************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-mp-loader/lib/main.js):\nError: Can't resolve './components/saveFile/saveFile.vue' in 'D:\\test\\WealthPoint'\n    at doResolve (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:180:19)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn0 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:15:1)\n    at resolver.doResolve (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\UnsafeCachePlugin.js:37:5)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn0 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:15:1)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn1 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:24:1)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn43 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:402:1)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn1 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:24:1)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn1 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:24:1)\n    at hook.callAsync (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5)\n    at _fn0 (eval at create (D:\\software\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\tapable\\lib\\HookCodeFactory.js:32:10), <anonymous>:15:1)");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni, createApp) {__webpack_require__(/*! uni-pages */ "../../../../test/WealthPoint/pages.json");
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "../../../../test/WealthPoint/App.vue"));
+__webpack_require__(/*! ./common/filter.js */ "../../../../test/WealthPoint/common/filter.js");
+
+
+__webpack_require__(/*! ./static/font/iconfont.css */ "../../../../test/WealthPoint/static/font/iconfont.css");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+_vue.default.config.productionTip = false;
+_App.default.mpType = 'app';
+
+var app = new _vue.default(_objectSpread({},
+_App.default));
+
+
+
+uni.getStorage({ //如果存在sessionid则跳到首页，否则去登陆页
+  key: 'sessionid',
+  success: function success(e) {
+    //console.log(999);
+    uni.switchTab({
+      url: 'pages/index/index' });
+
+  },
+  fail: function fail(e) {
+    //console.log(333);
+    uni.navigateTo({
+      url: 'pages/login/login' });
+
+  } });
+
+var times = null;
+uni.getStorage({
+  key: 'time',
+  success: function success(e) {
+    times = JSON.parse(e.data);
+  } });
+/*  */
+if (new Date().getTime() - times > 1000 * 60 * 60 * 24 * 7) {//大于七天清除本地存储
+  uni.clearStorage();
+  uni.navigateTo({
+    url: 'pages/login/login' });
+
+}
+createApp(app).$mount();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createApp"]))
 
 /***/ }),
 
@@ -5213,6 +5320,17 @@ createPage(_wealth.default);
 
 "use strict";
 
+
+/***/ }),
+
+/***/ "../../../../test/WealthPoint/static/font/iconfont.css":
+/*!****************************************************!*\
+  !*** D:/test/WealthPoint/static/font/iconfont.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 

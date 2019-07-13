@@ -21,15 +21,13 @@ const djRequest = async function (opt){
 		opt.header.authorization = config.Authorization;
 	}		
 	
-	//console.log(opt);
-	
 	uni.request({
 	　	url: config.BASE_URL + opt.url +'?t='+Date.now(),
 		data: opt.data,
 		header: opt.header,
 		method: opt.method,
 		success: (res) => {
-			if(res.data.status == 403){
+			if(res.data.status == 403 && config.User == null){
 				uni.reLaunch({
 					url: '/pages/login/login'
 				});

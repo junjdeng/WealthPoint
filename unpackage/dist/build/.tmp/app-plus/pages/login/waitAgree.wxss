@@ -1,0 +1,6 @@
+
+page{background: #ffffff;}
+.wrap{text-align: center;}
+.wrap image{margin-top: 100rpx;}
+.tips{font-size:32rpx; color: #333333; margin-top: 100rpx;}
+

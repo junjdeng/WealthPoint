@@ -1,0 +1,1 @@
+<view class="main"><view><view class="title">{{info.title}}</view><view class="sendTime">{{"发布时间："+$root.f0}}</view><view class="content">{{info.content}}</view></view></view>

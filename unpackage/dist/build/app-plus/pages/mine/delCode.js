@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"content { width: 80%; margin: ",[0,20]," auto; height: ",[0,700],"; overflow:hidden; }\n.",[1],"content wx-image { width: 100%; height: ",[0,700],"; display: block; }\n",],undefined,{path:"./pages/mine/delCode.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/mine/delCode.wxml') } }));

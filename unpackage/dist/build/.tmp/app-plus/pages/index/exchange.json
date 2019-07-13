@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "兑换AP",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "兑换记录",
+        "color": "#333",
+        "fontSize": "14px",
+        "width": "80"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

@@ -10,6 +10,7 @@
 				<view class="shape"></view>
 			</view>
 		</view>
+		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
 	</view>
 </template>
 
@@ -26,7 +27,20 @@
 	export default {
 		data() {
 			return {
-				list:[]
+				list:[],
+				start:0,
+				length:30,
+				isMore:true,
+			}
+		},
+		onPullDownRefresh: function() {	
+			this.start = 0;
+			this.list = [];
+			this.getList();
+		},
+		onReachBottom: function() {		
+			if (this.isMore) {
+				this.getList();
 			}
 		},
 		methods: {
@@ -35,13 +49,20 @@
 				djRequest({
 					url: '/api/order',
 					data:{
-						start: 0,
-						length: 200,
+						start: that.start,
+						length: that.length,
 						status: 'finish',
 						type: 'sell'
 					},
 					success:function(res){
-						that.list = res.data.data.data;
+						uni.stopPullDownRefresh();
+						if (res.data.data.data.length < that.length/2) {
+							that.isMore = false;
+						}else{
+							that.isMore = true;
+						}
+						that.list = that.list.concat(res.data.data.data);
+						that.start = that.list.length;
 					}
 					
 				})
@@ -59,6 +80,8 @@
 </script>
 
 <style>
+	.more{text-align: center; color: #999999; height: 40upx; 
+	line-height: 40upx; font-size: 28upx; padding: 20upx 0;margin-top:20upx;}
 	.item {
 		color: #333333;
 		background: #fff;

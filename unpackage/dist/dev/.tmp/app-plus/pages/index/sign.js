@@ -283,13 +283,12 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
             _this.getDate();
             _this.signTxt = "今日已签到";
             // common.balance();
-            (function (opt) {
+            (function () {
               (0, _request.djRequest)({
                 url: '/api/member/balance',
                 method: 'GET',
                 success: function success(res) {
                   if (res.data.status === 200) {
-                    opt.success(res.data.data);
                     _config.config.balance = res.data.data;
                     _this.signNum = _config.config.balance.sign;
                   }
@@ -303,7 +302,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
     },
     switch1Change: function switch1Change(e) {
-      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:206");
+      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:205");
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

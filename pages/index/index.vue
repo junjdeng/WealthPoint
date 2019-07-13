@@ -82,7 +82,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="section section4">
+		<!-- <view class="section section4">
 			<view class="section_title">AP成交量</view>
 			<view class="trend">
 				<view class="qiun-columns">
@@ -91,7 +91,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		<view class="cover" v-if="showPop" @tap="hidePop()">
 			<view class="pop_wrap" style="background-image: url('../../static/images/main11.jpg');">
 				<view class="text">签到领红包</view>
@@ -284,7 +284,7 @@
 					$this: _self,
 					canvasId: canvasId1,
 					type: 'line',
-					fontSize: 11,
+					fontSize: 8,
 					legend: false,
 					dataLabel: false,
 					dataPointShape: false,
@@ -363,7 +363,7 @@
 					canvasId: canvasId,
 					type: 'column',
 					legend: false,
-					fontSize: 11,
+					fontSize: 8,
 					background: '#FFFFFF',
 					pixelRatio: _self.pixelRatio,
 					animation: true,

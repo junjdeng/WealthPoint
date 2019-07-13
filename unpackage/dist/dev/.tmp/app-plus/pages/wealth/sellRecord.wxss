@@ -466,6 +466,8 @@
 }
 
 
+.more{text-align: center; color: #999999; height: 40rpx; 
+line-height: 40rpx; font-size: 28rpx; padding: 20rpx 0;margin-top:20rpx;}
 .item {
 	color: #333333;
 	background: #fff;

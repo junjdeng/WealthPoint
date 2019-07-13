@@ -15,7 +15,6 @@
 </template>
 
 <script>
-	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
 	import {
@@ -80,7 +79,7 @@
 
 <style>
 	.more{text-align: center; color: #999999; height: 40upx; 
-	line-height: 40upx; font-size: 28upx; padding: 20upx 0;}
+	line-height: 40upx; font-size: 28upx; padding: 20upx 0;margin-top:20upx;}
 	.item {
 		color: #333333;
 		background: #fff;

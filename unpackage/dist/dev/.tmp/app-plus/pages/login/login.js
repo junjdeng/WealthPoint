@@ -184,7 +184,6 @@ var _default = { data: function data() {return { user: '', pwd: '' };}, onLoad: 
                 url: '/pages/index/index' });
 
             }
-
           }
         } });
 

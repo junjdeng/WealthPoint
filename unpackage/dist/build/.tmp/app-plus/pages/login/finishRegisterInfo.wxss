@@ -1,0 +1,10 @@
+
+.tips{font-size: 28rpx; color: #333333; line-height: 3em; padding: 20rpx;}
+.login_form{ position: relative;}
+.login_form .uni-form-item{ margin-bottom: 2rpx; padding: 10rpx 20rpx; background: #ffffff;}
+.login_form .uni-form-item .title{color: #333333; font-size: 28rpx;width: 710rpx; padding: 20rpx;}
+.login_form .uni-input{color: #333333; font-size: 28rpx;  text-align: right;}
+.login_form .uni-btn-v{position: absolute; bottom: -200rpx; left: 20rpx; width: 710rpx;
+}
+.login_form .uni-btn-v button{background: #CCA366; font-size: 32rpx; color: #ffffff;}
+
