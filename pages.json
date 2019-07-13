@@ -231,7 +231,8 @@
 		{
 			"path": "pages/wealth/buyRecord",
 			"style": {
-				"navigationBarTitleText": "已买入记录"
+				"navigationBarTitleText": "已买入记录",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
