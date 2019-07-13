@@ -11,7 +11,7 @@
 			<!-- <switch checked @change="switch1Change" color="#CCA366" /><span>签到提醒</span> -->
 			<view class="section_title">签到日历</view>
 			<view class="list flex-start">
-				<view class="flex1 item">
+				<!-- <view class="flex1 item">
 					<view class="num" :class="signList[1] ? '':'cover'">+{{signList[1] ? signList[1].integral : '5'}}</view>
 					<view class="point"></view>
 					<view calss="date">昨天</view>
@@ -40,11 +40,10 @@
 					<view class="num">+5</view>
 					<view class="point"></view>
 					<view calss="date">05.20</view>
-				</view>
-				<view class="flex1 item cover">
-					<view class="num">+5</view>
+				</view> -->
+				<view class="flex1 item cover" v-for="(item,index) in dateList" :key="index">
+					<view calss="date">{{item}}</view>
 					<view class="point"></view>
-					<view calss="date">05.20</view>
 				</view>
 			</view>
 			<!-- <view class="line"></view> -->
@@ -89,7 +88,7 @@
 				signNum: 0,
 				list: [],
 				dateList: [],
-				know:false
+				know:false,
 			}
 		},
 		onNavigationBarButtonTap(e) {
@@ -128,6 +127,7 @@
 					}
 				}
 			})
+			
 		},
 		components: {
 			uniIcon
@@ -150,6 +150,7 @@
 				})
 			},
 			getDate() {
+				let that =this;
 				var currentDate = new Date()
 				var timesStamp = currentDate.getTime();
 				var currenDay = currentDate.getDay();
@@ -159,6 +160,7 @@
 						/\//g, '.')).slice(5)
 					dates.push(item);
 				}
+				that.dateList=dates;
 				console.log(dates)
 				/* return dates */
 			},

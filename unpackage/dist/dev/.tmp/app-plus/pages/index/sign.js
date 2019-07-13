@@ -173,7 +173,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 
 
@@ -228,6 +227,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         }
       } });
 
+
   },
   components: {
     uniIcon: uniIcon },
@@ -250,6 +250,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
     },
     getDate: function getDate() {
+      var that = this;
       var currentDate = new Date();
       var timesStamp = currentDate.getTime();
       var currenDay = currentDate.getDay();
@@ -259,7 +260,8 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         /\//g, '.').slice(5);
         dates.push(item);
       }
-      console.log(dates, " at pages\\index\\sign.vue:162");
+      that.dateList = dates;
+      console.log(dates, " at pages\\index\\sign.vue:164");
       /* return dates */
     },
     sign: function sign() {
@@ -271,7 +273,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         url: '/api/sign',
         data: {},
         success: function success(res) {
-          console.log(res, " at pages\\index\\sign.vue:174");
+          console.log(res, " at pages\\index\\sign.vue:176");
           if (res.data.status == 200) {
             _common.default.TostUtil(res.data.message);
             _this.signTxt = "今日已签到";
@@ -287,7 +289,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
     },
     switch1Change: function switch1Change(e) {
-      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:190");
+      console.log('switch1 发生 change 事件，携带值为', e.target.value, " at pages\\index\\sign.vue:192");
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
