@@ -1,0 +1,6 @@
+
+.list_wrap{background: #FFFFFF; width: 710rpx; padding: 0 20rpx;margin-top: 20rpx;}
+.list .item{color: #333333; font-size: 32rpx; line-height: 2em; padding: 20rpx; border-bottom: 1px solid #E6E6E6;}
+.list .item .forward{float: right; line-height: 2em;}
+
+

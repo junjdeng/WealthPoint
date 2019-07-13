@@ -1,0 +1,48 @@
+
+.list_wrap {
+	margin: 0 20rpx;
+	width: 710rpx;
+	margin-top: 20rpx;
+}
+.list .item {
+	color: #333333;
+	background: #FFFFFF;
+	font-size: 32rpx;
+	line-height: 2em;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
+	padding: 20rpx;
+	margin-bottom: 20rpx;
+}
+.list .item .flex1 {
+	-webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	        align-self: flex-start;
+	margin-top: 20rpx;
+}
+.list .item image {
+	width: 80rpx;
+	height: 80rpx;
+}
+.list .item .name {
+	color: #333333;
+	font-size: 32rpx;
+	font-weight: bold;
+}
+.list .item .num {
+	color: #999999;
+	font-size: 26rpx;
+}
+.bottomBtn {
+	width: 710rpx;
+	background: #CCA366;
+	color: #ffffff;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
+	margin-top: 80rpx;
+	font-size: 32rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+	text-align: center;
+}
+

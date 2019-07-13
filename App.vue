@@ -1,7 +1,46 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			// #ifdef APP-PLUS 
+			let platform = '';
+			uni.getSystemInfo({
+				success: function (res) {
+					 platform = res.platform;
+				}
+			});			
+			//console.log(platform);			
+			plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {				
+				uni.request({  
+					url: 'http://download.wealth-point.com/update/GetVersion.php',   
+					success: (result) => {
+						if (result.data && result.data  !==  widgetInfo.version) {
+							let downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update/ios.wgt':'http://download.wealth-point.com/update/apk.wgt';
+							//console.log(downUrl);	
+							uni.downloadFile({  
+								url: downUrl,  
+								success: (downloadResult) => { 
+									//console.log(downloadResult);
+									if (downloadResult.statusCode === 200) {
+										console.log('installing...'); 
+										plus.runtime.install(downloadResult.tempFilePath, {  
+											force: true  
+										}, function() {  
+											//console.log('install success...');  
+											plus.runtime.restart();  
+										}, function(e) {  
+											//console.error('install fail...');  
+										});  
+									}  
+								},
+								fail(err) {
+								 	console.log(err);
+								}
+							});  
+						}  
+					}  
+				});  
+			});  
+			// #endif  
 		},
 		onShow: function() {
 			console.log('App Show')
