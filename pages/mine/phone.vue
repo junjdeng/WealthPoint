@@ -111,6 +111,8 @@
 										}
 									}
 								})
+							}else{
+								that.flag=true;
 							}
 						}
 					})

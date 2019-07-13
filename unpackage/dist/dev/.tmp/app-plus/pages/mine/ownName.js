@@ -208,6 +208,8 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                   }
                 } });
 
+            } else {
+              that.flag = true;
             }
           } });
 

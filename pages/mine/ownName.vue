@@ -108,6 +108,8 @@
 										}
 									}
 								})
+							}else{
+								that.flag=true;
 							}
 						}
 					})
