@@ -29,8 +29,7 @@
 		data() {
 			return {
 				user:'',
-				pwd:'',
-				mark:true
+				pwd:''
 			}
 		},
 		onLoad() {
@@ -48,73 +47,47 @@
 					url: '/pages/login/register'
 				});
 			},
-			
-			login(data){	
-				/* if(this.mark){
-					this.mark = false */
-					console.log('点击胃')
-					uni.setStorage({
-						key : 'login',
-						data: true
-					})
-					setTimeout(()=>{
-						djRequest({
-							url:'/api/login',
-							data:data,
-							success:function(res) {
-								console.log('loginfirst')
-								if (res.data.status == 406) {
-									common.TostUtil(res.data.message);
-								} 
-								if (res.data.status == 200){
-									console.log('70')
-									/* this.mark = true */
-									uni.setStorage({
-										key : 'login',
-										data:false
-									})
-									uni.setStorage({
-										key:'sessionid',
-										data:res.data.data.sessionId
-									})
-									
-									uni.setStorage({
-										key:'userpwd',
-										data:data
-									})							
-									uni.setStorage({
-										key:'time',
-										data:JSON.stringify(new Date().getTime())
-									})																										
-									uni.setStorage({
-										key:'loginInfo',
-										data:JSON.stringify(res.data.data)
-									})
-									config.User = res.data.data;
-									console.log(455)
-									common.balance();
-									console.log(666)
-									if(res.data.data.realName==""){
-										uni.navigateTo({
-											url:'finishRegisterInfo'
-										})
-									}else{
-									console.log('90')
-										uni.switchTab({
-										url: '/pages/index/index'
-									});
-									}
-								}	
-							},
-							fail:function(res){
-								console.log(res,2)
+			login(data){				
+				djRequest({
+					url:'/api/login',
+					data:data,
+					success:function(res) {
+						if (res.data.status == 406) {
+							common.TostUtil(res.data.message);
+						} 
+						if (res.data.status == 200){
+							uni.setStorage({
+								key:'sessionid',
+								data:res.data.data.sessionId
+							})
+							
+							uni.setStorage({
+								key:'userpwd',
+								data:data
+							})							
+							uni.setStorage({
+								key:'time',
+								data:JSON.stringify(new Date().getTime())
+							})																										
+							uni.setStorage({
+								key:'loginInfo',
+								data:JSON.stringify(res.data.data)
+							})
+							config.User = res.data.data;
+							common.balance();
+							if(res.data.data.realName==""){
+								uni.navigateTo({
+									url:'finishRegisterInfo'
+								})
+							}else{
+								uni.switchTab({
+								url: '/pages/index/index'
+							});
 							}
-						})	
-					},20)
-					
-	/* 
-				} */
-
+							
+						}	
+					},
+				})	
 			},
 			formSubmit: function(e) {
 				var data = e.detail.value;

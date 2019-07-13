@@ -122,7 +122,7 @@
 				showPop: false,
 				cWidth: '',
 				cHeight: '',
-				pixelRatio: 0.98, //放大位数
+				pixelRatio: 0.96, //放大位数
 				das: [],
 				week: [],
 				das2: [],
