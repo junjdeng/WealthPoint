@@ -15,12 +15,13 @@ Vue.component('savefile',savefile)
 uni.getStorage({//如果存在sessionid则跳到首页，否则去登陆页
 	key:'sessionid',
 	success(e){
-		console.log(9999999999)
+		//console.log(999);
 		uni.switchTab({
 			url:'pages/index/index'
 		})
 	},
 	fail(e){
+		//console.log(333);
 		uni.navigateTo({
 			url:'pages/login/login'
 		})

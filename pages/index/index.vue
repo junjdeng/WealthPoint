@@ -338,7 +338,7 @@
 					url:'/api/statistics/orders',
 					method:'GET',
 					success:function(res){
-						//console.log(res);
+						//console.log(res);						
 						let orignData = res.data.data;
 						let weekNumber = [];
 						let weekArr = [];
