@@ -1,0 +1,6 @@
+
+.list_wrap{margin: 0 20rpx; width: 710rpx; margin-top: 20rpx;}
+.list .item{color: #333333; background: #FFFFFF; -webkit-border-radius: 8rpx; border-radius: 8rpx; font-size: 32rpx; line-height: 2em; padding: 20rpx; margin-bottom: 20rpx;}
+.list .item image{width: 160rpx; height: 160rpx; -webkit-border-radius: 8rpx; border-radius: 8rpx;}
+.list .item .price{color: #D03C29;}
+
