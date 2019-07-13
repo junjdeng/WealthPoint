@@ -1,6 +1,5 @@
 import {config} from './config.js'
 
-
 const djRequest = async function (opt){
 	opt = opt || {};
     opt.url = opt.url || '';
@@ -21,7 +20,6 @@ const djRequest = async function (opt){
 	} else{
 		opt.header.authorization = config.Authorization;
 	}		
-	//console.log(opt.url);	
 	
 	uni.request({
 	　	url: config.BASE_URL + opt.url +'?t='+Date.now(),
@@ -30,7 +28,6 @@ const djRequest = async function (opt){
 		method: opt.method,
 		success: (res) => {
 			if(res.data.status == 403 && config.User == null){
-				console.log(666);
 				uni.reLaunch({
 					url: '/pages/login/login'
 				});
