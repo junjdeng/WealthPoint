@@ -15,6 +15,7 @@ Vue.component('savefile',savefile)
 uni.getStorage({//如果存在sessionid则跳到首页，否则去登陆页
 	key:'sessionid',
 	success(e){
+		console.log(9999999999)
 		uni.switchTab({
 			url:'pages/index/index'
 		})

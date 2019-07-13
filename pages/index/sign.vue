@@ -10,40 +10,12 @@
 		<view class=" section section2">
 			<!-- <switch checked @change="switch1Change" color="#CCA366" /><span>签到提醒</span> -->
 			<view class="section_title">签到日历</view>
-			<view class="list flex-start">
-				<!-- <view class="flex1 item">
-					<view class="num" :class="signList[1] ? '':'cover'">+{{signList[1] ? signList[1].integral : '5'}}</view>
-					<view class="point"></view>
-					<view calss="date">昨天</view>
-				</view>
-				<view class="flex1 item" :class="signList[0] ? '':'cover'">
-					<view class="num">+{{signList[0] ? signList[0].integral : '5'}}</view>
-					<view class="point"></view>
-					<view calss="date">今天</view>
-				</view>
-				<view class="flex1 item cover">
-					<view class="num">+5</view>
-					<view class="point"></view>
-					<view calss="date">明天</view>
-				</view>
-				<view class="flex1 item cover">
-					<view class="num">+5</view>
-					<view class="point"></view>
-					<view calss="date">05.20</view>
-				</view>
-				<view class="flex1 item cover">
-					<view class="num">+5</view>
-					<view class="point"></view>
-					<view calss="date">05.20</view>
-				</view>
-				<view class="flex1 item cover">
-					<view class="num">+5</view>
-					<view class="point"></view>
-					<view calss="date">05.20</view>
-				</view> -->
-				<view class="flex1 item cover" v-for="(item,index) in dateList" :key="index">
-					<view calss="date">{{item}}</view>
-					<view class="point"></view>
+			<view class="list flex-around">
+				<view class=" item cover" v-for="(item,index) in dateList" :key="index">
+					<view class="date">{{item.time}}</view>
+					<!-- <view :class="[item.isSign?'point red':'point green']"></view> -->
+					<image v-show="!item.isSign" src="/static/images/sign.png"></image>
+					<image v-show="item.isSign" src="/static/images/alreadySign.png"></image>
 				</view>
 			</view>
 			<!-- <view class="line"></view> -->
@@ -55,16 +27,16 @@
 				<view>每日签到说明
 				</view>
 				<view>1. 每日签到可获得相应云积分奖励
-					<br/>
+					<br />
 					2. 云积分奖励大小根据签到连续性、购买AP付款时间、购买金额来判断
 
-						<br/>
-						3. 云积分累计到一定额度可兑换AP、商品、云链等
+					<br />
+					3. 云积分累计到一定额度可兑换AP、商品、云链等
 
-							<br/>
-							4. 本签到积分最终解释权归W云积分生态系统所有
+					<br />
+					4. 本签到积分最终解释权归W云积分生态系统所有
 
-					</view>
+				</view>
 				<view>我知道了</view>
 			</view>
 		</view>
@@ -88,7 +60,8 @@
 				signNum: 0,
 				list: [],
 				dateList: [],
-				know:false,
+				know: false,
+				signList: []
 			}
 		},
 		onNavigationBarButtonTap(e) {
@@ -127,7 +100,7 @@
 					}
 				}
 			})
-			
+
 		},
 		components: {
 			uniIcon
@@ -138,10 +111,10 @@
 			_this.signNum = config.balance.sign;
 		},
 		methods: {
-			getKnow(){
+			getKnow() {
 				this.know = true;
 			},
-			inKnow(){
+			inKnow() {
 				this.know = !this.know;
 			},
 			navTo(e) {
@@ -150,18 +123,50 @@
 				})
 			},
 			getDate() {
-				let that =this;
+				let that = this;
 				var currentDate = new Date()
 				var timesStamp = currentDate.getTime();
 				var currenDay = currentDate.getDay();
 				var dates = [];
 				for (var i = 0; i < 7; i++) {
-					let item = (new Date(timesStamp + 24 * 60 * 60 * 1000 * (i - (currenDay + 6) % 7)).toLocaleDateString().replace(
+					let item = {};
+					item.time = (new Date(timesStamp + 24 * 60 * 60 * 1000 * (i - (currenDay + 6) % 7)).toLocaleDateString().replace(
 						/\//g, '.')).slice(5)
-					dates.push(item);
+					dates.push({
+						time: item.time,
+						isSign: false
+					});
 				}
-				that.dateList=dates;
-				console.log(dates)
+				that.dateList = dates;
+				djRequest({
+					url: '/api/sign/sign_list',
+					method: 'POST',
+					data: {
+						start: 0,
+						length: 7
+					},
+					success: function(res) {
+						let arr = res.data.data.data;
+						let arr1 = [];
+						let len = arr.length;
+						for (i = 0; i < arr.length; i++) {
+							let date = new Date(Number(arr[i].time) * 1000);
+							let YY = date.getFullYear();
+							let MM = date.getMonth() + 1;
+							let d = date.getDate();
+							let itemTime = MM + '.' + d;
+							that.signList.push(itemTime);
+						}
+						for (let j = 0; j < that.dateList.length; j++) {
+							for (let k = 0; k < that.signList.length; k++) {
+								if (that.signList[k] == that.dateList[j].time) {
+									that.dateList[j].isSign = true;
+								}
+							}
+						}
+					}
+				})
+
 				/* return dates */
 			},
 			sign() {
@@ -173,15 +178,24 @@
 					url: '/api/sign',
 					data: {},
 					success: function(res) {
-						console.log(res);
 						if (res.data.status == 200) {
 							common.TostUtil(res.data.message);
+							_this.getDate();
 							_this.signTxt = "今日已签到";
-							common.balance();
-							setTimeout(function() {
-								_this.signNum = config.balance.sign;
-							}, 300)
-
+							// common.balance();
+							(function(opt) {
+								djRequest({
+									url: '/api/member/balance',
+									method: 'GET',
+									success: function(res) {
+										if (res.data.status === 200) {
+											opt.success(res.data.data);
+											config.balance = res.data.data;
+											_this.signNum = config.balance.sign;
+										}
+									}
+								})
+							})()
 						} else {
 							common.TostUtil(res.data.message);
 						}
@@ -207,7 +221,7 @@
 
 	.box {
 		width: 600upx;
-		max-height:580upx;
+		max-height: 580upx;
 		background: #fff;
 		position: absolute;
 		left: 0;
@@ -222,26 +236,30 @@
 		width: 560upx;
 		margin: 0 auto;
 	}
-	.box>view:nth-child(1){
+
+	.box>view:nth-child(1) {
 		font-size: 32upx;
-		color:#333;
+		color: #333;
 		text-align: center;
-		padding:20upx 0;
+		padding: 20upx 0;
 	}
-	.box>view:nth-child(2){
+
+	.box>view:nth-child(2) {
 		font-size: 28upx;
-		color:#888;
+		color: #888;
 		text-align: left;
 		line-height: 2;
 	}
-	.box>view:nth-child(3){
+
+	.box>view:nth-child(3) {
 		font-size: 32upx;
-		color:#CCA366;
+		color: #CCA366;
 		text-align: center;
-		margin-top:20upx;
-		border-top:2upx solid #f7f7f7;
-		padding:20upx 0;
+		margin-top: 20upx;
+		border-top: 2upx solid #f7f7f7;
+		padding: 20upx 0;
 	}
+
 	.section1 {
 		width: 750upx;
 		height: 360upx;
@@ -261,6 +279,11 @@
 		text-align: center;
 		color: #fff;
 		font-size: 28upx;
+	}
+
+	.date {
+		font-size: 28upx !important;
+		color: #888 !important;
 	}
 
 	.section1 .title {
@@ -308,18 +331,21 @@
 	.section_title switch {
 		transform: scale(0.8);
 	}
-
 	.item {
 		text-align: center;
-		font-size: 12upx;
-		color: #333333;
-		padding: 20upx 0;
+		font-size: 24upx;
+		color: #888888;
+		font-weight: 500;
+		background: #f9f9f9;
+		border-radius:6upx;
+		overflow:hidden;
+		padding: 16upx 20upx 11upx 20upx;
 	}
-
-	.item.cover {
-		opacity: 0.3;
+	.item image{
+		width:40upx;
+		height:40upx;
+		margin-top:5upx;
 	}
-
 	.item .num {
 		width: 70upx;
 		height: 70upx;
@@ -332,16 +358,18 @@
 		text-align: center;
 	}
 
-	.item .point {
+	.point {
 		width: 20upx;
 		height: 20upx;
 		margin: 10upx auto;
 		border-radius: 10upx;
-		background: #FF5533;
-		z-index: 100;
 	}
 
-	.item.cover .point {
+	.red {
+		background: #FF5533;
+	}
+
+	.green {
 		background: #E6E6E6;
 	}
 
@@ -365,15 +393,16 @@
 		font-size: 32upx;
 		text-align: center;
 	}
-	.tip .crl{
-		display:inline-block;
-		width:30upx;
-		height:30upx;
+
+	.tip .crl {
+		display: inline-block;
+		width: 30upx;
+		height: 30upx;
 		background: #fff;
-		border-radius:50%;
+		border-radius: 50%;
 		text-align: center;
 		line-height: 30upx;
-		color:#CCA366;
-		margin-left:5upx;
+		color: #CCA366;
+		margin-left: 5upx;
 	}
 </style>

@@ -48,7 +48,6 @@
 					Id: that.id
 				},
 				success: function(res) {
-					console.log(res)
 					common.TostUtil(res.data.message);
 					if (res.data.status === 200) {
 						setTimeout(function() {

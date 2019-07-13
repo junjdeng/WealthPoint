@@ -150,7 +150,7 @@
 						if (res.data.status === 200) {
 							let arr = res.data.data.data;
 							let arr1 = [];
-							let time24ms = 24 * 3600 * 1000;
+							let time24ms;
 							arr.forEach(item => {
 								if (item.type === 'sell') {
 									arr1.push(item)
@@ -174,7 +174,13 @@
 										orderTime = Number(curOrder.confirmTime) * 1000 //确认时间
 									}
 									if (!curOrder.hasOwnProperty("rever")) {
+										if (idx === 'match') {
+											time24ms = 48 * 3600 * 1000;
+										} else {
+											time24ms = 24 * 3600 * 1000;
+										}
 										let orderOffsetTime = (Date.now() - orderTime) % time24ms;
+										
 										let orderStart = time24ms - orderOffsetTime;
 										curOrder.rever = orderStart;
 									}

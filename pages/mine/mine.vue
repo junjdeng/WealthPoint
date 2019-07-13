@@ -100,8 +100,10 @@
 			},
 			goOut(){
 				uni.clearStorageSync();
-				uni.navigateTo({
-					url:'../login/login'
+				config.balance=null;
+				config.User=null;
+				uni.switchTab({
+					url:'../index/index'
 				})
 			}
 		}
