@@ -82,7 +82,7 @@
 				</view>
 			</view>
 		</view>
-		<!-- <view class="section section4">
+		<view class="section section4">
 			<view class="section_title">AP成交量</view>
 			<view class="trend">
 				<view class="qiun-columns">
@@ -91,7 +91,7 @@
 					</view>
 				</view>
 			</view>
-		</view> -->
+		</view>
 		<view class="cover" v-if="showPop" @tap="hidePop()">
 			<view class="pop_wrap" style="background-image: url('../../static/images/main11.jpg');">
 				<view class="text">签到领红包</view>
@@ -176,22 +176,12 @@
 			})			
 			this.getBTC();
 		},
-		onLoad(){
-			let dq=[];
-			common.balance();
-			let cycle=24*3600*1000;
-			let das = Number(new Date())+cycle;
-			for(let i=7;i>0;i--){
-				let ds=this.nowDate(das-cycle*i)
-				dq.push(ds);
-			}
-			this._data.das = [1, 1, 1.002, 1.020, 1.0, 1.0, 1.0];
-			this._data.week = dq;
+		onLoad(){			
+			common.balance();			
 			_self = this;
 			this.cWidth = uni.upx2px(680);
 			this.cHeight = uni.upx2px(460);
 			this.getServerData();
-			this._data.das2 = [100, 220, 280, 340, 290, 300, 320];
 			this.getServerData2();
 		},
 
@@ -263,29 +253,30 @@
 					categories: [],
 					series: []
 				};
-				//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-				canvasData.categories = that._data.week;
-				canvasData.series = [{
-					data: that._data.das,
-					name: '',
-					color: "#FF5533"
-				}];
 				djRequest({
 					url:'/api/statistics/income',
 					method:'GET',
 					success:function(res){
-						/* console.log(res,3)
-						let arr = res.data.data.split(0,1);
+						let orignData = res.data.data;
+						let weekNumber = [];
+						let weekArr = [];
+						for (let obj in orignData) {
+							weekArr.push(obj);
+							weekNumber.push(String(orignData[obj].number/100.00));
+						}												
+						canvasData.categories = weekArr;
+						canvasData.series = [{
+							data: weekNumber,
+							name: '',
+							color: "#FF5533"
+						}];
+						//console.log(canvasData);
+						_self.CanvasData("canvas", canvasData);
 						
-						console.log(arr)
-						for(let i=0;i<arr.length;i++){
-							console.log(arr[i])
-						} */
-						/* canvasData.series[0].data; */
 					}
 				})
-				that._data.das = canvasData.series[0].data;
-				_self.CanvasData("canvas", canvasData);
+				
+				
 			},
 			CanvasData(canvasId1, chartData1) {
 				let that = this;
@@ -342,16 +333,29 @@
 				let Column = {
 					categories: [],
 					series: []
-				};
-				//这里我后台返回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-				Column.categories = that._data.week;
-				Column.series = [{
-					data: that._data.das2,
-					name: '',
-					color: "#FF5533"
-				}];
-				that._data.das2 = Column.series[0].data;
-				_self.showColumn("canvasColumn", Column);
+				};							
+				djRequest({
+					url:'/api/statistics/orders',
+					method:'GET',
+					success:function(res){
+						//console.log(res);
+						let orignData = res.data.data;
+						let weekNumber = [];
+						let weekArr = [];
+						for (let obj in orignData) {
+							weekArr.push(obj);
+							weekNumber.push(String(orignData[obj].number.toFixed(2)));
+						}												
+						Column.categories = weekArr;
+						Column.series = [{
+							data: weekNumber,
+							name: '',
+							color: "#FF5533"
+						}];
+						//console.log(Column);
+						_self.showColumn("canvasColumn", Column);						
+					}
+				})
 			},
 			showColumn(canvasId, chartData) {
 				canvaColumn = new uCharts({

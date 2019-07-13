@@ -1,2 +1,0 @@
-setCssToHead(["body{background: #ffffff;}\n.",[1],"wrap{text-align: center;}\n.",[1],"wrap wx-image{margin-top: ",[0,100],";}\n.",[1],"tips{font-size:",[0,32],"; color: #333333; margin-top: ",[0,100],";}\n",],undefined,{path:"./pages/login/waitAgree.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/login/waitAgree.wxml') } }));

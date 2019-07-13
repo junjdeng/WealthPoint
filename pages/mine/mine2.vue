@@ -8,46 +8,62 @@
 	
 		<view class="section2">
 			<view class="section_title">我的云用户</view>
-			<!-- <view class="list">
-				<view class="item flex-start">
-					<view class="flex1">
-						<image  src="../../static/images/bg112.jpg"></image>
+			
+			<view class="tree_wrap">
+				<view class="tree_first">
+					<view class="tree_first_title tree_txt" @tap="clickTree(treeData)"><uni-icon :type="treeData.isShow" class="forward" size="16" color="#999999"></uni-icon>{{treeData.username}}</view>					
+					<view class="tree_second" v-if="treeData.isShow=='minus-filled'" v-for="(item, index) in treeData.subData" :key="index">
+						<view class="tree_second_title tree_txt" @tap="clickTree(item)"><uni-icon :type="item.isShow" class="forward" size="16" color="#999999"></uni-icon>{{item.username}}</view>
+						<view class="tree_third tree_txt" v-if="item.isShow=='minus-filled'" v-for="(item11, index11) in item.subData" :key="index11">{{item11.username}}</view>
 					</view>
-					<view class="flex2">马晓云</view>
-					<view class="flex2 time">2019-09-09</view>
 				</view>
-				<view class="item flex-start">
-					<view class="flex1">
-						<image  src="../../static/images/bg112.jpg"></image>
-					</view>
-					<view class="flex2">马晓云</view>
-					<view class="flex2 time">2019-09-09</view>
-				</view>
-			</view> -->
+			</view>			
 		</view>
 	</view>
 </template>
 
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import {djRequest} from '../../common/request.js'
 	import common from '../../common/common.js'
-	import {
-		config
-	} from '../../common/config.js'
+	import {config} from '../../common/config.js'
 	export default {
 		data() {
 			return {
-				dj:config.User.levelName
+				dj:config.User.levelName,
+				treeData:[],
 			}
 		},
 		components: {
 			uniIcon
 		},
 		onLoad() {
-			
+			let that = this;										
+			djRequest({
+				url:'/api/network',
+				method:'GET',
+				success:function(res){
+					if (res.data.status == 200) {
+						var orignData = res.data.data;
+						orignData.isShow = 'plus-filled';												
+						for(var i = 0; i <orignData.subData.length; i++){
+							var obj = orignData.subData[i];
+							obj.isShow = 'plus-filled';							
+						}
+						that.treeData = orignData;
+						//console.log(that.treeData);
+					}												
+				}
+			})
 		},
 		methods: {
-
+			clickTree(item){
+				if (item.isShow == 'plus-filled') {
+					item.isShow = 'minus-filled';
+				} else{
+					item.isShow = 'plus-filled';
+				}
+			}
 		}
 	}
 </script>
@@ -61,16 +77,12 @@
 
 .section_title {color: #333333;font-size: 28upx;font-weight: bold;line-height: 2em;}
 .section2{margin: 20upx;width: 710upx;}
-.section2 .item {
-	background: #FFFFFF;
-	margin-bottom: 20upx;
-	padding: 20upx;
-	border-radius: 8upx;
-	color: #333333;
-	font-size: 24upx;
-	text-align: left;
-}
-.section2 .item .flex1{text-align: center;}
-.section2 .item .time{color: #999999; font-size: 28upx; text-align: right;}
-.section2 .item image{width: 100upx; height: 100upx; border-radius: 50upx;}
+.tree_wrap{font-size: 14px; color: #888888; margin-top: 20upx;padding: 10upx;
+background: #ffffff;line-height: 28upx;}
+.tree_wrap .tree_first{}
+.tree_wrap .tree_first_title{}
+.tree_wrap .tree_second{}
+.tree_wrap .tree_second_title{text-indent: 1em;}
+.tree_wrap .tree_third{text-indent: 4em;}
+.tree_wrap .tree_txt{padding: 10upx 0;}
 </style>
