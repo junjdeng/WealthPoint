@@ -7,7 +7,7 @@
 		<view class="content">
 			<view>
 				<view class="list">
-					<view class="item" v-for="(temp,index) in list" :key="index" v-if="temp.type==='buy'">
+					<view class="item" v-for="(temp,index) in list" :key="index" v-show="temp.type==='buy'">
 						<view class="first">{{temp.orderId}}</view>
 						<div class="tw">
 							<view>{{temp.number}} <text>AP</text></view>
@@ -45,7 +45,7 @@
 			<view class="pop-title">请上传付款凭证</view>
 			<view class="chose">
 				<input class="" @click="chooseImg" v-show="inputShow" ref="files" type="file" />
-				<image v-show = "gif" class="pop-img" src="/static/images/loading.gif"></image>
+				<image v-show="gif" class="pop-img" src="/static/images/loading.gif"></image>
 				<view class="place" v-show="proof">请点击上传付款凭证</view>
 				<view class="txt" v-show="sucs">上传成功</view>
 			</view>
@@ -66,7 +66,8 @@
 		config
 	} from '../../common/config.js'
 	import {
-		djRequest,djPostForm
+		djRequest,
+		djPostForm
 	} from '../../common/request.js'
 	export default {
 		data() {
@@ -78,11 +79,11 @@
 				txtShowOrHide: true,
 				url: '',
 				imageFile: null,
-				proof:true,//是否显示 text
-				sucs:false,//是否显示‘上传成功提示’
+				proof: true, //是否显示 text
+				sucs: false, //是否显示‘上传成功提示’
 				flag: true,
-				gif:false,
-				inputShow:true
+				gif: false,
+				inputShow: true
 			}
 		},
 		onNavigationBarButtonTap(e) {
@@ -95,13 +96,13 @@
 			uniLoadMore
 		},
 		onShow() {
-			if(this.current==0){
+			if (this.current == 0) {
 				this.getList('match');
-			}else if(this.current==1){
+			} else if (this.current == 1) {
 				this.getList('pay');
-			}else if(this.current==2){
+			} else if (this.current == 2) {
 				this.getList('confirm');
-			}else if(this.current==3){
+			} else if (this.current == 3) {
 				this.getList('evaluate');
 			}
 		},
@@ -117,11 +118,11 @@
 			},
 			cal() {
 				this.showOrHide = !this.showOrHide;
-				this.proof=true;
-				this.sucs=false;
+				this.proof = true;
+				this.sucs = false;
 				this.flag = true;
-				this.gif=false;
-				that.inputShow=true;
+				this.gif = false;
+				that.inputShow = true;
 				this.$refs.files.value = null;
 			},
 			chooseImg() {
@@ -133,8 +134,8 @@
 					success: (imageFile) => {
 						this.url = imageFile.tempFilePaths[0];
 						var _this = this;
-						that.gif=true;
-						that.inputShow=false;
+						that.gif = true;
+						that.inputShow = false;
 						that.proof = false;
 						djPostForm({
 							url: "/api/uploads",
@@ -144,8 +145,8 @@
 							success: function(result) {
 								var res = JSON.parse(result.data);
 								if (res.status == 200) {
-									that.gif=false;
-									that.sucs=true;
+									that.gif = false;
+									that.sucs = true;
 									_this.url = config.BASE_URL + res.data.filePath + res.data.fileName;
 									_this.imageFile = res.data;
 								} else {
@@ -178,14 +179,14 @@
 						method: 'POST',
 						success: function(res) {
 							that.flag = true;
-							that.showOrHide=!that.showOrHide;
-							that.sucs=false;
-							that.proof=true;
-							that.inputShow=true;
+							that.showOrHide = !that.showOrHide;
+							that.sucs = false;
+							that.proof = true;
+							that.inputShow = true;
 							if (res.data.status === 200) {
 								common.TostUtil(res.data.message);
 								that.getList('pay');
-								
+
 							} else {
 								common.TostUtil(res.data.message);
 							}
@@ -208,7 +209,7 @@
 				let ars = ['match', 'pay', 'confirm', 'evaluate'];
 				if (this.current !== index) {
 					this.current = index;
-					that.list=[];
+					that.list = [];
 					that.getList(ars[index]);
 				}
 			},
@@ -227,12 +228,9 @@
 					success: function(res) {
 						that.list = [];
 						if (res.data.status === 200) {
-							let arr = res.data.data.data;
-							let time24ms = 24 * 3600 * 1000;
-							if (that.orderTimer != null) {
-								clearInterval(that.orderTimer);
-							}
-							that.orderTimer = setInterval(() => {
+							if (res.data.data.data.length > 0) {
+								let arr = res.data.data.data;
+								let time24ms = 24 * 3600 * 1000;
 								for (let i = 0; i < arr.length; i++) {
 									let curOrder = arr[i];
 									let orderTime
@@ -250,19 +248,31 @@
 										let orderStart = time24ms - orderOffsetTime;
 										curOrder.rever = orderStart;
 									}
-									curOrder.rever -= 1000;
-									if (curOrder.rever <= 0) {
-										curOrder.rever = time24ms;
-									}
+									that.list=[];
+									that.list = arr;
+									that.getData();
 								}
-								that.list = arr;
-
-							}, 1000)
+							}
 						}
-
 					}
 				})
-			}
+			},
+			getData() {
+				let that = this;
+				let arrs = that.list;
+				arrs.forEach(item => {
+					if (that.orderTimer != null) {
+						clearInterval(that.orderTimer);
+					}
+					that.orderTimer = setInterval(function() {
+						item.rever -= 1000;
+						if (item.rever <= 0) {
+							item.rever = 24 * 3600 * 1000;
+						}
+					}, 1000)
+				})
+				that.list = arrs;
+			},
 		}
 	}
 </script>
@@ -271,11 +281,13 @@
 	.container {
 		position: relative;
 	}
-	.pop-img{
-		width:48upx;
-		height:48upx;
-		margin:10upx 252upx;
+
+	.pop-img {
+		width: 48upx;
+		height: 48upx;
+		margin: 10upx 252upx;
 	}
+
 	.txt {
 		width: 50%;
 		height: 100%;

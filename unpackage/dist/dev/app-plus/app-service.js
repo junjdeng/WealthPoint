@@ -1712,7 +1712,6 @@ function gz$gwx_58(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_58)return __WXML_GLOBAL__.ops_cached.$gwx_58
 __WXML_GLOBAL__.ops_cached.$gwx_58=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'container'])
 Z([3,'#CCA366'])
 Z([3,'__l'])
 Z([3,'__e'])
@@ -1722,11 +1721,6 @@ Z([[4],[[5],[[4],[[5],[[5],[1,'^clickItem']],[[4],[[5],[[4],[[5],[1,'onClickItem
 Z([3,'text'])
 Z([[7],[3,'items']])
 Z([3,'1'])
-Z([3,'index'])
-Z([3,'temp'])
-Z([[6],[[7],[3,'$root']],[3,'l0']])
-Z(z[10])
-Z([[2,'==='],[[6],[[6],[[7],[3,'temp']],[3,'$orig']],[3,'type']],[1,'buy']])
 })(__WXML_GLOBAL__.ops_cached.$gwx_58);return __WXML_GLOBAL__.ops_cached.$gwx_58
 }
 function gz$gwx_59(){
@@ -2519,22 +2513,7 @@ e_[x[56]]={f:m56,j:[],i:[],ti:[],ic:[]}
 d_[x[57]]={}
 var m57=function(e,s,r,gg){
 var z=gz$gwx_58()
-var oFF=_n('view')
-_rz(z,oFF,'class',0,e,s,gg)
-var fGF=_mz(z,'uni-segmented-control',['activeColor',1,'bind:__l',1,'bind:clickItem',2,'class',3,'current',4,'data-event-opts',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
-_(oFF,fGF)
-var cHF=_v()
-_(oFF,cHF)
-var hIF=function(cKF,oJF,oLF,gg){
-var aNF=_v()
-_(oLF,aNF)
-if(_oz(z,14,cKF,oJF,gg)){aNF.wxVkey=1
-}
-aNF.wxXCkey=1
-return oLF
-}
-cHF.wxXCkey=2
-_2z(z,12,hIF,e,s,gg,cHF,'temp','index','index')
+var oFF=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
 _(r,oFF)
 return r
 }
@@ -2542,32 +2521,32 @@ e_[x[57]]={f:m57,j:[],i:[],ti:[],ic:[]}
 d_[x[58]]={}
 var m58=function(e,s,r,gg){
 var z=gz$gwx_59()
-var ePF=_n('view')
-_rz(z,ePF,'class',0,e,s,gg)
-var bQF=_v()
-_(ePF,bQF)
-if(_oz(z,1,e,s,gg)){bQF.wxVkey=1
-var xSF=_n('view')
-_rz(z,xSF,'class',2,e,s,gg)
-var oTF=_v()
-_(xSF,oTF)
-if(_oz(z,3,e,s,gg)){oTF.wxVkey=1
+var cHF=_n('view')
+_rz(z,cHF,'class',0,e,s,gg)
+var hIF=_v()
+_(cHF,hIF)
+if(_oz(z,1,e,s,gg)){hIF.wxVkey=1
+var cKF=_n('view')
+_rz(z,cKF,'class',2,e,s,gg)
+var oLF=_v()
+_(cKF,oLF)
+if(_oz(z,3,e,s,gg)){oLF.wxVkey=1
 }
-var fUF=_v()
-_(xSF,fUF)
-if(_oz(z,4,e,s,gg)){fUF.wxVkey=1
+var lMF=_v()
+_(cKF,lMF)
+if(_oz(z,4,e,s,gg)){lMF.wxVkey=1
 }
-oTF.wxXCkey=1
-fUF.wxXCkey=1
-_(bQF,xSF)
+oLF.wxXCkey=1
+lMF.wxXCkey=1
+_(hIF,cKF)
 }
-var oRF=_v()
-_(ePF,oRF)
-if(_oz(z,5,e,s,gg)){oRF.wxVkey=1
+var oJF=_v()
+_(cHF,oJF)
+if(_oz(z,5,e,s,gg)){oJF.wxVkey=1
 }
-bQF.wxXCkey=1
-oRF.wxXCkey=1
-_(r,ePF)
+hIF.wxXCkey=1
+oJF.wxXCkey=1
+_(r,cHF)
 return r
 }
 e_[x[58]]={f:m58,j:[],i:[],ti:[],ic:[]}
@@ -2586,56 +2565,56 @@ e_[x[60]]={f:m60,j:[],i:[],ti:[],ic:[]}
 d_[x[61]]={}
 var m61=function(e,s,r,gg){
 var z=gz$gwx_62()
-var cYF=_n('view')
-_rz(z,cYF,'hidden',0,e,s,gg)
-var l1F=_v()
-_(cYF,l1F)
-var a2F=function(e4F,t3F,b5F,gg){
-var x7F=_v()
-_(b5F,x7F)
-if(_oz(z,5,e4F,t3F,gg)){x7F.wxVkey=1
+var bQF=_n('view')
+_rz(z,bQF,'hidden',0,e,s,gg)
+var xSF=_v()
+_(bQF,xSF)
+var oTF=function(cVF,fUF,hWF,gg){
+var cYF=_v()
+_(hWF,cYF)
+if(_oz(z,5,cVF,fUF,gg)){cYF.wxVkey=1
 }
-x7F.wxXCkey=1
-return b5F
+cYF.wxXCkey=1
+return hWF
 }
-l1F.wxXCkey=2
-_2z(z,3,a2F,e,s,gg,l1F,'temp','index','index')
+xSF.wxXCkey=2
+_2z(z,3,oTF,e,s,gg,xSF,'temp','index','index')
+var oRF=_v()
+_(bQF,oRF)
+if(_oz(z,6,e,s,gg)){oRF.wxVkey=1
 var oZF=_v()
-_(cYF,oZF)
-if(_oz(z,6,e,s,gg)){oZF.wxVkey=1
+_(oRF,oZF)
+var l1F=function(t3F,a2F,e4F,gg){
+var o6F=_v()
+_(e4F,o6F)
+if(_oz(z,11,t3F,a2F,gg)){o6F.wxVkey=1
+var x7F=_n('view')
+_rz(z,x7F,'class',12,t3F,a2F,gg)
 var o8F=_v()
-_(oZF,o8F)
-var f9F=function(hAG,c0F,oBG,gg){
-var oDG=_v()
-_(oBG,oDG)
-if(_oz(z,11,hAG,c0F,gg)){oDG.wxVkey=1
-var lEG=_n('view')
-_rz(z,lEG,'class',12,hAG,c0F,gg)
-var aFG=_v()
-_(lEG,aFG)
-if(_oz(z,13,hAG,c0F,gg)){aFG.wxVkey=1
+_(x7F,o8F)
+if(_oz(z,13,t3F,a2F,gg)){o8F.wxVkey=1
 }
-var tGG=_v()
-_(lEG,tGG)
-if(_oz(z,14,hAG,c0F,gg)){tGG.wxVkey=1
+var f9F=_v()
+_(x7F,f9F)
+if(_oz(z,14,t3F,a2F,gg)){f9F.wxVkey=1
 }
-var eHG=_v()
-_(lEG,eHG)
-if(_oz(z,15,hAG,c0F,gg)){eHG.wxVkey=1
+var c0F=_v()
+_(x7F,c0F)
+if(_oz(z,15,t3F,a2F,gg)){c0F.wxVkey=1
 }
-aFG.wxXCkey=1
-tGG.wxXCkey=1
-eHG.wxXCkey=1
-_(oDG,lEG)
+o8F.wxXCkey=1
+f9F.wxXCkey=1
+c0F.wxXCkey=1
+_(o6F,x7F)
 }
-oDG.wxXCkey=1
-return oBG
+o6F.wxXCkey=1
+return e4F
 }
-o8F.wxXCkey=2
-_2z(z,9,f9F,e,s,gg,o8F,'item','index','index')
+oZF.wxXCkey=2
+_2z(z,9,l1F,e,s,gg,oZF,'item','index','index')
 }
-oZF.wxXCkey=1
-_(r,cYF)
+oRF.wxXCkey=1
+_(r,bQF)
 return r
 }
 e_[x[61]]={f:m61,j:[],i:[],ti:[],ic:[]}
@@ -2660,8 +2639,8 @@ e_[x[64]]={f:m64,j:[],i:[],ti:[],ic:[]}
 d_[x[65]]={}
 var m65=function(e,s,r,gg){
 var z=gz$gwx_66()
-var fMG=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,fMG)
+var lEG=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,lEG)
 return r
 }
 e_[x[65]]={f:m65,j:[],i:[],ti:[],ic:[]}
@@ -2698,10 +2677,10 @@ e_[x[70]]={f:m70,j:[],i:[],ti:[],ic:[]}
 d_[x[71]]={}
 var m71=function(e,s,r,gg){
 var z=gz$gwx_72()
-var aTG=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
-var tUG=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(aTG,tUG)
-_(r,aTG)
+var oLG=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
+var fMG=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(oLG,fMG)
+_(r,oLG)
 return r
 }
 e_[x[71]]={f:m71,j:[],i:[],ti:[],ic:[]}
@@ -24616,6 +24595,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniSegmentedControl = function uniSegmentedControl() {return __webpack_require__.e(/*! import() | components/uni-segmented-control/uni-segmented-control */ "components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/components/uni-segmented-control/uni-segmented-control.vue */ "../../../../test/WealthPoint/components/uni-segmented-control/uni-segmented-control.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "../../../../test/WealthPoint/components/uni-load-more/uni-load-more.vue"));};var _default =
 
 
+
 {
   data: function data() {
     return {
@@ -24775,12 +24755,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         success: function success(res) {
           that.list = [];
           if (res.data.status === 200) {
-            var arr = res.data.data.data;
-            var time24ms = 24 * 3600 * 1000;
-            if (that.orderTimer != null) {
-              clearInterval(that.orderTimer);
-            }
-            that.orderTimer = setInterval(function () {
+            if (res.data.data.data.length > 0) {
+              var arr = res.data.data.data;
+              var time24ms = 24 * 3600 * 1000;
               for (var i = 0; i < arr.length; i++) {
                 var curOrder = arr[i];
                 var orderTime = void 0;
@@ -24798,18 +24775,30 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                   var orderStart = time24ms - orderOffsetTime;
                   curOrder.rever = orderStart;
                 }
-                curOrder.rever -= 1000;
-                if (curOrder.rever <= 0) {
-                  curOrder.rever = time24ms;
-                }
+                that.list = [];
+                that.list = arr;
+                that.getData();
               }
-              that.list = arr;
-
-            }, 1000);
+            }
           }
-
         } });
 
+    },
+    getData: function getData() {
+      var that = this;
+      var arrs = that.list;
+      arrs.forEach(function (item) {
+        if (that.orderTimer != null) {
+          clearInterval(that.orderTimer);
+        }
+        that.orderTimer = setInterval(function () {
+          item.rever -= 1000;
+          if (item.rever <= 0) {
+            item.rever = 24 * 3600 * 1000;
+          }
+        }, 1000);
+      });
+      that.list = arrs;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -29072,21 +29061,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         success: function success(res) {
           that.list = [];
           if (res.data.status === 200) {
-            var arr = res.data.data.data;
-            var arr1 = [];
-            var time24ms;
-            arr.forEach(function (item) {
-              if (item.type === 'sell') {
-                arr1.push(item);
-              }
-            });
-            var len = arr1.length;
-            if (that.orderTimer != null) {
-              clearInterval(that.orderTimer);
-            }
-            that.orderTimer = setInterval(function () {
-              for (var i = 0; i < len; i++) {
-                var curOrder = arr1[i];
+            if (res.data.data.data.length > 0) {
+              var arr = res.data.data.data;
+              var arr1 = [];
+              var time24ms;
+              for (var i = 0; i < arr.length; i++) {
+                var curOrder = arr[i];
                 var orderTime = void 0;
                 if (idx === 'match') {
                   orderTime = Number(curOrder.time) * 1000; //订单时间
@@ -29104,21 +29084,40 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                     time24ms = 24 * 3600 * 1000;
                   }
                   var orderOffsetTime = (Date.now() - orderTime) % time24ms;
-
                   var orderStart = time24ms - orderOffsetTime;
                   curOrder.rever = orderStart;
                 }
                 curOrder.rever -= 1000;
-                if (curOrder.rever <= 0) {
-                  curOrder.rever = time24ms;
-                }
               }
-              that.list = arr1;
-            }, 1000);
+              that.list = [];
+              that.list = arr;
+              that.getData(idx);
+            }
+
           }
 
         } });
 
+    },
+    getData: function getData(idx) {
+      var that = this;
+      var arrs = that.list;
+      arrs.forEach(function (item) {
+        if (that.orderTimer != null) {
+          clearInterval(that.orderTimer);
+        }
+        that.orderTimer = setInterval(function () {
+          item.rever -= 1000;
+          if (item.rever <= 0) {
+            if (idx === 'match') {
+              item.rever = 48 * 3600 * 1000;
+            } else {
+              item.rever = 24 * 3600 * 1000;
+            }
+          }
+        }, 1000);
+      });
+      that.list = arrs;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

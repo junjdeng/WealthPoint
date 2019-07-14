@@ -378,21 +378,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         success: function success(res) {
           that.list = [];
           if (res.data.status === 200) {
-            var arr = res.data.data.data;
-            var arr1 = [];
-            var time24ms;
-            arr.forEach(function (item) {
-              if (item.type === 'sell') {
-                arr1.push(item);
-              }
-            });
-            var len = arr1.length;
-            if (that.orderTimer != null) {
-              clearInterval(that.orderTimer);
-            }
-            that.orderTimer = setInterval(function () {
-              for (var i = 0; i < len; i++) {
-                var curOrder = arr1[i];
+            if (res.data.data.data.length > 0) {
+              var arr = res.data.data.data;
+              var arr1 = [];
+              var time24ms;
+              for (var i = 0; i < arr.length; i++) {
+                var curOrder = arr[i];
                 var orderTime = void 0;
                 if (idx === 'match') {
                   orderTime = Number(curOrder.time) * 1000; //订单时间
@@ -410,21 +401,40 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                     time24ms = 24 * 3600 * 1000;
                   }
                   var orderOffsetTime = (Date.now() - orderTime) % time24ms;
-
                   var orderStart = time24ms - orderOffsetTime;
                   curOrder.rever = orderStart;
                 }
                 curOrder.rever -= 1000;
-                if (curOrder.rever <= 0) {
-                  curOrder.rever = time24ms;
-                }
               }
-              that.list = arr1;
-            }, 1000);
+              that.list = [];
+              that.list = arr;
+              that.getData(idx);
+            }
+
           }
 
         } });
 
+    },
+    getData: function getData(idx) {
+      var that = this;
+      var arrs = that.list;
+      arrs.forEach(function (item) {
+        if (that.orderTimer != null) {
+          clearInterval(that.orderTimer);
+        }
+        that.orderTimer = setInterval(function () {
+          item.rever -= 1000;
+          if (item.rever <= 0) {
+            if (idx === 'match') {
+              item.rever = 48 * 3600 * 1000;
+            } else {
+              item.rever = 24 * 3600 * 1000;
+            }
+          }
+        }, 1000);
+      });
+      that.list = arrs;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

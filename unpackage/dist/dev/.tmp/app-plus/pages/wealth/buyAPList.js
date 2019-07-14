@@ -299,6 +299,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniSegmentedControl = function uniSegmentedControl() {return __webpack_require__.e(/*! import() | components/uni-segmented-control/uni-segmented-control */ "components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/components/uni-segmented-control/uni-segmented-control.vue */ "../../../../test/WealthPoint/components/uni-segmented-control/uni-segmented-control.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "../../../../test/WealthPoint/components/uni-load-more/uni-load-more.vue"));};var _default =
 
 
+
 {
   data: function data() {
     return {
@@ -458,12 +459,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         success: function success(res) {
           that.list = [];
           if (res.data.status === 200) {
-            var arr = res.data.data.data;
-            var time24ms = 24 * 3600 * 1000;
-            if (that.orderTimer != null) {
-              clearInterval(that.orderTimer);
-            }
-            that.orderTimer = setInterval(function () {
+            if (res.data.data.data.length > 0) {
+              var arr = res.data.data.data;
+              var time24ms = 24 * 3600 * 1000;
               for (var i = 0; i < arr.length; i++) {
                 var curOrder = arr[i];
                 var orderTime = void 0;
@@ -481,18 +479,30 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                   var orderStart = time24ms - orderOffsetTime;
                   curOrder.rever = orderStart;
                 }
-                curOrder.rever -= 1000;
-                if (curOrder.rever <= 0) {
-                  curOrder.rever = time24ms;
-                }
+                that.list = [];
+                that.list = arr;
+                that.getData();
               }
-              that.list = arr;
-
-            }, 1000);
+            }
           }
-
         } });
 
+    },
+    getData: function getData() {
+      var that = this;
+      var arrs = that.list;
+      arrs.forEach(function (item) {
+        if (that.orderTimer != null) {
+          clearInterval(that.orderTimer);
+        }
+        that.orderTimer = setInterval(function () {
+          item.rever -= 1000;
+          if (item.rever <= 0) {
+            item.rever = 24 * 3600 * 1000;
+          }
+        }, 1000);
+      });
+      that.list = arrs;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

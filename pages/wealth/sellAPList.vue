@@ -7,7 +7,7 @@
 		<view class="content">
 			<view>
 				<view class="list">
-					<view class="item" v-for="(temp,index) in list" :key="index">
+					<view class="item" v-for="(temp,index) in list" :key="index" v-show="temp.type=='sell'">
 						<!--  v-if="temp.type==='sell'" -->
 						<view class="first">{{temp.orderId}}</view>
 						<view class="tw">
@@ -147,21 +147,12 @@
 					success: function(res) {
 						that.list = [];
 						if (res.data.status === 200) {
-							let arr = res.data.data.data;
-							let arr1 = [];
-							let time24ms;
-							arr.forEach(item => {
-								if (item.type === 'sell') {
-									arr1.push(item)
-								}
-							})
-							let len = arr1.length;
-							if (that.orderTimer != null) {
-								clearInterval(that.orderTimer);
-							}
-							that.orderTimer = setInterval(() => {
-								for (let i = 0; i < len; i++) {
-									let curOrder = arr1[i];
+							if (res.data.data.data.length > 0) {
+								let arr = res.data.data.data;
+								let arr1 = [];
+								let time24ms;
+								for (let i = 0; i < arr.length; i++) {
+									let curOrder = arr[i];
 									let orderTime
 									if (idx === 'match') {
 										orderTime = Number(curOrder.time) * 1000; //订单时间
@@ -179,21 +170,40 @@
 											time24ms = 24 * 3600 * 1000;
 										}
 										let orderOffsetTime = (Date.now() - orderTime) % time24ms;
-										
 										let orderStart = time24ms - orderOffsetTime;
 										curOrder.rever = orderStart;
 									}
 									curOrder.rever -= 1000;
-									if (curOrder.rever <= 0) {
-										curOrder.rever = time24ms;
-									}
 								}
-								that.list = arr1;
-							}, 1000)
+								that.list=[];
+								that.list = arr;
+								that.getData(idx);
+							}
+
 						}
 
 					}
 				})
+			},
+			getData(idx) {
+				let that = this;
+				let arrs= that.list;
+				arrs.forEach(item => {
+					if (that.orderTimer != null) {
+						clearInterval(that.orderTimer);
+					}
+					that.orderTimer = setInterval(function() {
+						item.rever -= 1000;
+						if (item.rever <= 0) {
+							if (idx === 'match') {
+								item.rever = 48 * 3600 * 1000;
+							} else {
+								item.rever = 24 * 3600 * 1000;
+							}
+						}
+					}, 1000)
+				})
+				that.list= arrs;
 			}
 		}
 	}
