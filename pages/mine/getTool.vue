@@ -82,7 +82,6 @@
 			submit() {
 				let that = this;
 				uni.showModal({
-					title: '购买',
 					content: '确定购买1张' + that.text + '?',
 					success: function(res) {
 						if (res.confirm) {

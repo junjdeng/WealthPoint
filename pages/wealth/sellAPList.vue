@@ -108,7 +108,6 @@
 			confirmPay(id) {
 				let that = this;
 				uni.showModal({
-					title: '确认',
 					content: '确定已收款？',
 					success: function(res) {
 						if (res.confirm) {

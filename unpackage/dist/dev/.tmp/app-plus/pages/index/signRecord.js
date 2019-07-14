@@ -98,7 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
 
 
 
@@ -137,18 +138,39 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { list: [], total: 0 };}, onShow: function onShow() {this.record();}, methods: { record: function record() {var that = this;(0, _request.djRequest)({ url: '/api/sign/sign_list', method: 'POST', data: {
-          start: 0,
-          length: 50 },
+//
+var _default = { data: function data() {return { list: [], total: 0, start: 0, length: 20, isMore: true };}, onPullDownRefresh: function onPullDownRefresh() {this.start = 0;this.list = [];this.record();}, onReachBottom: function onReachBottom() {if (this.isMore) {this.record();
+    }
+  },
+  onShow: function onShow() {
+    this.record();
+  },
+  methods: {
+    record: function record() {
+      var that = this;
+      (0, _request.djRequest)({
+        url: '/api/sign/sign_list',
+        method: 'POST',
+        data: {
+          start: that.start,
+          length: that.length },
 
         success: function success(res) {
-          that.list = res.data.data.data;
+          uni.stopPullDownRefresh();
+          if (res.data.data.data.length < that.length) {
+            that.isMore = false;
+          } else {
+            that.isMore = true;
+          }
+          that.list = that.list.concat(res.data.data.data);
+          that.start = that.list.length;
           that.list.forEach(function (item) {
             that.total += Number(item.integral);
           });
         } });
 
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

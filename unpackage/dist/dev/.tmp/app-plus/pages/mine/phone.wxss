@@ -48,8 +48,8 @@
 	font-size: 24rpx;
 	color: #D03C29;
 }
-.tips text{
+.tips text {
 	font-size: 32rpx;
-	margin:0 10rpx;
+	margin: 0 10rpx;
 }
 

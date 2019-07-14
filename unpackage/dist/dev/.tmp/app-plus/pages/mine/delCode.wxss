@@ -3,7 +3,7 @@
 	width: 80%;
 	margin: 20rpx auto;
 	height: 700rpx;
-	overflow:hidden;
+	overflow: hidden;
 }
 .content image {
 	width: 100%;

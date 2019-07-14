@@ -127,11 +127,11 @@ var _default = { data: function data() {return { srcs: '', id: 0,
              this.isShowPhoto = true;
              
              }, */
+
     onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
       var that = this;
       /* 删除 */
       uni.showModal({
-        title: '删除',
         content: '确定删除此二维码？',
         success: function success(res) {
           if (res.confirm) {

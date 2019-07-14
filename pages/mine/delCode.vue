@@ -1,13 +1,13 @@
 <template>
 	<view class="content">
 		<!-- <savefile v-if="isShowPhoto" :url="srcs" @hide="hidePhoto"></savefile> -->
-		<image :src="srcs" ></image>
+		<image :src="srcs"></image>
 	</view>
 </template>
 
 <script>
 	import common from '../../common/common.js'
-	
+
 	import {
 		config
 	} from '../../common/config.js'
@@ -19,7 +19,7 @@
 			return {
 				srcs: '',
 				id: 0,
-				isShowPhoto:false,
+				isShowPhoto: false,
 			}
 		},
 		methods: {
@@ -27,11 +27,11 @@
 			this.isShowPhoto = true;
 			
 			}, */
+			
 			onNavigationBarButtonTap(e) {
 				let that = this;
 				/* 删除 */
 				uni.showModal({
-					title: '删除',
 					content: '确定删除此二维码？',
 					success: function(res) {
 						if (res.confirm) {
@@ -59,25 +59,25 @@
 
 			},
 		},
-		created(){
+		created() {
 			let that = this;
-				
-			
+
+
 		},
 		onLoad(options) {
 			let that = this;
 			that.id = options.id;
 			djRequest({
-					url: '/api/qrcode/show',
-					method: 'GET',
-					data: {
-						Id: that.id
-					},
-					success: function(res) {
-						that.srcs = 'http://api.wealth-point.com' + res.data.data.images;
-						console.log(that.srcs,4)
-					}
-				})
+				url: '/api/qrcode/show',
+				method: 'GET',
+				data: {
+					Id: that.id
+				},
+				success: function(res) {
+					that.srcs = 'http://api.wealth-point.com' + res.data.data.images;
+					console.log(that.srcs, 4)
+				}
+			})
 		},
 		onShow() {
 
@@ -90,7 +90,7 @@
 		width: 80%;
 		margin: 20upx auto;
 		height: 700upx;
-		overflow:hidden;
+		overflow: hidden;
 	}
 
 	.content image {

@@ -12,6 +12,7 @@
 			<view>合计</view>
 			<view style="font-size:40upx;color:#D03C29;">{{total}}</view>
 		</view>
+		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
 	</view>
 </template>
 
@@ -25,7 +26,20 @@
 		data () {
 			return {
 				list:[],
-				total:0
+				total:0,
+				start:0,
+				length:20,
+				isMore:true,
+			}
+		},
+		onPullDownRefresh: function() {	
+			this.start = 0;
+			this.list = [];
+			this.record();
+		},
+		onReachBottom: function() {		
+			if (this.isMore) {
+				this.record();
 			}
 		},
 		onShow(){
@@ -38,11 +52,18 @@
 					url:'/api/sign/sign_list',
 					method:'POST',
 					data:{
-						start:0,
-						length:50
+						start: that.start,
+						length: that.length,
 					},
 					success:function(res){
-						that.list=res.data.data.data;
+						uni.stopPullDownRefresh();
+						if (res.data.data.data.length < that.length) {
+							that.isMore = false;
+						}else{
+							that.isMore = true;
+						}
+						that.list = that.list.concat(res.data.data.data);
+						that.start = that.list.length;
 						that.list.forEach(item=>{
 							that.total+=Number(item.integral)
 						})
@@ -57,6 +78,8 @@
 	.content{
 		background: #fff;
 	}
+	.more{text-align: center; color: #999999; height: 40upx; 
+	line-height: 40upx; font-size: 28upx; padding: 20upx 0;margin-top:20upx;}
 	.title,.list{
 		width:750upx;
 		display:flex;

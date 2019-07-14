@@ -192,7 +192,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   },
   created: function created() {
     var that = this;
-    that.getUserName();
     that.bankName = that.array[that.index];
 
   },
@@ -207,7 +206,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     del: function del() {
       var that = this;
       uni.showModal({
-        title: '删除',
         content: '确定删除此银行卡？',
         success: function success(res) {
           if (res.confirm) {
@@ -251,59 +249,60 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         } });
 
     },
-    /* 获取用户名 */
-    /* getUserName() {
-                	let that = this;
-                	uni.getStorage({
-                		key: 'loginInfo',
-                		success(e) {
-                			that.userName = JSON.parse(e.data).realName;
-                			that.sessionid = JSON.parse(e.data).sessionId;
-                		}
-                	})
-                }, */
     /* 修改银行卡 */
     formSubmit: function formSubmit() {//确定提交
       var that = this;
-      if (that.flag) {
-        that.flag = false;
-        if (!_common.default.RegUtil.isMatchRealName(that.userName)) {
-          _common.default.TostUtil('请输入开户人！');
-          that.flag = true;
-          return;
-        }
-        if (!_common.default.RegUtil.isMatchBankNumber(that.bankNumber)) {
-          _common.default.TostUtil('请输入16~19位银行卡号！');
-          that.flag = true;
-          return;
-        }
-        if (that.bankAddress === '') {
-          _common.default.TostUtil('请输入开户行！');
-          that.flag = true;
-          return;
-        }
-      }
-      (0, _request.djRequest)({
-        url: '/api/bank/update',
-        data: {
-          bankId: that.id,
-          bankName: that.bankName,
-          bankNumber: that.bankNumber,
-          bankAddress: that.bankAddress,
-          bankAccountName: that.userName,
-          status: 'yes' },
 
-        method: 'POST',
+      uni.showModal({
+        content: '确定修改?',
         success: function success(res) {
-          _common.default.TostUtil(res.data.message);
-          that.flag = true;
-          setTimeout(function () {
-            uni.navigateBack();
-          }, 1000);
-        },
-        fail: function fail(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:205");
+          if (res.confirm) {
+            if (that.flag) {
+              that.flag = false;
+              if (!_common.default.RegUtil.isMatchRealName(that.userName)) {
+                _common.default.TostUtil('请输入开户人！');
+                that.flag = true;
+                return;
+              }
+              if (!_common.default.RegUtil.isMatchBankNumber(that.bankNumber)) {
+                _common.default.TostUtil('请输入16~19位银行卡号！');
+                that.flag = true;
+                return;
+              }
+              if (that.bankAddress === '') {
+                _common.default.TostUtil('请输入开户行！');
+                that.flag = true;
+                return;
+              }
+            }
+            (0, _request.djRequest)({
+              url: '/api/bank/update',
+              data: {
+                bankId: that.id,
+                bankName: that.bankName,
+                bankNumber: that.bankNumber,
+                bankAddress: that.bankAddress,
+                bankAccountName: that.userName,
+                status: 'yes' },
+
+              method: 'POST',
+              success: function success(res) {
+                _common.default.TostUtil(res.data.message);
+                that.flag = true;
+                setTimeout(function () {
+                  uni.navigateBack();
+                }, 1000);
+              },
+              fail: function fail(res) {
+                console.log(res, " at pages\\mine\\reviseBank.vue:197");
+                that.flag = true;
+              } });
+
+          } else {
+            that.flag = true;
+          }
         } });
+
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))

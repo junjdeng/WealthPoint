@@ -339,7 +339,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     confirmPay: function confirmPay(id) {
       var that = this;
       uni.showModal({
-        title: '确认',
         content: '确定已收款？',
         success: function success(res) {
           if (res.confirm) {

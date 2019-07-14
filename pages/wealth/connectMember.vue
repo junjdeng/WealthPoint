@@ -82,7 +82,7 @@
 						<view class="bg-pay-code-wx flex-justify-center column" :class="item.type==='alipay'?'aplay-pay-color':''" v-for="(item,index) in list2"
 						 :key="index" v-if="(item.status==='yes')&&(item.images!=='http://api.wealth-point.com/')">
 							<view class="wx-img-code">
-								<img :src="item.images" alt="">
+								<img @click="saveImg(item.images)" :src="item.images" alt="">
 							</view>
 							<view v-if="item.type==='alipay'&&item.status==='yes'">扫-扫支付宝付款</view>
 							<view v-if="item.type==='wechat'&&item.status==='yes'">扫-扫微信付款</view>
@@ -92,7 +92,6 @@
 				</view>
 			</view>
 		</view>
-		<!-- <savefile v-if="isShowPhoto" @hide="hidePhoto" url="/static/images/bg112.jpg"></savefile> -->
 	</view>
 </template>
 
@@ -133,6 +132,38 @@
 		methods: {
 			hidePhoto(){
 				this.isShowPhoto=!this.isShowPhoto
+			},
+			saveImg(url) {//保存图片
+				uni.showModal({
+					content: '是否保存图片?',
+					success: function(res) {
+						if (res.confirm) {
+							uni.downloadFile({
+								url: url,
+								success: (res) => {
+									if (res.statusCode === 200) {
+										uni.saveImageToPhotosAlbum({
+											filePath: res.tempFilePath,
+											success: function() {
+												uni.showToast({
+													title: "保存成功",
+													icon: "none"
+												});
+											},
+											fail: function() {
+												uni.showToast({
+													title: "保存失败，请稍后重试",
+													icon: "none"
+												});
+											}
+										});
+									}
+								}
+							})
+						}
+					}
+				})
+			
 			},
 			copy(txt){
 				uni.setClipboardData({

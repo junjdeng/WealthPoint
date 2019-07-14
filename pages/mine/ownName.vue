@@ -66,14 +66,14 @@
 					url: '/api/member/update',
 					method: 'POST',
 					data: {
-						type:'realname',
+						type: 'realname',
 						value: that.realName
 					},
 					success: function(res) {
 						common.TostUtil(res.data.message);
 						if (res.data.status === 200) {
 							common.balance();
-							config.User.realName=that.realName;
+							config.User.realName = that.realName;
 							that.realName = '';
 							that.safePwd = '';
 							setTimeout(function() {
@@ -85,13 +85,12 @@
 			},
 			formSubmit() {
 				let that = this;
-				if (that.flag) {
-					that.flag = false;
-					uni.showModal({
-						title: '确认修改',
-						content: "修改将消耗1张改名卡,确认修改?",
-						success: function(res) {
-							if (res.confirm) {
+				uni.showModal({
+					content: "修改将消耗1张改名卡,确认修改?",
+					success: function(res) {
+						if (res.confirm) {
+							if (that.flag) {
+								that.flag = false;
 								djRequest({
 									url: '/api/member/verify_security',
 									method: "POST",
@@ -108,12 +107,13 @@
 										}
 									}
 								})
-							}else{
-								that.flag=true;
 							}
+						} else {
+							that.flag = true;
 						}
-					})
-				}
+					}
+				})
+
 			}
 		}
 	}
@@ -177,8 +177,9 @@
 		font-size: 24upx;
 		color: #D03C29;
 	}
-	.tips text{
+
+	.tips text {
 		font-size: 32upx;
-		margin:0 10upx;
+		margin: 0 10upx;
 	}
 </style>

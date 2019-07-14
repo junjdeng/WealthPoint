@@ -69,14 +69,14 @@
 					url: '/api/member/update',
 					method: 'POST',
 					data: {
-						type:'phone',
+						type: 'phone',
 						value: that.tel
 					},
 					success: function(res) {
 						common.TostUtil(res.data.message);
 						if (res.data.status === 200) {
 							common.balance();
-							config.User.phone=that.tel;
+							config.User.phone = that.tel;
 							setTimeout(function() {
 								uni.navigateBack()
 							}, 1000)
@@ -88,13 +88,12 @@
 			},
 			formSubmit() {
 				let that = this;
-				if (that.flag) {
-					that.flag = false;
-					uni.showModal({
-						title: '确认修改',
-						content: "修改将消耗1张改手机号卡,确认修改?",
-						success: function(res) {
-							if (res.confirm) {
+				uni.showModal({
+					content: "修改将消耗1张改手机号卡,确认修改?",
+					success: function(res) {
+						if (res.confirm) {
+							if (that.flag) {
+								that.flag = false;
 								djRequest({
 									url: '/api/member/verify_security',
 									method: "POST",
@@ -111,14 +110,13 @@
 										}
 									}
 								})
-							}else{
-								that.flag=true;
 							}
+						} else {
+							that.flag = true;
 						}
-					})
+					}
+				})
 
-
-				}
 			}
 		}
 	}
@@ -182,8 +180,9 @@
 		font-size: 24upx;
 		color: #D03C29;
 	}
-	.tips text{
+
+	.tips text {
 		font-size: 32upx;
-		margin:0 10upx;
+		margin: 0 10upx;
 	}
 </style>

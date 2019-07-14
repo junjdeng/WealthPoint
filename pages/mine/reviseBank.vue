@@ -92,7 +92,6 @@
 		},
 		created() {
 			let that = this;
-			that.getUserName();
 			that.bankName = that.array[that.index];
 
 		},
@@ -107,7 +106,6 @@
 			del() {
 				let that = this;
 				uni.showModal({
-					title: '删除',
 					content: '确定删除此银行卡？',
 					success: function(res) {
 						if (res.confirm) {
@@ -120,12 +118,12 @@
 								success: function(res) {
 									if (res.data.status === 200) {
 										common.TostUtil(res.data.message);
-										setTimeout(function(){
+										setTimeout(function() {
 											uni.navigateBack({
-											delta: 1
-										});
-										},1000)
-										
+												delta: 1
+											});
+										}, 1000)
+
 									}
 								}
 							})
@@ -151,60 +149,61 @@
 					}
 				})
 			},
-			/* 获取用户名 */
-			/* getUserName() {
-				let that = this;
-				uni.getStorage({
-					key: 'loginInfo',
-					success(e) {
-						that.userName = JSON.parse(e.data).realName;
-						that.sessionid = JSON.parse(e.data).sessionId;
-					}
-				})
-			}, */
 			/* 修改银行卡 */
 			formSubmit() { //确定提交
 				let that = this;
-				if (that.flag) {
-					that.flag = false;
-					if (!common.RegUtil.isMatchRealName(that.userName)) {
-						common.TostUtil('请输入开户人！');
-						that.flag = true;
-						return
-					}
-					if (!common.RegUtil.isMatchBankNumber(that.bankNumber)) {
-						common.TostUtil('请输入16~19位银行卡号！');
-						that.flag = true;
-						return
-					}
-					if (that.bankAddress === '') {
-						common.TostUtil('请输入开户行！');
-						that.flag = true;
-						return
-					}
-				}
-				djRequest({
-					url: '/api/bank/update',
-					data: {
-						bankId: that.id,
-						bankName: that.bankName,
-						bankNumber: that.bankNumber,
-						bankAddress: that.bankAddress,
-						bankAccountName: that.userName,
-						status: 'yes'
-					},
-					method: 'POST',
+
+				uni.showModal({
+					content: '确定修改?',
 					success: function(res) {
-						common.TostUtil(res.data.message);
-						that.flag = true;
-						setTimeout(function() {
-							uni.navigateBack();
-						}, 1000)
-					},
-					fail: function(res) {
-						console.log(res)
+						if (res.confirm) {
+							if (that.flag) {
+								that.flag = false;
+								if (!common.RegUtil.isMatchRealName(that.userName)) {
+									common.TostUtil('请输入开户人！');
+									that.flag = true;
+									return
+								}
+								if (!common.RegUtil.isMatchBankNumber(that.bankNumber)) {
+									common.TostUtil('请输入16~19位银行卡号！');
+									that.flag = true;
+									return
+								}
+								if (that.bankAddress === '') {
+									common.TostUtil('请输入开户行！');
+									that.flag = true;
+									return
+								}
+							}
+							djRequest({
+								url: '/api/bank/update',
+								data: {
+									bankId: that.id,
+									bankName: that.bankName,
+									bankNumber: that.bankNumber,
+									bankAddress: that.bankAddress,
+									bankAccountName: that.userName,
+									status: 'yes'
+								},
+								method: 'POST',
+								success: function(res) {
+									common.TostUtil(res.data.message);
+									that.flag = true;
+									setTimeout(function() {
+										uni.navigateBack();
+									}, 1000)
+								},
+								fail: function(res) {
+									console.log(res)
+									that.flag = true;
+								}
+							})
+						} else {
+							that.flag = true;
+						}
 					}
 				})
+
 			},
 		}
 	}

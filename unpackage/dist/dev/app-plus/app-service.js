@@ -9171,7 +9171,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -15369,7 +15369,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -15390,14 +15390,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -15466,7 +15466,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -20884,7 +20884,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
 
 
 
@@ -20923,18 +20924,39 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-var _default = { data: function data() {return { list: [], total: 0 };}, onShow: function onShow() {this.record();}, methods: { record: function record() {var that = this;(0, _request.djRequest)({ url: '/api/sign/sign_list', method: 'POST', data: {
-          start: 0,
-          length: 50 },
+//
+var _default = { data: function data() {return { list: [], total: 0, start: 0, length: 20, isMore: true };}, onPullDownRefresh: function onPullDownRefresh() {this.start = 0;this.list = [];this.record();}, onReachBottom: function onReachBottom() {if (this.isMore) {this.record();
+    }
+  },
+  onShow: function onShow() {
+    this.record();
+  },
+  methods: {
+    record: function record() {
+      var that = this;
+      (0, _request.djRequest)({
+        url: '/api/sign/sign_list',
+        method: 'POST',
+        data: {
+          start: that.start,
+          length: that.length },
 
         success: function success(res) {
-          that.list = res.data.data.data;
+          uni.stopPullDownRefresh();
+          if (res.data.data.data.length < that.length) {
+            that.isMore = false;
+          } else {
+            that.isMore = true;
+          }
+          that.list = that.list.concat(res.data.data.data);
+          that.start = that.list.length;
           that.list.forEach(function (item) {
             that.total += Number(item.integral);
           });
         } });
 
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -28965,7 +28987,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     confirmPay: function confirmPay(id) {
       var that = this;
       uni.showModal({
-        title: '确认',
         content: '确定已收款？',
         success: function success(res) {
           if (res.confirm) {
@@ -29360,7 +29381,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 __webpack_require__(/*! @/components/ican-clipBoard/ican-clipBoard.js */ "../../../../test/WealthPoint/components/ican-clipBoard/ican-clipBoard.js");
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -29461,11 +29481,43 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-//
 var _default = { data: function data() {return { buyerName: '', //买方会员的名字或昵称
       buyerSignature: '', //买方会员的个性签名
-      phone: '', id: 0, dist: 1, type: '', realName: '', personId: 0, list: [], list2: [], show: false, alipayList: [], isShowPhoto: false, len: 0 };}, onLoad: function onLoad(options) {this.id = options.id;this.dist = options.dist;this.type = options.type;this.personId = options.personId;}, onShow: function onShow() {this.getUser();this.getInfo();}, methods: { hidePhoto: function hidePhoto() {this.isShowPhoto = !this.isShowPhoto;}, copy: function copy(txt) {uni.setClipboardData({ data: txt });}, /* 投诉 */complain: function complain() {var that = this;uni.navigateTo({ url: 'complaint?id=' + that.id + '&type=' + that.type });}, getInfo: function getInfo() {var that = this; /*卖方会员的银行卡列表*/(0, _request.djRequest)({ url: '/api/bank/member', method: 'GET', data: { Id: Number(that.personId) }, success: function success(res2) {if (res2.data.status === 200) {that.list = res2.data.data;}} }); //二维码
-      (0, _request.djRequest)({ url: '/api/qrcode/member', method: 'GET', data: { Id: Number(that.personId) }, success: function success(res) {if (res.data.status === 200) {var arr = res.data.data;var as = [];arr.forEach(function (item) {if (item.images !== '') {item.images = 'http://api.wealth-point.com' + item.images;as.push(item);}if (item.type === 'alipay') {that.alipayList.push(item);}});that.list2 = as;that.len = that.list2.length;}} });}, showOrHide: function showOrHide() {this.show = !this.show;}, getUser: function getUser() {var that = this;(0, _request.djRequest)({ url: '/api/member', data: { Id: Number(that.personId) }, method: 'GET', success: function success(res) {if (res.data.status === 200) {that.buyerName = res.data.data.username;
+      phone: '', id: 0, dist: 1, type: '', realName: '', personId: 0, list: [], list2: [], show: false, alipayList: [], isShowPhoto: false, len: 0 };}, onLoad: function onLoad(options) {this.id = options.id;this.dist = options.dist;this.type = options.type;this.personId = options.personId;}, onShow: function onShow() {this.getUser();this.getInfo();}, methods: { hidePhoto: function hidePhoto() {this.isShowPhoto = !this.isShowPhoto;}, saveImg: function saveImg(url) {//保存图片
+      uni.showModal({ content: '是否保存图片?', success: function success(res) {if (res.confirm) {uni.downloadFile({ url: url, success: function success(res) {if (res.statusCode === 200) {uni.saveImageToPhotosAlbum({ filePath: res.tempFilePath, success: function success() {uni.showToast({ title: "保存成功", icon: "none" });}, fail: function fail() {uni.showToast({ title: "保存失败，请稍后重试", icon: "none" });} });}} });}} });}, copy: function copy(txt) {uni.setClipboardData({ data: txt });}, /* 投诉 */complain: function complain() {var that = this;uni.navigateTo({ url: 'complaint?id=' + that.id + '&type=' + that.type });}, getInfo: function getInfo() {var that = this; /*卖方会员的银行卡列表*/(0, _request.djRequest)({ url: '/api/bank/member', method: 'GET', data: { Id: Number(that.personId) }, success: function success(res2) {if (res2.data.status === 200) {that.list = res2.data.data;}} }); //二维码
+      (0, _request.djRequest)({ url: '/api/qrcode/member', method: 'GET', data: { Id: Number(that.personId) }, success: function success(res) {
+          if (res.data.status === 200) {
+            var arr = res.data.data;
+            var as = [];
+            arr.forEach(function (item) {
+              if (item.images !== '') {
+                item.images = 'http://api.wealth-point.com' + item.images;
+                as.push(item);
+              }
+              if (item.type === 'alipay') {
+                that.alipayList.push(item);
+              }
+            });
+            that.list2 = as;
+            that.len = that.list2.length;
+          }
+        } });
+
+    },
+    showOrHide: function showOrHide() {
+      this.show = !this.show;
+    },
+    getUser: function getUser() {
+      var that = this;
+      (0, _request.djRequest)({
+        url: '/api/member',
+        data: {
+          Id: Number(that.personId) },
+
+        method: 'GET',
+        success: function success(res) {
+          if (res.data.status === 200) {
+            that.buyerName = res.data.data.username;
             that.phone = res.data.data.phone;
             that.realName = res.data.data.realName;
           }
@@ -30209,13 +30261,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     },
     formSubmit: function formSubmit() {
       var that = this;
-      if (that.flag) {
-        that.flag = false;
-        uni.showModal({
-          title: '确认修改',
-          content: "修改将消耗1张改手机号卡,确认修改?",
-          success: function success(res) {
-            if (res.confirm) {
+      uni.showModal({
+        content: "修改将消耗1张改手机号卡,确认修改?",
+        success: function success(res) {
+          if (res.confirm) {
+            if (that.flag) {
+              that.flag = false;
               (0, _request.djRequest)({
                 url: '/api/member/verify_security',
                 method: "POST",
@@ -30232,14 +30283,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                   }
                 } });
 
-            } else {
-              that.flag = true;
             }
-          } });
+          } else {
+            that.flag = true;
+          }
+        } });
 
 
-
-      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -30472,13 +30522,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     },
     formSubmit: function formSubmit() {
       var that = this;
-      if (that.flag) {
-        that.flag = false;
-        uni.showModal({
-          title: '确认修改',
-          content: "修改将消耗1张改名卡,确认修改?",
-          success: function success(res) {
-            if (res.confirm) {
+      uni.showModal({
+        content: "修改将消耗1张改名卡,确认修改?",
+        success: function success(res) {
+          if (res.confirm) {
+            if (that.flag) {
+              that.flag = false;
               (0, _request.djRequest)({
                 url: '/api/member/verify_security',
                 method: "POST",
@@ -30495,12 +30544,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                   }
                 } });
 
-            } else {
-              that.flag = true;
             }
-          } });
+          } else {
+            that.flag = true;
+          }
+        } });
 
-      }
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -31493,11 +31543,11 @@ var _default = { data: function data() {return { srcs: '', id: 0,
              this.isShowPhoto = true;
              
              }, */
+
     onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {
       var that = this;
       /* 删除 */
       uni.showModal({
-        title: '删除',
         content: '确定删除此二维码？',
         success: function success(res) {
           if (res.confirm) {
@@ -32013,7 +32063,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     var that = this;
     /* 删除 */
     uni.showModal({
-      title: '删除',
       content: '确定删除此支付宝帐号？',
       success: function success(res) {
         if (res.confirm) {
@@ -32084,7 +32133,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             status: 'yes' },
 
           success: function success(res) {
-            console.log(res, " at pages\\mine\\alipayEdit.vue:120");
+            console.log(res, " at pages\\mine\\alipayEdit.vue:119");
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {
@@ -33753,8 +33802,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 var _default = { data: function data() {return { text: '', price: 0, id: 0, selName: '', sel: false, source: 'ecash', flag: true };}, onLoad: function onLoad(options) {this.text = options.text;this.price = options.price;this.id = options.id;this.selName = options.name;}, methods: { change: function change() {//选择钱包
-      this.sel = !this.sel;if (this.sel) {this.source = "bonus";} else {this.source = "ecash";}}, submit: function submit() {var that = this;uni.showModal({ title: '购买', content: '确定购买1张' + that.text + '?', success: function success(res) {if (res.confirm) {if (that.flag) {that.flag = false;(0, _request.djRequest)({ url: '/api/gift/buy', method: 'POST', data: { name: that.selName, source: that.source, quantity: 1 },
-                success: function success(res) {
+      this.sel = !this.sel;if (this.sel) {this.source = "bonus";} else {this.source = "ecash";}}, submit: function submit() {var that = this;uni.showModal({ content: '确定购买1张' + that.text + '?', success: function success(res) {if (res.confirm) {if (that.flag) {that.flag = false;(0, _request.djRequest)({ url: '/api/gift/buy', method: 'POST', data: { name: that.selName, source: that.source, quantity: 1 }, success: function success(res) {
                   _common.default.TostUtil(res.data.message);
                   that.flag = true;
                   if (res.data.status === 200) {
@@ -36523,7 +36571,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   },
   created: function created() {
     var that = this;
-    that.getUserName();
     that.bankName = that.array[that.index];
 
   },
@@ -36538,7 +36585,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     del: function del() {
       var that = this;
       uni.showModal({
-        title: '删除',
         content: '确定删除此银行卡？',
         success: function success(res) {
           if (res.confirm) {
@@ -36582,59 +36628,60 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         } });
 
     },
-    /* 获取用户名 */
-    /* getUserName() {
-                	let that = this;
-                	uni.getStorage({
-                		key: 'loginInfo',
-                		success(e) {
-                			that.userName = JSON.parse(e.data).realName;
-                			that.sessionid = JSON.parse(e.data).sessionId;
-                		}
-                	})
-                }, */
     /* 修改银行卡 */
     formSubmit: function formSubmit() {//确定提交
       var that = this;
-      if (that.flag) {
-        that.flag = false;
-        if (!_common.default.RegUtil.isMatchRealName(that.userName)) {
-          _common.default.TostUtil('请输入开户人！');
-          that.flag = true;
-          return;
-        }
-        if (!_common.default.RegUtil.isMatchBankNumber(that.bankNumber)) {
-          _common.default.TostUtil('请输入16~19位银行卡号！');
-          that.flag = true;
-          return;
-        }
-        if (that.bankAddress === '') {
-          _common.default.TostUtil('请输入开户行！');
-          that.flag = true;
-          return;
-        }
-      }
-      (0, _request.djRequest)({
-        url: '/api/bank/update',
-        data: {
-          bankId: that.id,
-          bankName: that.bankName,
-          bankNumber: that.bankNumber,
-          bankAddress: that.bankAddress,
-          bankAccountName: that.userName,
-          status: 'yes' },
 
-        method: 'POST',
+      uni.showModal({
+        content: '确定修改?',
         success: function success(res) {
-          _common.default.TostUtil(res.data.message);
-          that.flag = true;
-          setTimeout(function () {
-            uni.navigateBack();
-          }, 1000);
-        },
-        fail: function fail(res) {
-          console.log(res, " at pages\\mine\\reviseBank.vue:205");
+          if (res.confirm) {
+            if (that.flag) {
+              that.flag = false;
+              if (!_common.default.RegUtil.isMatchRealName(that.userName)) {
+                _common.default.TostUtil('请输入开户人！');
+                that.flag = true;
+                return;
+              }
+              if (!_common.default.RegUtil.isMatchBankNumber(that.bankNumber)) {
+                _common.default.TostUtil('请输入16~19位银行卡号！');
+                that.flag = true;
+                return;
+              }
+              if (that.bankAddress === '') {
+                _common.default.TostUtil('请输入开户行！');
+                that.flag = true;
+                return;
+              }
+            }
+            (0, _request.djRequest)({
+              url: '/api/bank/update',
+              data: {
+                bankId: that.id,
+                bankName: that.bankName,
+                bankNumber: that.bankNumber,
+                bankAddress: that.bankAddress,
+                bankAccountName: that.userName,
+                status: 'yes' },
+
+              method: 'POST',
+              success: function success(res) {
+                _common.default.TostUtil(res.data.message);
+                that.flag = true;
+                setTimeout(function () {
+                  uni.navigateBack();
+                }, 1000);
+              },
+              fail: function fail(res) {
+                console.log(res, " at pages\\mine\\reviseBank.vue:197");
+                that.flag = true;
+              } });
+
+          } else {
+            that.flag = true;
+          }
         } });
+
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))

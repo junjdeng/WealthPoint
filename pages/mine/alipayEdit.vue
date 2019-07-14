@@ -46,7 +46,6 @@
 			let that = this;
 			/* 删除 */
 			uni.showModal({
-				title: '删除',
 				content: '确定删除此支付宝帐号？',
 				success: function(res) {
 					if (res.confirm) {

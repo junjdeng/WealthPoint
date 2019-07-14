@@ -326,8 +326,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 var _default = { data: function data() {return { text: '', price: 0, id: 0, selName: '', sel: false, source: 'ecash', flag: true };}, onLoad: function onLoad(options) {this.text = options.text;this.price = options.price;this.id = options.id;this.selName = options.name;}, methods: { change: function change() {//选择钱包
-      this.sel = !this.sel;if (this.sel) {this.source = "bonus";} else {this.source = "ecash";}}, submit: function submit() {var that = this;uni.showModal({ title: '购买', content: '确定购买1张' + that.text + '?', success: function success(res) {if (res.confirm) {if (that.flag) {that.flag = false;(0, _request.djRequest)({ url: '/api/gift/buy', method: 'POST', data: { name: that.selName, source: that.source, quantity: 1 },
-                success: function success(res) {
+      this.sel = !this.sel;if (this.sel) {this.source = "bonus";} else {this.source = "ecash";}}, submit: function submit() {var that = this;uni.showModal({ content: '确定购买1张' + that.text + '?', success: function success(res) {if (res.confirm) {if (that.flag) {that.flag = false;(0, _request.djRequest)({ url: '/api/gift/buy', method: 'POST', data: { name: that.selName, source: that.source, quantity: 1 }, success: function success(res) {
                   _common.default.TostUtil(res.data.message);
                   that.flag = true;
                   if (res.data.status === 200) {

@@ -185,13 +185,12 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     },
     formSubmit: function formSubmit() {
       var that = this;
-      if (that.flag) {
-        that.flag = false;
-        uni.showModal({
-          title: '确认修改',
-          content: "修改将消耗1张改名卡,确认修改?",
-          success: function success(res) {
-            if (res.confirm) {
+      uni.showModal({
+        content: "修改将消耗1张改名卡,确认修改?",
+        success: function success(res) {
+          if (res.confirm) {
+            if (that.flag) {
+              that.flag = false;
               (0, _request.djRequest)({
                 url: '/api/member/verify_security',
                 method: "POST",
@@ -208,12 +207,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                   }
                 } });
 
-            } else {
-              that.flag = true;
             }
-          } });
+          } else {
+            that.flag = true;
+          }
+        } });
 
-      }
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

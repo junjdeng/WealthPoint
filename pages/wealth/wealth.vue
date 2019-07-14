@@ -56,14 +56,14 @@
 		<view class="section section3">
 			<view class="flex-start">
 				<view class="flex1 " data-url="buyAPList" @tap="navTo">
-					<view class="father">
+					<view class="father hasData">
 						<image src="../../static/images/wealth2.jpg"></image>
 						<view class="color" v-show="buyFlag"></view>
 					</view>
 					<view class="title" style="color:#ff3333;">AP订单</view>
 				</view>
 				<view class="flex1" data-url="sellAPList" @tap="navTo">
-					<view class="father">
+					<view class="father hasData">
 						<image src="../../static/images/wealth1.jpg"></image>
 						<view class="color" v-show="sellFlag"></view>
 					</view>
@@ -290,5 +290,14 @@
 		height:20upx;
 		border-radius:50%;
 		background: #e4393c;
+	}
+	.hasData::after{
+		position:absolute;
+		content:"";
+		width:20upx;
+		height:20upx;
+		background: red;
+		border-radius:50%;
+		right:120upx;
 	}
 </style>

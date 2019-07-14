@@ -146,7 +146,6 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     var that = this;
     /* 删除 */
     uni.showModal({
-      title: '删除',
       content: '确定删除此支付宝帐号？',
       success: function success(res) {
         if (res.confirm) {
@@ -217,7 +216,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             status: 'yes' },
 
           success: function success(res) {
-            console.log(res, " at pages\\mine\\alipayEdit.vue:120");
+            console.log(res, " at pages\\mine\\alipayEdit.vue:119");
             _common.default.TostUtil(res.data.message);
             that.flag = true;
             setTimeout(function () {
