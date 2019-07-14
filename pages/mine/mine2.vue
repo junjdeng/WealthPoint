@@ -53,7 +53,6 @@
 				method: 'GET',
 				success: function(res) {
 					if (res.data.status == 200) {
-						console.log(res)
 						var orignData = res.data.data;
 						orignData.isShow = 'plus-filled';
 						for (var i = 0; i < orignData.subData.length; i++) {

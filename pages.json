@@ -334,6 +334,12 @@
 			}
 		},
 		{
+			"path": "pages/mine/signature",
+			"style": {
+				"navigationBarTitleText": "修改个性签名"
+			}
+		},
+		{
 			"path": "pages/mine/mine1",
 			"style": {
 				"navigationBarTitleText": "云信用"

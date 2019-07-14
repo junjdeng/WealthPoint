@@ -1,0 +1,27 @@
+
+textarea {
+	background: #ffffff;
+	margin: 20rpx;
+	width: 670rpx;
+	padding: 20rpx;
+	font-size: 28rpx;
+}
+.bottomBtn {
+	text-align: center;
+	font-size: 30rpx;
+	line-height: 3em;
+	color: #ffffff;
+	margin-top: 250rpx;
+	background: #CCA366;
+	margin: 0 20rpx;
+	width: 710rpx;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
+}
+.pop_wrap{
+	text-align: center;
+}
+.pop_wrap .text{font-size: 28rpx; color: #999999; padding: 20rpx 0;}
+.pop_wrap .close{background: #CCA366; font-size: 32rpx; line-height: 1.6; -webkit-border-radius: 4rpx; border-radius: 4rpx; 
+color: #ffffff; margin-top: 40rpx; padding: 10rpx 0;}
+

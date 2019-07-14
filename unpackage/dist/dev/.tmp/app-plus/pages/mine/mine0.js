@@ -142,26 +142,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
 
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //

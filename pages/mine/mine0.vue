@@ -30,20 +30,12 @@
 						<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon>
 					</span>
 				</view>
-
-				<!-- <view class="uni-form-item uni-column flex-start">
-					<span class="flex2 title">出生日期</span>
-					<input class="uni-input flex5"   value="2018-09-09" />
-				</view> -->
-
-				<view class="uni-form-item uni-column flex-start">
+				<view class="uni-form-item uni-column flex-start" :data-url="'signature?txt='+obj.signature" @click="navTo">
 					<span class="flex2 title">个性签名</span>
-					<!-- <input class="uni-input flex5"  placeholder="请输入个性签名" value="人生天地间,忽如远行客" /> -->
+					<span><span class="gray self" >{{obj.signature}}</span>
+						<uni-icon type="forward" class="forward" size="16" color="#999999"></uni-icon>
+					</span>
 				</view>
-
-				<!-- <view class="uni-btn-v">
-					<button formType="submit">编辑</button>
-				</view> -->
 			</form>
 		</view>
 	</view>
@@ -70,6 +62,7 @@
 		onShow() {
 			let that = this;
 			that.obj=config.User;
+			
 		},
 		methods: {
 			navTo(e) {
@@ -132,5 +125,13 @@
 	.gray {
 		font-size: 28upx;
 		color: #666;
+	}
+	.self{
+		width:375upx;
+		text-align:right;
+		display:inline-block;
+		text-overflow: ellipsis;
+		overflow:hidden;
+		white-space: nowrap;
 	}
 </style>

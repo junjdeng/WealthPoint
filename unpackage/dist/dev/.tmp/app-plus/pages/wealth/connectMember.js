@@ -196,6 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 __webpack_require__(/*! @/components/ican-clipBoard/ican-clipBoard.js */ "../../../../test/WealthPoint/components/ican-clipBoard/ican-clipBoard.js");
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -296,9 +297,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
+//
 var _default = { data: function data() {return { buyerName: '', //买方会员的名字或昵称
       buyerSignature: '', //买方会员的个性签名
-      phone: '', id: 0, dist: 1, type: '', realName: '', personId: 0, list: [], list2: [], show: false, alipayList: [], isShowPhoto: false, len: 0 };}, onLoad: function onLoad(options) {this.id = options.id;this.dist = options.dist;this.type = options.type;this.personId = options.personId;}, onShow: function onShow() {this.getUser();this.getInfo();}, methods: { hidePhoto: function hidePhoto() {this.isShowPhoto = !this.isShowPhoto;}, saveImg: function saveImg(url) {//保存图片
+      phone: '', id: 0, dist: 1, signature: '', type: '', realName: '', personId: 0, list: [], list2: [], show: false, alipayList: [], isShowPhoto: false, len: 0 };}, onLoad: function onLoad(options) {this.id = options.id;this.dist = options.dist;this.type = options.type;this.personId = options.personId;}, onShow: function onShow() {this.getUser();this.getInfo();}, methods: { hidePhoto: function hidePhoto() {this.isShowPhoto = !this.isShowPhoto;}, saveImg: function saveImg(url) {//保存图片
       uni.showModal({ content: '是否保存图片?', success: function success(res) {if (res.confirm) {uni.downloadFile({ url: url, success: function success(res) {if (res.statusCode === 200) {uni.saveImageToPhotosAlbum({ filePath: res.tempFilePath, success: function success() {uni.showToast({ title: "保存成功", icon: "none" });}, fail: function fail() {uni.showToast({ title: "保存失败，请稍后重试", icon: "none" });} });}} });}} });}, copy: function copy(txt) {uni.setClipboardData({ data: txt });}, /* 投诉 */complain: function complain() {var that = this;uni.navigateTo({ url: 'complaint?id=' + that.id + '&type=' + that.type });}, getInfo: function getInfo() {var that = this; /*卖方会员的银行卡列表*/(0, _request.djRequest)({ url: '/api/bank/member', method: 'GET', data: { Id: Number(that.personId) }, success: function success(res2) {if (res2.data.status === 200) {that.list = res2.data.data;}} }); //二维码
       (0, _request.djRequest)({ url: '/api/qrcode/member', method: 'GET', data: { Id: Number(that.personId) }, success: function success(res) {
           if (res.data.status === 200) {
@@ -335,6 +337,7 @@ var _default = { data: function data() {return { buyerName: '', //买方会员�
             that.buyerName = res.data.data.username;
             that.phone = res.data.data.phone;
             that.realName = res.data.data.realName;
+            that.signature = res.data.data.signature;
           }
         } });
 

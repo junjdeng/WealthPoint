@@ -298,6 +298,6 @@
 		height:20upx;
 		background: red;
 		border-radius:50%;
-		right:120upx;
+		
 	}
 </style>

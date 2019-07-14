@@ -11,7 +11,8 @@
 				</view>
 			</view>
 			<!-- 个性签名 -->
-			<view class="sign">个性签名: <text></text></view>
+			<view class="sign"><view>个性签名: </view><view class="self" :title="signature">{{signature}}</view></view>
+			
 			<!-- 投诉 -->
 			<view class="bank" @click="complain"  v-show="dist==2">
 				<view>帐户信息错误投诉</view>
@@ -108,6 +109,7 @@
 				phone: '',
 				id: 0,
 				dist: 1,
+				signature:'',
 				type: '',
 				realName: '',
 				personId: 0,
@@ -235,6 +237,7 @@
 							that.buyerName = res.data.data.username;
 							that.phone = res.data.data.phone;
 							that.realName = res.data.data.realName;
+							that.signature=res.data.data.signature;
 						}
 					}
 				})
@@ -326,7 +329,7 @@
 		font-size: 12px;
 		color: #666;
 	}
-
+	
 	.aset,
 	.sign,
 	.bank {
@@ -334,7 +337,6 @@
 		padding: 15px 2%;
 		width: 100%;
 	}
-
 	.aset {
 		padding: 0 2% 10px;
 	}
@@ -342,7 +344,7 @@
 	.sign {
 		display: flex;
 		justify-content: flex-start;
-		align-items: center;
+		align-items: flex-start;
 	}
 
 	.sign {
@@ -351,15 +353,21 @@
 		font-size: 16px;
 		margin-right: 5px;
 	}
+.sign>view:first-child {
+		width:25%;
+	}
 
-	.sign>text:last-child {
+	.sign>view:last-child {
 		font-size: 14px;
 		display: inline-block;
 		width: 70%;
 		color: #333;
 		overflow: hidden;
-		white-space: nowrap;
 		text-overflow: ellipsis;
+		display: -webkit-box;
+		word-break: break-all;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
 	}
 
 	.bank {
