@@ -53,12 +53,12 @@
 .num{
 	width:30rpx;
 	height:30rpx;
-	background: #ff5533;
+	background: #CCA366;
 	position:absolute;
 	top:0;
 	line-height: 30rpx;
 	font-size: 20rpx!important;
-	color:#CCA366!important;
+	color:#fff!important;
 	right:20rpx;
 	-webkit-border-radius:50%;
 	        border-radius:50%;

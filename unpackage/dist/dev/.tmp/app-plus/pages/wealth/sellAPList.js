@@ -386,6 +386,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         this.current = index;
         that.list = [];
         that.getList(ars[index]);
+        this.info('match');
+        this.info('pay');
+        this.info('confirm');
+        this.info('evaluate');
       }
     },
     /* 确认收款 */
@@ -407,6 +411,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                 if (res.data.status === 200) {
                   _common.default.balance();
                   that.getList('confirm');
+                  that.info('match');
+                  that.info('pay');
+                  that.info('confirm');
+                  that.info('evaluate');
                 }
               } });
 

@@ -41,11 +41,6 @@
 								that.getData();
 							}
 							common.TostUtil(res.data.message);
-							setTimeout(function(){
-								uni.navigateTo({
-									url:'myMoney'
-								})
-							},500)
 						}
 					})
 

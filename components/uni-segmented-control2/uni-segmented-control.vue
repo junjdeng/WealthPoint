@@ -136,12 +136,12 @@
 	.num{
 		width:30upx;
 		height:30upx;
-		background: #ff5533;
+		background: #CCA366;
 		position:absolute;
 		top:0;
 		line-height: 30upx;
 		font-size: 20upx!important;
-		color:#CCA366!important;
+		color:#fff!important;
 		right:20upx;
 		border-radius:50%;
 	}

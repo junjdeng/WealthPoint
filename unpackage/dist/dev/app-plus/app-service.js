@@ -25369,7 +25369,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
             if (res.data.status === 200) {
               _common.default.TostUtil(res.data.message);
               that.getList('pay');
-
+              that.info('match');
+              that.info('pay');
+              that.info('confirm');
+              that.info('evaluate');
             } else {
               _common.default.TostUtil(res.data.message);
             }
@@ -25421,6 +25424,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         this.current = index;
         that.list = [];
         that.getList(ars[index]);
+        this.info('match');
+        this.info('pay');
+        this.info('confirm');
+        this.info('evaluate');
       }
     },
     //获取数据
@@ -29177,7 +29184,7 @@ var _default =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -29220,11 +29227,6 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
               that.getData();
             }
             _common.default.TostUtil(res.data.message);
-            setTimeout(function () {
-              uni.navigateTo({
-                url: 'myMoney' });
-
-            }, 500);
           } });
 
 
@@ -29285,7 +29287,6 @@ var _default = { data: function data() {return { dataList: [] };}, onShow: funct
         } });
 
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -29751,6 +29752,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
         this.current = index;
         that.list = [];
         that.getList(ars[index]);
+        this.info('match');
+        this.info('pay');
+        this.info('confirm');
+        this.info('evaluate');
       }
     },
     /* 确认收款 */
@@ -29772,6 +29777,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                 if (res.data.status === 200) {
                   _common.default.balance();
                   that.getList('confirm');
+                  that.info('match');
+                  that.info('pay');
+                  that.info('confirm');
+                  that.info('evaluate');
                 }
               } });
 

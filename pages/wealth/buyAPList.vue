@@ -74,22 +74,22 @@
 			return {
 				items: [{
 						name: '待匹配',
-						type:'match',
+						type: 'match',
 						num: 0
 					},
 					{
 						name: '待付款',
-						type:'pay',
+						type: 'pay',
 						num: 0
 					},
 					{
 						name: '待确认',
-						type:'confirm',
+						type: 'confirm',
 						num: 0
 					},
 					{
 						name: '待评价',
-						type:'evaluate',
+						type: 'evaluate',
 						num: 0
 					},
 
@@ -212,7 +212,10 @@
 							if (res.data.status === 200) {
 								common.TostUtil(res.data.message);
 								that.getList('pay');
-
+								that.info('match');
+								that.info('pay');
+								that.info('confirm');
+								that.info('evaluate');
 							} else {
 								common.TostUtil(res.data.message);
 							}
@@ -239,14 +242,14 @@
 						let arr = res.data.data.data;
 						let ars = [];
 						that.items.forEach((item, index) => {
-						  if (idx === item.type) {
-							  arr.forEach(temp=>{
-								  if(temp.type==='buy'){
-									  ars.push(temp);
-								  }
-							  });
-							  item.num = ars.length;
-						  }
+							if (idx === item.type) {
+								arr.forEach(temp => {
+									if (temp.type === 'buy') {
+										ars.push(temp);
+									}
+								});
+								item.num = ars.length;
+							}
 						});
 					},
 				})
@@ -264,6 +267,10 @@
 					this.current = index;
 					that.list = [];
 					that.getList(ars[index]);
+					this.info('match');
+					this.info('pay');
+					this.info('confirm');
+					this.info('evaluate');
 				}
 			},
 			//获取数据
