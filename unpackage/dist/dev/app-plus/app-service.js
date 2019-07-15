@@ -23400,8 +23400,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       var that = this;
       that.down = false;
       that.hopeSelTxt = "提取分红";
-      that.consume = [];
+      that.listWallet = [];
       that.listWalletChange = [];
+      that.consume = [];
       (0, _request.djRequest)({
         url: '/api/seed',
         data: {
@@ -23430,6 +23431,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       that.hopeSelTxt = "赠送";
       that.down = !that.down;
       that.listWallet = [];
+      that.listWalletChange = [];
       that.consume = [];
       (0, _request.djRequest)({
         url: '/api/adjustment',
@@ -23452,6 +23454,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       that.down = !that.down;
       that.listWallet = [];
       that.listWalletChange = [];
+      that.consume = [];
       (0, _request.djRequest)({
         url: '/api/gift/receive',
         method: 'POST',
@@ -23479,8 +23482,9 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       var that = this;
       that.bonusSelTxt = '奖金';
       that.down = false;
-      that.consume = [];
+      that.listBonus = [];
       that.listWalletChange = [];
+      that.consume = [];
       (0, _request.djRequest)({
         url: '/api/recommend',
         method: 'POST',
@@ -23501,6 +23505,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       that.bonusSelTxt = '奖励';
       that.down = !that.down;
       that.listBonus = [];
+      that.listWalletChange = [];
       that.consume = [];
       (0, _request.djRequest)({
         url: '/api/adjustment',
@@ -23523,6 +23528,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       that.down = !that.down;
       that.listBonus = [];
       that.listWalletChange = [];
+      that.consume = [];
       (0, _request.djRequest)({
         url: '/api/gift/receive',
         method: 'POST',

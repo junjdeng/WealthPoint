@@ -127,8 +127,9 @@
 				let that = this;
 				that.down=false;
 				that.hopeSelTxt="提取分红";
+				that.listWallet=[];
+				that.listWalletChange=[];
 				that.consume=[];
-				that.listWalletChange=[]
 				djRequest({
 					url: '/api/seed',
 					data: {
@@ -157,6 +158,7 @@
 				that.hopeSelTxt="赠送";
 				that.down=!that.down;
 				that.listWallet=[];
+				that.listWalletChange=[];
 				that.consume=[];
 				djRequest({
 					url: '/api/adjustment',
@@ -179,6 +181,7 @@
 				that.down=!that.down;
 				that.listWallet=[];
 				that.listWalletChange=[];
+				that.consume=[];
 				djRequest({
 					url: '/api/gift/receive',
 					method: 'POST',
@@ -206,8 +209,9 @@
 				let that = this;
 				that.bonusSelTxt='奖金';
 				that.down=false;
+				that.listBonus=[];
+				that.listWalletChange=[];
 				that.consume=[];
-				that.listWalletChange=[]
 				djRequest({
 					url: '/api/recommend',
 					method: 'POST',
@@ -228,7 +232,8 @@
 				that.bonusSelTxt='奖励';
 				that.down=!that.down;
 				that.listBonus=[];
-				that.consume=[]
+				that.listWalletChange=[];
+				that.consume=[];
 				djRequest({
 					url: '/api/adjustment',
 					method: 'POST',
@@ -250,6 +255,7 @@
 				that.down=!that.down;
 				that.listBonus=[];
 				that.listWalletChange=[];
+				that.consume=[];
 				djRequest({
 					url: '/api/gift/receive',
 					method: 'POST',
