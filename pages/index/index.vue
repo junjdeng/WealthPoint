@@ -107,8 +107,6 @@
 	import {djRequest} from '../../common/request.js'
 	import common from '../../common/common.js'
 	import {config} from '../../common/config.js'
-	import  '../../common/hmac-sha256.js'
-	import '../../common/base64.js'
 
 	var _self;
 	var canvaColumn = null;

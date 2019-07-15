@@ -206,9 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 var _uCharts = _interopRequireDefault(__webpack_require__(/*! @/components/u-charts/u-charts.js */ "../../../../test/WealthPoint/components/u-charts/u-charts.js"));
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
-var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
-__webpack_require__(/*! ../../common/hmac-sha256.js */ "../../../../test/WealthPoint/common/hmac-sha256.js");
-__webpack_require__(/*! ../../common/base64.js */ "../../../../test/WealthPoint/common/base64.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
+var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};
 
 var _self;
 var canvaColumn = null;
@@ -323,7 +321,7 @@ var canvas = null;var _default =
           that.color = Number(that.low - that.opens);
         },
         fail: function fail(res) {
-          console.log(res, 4, " at pages\\index\\index.vue:226");
+          console.log(res, 4, " at pages\\index\\index.vue:224");
           //that.getBTC();
         } });
 
