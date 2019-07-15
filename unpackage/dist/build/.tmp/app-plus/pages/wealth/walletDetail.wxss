@@ -1,19 +1,92 @@
 
+.header {
+	width: 750rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 50rpx 20rpx 10rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 28rpx;
+	background: #fff;
+	border-bottom:2rpx solid #f7f7f7;
+}
+.header .con{
+	width:32rpx;
+	text-align: left;
+}
+.header .con .back{
+	margin-left:-20rpx;
+}
+.header .cter{
+	width:540rpx;
+	text-align: center;
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+	padding-left:40rpx;
+}
+.btns {
+	position: relative;
+	width: 120rpx;
+}
+.btns .btnTitle {
+	width: 120rpx;
+	text-align: center;
+	position: relative;
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+	-webkit-border-radius:4rpx;
+	        border-radius:4rpx;
+	padding:4rpx 0;
+	color:#CCA366;
+	font-size: 24rpx!important;
+	color:#CCA366!important;
+	border:2rpx solid #CCA366;
+}
+.btns view.down {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background: #fff;
+	z-index: 100;
+	border: 2rpx solid #f7f7f7;
+	-webkit-border-radius: 6rpx;
+	        border-radius: 6rpx;
+	-webkit-box-shadow: 0 0 6rpx #f7f7f7;
+	        box-shadow: 0 0 6rpx #f7f7f7;
+	overflow: hidden;
+	font-size: 24rpx!important;
+}
+.down>view {
+	padding: 10rpx 0;
+	text-align: center;
+	border-bottom: 2rpx #f7f7f7 solid;
+}
 .wallet-title,
 .bonus-title,
 .list {
 	width: 750rpx;
-	display: -webkit-box!important;
-	display: -webkit-flex!important;
-	display: -ms-flexbox!important;
-	display: flex!important;
-	-webkit-justify-content: space-around!important;
-	    -ms-flex-pack: distribute!important;
-	        justify-content: space-around!important;
-	-webkit-box-align: center!important;
-	-webkit-align-items: center!important;
-	    -ms-flex-align: center!important;
-	        align-items: center!important;
+	display: -webkit-box !important;
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+	-webkit-justify-content: space-around !important;
+	    -ms-flex-pack: distribute !important;
+	        justify-content: space-around !important;
+	-webkit-box-align: center !important;
+	-webkit-align-items: center !important;
+	    -ms-flex-align: center !important;
+	        align-items: center !important;
 	background: #fff;
 	padding: 20rpx 0;
 	font-size: 28rpx;
@@ -22,19 +95,20 @@
 	border-top: 2rpx solid #f7f7f7;
 	font-size: 28rpx;
 }
-.wt>.wallet-title>view,.wt>.list>view{
-	width:33.3%;
+.wt>.wallet-title>view,
+.wt>.list>view {
+	width: 33.3%;
 	text-align: center;
-	overflow:hidden;
+	overflow: hidden;
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
 	white-space: nowrap;
 }
 .bs>.bonus-title>view,
-.bs>.list>view{
-	width:25%;
+.bs>.list>view {
+	width: 25%;
 	text-align: center;
-	overflow:hidden;
+	overflow: hidden;
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
 	white-space: nowrap;

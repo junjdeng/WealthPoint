@@ -11,13 +11,14 @@
 					<view @click="hopeGet">提取分红</view>
 					<view @click="hopeSend">赠送</view>
 					<view @click="hopeRev">扣除</view>
+					
 				</view>
 			</view>
 			<view class="btns" v-if="type==2">
 				<view class="btnTitle" @click="getDown">{{bonusSelTxt}}</view>
 				<view class="down" v-show="down">
-					<view @click="bonusGet">买入</view>
-					<view @click="bonusOther">赠送</view>
+					<view @click="bonusGet">奖金</view>
+					<view @click="bonusOther">奖励</view>
 					<view @click="bonusRev">扣除</view>
 				</view>
 			</view>
@@ -67,7 +68,7 @@
 			</view>
 			<view class="list" v-for="(temp,index) in listBonus" :key="index">
 				<view class="">{{temp.Time | formatDate(2)}}</view>
-				<view class="">买入</view>
+				<view class="">奖金</view>
 				<view class="">{{temp.recommendUsername}}</view>
 				<view class="">{{temp.bonus}}</view>
 			</view>
@@ -95,7 +96,7 @@
 				down: false,
 				whichWallet:'希望钱包明细',
 				hopeSelTxt:'提取分红',
-				bonusSelTxt:'提取分红',
+				bonusSelTxt:'奖金',
 			}
 		},
 		components: {
@@ -203,7 +204,7 @@
 			//买入奖金钱包
 			bonusGet() {
 				let that = this;
-				that.bonusSelTxt='买入';
+				that.bonusSelTxt='奖金';
 				that.down=false;
 				that.consume=[];
 				that.listWalletChange=[]

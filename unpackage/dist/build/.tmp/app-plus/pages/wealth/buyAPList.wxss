@@ -297,10 +297,10 @@
 .container {
 	position: relative;
 }
-.pop-img{
-	width:48rpx;
-	height:48rpx;
-	margin:10rpx 252rpx;
+.pop-img {
+	width: 48rpx;
+	height: 48rpx;
+	margin: 10rpx 252rpx;
 }
 .txt {
 	width: 50%;

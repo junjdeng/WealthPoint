@@ -138,4 +138,13 @@
 	        border-radius:50%;
 	background: #e4393c;
 }
+.hasData::after{
+	position:absolute;
+	content:"";
+	width:20rpx;
+	height:20rpx;
+	background: red;
+	-webkit-border-radius:50%;
+	        border-radius:50%;
+}
 

@@ -3910,7 +3910,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.config = v
   APPID: 'wxf57619f193cc04a8',
   BASE_URL: 'http://api.wealth-point.com',
   Authorization: null,
-  Version: '1.0.0',
+  Version: '2.0.0',
   User: null,
   balance: null };exports.config = config;
 
@@ -23849,6 +23849,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
@@ -23867,7 +23868,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       down: false,
       whichWallet: '希望钱包明细',
       hopeSelTxt: '提取分红',
-      bonusSelTxt: '提取分红' };
+      bonusSelTxt: '奖金' };
 
   },
   components: {
@@ -23975,7 +23976,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     //买入奖金钱包
     bonusGet: function bonusGet() {
       var that = this;
-      that.bonusSelTxt = '买入';
+      that.bonusSelTxt = '奖金';
       that.down = false;
       that.consume = [];
       that.listWalletChange = [];

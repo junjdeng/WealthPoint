@@ -43,4 +43,13 @@
 	font-size: 28rpx;
 	color: #666;
 }
+.self{
+	width:375rpx;
+	text-align:right;
+	display:inline-block;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+	overflow:hidden;
+	white-space: nowrap;
+}
 

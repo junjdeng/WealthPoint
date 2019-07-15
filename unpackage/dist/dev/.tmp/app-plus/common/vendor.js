@@ -363,7 +363,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.config = v
   APPID: 'wxf57619f193cc04a8',
   BASE_URL: 'http://api.wealth-point.com',
   Authorization: null,
-  Version: '1.0.0',
+  Version: '2.0.0',
   User: null,
   balance: null };exports.config = config;
 

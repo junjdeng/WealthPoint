@@ -2,6 +2,8 @@
 .content{
 	background: #fff;
 }
+.more{text-align: center; color: #999999; height: 40rpx; 
+line-height: 40rpx; font-size: 28rpx; padding: 20rpx 0;margin-top:20rpx;}
 .title,.list{
 	width:750rpx;
 	display:-webkit-box;
