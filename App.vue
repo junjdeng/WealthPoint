@@ -11,7 +11,7 @@
 			//console.log(platform);			
 			plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {				
 				uni.request({  
-					url: 'http://download.wealth-point.com/update/GetVersion.php',   
+					url: 'http://download.wealth-point.com/update2/GetVersion.php',   
 					success: (result) => {
 						if (result.data && result.data  !==  widgetInfo.version) {
 							uni.showModal({
