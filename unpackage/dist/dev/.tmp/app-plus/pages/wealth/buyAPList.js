@@ -296,14 +296,35 @@ var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
 
-var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniSegmentedControl = function uniSegmentedControl() {return __webpack_require__.e(/*! import() | components/uni-segmented-control/uni-segmented-control */ "components/uni-segmented-control/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/components/uni-segmented-control/uni-segmented-control.vue */ "../../../../test/WealthPoint/components/uni-segmented-control/uni-segmented-control.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "../../../../test/WealthPoint/components/uni-load-more/uni-load-more.vue"));};var _default =
+var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniSegmentedControl = function uniSegmentedControl() {return __webpack_require__.e(/*! import() | components/uni-segmented-control2/uni-segmented-control */ "components/uni-segmented-control2/uni-segmented-control").then(__webpack_require__.bind(null, /*! @/components/uni-segmented-control2/uni-segmented-control.vue */ "../../../../test/WealthPoint/components/uni-segmented-control2/uni-segmented-control.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "../../../../test/WealthPoint/components/uni-load-more/uni-load-more.vue"));};var _default =
 
 
 
 {
   data: function data() {
     return {
-      items: ['待匹配', '待付款', '待确认', '待评价'],
+      items: [{
+        name: '待匹配',
+        type: 'match',
+        num: 0 },
+
+      {
+        name: '待付款',
+        type: 'pay',
+        num: 0 },
+
+      {
+        name: '待确认',
+        type: 'confirm',
+        num: 0 },
+
+      {
+        name: '待评价',
+        type: 'evaluate',
+        num: 0 }],
+
+
+
       current: 0,
       list: [],
       showOrHide: false, //弹出框显示或隐藏
@@ -327,6 +348,10 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     uniLoadMore: uniLoadMore },
 
   onShow: function onShow() {
+    this.info('match');
+    this.info('pay');
+    this.info('confirm');
+    this.info('evaluate');
     if (this.current == 0) {
       this.getList('match');
     } else if (this.current == 1) {
@@ -336,6 +361,7 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     } else if (this.current == 3) {
       this.getList('evaluate');
     }
+
   },
   methods: {
     navTo: function navTo(e) {
@@ -429,6 +455,33 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
       }
     },
+    info: function info(idx) {
+      var that = this;
+      (0, _request.djRequest)({
+        url: '/api/order',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 50,
+          status: idx,
+          type: 'buy' },
+
+        success: function success(res) {
+          var arr = res.data.data.data;
+          var ars = [];
+          that.items.forEach(function (item, index) {
+            if (idx === item.type) {
+              arr.forEach(function (temp) {
+                if (temp.type === 'buy') {
+                  ars.push(temp);
+                }
+              });
+              item.num = ars.length;
+            }
+          });
+        } });
+
+    },
     /* 联系会员 */
     connect: function connect(temp, dist) {
       uni.navigateTo({
@@ -481,14 +534,14 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
                 }
                 that.list = [];
                 that.list = arr;
-                that.getData();
+                that.getData(idx);
               }
             }
           }
         } });
 
     },
-    getData: function getData() {
+    getData: function getData(idx) {
       var that = this;
       var arrs = that.list;
       arrs.forEach(function (item) {

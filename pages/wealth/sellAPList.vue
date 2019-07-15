@@ -47,7 +47,7 @@
 </template>
 
 <script>
-	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
+	import uniSegmentedControl from "@/components/uni-segmented-control2/uni-segmented-control.vue"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
 	import {
@@ -59,7 +59,28 @@
 	export default {
 		data() {
 			return {
-				items: ['待匹配', '待收款', '待确认', '待评价'],
+				items: [{
+						name: '待匹配',
+						type:'match',
+						num: 0
+					},
+					{
+						name: '待付款',
+						type:'pay',
+						num: 0
+					},
+					{
+						name: '待确认',
+						type:'confirm',
+						num: 0
+					},
+					{
+						name: '待评价',
+						type:'evaluate',
+						num: 0
+					},
+				
+				],
 				current: 0,
 				list: []
 			}
@@ -68,6 +89,10 @@
 			uniSegmentedControl
 		},
 		onShow() {
+			this.info('match');
+			this.info('pay');
+			this.info('confirm');
+			this.info('evaluate');
 			if (this.current == 0) {
 				this.getList('match');
 			} else if (this.current == 1) {
@@ -87,6 +112,34 @@
 			navTo(e) {
 				uni.navigateTo({
 					url: e.currentTarget.dataset.url
+				})
+			},
+			
+			info(idx) {
+				let that = this;
+				djRequest({
+					url: '/api/order',
+					method: 'POST',
+					data: {
+						start: 0,
+						length: 50,
+						status: idx,
+						type: 'sell'
+					},
+					success: function(res) {
+						let arr = res.data.data.data;
+						let ars = [];
+						that.items.forEach((item, index) => {
+						  if (idx === item.type) {
+							  arr.forEach(temp=>{
+								  if(temp.type==='sell'){
+									  ars.push(temp);
+								  }
+							  });
+							  item.num = ars.length;
+						  }
+						});
+					},
 				})
 			},
 			/* 联系会员 */
@@ -175,7 +228,7 @@
 									}
 									curOrder.rever -= 1000;
 								}
-								that.list=[];
+								that.list = [];
 								that.list = arr;
 								that.getData(idx);
 							}
@@ -187,7 +240,7 @@
 			},
 			getData(idx) {
 				let that = this;
-				let arrs= that.list;
+				let arrs = that.list;
 				arrs.forEach(item => {
 					if (that.orderTimer != null) {
 						clearInterval(that.orderTimer);
@@ -203,7 +256,7 @@
 						}
 					}, 1000)
 				})
-				that.list= arrs;
+				that.list = arrs;
 			}
 		}
 	}

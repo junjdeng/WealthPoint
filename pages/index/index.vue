@@ -206,24 +206,11 @@
 			},
 			getBTC(){
 				let that = this;			
-				// let Signature =
-				// 	'https://api.huobi.pro\n/market/detail\n?AccessKeyId=rfhfg2mkl3-2302480c-0d9d2de1-97cee&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2019-07-09T10:19:30&symbol=btcusdt';
 					uni.request({
 						url: 'https://api.huobi.pro/market/detail',
 						data: {
 							symbol: 'btcusdt',
-							/* Timestamp: encodeURIComponent('2019-07-09T10:19:30'),
-							SignatureVersion: 2,
-							SignatureMethod: 'HmacSHA256',*/
-							/* Signature:Base64.encode(CryptoJS(encodeURIComponent(Signature),'533c1d05-e6745887-d192682d-90e85')), */
-							/* SecretKey: '533c1d05-e6745887-d192682d-90e85',
-							AccessKeyId: 'rfhfg2mkl3-2302480c-0d9d2de1-97cee' */
 						},
-						// header: {
-						// 	'Content-Type': 'application/x-www-form-urlencoded',
-						// 	'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-						// 	'Accept-Language': 'zh-cn'
-						// },
 						method: 'GET',
 						success: function(res) {
 							that.amount = Number(res.data.tick.amount).toFixed(2);
@@ -320,7 +307,7 @@
 			touchCanvas(e) {
 				canvas.showToolTip(e, {
 					format: function(item, category) {
-						return /* category + ' ' + item.name + ':' + */ item.data + '%'
+						return /* category + ' ' + item.name + ':' + */ Number(item.data).toFixed(2) + '%'
 					}
 				});
 			},
@@ -338,7 +325,6 @@
 					url:'/api/statistics/orders',
 					method:'GET',
 					success:function(res){
-						//console.log(res);
 						let orignData = res.data.data;
 						let weekNumber = [];
 						let weekArr = [];

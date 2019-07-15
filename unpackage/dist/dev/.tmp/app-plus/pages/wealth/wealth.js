@@ -180,10 +180,10 @@ __webpack_require__.r(__webpack_exports__);
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
-var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
+var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));};var _default =
 {
   data: function data() {
-    return {
+    return _defineProperty({
       obj: {},
       totalAssets: 0, //总资产
       hopeWallet: 0, //希望钱包
@@ -194,7 +194,15 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
       financialWallet: 0, //理财钱包
       totalRevenue: 0, //总收益
       buyFlag: false,
-      sellFlag: false };
+      sellFlag: false,
+      buyMatch: 0,
+      buyPay: 0,
+      buyConfirm: 0,
+      buyEvaluate: 0,
+      sellMatch: 0,
+      sellPay: 0,
+      sellConfirm: 0 }, "buyEvaluate",
+    0);
 
   },
   components: {
@@ -235,6 +243,30 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 
     } },
 
+  //每个订单的数量
+  /* getData(type,idx){
+  	djRequest({
+  		url: '/api/order',
+  		method: 'POST',
+  		data: {
+  			start: 0,
+  			length: 50,
+  			status: idx,
+  			type: type
+  		},
+  		success: function(res) {
+  			that.list = [];
+  			if (res.data.status === 200) {
+  				if (res.data.data.data.length > 0) {
+  					let arr = res.data.data.data;
+  					for (let i = 0; i < arr.length; i++) {
+  						
+  					}
+  				}
+  			}
+  		}
+  	})
+  } */
   onShow: function onShow() {
     _common.default.balance();
     this.wallet(); //钱包资产

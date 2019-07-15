@@ -13,7 +13,6 @@
 		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
 	</view>
 </template>
-
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'

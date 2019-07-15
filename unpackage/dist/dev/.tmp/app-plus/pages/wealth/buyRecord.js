@@ -245,7 +245,6 @@ var _default =
 
 
 
-
 var _uniIcon = _interopRequireDefault(__webpack_require__(/*! @/components/uni-icon/uni-icon.vue */ "../../../../test/WealthPoint/components/uni-icon/uni-icon.vue"));
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
@@ -266,8 +265,8 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
 //
 //
 //
-//
-var _default = { data: function data() {return { list: [], start: 0, length: 30, isMore: true };}, onPullDownRefresh: function onPullDownRefresh() {this.start = 0;this.list = [];this.getList();},
+var _default = { data: function data() {return { list: [], start: 0, length: 30, isMore: true };}, onPullDownRefresh: function onPullDownRefresh() {this.start = 0;this.list = [];this.getList();
+  },
   onReachBottom: function onReachBottom() {
     if (this.isMore) {
       this.getList();

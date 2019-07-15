@@ -56,14 +56,14 @@
 		<view class="section section3">
 			<view class="flex-start">
 				<view class="flex1 " data-url="buyAPList" @tap="navTo">
-					<view class="father hasData">
+					<view class="father">
 						<image src="../../static/images/wealth2.jpg"></image>
 						<view class="color" v-show="buyFlag"></view>
 					</view>
 					<view class="title" style="color:#ff3333;">AP订单</view>
 				</view>
 				<view class="flex1" data-url="sellAPList" @tap="navTo">
-					<view class="father hasData">
+					<view class="father">
 						<image src="../../static/images/wealth1.jpg"></image>
 						<view class="color" v-show="sellFlag"></view>
 					</view>
@@ -94,7 +94,15 @@
 				financialWallet: 0, //理财钱包
 				totalRevenue: 0, //总收益
 				buyFlag:false,
-				sellFlag:false
+				sellFlag:false,
+				buyMatch:0,
+				buyPay:0,
+				buyConfirm:0,
+				buyEvaluate:0,
+				sellMatch:0,
+				sellPay:0,
+				sellConfirm:0,
+				buyEvaluate:0
 			}
 		},
 		components: {
@@ -135,6 +143,30 @@
 				})
 			}
 		},
+		//每个订单的数量
+		/* getData(type,idx){
+			djRequest({
+				url: '/api/order',
+				method: 'POST',
+				data: {
+					start: 0,
+					length: 50,
+					status: idx,
+					type: type
+				},
+				success: function(res) {
+					that.list = [];
+					if (res.data.status === 200) {
+						if (res.data.data.data.length > 0) {
+							let arr = res.data.data.data;
+							for (let i = 0; i < arr.length; i++) {
+								
+							}
+						}
+					}
+				}
+			})
+		} */
 		onShow() {
 			common.balance();
 			this.wallet(); //钱包资产

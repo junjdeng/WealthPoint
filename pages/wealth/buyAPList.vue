@@ -58,7 +58,7 @@
 </template>
 
 <script>
-	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
+	import uniSegmentedControl from "@/components/uni-segmented-control2/uni-segmented-control.vue"
 	import uniLoadMore from "@/components/uni-load-more/uni-load-more.vue"
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
@@ -72,7 +72,28 @@
 	export default {
 		data() {
 			return {
-				items: ['待匹配', '待付款', '待确认', '待评价'],
+				items: [{
+						name: '待匹配',
+						type:'match',
+						num: 0
+					},
+					{
+						name: '待付款',
+						type:'pay',
+						num: 0
+					},
+					{
+						name: '待确认',
+						type:'confirm',
+						num: 0
+					},
+					{
+						name: '待评价',
+						type:'evaluate',
+						num: 0
+					},
+
+				],
 				current: 0,
 				list: [],
 				showOrHide: false, //弹出框显示或隐藏
@@ -96,6 +117,10 @@
 			uniLoadMore
 		},
 		onShow() {
+			this.info('match');
+			this.info('pay');
+			this.info('confirm');
+			this.info('evaluate');
 			if (this.current == 0) {
 				this.getList('match');
 			} else if (this.current == 1) {
@@ -105,6 +130,7 @@
 			} else if (this.current == 3) {
 				this.getList('evaluate');
 			}
+
 		},
 		methods: {
 			navTo(e) {
@@ -198,6 +224,33 @@
 
 				}
 			},
+			info(idx) {
+				let that = this;
+				djRequest({
+					url: '/api/order',
+					method: 'POST',
+					data: {
+						start: 0,
+						length: 50,
+						status: idx,
+						type: 'buy'
+					},
+					success: function(res) {
+						let arr = res.data.data.data;
+						let ars = [];
+						that.items.forEach((item, index) => {
+						  if (idx === item.type) {
+							  arr.forEach(temp=>{
+								  if(temp.type==='buy'){
+									  ars.push(temp);
+								  }
+							  });
+							  item.num = ars.length;
+						  }
+						});
+					},
+				})
+			},
 			/* 联系会员 */
 			connect(temp, dist) {
 				uni.navigateTo({
@@ -248,16 +301,16 @@
 										let orderStart = time24ms - orderOffsetTime;
 										curOrder.rever = orderStart;
 									}
-									that.list=[];
+									that.list = [];
 									that.list = arr;
-									that.getData();
+									that.getData(idx);
 								}
 							}
 						}
 					}
 				})
 			},
-			getData() {
+			getData(idx) {
 				let that = this;
 				let arrs = that.list;
 				arrs.forEach(item => {

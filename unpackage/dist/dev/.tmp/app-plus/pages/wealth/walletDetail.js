@@ -131,6 +131,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../test/WealthPoint/common/config.js");
 
@@ -143,7 +189,13 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
     return {
       type: 1,
       listWallet: [],
-      listBonus: [] };
+      listWalletChange: [],
+      listBonus: [],
+      consume: [],
+      down: false,
+      whichWallet: '希望钱包明细',
+      hopeSelTxt: '提取分红',
+      bonusSelTxt: '提取分红' };
 
   },
   components: {
@@ -152,21 +204,30 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
   onShow: function onShow() {
     var that = this;
     if (that.type == 2) {//奖金明细
-      (0, _request.djRequest)({
-        url: '/api/recommend',
-        method: 'POST',
-        data: {
-          start: 0,
-          length: 500 },
-
-        success: function success(res) {
-          if (res.data.status === 200) {
-            that.listBonus = res.data.data.data;
-          }
-        } });
-
-
+      that.bonusGet();
     } else if (that.type == 1) {//希望钱包明细
+      that.hopeGet();
+    }
+  },
+  onLoad: function onLoad(options) {
+    this.type = options.type;
+    if (options.type == 1) {
+      this.whichWallet = '希望钱包明细';
+    } else if (options.type == 2) {
+      this.whichWallet = '奖金钱包明细';
+    }
+  },
+  methods: {
+    goBack: function goBack() {
+      uni.navigateBack();
+    },
+    //提取分红希望钱包
+    hopeGet: function hopeGet() {
+      var that = this;
+      that.down = false;
+      that.hopeSelTxt = "提取分红";
+      that.consume = [];
+      that.listWalletChange = [];
       (0, _request.djRequest)({
         url: '/api/seed',
         data: {
@@ -188,28 +249,131 @@ var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../t
           that.listWallet = arr;
         } });
 
-    }
-  },
-  onLoad: function onLoad(options) {
-    this.type = options.type;
-    console.log(options, " at pages\\wealth\\walletDetail.vue:95");
-    if (options.type == 1) {
-      uni.setNavigationBarTitle({
-        title: '希望钱包明细' });
+    },
+    //赠送希望钱包
+    hopeSend: function hopeSend() {
+      var that = this;
+      that.hopeSelTxt = "赠送";
+      that.down = !that.down;
+      that.listWallet = [];
+      that.consume = [];
+      (0, _request.djRequest)({
+        url: '/api/adjustment',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 500 },
 
-    } else if (options.type == 2) {
-      uni.setNavigationBarTitle({
-        title: '奖金钱包明细' });
-
-    }
-  },
-  methods: {
-    hope: function hope() {
+        success: function success(res) {
+          if (res.data.status === 200) {
+            that.listWalletChange = res.data.data.data;
+          }
+        } });
 
     },
-    bonus: function bonus() {
+    //扣除希望钱包
+    hopeRev: function hopeRev() {
       var that = this;
+      that.hopeSelTxt = "扣除";
+      that.down = !that.down;
+      that.listWallet = [];
+      that.listWalletChange = [];
+      (0, _request.djRequest)({
+        url: '/api/gift/receive',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 500 },
 
+        success: function success(res) {
+          if (res.data.status === 200) {
+            var arr = res.data.data.data;
+            arr.forEach(function (item) {
+              if (item.from !== 'other') {
+                if ((item.source = 'buy') && item.type !== 'code' && item.price !== '0.000') {
+                  that.consume.push(item);
+                }
+              }
+
+            });
+          }
+        } });
+
+    },
+    //买入奖金钱包
+    bonusGet: function bonusGet() {
+      var that = this;
+      that.bonusSelTxt = '买入';
+      that.down = false;
+      that.consume = [];
+      that.listWalletChange = [];
+      (0, _request.djRequest)({
+        url: '/api/recommend',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 500 },
+
+        success: function success(res) {
+          if (res.data.status === 200) {
+            that.listBonus = res.data.data.data;
+          }
+        } });
+
+    },
+    //奖励奖金钱包
+    bonusOther: function bonusOther() {
+      var that = this;
+      that.bonusSelTxt = '奖励';
+      that.down = !that.down;
+      that.listBonus = [];
+      that.consume = [];
+      (0, _request.djRequest)({
+        url: '/api/adjustment',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 500 },
+
+        success: function success(res) {
+          if (res.data.status === 200) {
+            that.listWalletChange = res.data.data.data;
+          }
+        } });
+
+    },
+    //扣除奖金钱包
+    bonusRev: function bonusRev() {
+      var that = this;
+      that.bonusSelTxt = '扣除';
+      that.down = !that.down;
+      that.listBonus = [];
+      that.listWalletChange = [];
+      (0, _request.djRequest)({
+        url: '/api/gift/receive',
+        method: 'POST',
+        data: {
+          start: 0,
+          length: 500 },
+
+        success: function success(res) {
+          if (res.data.status === 200) {
+            var arr = res.data.data.data;
+            arr.forEach(function (item) {
+              if (item.from !== 'other') {
+                if ((item.source = 'buy') && item.type !== 'code' && item.price !== '0.000') {
+                  that.consume.push(item);
+                }
+              }
+
+            });
+          }
+        } });
+
+    },
+    //下拉框
+    getDown: function getDown() {
+      this.down = !this.down;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -241,20 +405,52 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var l0 = _vm.listWallet.map(function(item, index) {
-    var f0 = _vm._f("formatDate")(item.harvestTime, 2)
+  var l0 = _vm.listWalletChange.map(function(item, index) {
+    var f0 = _vm._f("formatDate")(item.time, 2)
 
     return {
       $orig: _vm.__get_orig(item),
       f0: f0
     }
   })
-  var l1 = _vm.listBonus.map(function(temp, index) {
-    var f1 = _vm._f("formatDate")(temp.Time, 2)
+  var l1 = _vm.consume.map(function(temp, index) {
+    var f1 = _vm._f("formatDate")(temp.time, 2)
 
     return {
       $orig: _vm.__get_orig(temp),
       f1: f1
+    }
+  })
+  var l2 = _vm.listWallet.map(function(item, index) {
+    var f2 = _vm._f("formatDate")(item.harvestTime, 2)
+
+    return {
+      $orig: _vm.__get_orig(item),
+      f2: f2
+    }
+  })
+  var l3 = _vm.listWalletChange.map(function(item, index) {
+    var f3 = _vm._f("formatDate")(item.time, 2)
+
+    return {
+      $orig: _vm.__get_orig(item),
+      f3: f3
+    }
+  })
+  var l4 = _vm.consume.map(function(temp, index) {
+    var f4 = _vm._f("formatDate")(temp.time, 2)
+
+    return {
+      $orig: _vm.__get_orig(temp),
+      f4: f4
+    }
+  })
+  var l5 = _vm.listBonus.map(function(temp, index) {
+    var f5 = _vm._f("formatDate")(temp.Time, 2)
+
+    return {
+      $orig: _vm.__get_orig(temp),
+      f5: f5
     }
   })
   _vm.$mp.data = Object.assign(
@@ -262,7 +458,11 @@ var render = function() {
     {
       $root: {
         l0: l0,
-        l1: l1
+        l1: l1,
+        l2: l2,
+        l3: l3,
+        l4: l4,
+        l5: l5
       }
     }
   )
