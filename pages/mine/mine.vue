@@ -113,7 +113,8 @@
 						uni.request({
 							url: 'http://download.wealth-point.com/update2/GetVersion.php',
 							success: (result) => {
-								if((result.data)||(result.data == widgetInfo.version)){
+								console.log(result,result.data,widgetInfo)
+								if((result.data == widgetInfo.version)){
 									uni.showModal({
 										content: '已是最新版本!',
 										success: function(res) {

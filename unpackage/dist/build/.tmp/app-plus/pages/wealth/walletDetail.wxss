@@ -44,9 +44,10 @@
 	position: relative;
 	-webkit-box-sizing:border-box;
 	        box-sizing:border-box;
-	-webkit-border-radius:4rpx;
-	        border-radius:4rpx;
-	padding:4rpx 0;
+	-webkit-border-radius:8rpx;
+	        border-radius:8rpx;
+	line-height: 40rpx;
+	height:40rpx;
 	color:#CCA366;
 	font-size: 24rpx!important;
 	color:#CCA366!important;
@@ -68,7 +69,7 @@
 	font-size: 24rpx!important;
 }
 .down>view {
-	padding: 10rpx 0;
+	padding: 12rpx 0;
 	text-align: center;
 	border-bottom: 2rpx #f7f7f7 solid;
 }

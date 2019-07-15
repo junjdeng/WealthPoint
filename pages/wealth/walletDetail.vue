@@ -315,8 +315,9 @@
 		text-align: center;
 		position: relative;
 		box-sizing:border-box;
-		border-radius:4upx;
-		padding:4upx 0;
+		border-radius:8upx;
+		line-height: 40upx;
+		height:40upx;
 		color:#CCA366;
 		font-size: 24upx!important;
 		color:#CCA366!important;
@@ -338,7 +339,7 @@
 	}
 
 	.down>view {
-		padding: 10upx 0;
+		padding: 12upx 0;
 		text-align: center;
 		border-bottom: 2upx #f7f7f7 solid;
 	}

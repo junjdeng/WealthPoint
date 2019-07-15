@@ -213,11 +213,12 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
         uni.request({
           url: 'http://download.wealth-point.com/update2/GetVersion.php',
           success: function success(result) {
-            if (result.data || result.data == widgetInfo.version) {
+            console.log(result, result.data, widgetInfo, " at pages\\mine\\mine.vue:116");
+            if (result.data == widgetInfo.version) {
               uni.showModal({
                 content: '已是最新版本!',
                 success: function success(res) {
-                  console.log('old', " at pages\\mine\\mine.vue:120");
+                  console.log('old', " at pages\\mine\\mine.vue:121");
                 } });
 
             } else if (result.data && result.data !== widgetInfo.version) {
@@ -227,17 +228,17 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
                   if (res.confirm) {
                     var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
                     'http://download.wealth-point.com/update2/apk.wgt';
-                    console.log(downUrl, " at pages\\mine\\mine.vue:130");
+                    console.log(downUrl, " at pages\\mine\\mine.vue:131");
                     uni.downloadFile({
                       url: downUrl,
                       success: function success(downloadResult) {
-                        console.log(downloadResult, " at pages\\mine\\mine.vue:134");
+                        console.log(downloadResult, " at pages\\mine\\mine.vue:135");
                         if (downloadResult.statusCode === 200) {
-                          console.log('installing...', " at pages\\mine\\mine.vue:136");
+                          console.log('installing...', " at pages\\mine\\mine.vue:137");
                           plus.runtime.install(downloadResult.tempFilePath, {
                             force: true },
                           function () {
-                            console.log('install success...', " at pages\\mine\\mine.vue:140");
+                            console.log('install success...', " at pages\\mine\\mine.vue:141");
                             uni.showModal({
                               content: '安装成功!',
                               success: function success(res) {
@@ -248,7 +249,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
 
 
                           }, function (e) {
-                            console.error('install fail...', " at pages\\mine\\mine.vue:151");
+                            console.error('install fail...', " at pages\\mine\\mine.vue:152");
                             uni.showModal({
                               content: '安装失败!',
                               success: function success(res) {
@@ -259,7 +260,7 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
                         }
                       },
                       fail: function fail(err) {
-                        console.log(err, " at pages\\mine\\mine.vue:162");
+                        console.log(err, " at pages\\mine\\mine.vue:163");
                       } });
 
                   }
