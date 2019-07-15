@@ -11,31 +11,53 @@
 			//console.log(platform);			
 			plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {				
 				uni.request({  
-					url: 'http://download.wealth-point.com/update2/GetVersion.php',   
+					url: 'http://download.wealth-point.com/update/GetVersion.php',   
 					success: (result) => {
 						if (result.data && result.data  !==  widgetInfo.version) {
-							let downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt':'http://download.wealth-point.com/update2/apk.wgt';
-							//console.log(downUrl);	
-							uni.downloadFile({  
-								url: downUrl,  
-								success: (downloadResult) => { 
-									//console.log(downloadResult);
-									if (downloadResult.statusCode === 200) {
-										console.log('installing...'); 
-										plus.runtime.install(downloadResult.tempFilePath, {  
-											force: true  
-										}, function() {  
-											//console.log('install success...');  
-											plus.runtime.restart();  
-										}, function(e) {  
-											//console.error('install fail...');  
-										});  
-									}  
-								},
-								fail(err) {
-								 	console.log(err);
+							uni.showModal({
+								content: '发现新版本',
+								success: function(res) {
+									if (res.confirm) {
+										let downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
+											'http://download.wealth-point.com/update2/apk.wgt';
+										console.log(downUrl);
+										uni.downloadFile({
+											url: downUrl,
+											success: (downloadResult) => {
+												console.log(downloadResult);
+												if (downloadResult.statusCode === 200) {
+													console.log('installing...');
+													plus.runtime.install(downloadResult.tempFilePath, {
+														force: true
+													}, function() {
+														console.log('install success...');
+														uni.showModal({
+															content: '安装成功!',
+															success: function(res) {
+																if (res.confirm) {
+																	plus.runtime.restart();
+																}
+															}
+														})
+													
+													}, function(e) {
+														console.error('install fail...');
+														uni.showModal({
+															content: '安装失败!',
+															success: function(res) {
+													
+															}
+														})
+													});
+												}
+											},
+											fail(err) {
+												console.log(err);
+											}
+										});
+									}
 								}
-							});  
+							})
 						}  
 					}  
 				});  

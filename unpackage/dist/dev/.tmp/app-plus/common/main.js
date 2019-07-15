@@ -92,29 +92,51 @@ __webpack_require__.r(__webpack_exports__);
     //console.log(platform);			
     plus.runtime.getProperty(plus.runtime.appid, function (widgetInfo) {
       uni.request({
-        url: 'http://download.wealth-point.com/update2/GetVersion.php',
+        url: 'http://download.wealth-point.com/update/GetVersion.php',
         success: function success(result) {
           if (result.data && result.data !== widgetInfo.version) {
-            var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' : 'http://download.wealth-point.com/update2/apk.wgt';
-            //console.log(downUrl);	
-            uni.downloadFile({
-              url: downUrl,
-              success: function success(downloadResult) {
-                //console.log(downloadResult);
-                if (downloadResult.statusCode === 200) {
-                  console.log('installing...', " at App.vue:24");
-                  plus.runtime.install(downloadResult.tempFilePath, {
-                    force: true },
-                  function () {
-                    //console.log('install success...');  
-                    plus.runtime.restart();
-                  }, function (e) {
-                    //console.error('install fail...');  
-                  });
+            uni.showModal({
+              content: '发现新版本',
+              success: function success(res) {
+                if (res.confirm) {
+                  var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
+                  'http://download.wealth-point.com/update2/apk.wgt';
+                  console.log(downUrl, " at App.vue:23");
+                  uni.downloadFile({
+                    url: downUrl,
+                    success: function success(downloadResult) {
+                      console.log(downloadResult, " at App.vue:27");
+                      if (downloadResult.statusCode === 200) {
+                        console.log('installing...', " at App.vue:29");
+                        plus.runtime.install(downloadResult.tempFilePath, {
+                          force: true },
+                        function () {
+                          console.log('install success...', " at App.vue:33");
+                          uni.showModal({
+                            content: '安装成功!',
+                            success: function success(res) {
+                              if (res.confirm) {
+                                plus.runtime.restart();
+                              }
+                            } });
+
+
+                        }, function (e) {
+                          console.error('install fail...', " at App.vue:44");
+                          uni.showModal({
+                            content: '安装失败!',
+                            success: function success(res) {
+
+                            } });
+
+                        });
+                      }
+                    },
+                    fail: function fail(err) {
+                      console.log(err, " at App.vue:55");
+                    } });
+
                 }
-              },
-              fail: function fail(err) {
-                console.log(err, " at App.vue:36");
               } });
 
           }
@@ -124,10 +146,10 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   onShow: function onShow() {
-    console.log('App Show', " at App.vue:46");
+    console.log('App Show', " at App.vue:68");
   },
   onHide: function onHide() {
-    console.log('App Hide', " at App.vue:49");
+    console.log('App Hide', " at App.vue:71");
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

@@ -19,8 +19,8 @@
 	margin-top: 40rpx;
 	padding: 20rpx;
 	width: 710rpx;
-	-webkit-box-sizing:border-box;
-	        box-sizing:border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 .section1 image {
 	width: 100rpx;

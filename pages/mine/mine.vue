@@ -61,6 +61,9 @@
 				<view class="item" data-url="/pages/index/customSuggest" @tap="navTo">
 					意见反馈<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
 				</view>
+				<view class="item" @tap="edition">
+					检查版本<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
+				</view>
 				<view class="item" @tap="goOut">
 					退出登陆<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon>
 				</view>
@@ -90,7 +93,7 @@
 		},
 		onShow() {
 			common.balance();
-			this.user=config.User;
+			this.user = config.User;
 		},
 		methods: {
 			navTo(e) {
@@ -98,12 +101,86 @@
 					url: e.currentTarget.dataset.url
 				})
 			},
-			goOut(){
+			edition() {
+				let platform = '';
+				uni.getSystemInfo({
+					success: function(res) {
+						platform = res.platform;
+					}
+				});
+				console.log(platform);
+				plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {
+						uni.request({
+							url: 'http://download.wealth-point.com/update2/GetVersion.php',
+							success: (result) => {
+								if((result.data)||(result.data == widgetInfo.version)){
+									uni.showModal({
+										content: '已是最新版本!',
+										success: function(res) {
+											console.log('old');
+										}
+									})
+								}else if(result.data&&result.data !== widgetInfo.version){
+									uni.showModal({
+										content: '发现新版本',
+										success: function(res) {
+											if (res.confirm) {
+												let downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
+													'http://download.wealth-point.com/update2/apk.wgt';
+												console.log(downUrl);
+												uni.downloadFile({
+													url: downUrl,
+													success: (downloadResult) => {
+														console.log(downloadResult);
+														if (downloadResult.statusCode === 200) {
+															console.log('installing...');
+															plus.runtime.install(downloadResult.tempFilePath, {
+																force: true
+															}, function() {
+																console.log('install success...');
+																uni.showModal({
+																	content: '安装成功!',
+																	success: function(res) {
+																		if (res.confirm) {
+																			plus.runtime.restart();
+																		}
+																	}
+																})
+						
+															}, function(e) {
+																console.error('install fail...');
+																uni.showModal({
+																	content: '安装失败!',
+																	success: function(res) {
+						
+																	}
+																})
+															});
+														}
+													},
+													fail(err) {
+														console.log(err);
+													}
+												});
+											}
+										}
+									})
+								}
+							},
+							fail: function(res) {
+						
+							}
+						});
+					
+					
+				});
+			},
+			goOut() {
 				uni.clearStorageSync();
-				config.balance=null;
-				config.User=null;
+				config.balance = null;
+				config.User = null;
 				uni.switchTab({
-					url:'../index/index'
+					url: '../index/index'
 				})
 			}
 		}
@@ -128,7 +205,7 @@
 		margin-top: 40upx;
 		padding: 20upx;
 		width: 710upx;
-		box-sizing:border-box;
+		box-sizing: border-box;
 	}
 
 	.section1 image {

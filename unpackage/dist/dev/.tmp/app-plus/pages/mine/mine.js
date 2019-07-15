@@ -171,6 +171,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 
@@ -197,6 +200,80 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
       uni.navigateTo({
         url: e.currentTarget.dataset.url });
 
+    },
+    edition: function edition() {
+      var platform = '';
+      uni.getSystemInfo({
+        success: function success(res) {
+          platform = res.platform;
+        } });
+
+      console.log(platform, " at pages\\mine\\mine.vue:111");
+      plus.runtime.getProperty(plus.runtime.appid, function (widgetInfo) {
+        uni.request({
+          url: 'http://download.wealth-point.com/update2/GetVersion.php',
+          success: function success(result) {
+            if (result.data || result.data == widgetInfo.version) {
+              uni.showModal({
+                content: '已是最新版本!',
+                success: function success(res) {
+                  console.log('old', " at pages\\mine\\mine.vue:120");
+                } });
+
+            } else if (result.data && result.data !== widgetInfo.version) {
+              uni.showModal({
+                content: '发现新版本',
+                success: function success(res) {
+                  if (res.confirm) {
+                    var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
+                    'http://download.wealth-point.com/update2/apk.wgt';
+                    console.log(downUrl, " at pages\\mine\\mine.vue:130");
+                    uni.downloadFile({
+                      url: downUrl,
+                      success: function success(downloadResult) {
+                        console.log(downloadResult, " at pages\\mine\\mine.vue:134");
+                        if (downloadResult.statusCode === 200) {
+                          console.log('installing...', " at pages\\mine\\mine.vue:136");
+                          plus.runtime.install(downloadResult.tempFilePath, {
+                            force: true },
+                          function () {
+                            console.log('install success...', " at pages\\mine\\mine.vue:140");
+                            uni.showModal({
+                              content: '安装成功!',
+                              success: function success(res) {
+                                if (res.confirm) {
+                                  plus.runtime.restart();
+                                }
+                              } });
+
+
+                          }, function (e) {
+                            console.error('install fail...', " at pages\\mine\\mine.vue:151");
+                            uni.showModal({
+                              content: '安装失败!',
+                              success: function success(res) {
+
+                              } });
+
+                          });
+                        }
+                      },
+                      fail: function fail(err) {
+                        console.log(err, " at pages\\mine\\mine.vue:162");
+                      } });
+
+                  }
+                } });
+
+            }
+          },
+          fail: function fail(res) {
+
+          } });
+
+
+
+      });
     },
     goOut: function goOut() {
       uni.clearStorageSync();

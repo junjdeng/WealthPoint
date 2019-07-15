@@ -1468,13 +1468,22 @@ Z(z[6])
 Z([3,'8'])
 Z(z[1])
 Z(z[13])
-Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'goOut']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'edition']],[[4],[[5],[1,'$event']]]]]]]]]]])
 Z(z[5])
 Z(z[6])
 Z(z[18])
 Z(z[19])
 Z(z[6])
 Z([3,'9'])
+Z(z[1])
+Z(z[13])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'goOut']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z(z[5])
+Z(z[6])
+Z(z[18])
+Z(z[19])
+Z(z[6])
+Z([3,'10'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_37);return __WXML_GLOBAL__.ops_cached.$gwx_37
 }
 function gz$gwx_38(){
@@ -2352,6 +2361,10 @@ var lOD=_mz(z,'view',['bindtap',83,'class',1,'data-event-opts',2],[],e,s,gg)
 var aPD=_mz(z,'uni-icon',['bind:__l',86,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
 _(lOD,aPD)
 _(oHD,lOD)
+var tQD=_mz(z,'view',['bindtap',92,'class',1,'data-event-opts',2],[],e,s,gg)
+var eRD=_mz(z,'uni-icon',['bind:__l',95,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(tQD,eRD)
+_(oHD,tQD)
 _(c6C,oHD)
 _(r,c6C)
 return r
@@ -2360,20 +2373,20 @@ e_[x[36]]={f:m36,j:[],i:[],ti:[],ic:[]}
 d_[x[37]]={}
 var m37=function(e,s,r,gg){
 var z=gz$gwx_38()
-var eRD=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
-var bSD=_mz(z,'view',['bindtap',3,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var oTD=_mz(z,'uni-icon',['bind:__l',7,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(bSD,oTD)
-_(eRD,bSD)
-var xUD=_mz(z,'view',['bindtap',13,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var oVD=_mz(z,'uni-icon',['bind:__l',17,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+var oTD=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var xUD=_mz(z,'view',['bindtap',3,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var oVD=_mz(z,'uni-icon',['bind:__l',7,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
 _(xUD,oVD)
-_(eRD,xUD)
-var fWD=_mz(z,'view',['bindtap',23,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var cXD=_mz(z,'uni-icon',['bind:__l',27,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(oTD,xUD)
+var fWD=_mz(z,'view',['bindtap',13,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var cXD=_mz(z,'uni-icon',['bind:__l',17,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
 _(fWD,cXD)
-_(eRD,fWD)
-_(r,eRD)
+_(oTD,fWD)
+var hYD=_mz(z,'view',['bindtap',23,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var oZD=_mz(z,'uni-icon',['bind:__l',27,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(hYD,oZD)
+_(oTD,hYD)
+_(r,oTD)
 return r
 }
 e_[x[37]]={f:m37,j:[],i:[],ti:[],ic:[]}
@@ -2386,45 +2399,45 @@ e_[x[38]]={f:m38,j:[],i:[],ti:[],ic:[]}
 d_[x[39]]={}
 var m39=function(e,s,r,gg){
 var z=gz$gwx_40()
-var c1D=_n('view')
-_rz(z,c1D,'class',0,e,s,gg)
-var o2D=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2],[],e,s,gg)
-var l3D=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(o2D,l3D)
-_(c1D,o2D)
-var a4D=_v()
-_(c1D,a4D)
-var t5D=function(b7D,e6D,o8D,gg){
-var o0D=_v()
-_(o8D,o0D)
-if(_oz(z,14,b7D,e6D,gg)){o0D.wxVkey=1
-var fAE=_n('view')
-_rz(z,fAE,'class',15,b7D,e6D,gg)
-var cBE=_mz(z,'view',['bindtap',16,'class',1,'data-event-opts',2],[],b7D,e6D,gg)
-var hCE=_mz(z,'uni-icon',['bind:__l',19,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],b7D,e6D,gg)
+var l3D=_n('view')
+_rz(z,l3D,'class',0,e,s,gg)
+var a4D=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2],[],e,s,gg)
+var t5D=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(a4D,t5D)
+_(l3D,a4D)
+var e6D=_v()
+_(l3D,e6D)
+var b7D=function(x9D,o8D,o0D,gg){
+var cBE=_v()
+_(o0D,cBE)
+if(_oz(z,14,x9D,o8D,gg)){cBE.wxVkey=1
+var hCE=_n('view')
+_rz(z,hCE,'class',15,x9D,o8D,gg)
+var oDE=_mz(z,'view',['bindtap',16,'class',1,'data-event-opts',2],[],x9D,o8D,gg)
+var cEE=_mz(z,'uni-icon',['bind:__l',19,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],x9D,o8D,gg)
+_(oDE,cEE)
+_(hCE,oDE)
+var oFE=_v()
+_(hCE,oFE)
+var lGE=function(tIE,aHE,eJE,gg){
+var oLE=_v()
+_(eJE,oLE)
+if(_oz(z,29,tIE,aHE,gg)){oLE.wxVkey=1
+}
+oLE.wxXCkey=1
+return eJE
+}
+oFE.wxXCkey=2
+_2z(z,27,lGE,x9D,o8D,gg,oFE,'item11','index11','index11')
 _(cBE,hCE)
-_(fAE,cBE)
-var oDE=_v()
-_(fAE,oDE)
-var cEE=function(lGE,oFE,aHE,gg){
-var eJE=_v()
-_(aHE,eJE)
-if(_oz(z,29,lGE,oFE,gg)){eJE.wxVkey=1
 }
-eJE.wxXCkey=1
-return aHE
+cBE.wxXCkey=1
+cBE.wxXCkey=3
+return o0D
 }
-oDE.wxXCkey=2
-_2z(z,27,cEE,b7D,e6D,gg,oDE,'item11','index11','index11')
-_(o0D,fAE)
-}
-o0D.wxXCkey=1
-o0D.wxXCkey=3
-return o8D
-}
-a4D.wxXCkey=4
-_2z(z,12,t5D,e,s,gg,a4D,'item','index','index')
-_(r,c1D)
+e6D.wxXCkey=4
+_2z(z,12,b7D,e,s,gg,e6D,'item','index','index')
+_(r,l3D)
 return r
 }
 e_[x[39]]={f:m39,j:[],i:[],ti:[],ic:[]}
@@ -2437,45 +2450,45 @@ e_[x[40]]={f:m40,j:[],i:[],ti:[],ic:[]}
 d_[x[41]]={}
 var m41=function(e,s,r,gg){
 var z=gz$gwx_42()
-var xME=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
-var oNE=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(xME,oNE)
-_(r,xME)
+var fOE=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var cPE=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(fOE,cPE)
+_(r,fOE)
 return r
 }
 e_[x[41]]={f:m41,j:[],i:[],ti:[],ic:[]}
 d_[x[42]]={}
 var m42=function(e,s,r,gg){
 var z=gz$gwx_43()
-var cPE=_v()
-_(r,cPE)
-var hQE=function(cSE,oRE,oTE,gg){
-var aVE=_v()
-_(oTE,aVE)
-if(_oz(z,4,cSE,oRE,gg)){aVE.wxVkey=1
+var oRE=_v()
+_(r,oRE)
+var cSE=function(lUE,oTE,aVE,gg){
+var eXE=_v()
+_(aVE,eXE)
+if(_oz(z,4,lUE,oTE,gg)){eXE.wxVkey=1
 }
-aVE.wxXCkey=1
-return oTE
+eXE.wxXCkey=1
+return aVE
 }
-cPE.wxXCkey=2
-_2z(z,2,hQE,e,s,gg,cPE,'temp','index','index')
+oRE.wxXCkey=2
+_2z(z,2,cSE,e,s,gg,oRE,'temp','index','index')
 return r
 }
 e_[x[42]]={f:m42,j:[],i:[],ti:[],ic:[]}
 d_[x[43]]={}
 var m43=function(e,s,r,gg){
 var z=gz$gwx_44()
-var eXE=_n('view')
-_rz(z,eXE,'class',0,e,s,gg)
-var bYE=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var oZE=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(bYE,oZE)
-_(eXE,bYE)
-var x1E=_mz(z,'view',['bindtap',11,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
-var o2E=_mz(z,'uni-icon',['bind:__l',15,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+var oZE=_n('view')
+_rz(z,oZE,'class',0,e,s,gg)
+var x1E=_mz(z,'view',['bindtap',1,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var o2E=_mz(z,'uni-icon',['bind:__l',5,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
 _(x1E,o2E)
-_(eXE,x1E)
-_(r,eXE)
+_(oZE,x1E)
+var f3E=_mz(z,'view',['bindtap',11,'class',1,'data-event-opts',2,'data-url',3],[],e,s,gg)
+var c4E=_mz(z,'uni-icon',['bind:__l',15,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(f3E,c4E)
+_(oZE,f3E)
+_(r,oZE)
 return r
 }
 e_[x[43]]={f:m43,j:[],i:[],ti:[],ic:[]}
@@ -2512,8 +2525,8 @@ e_[x[48]]={f:m48,j:[],i:[],ti:[],ic:[]}
 d_[x[49]]={}
 var m49=function(e,s,r,gg){
 var z=gz$gwx_50()
-var l9E=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,l9E)
+var tAF=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,tAF)
 return r
 }
 e_[x[49]]={f:m49,j:[],i:[],ti:[],ic:[]}
@@ -2538,10 +2551,10 @@ e_[x[52]]={f:m52,j:[],i:[],ti:[],ic:[]}
 d_[x[53]]={}
 var m53=function(e,s,r,gg){
 var z=gz$gwx_54()
-var oDF=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
-var xEF=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(oDF,xEF)
-_(r,oDF)
+var oFF=_mz(z,'form',['bindsubmit',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var fGF=_mz(z,'uni-icon',['bind:__l',3,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(oFF,fGF)
+_(r,oFF)
 return r
 }
 e_[x[53]]={f:m53,j:[],i:[],ti:[],ic:[]}
@@ -2560,24 +2573,24 @@ e_[x[55]]={f:m55,j:[],i:[],ti:[],ic:[]}
 d_[x[56]]={}
 var m56=function(e,s,r,gg){
 var z=gz$gwx_57()
-var hIF=_n('view')
-_rz(z,hIF,'class',0,e,s,gg)
-var oJF=_v()
-_(hIF,oJF)
-if(_oz(z,1,e,s,gg)){oJF.wxVkey=1
-}
-var cKF=_v()
-_(hIF,cKF)
-if(_oz(z,2,e,s,gg)){cKF.wxVkey=1
-}
+var cKF=_n('view')
+_rz(z,cKF,'class',0,e,s,gg)
 var oLF=_v()
-_(hIF,oLF)
-if(_oz(z,3,e,s,gg)){oLF.wxVkey=1
+_(cKF,oLF)
+if(_oz(z,1,e,s,gg)){oLF.wxVkey=1
 }
-oJF.wxXCkey=1
-cKF.wxXCkey=1
+var lMF=_v()
+_(cKF,lMF)
+if(_oz(z,2,e,s,gg)){lMF.wxVkey=1
+}
+var aNF=_v()
+_(cKF,aNF)
+if(_oz(z,3,e,s,gg)){aNF.wxVkey=1
+}
 oLF.wxXCkey=1
-_(r,hIF)
+lMF.wxXCkey=1
+aNF.wxXCkey=1
+_(r,cKF)
 return r
 }
 e_[x[56]]={f:m56,j:[],i:[],ti:[],ic:[]}
@@ -2590,40 +2603,40 @@ e_[x[57]]={f:m57,j:[],i:[],ti:[],ic:[]}
 d_[x[58]]={}
 var m58=function(e,s,r,gg){
 var z=gz$gwx_59()
-var tOF=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,tOF)
+var bQF=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,bQF)
 return r
 }
 e_[x[58]]={f:m58,j:[],i:[],ti:[],ic:[]}
 d_[x[59]]={}
 var m59=function(e,s,r,gg){
 var z=gz$gwx_60()
-var bQF=_n('view')
-_rz(z,bQF,'class',0,e,s,gg)
-var oRF=_v()
-_(bQF,oRF)
-if(_oz(z,1,e,s,gg)){oRF.wxVkey=1
-var oTF=_n('view')
-_rz(z,oTF,'class',2,e,s,gg)
-var fUF=_v()
-_(oTF,fUF)
-if(_oz(z,3,e,s,gg)){fUF.wxVkey=1
+var xSF=_n('view')
+_rz(z,xSF,'class',0,e,s,gg)
+var oTF=_v()
+_(xSF,oTF)
+if(_oz(z,1,e,s,gg)){oTF.wxVkey=1
+var cVF=_n('view')
+_rz(z,cVF,'class',2,e,s,gg)
+var hWF=_v()
+_(cVF,hWF)
+if(_oz(z,3,e,s,gg)){hWF.wxVkey=1
 }
-var cVF=_v()
+var oXF=_v()
+_(cVF,oXF)
+if(_oz(z,4,e,s,gg)){oXF.wxVkey=1
+}
+hWF.wxXCkey=1
+oXF.wxXCkey=1
 _(oTF,cVF)
-if(_oz(z,4,e,s,gg)){cVF.wxVkey=1
 }
+var fUF=_v()
+_(xSF,fUF)
+if(_oz(z,5,e,s,gg)){fUF.wxVkey=1
+}
+oTF.wxXCkey=1
 fUF.wxXCkey=1
-cVF.wxXCkey=1
-_(oRF,oTF)
-}
-var xSF=_v()
-_(bQF,xSF)
-if(_oz(z,5,e,s,gg)){xSF.wxVkey=1
-}
-oRF.wxXCkey=1
-xSF.wxXCkey=1
-_(r,bQF)
+_(r,xSF)
 return r
 }
 e_[x[59]]={f:m59,j:[],i:[],ti:[],ic:[]}
@@ -2642,56 +2655,56 @@ e_[x[61]]={f:m61,j:[],i:[],ti:[],ic:[]}
 d_[x[62]]={}
 var m62=function(e,s,r,gg){
 var z=gz$gwx_63()
-var oZF=_n('view')
-_rz(z,oZF,'hidden',0,e,s,gg)
-var a2F=_v()
-_(oZF,a2F)
-var t3F=function(b5F,e4F,o6F,gg){
-var o8F=_v()
-_(o6F,o8F)
-if(_oz(z,5,b5F,e4F,gg)){o8F.wxVkey=1
+var a2F=_n('view')
+_rz(z,a2F,'hidden',0,e,s,gg)
+var e4F=_v()
+_(a2F,e4F)
+var b5F=function(x7F,o6F,o8F,gg){
+var c0F=_v()
+_(o8F,c0F)
+if(_oz(z,5,x7F,o6F,gg)){c0F.wxVkey=1
 }
-o8F.wxXCkey=1
-return o6F
+c0F.wxXCkey=1
+return o8F
 }
-a2F.wxXCkey=2
-_2z(z,3,t3F,e,s,gg,a2F,'temp','index','index')
-var l1F=_v()
-_(oZF,l1F)
-if(_oz(z,6,e,s,gg)){l1F.wxVkey=1
-var f9F=_v()
-_(l1F,f9F)
-var c0F=function(oBG,hAG,cCG,gg){
-var lEG=_v()
-_(cCG,lEG)
-if(_oz(z,11,oBG,hAG,gg)){lEG.wxVkey=1
-var aFG=_n('view')
-_rz(z,aFG,'class',12,oBG,hAG,gg)
+e4F.wxXCkey=2
+_2z(z,3,b5F,e,s,gg,e4F,'temp','index','index')
+var t3F=_v()
+_(a2F,t3F)
+if(_oz(z,6,e,s,gg)){t3F.wxVkey=1
+var hAG=_v()
+_(t3F,hAG)
+var oBG=function(oDG,cCG,lEG,gg){
 var tGG=_v()
-_(aFG,tGG)
-if(_oz(z,13,oBG,hAG,gg)){tGG.wxVkey=1
-}
-var eHG=_v()
-_(aFG,eHG)
-if(_oz(z,14,oBG,hAG,gg)){eHG.wxVkey=1
-}
+_(lEG,tGG)
+if(_oz(z,11,oDG,cCG,gg)){tGG.wxVkey=1
+var eHG=_n('view')
+_rz(z,eHG,'class',12,oDG,cCG,gg)
 var bIG=_v()
-_(aFG,bIG)
-if(_oz(z,15,oBG,hAG,gg)){bIG.wxVkey=1
+_(eHG,bIG)
+if(_oz(z,13,oDG,cCG,gg)){bIG.wxVkey=1
+}
+var oJG=_v()
+_(eHG,oJG)
+if(_oz(z,14,oDG,cCG,gg)){oJG.wxVkey=1
+}
+var xKG=_v()
+_(eHG,xKG)
+if(_oz(z,15,oDG,cCG,gg)){xKG.wxVkey=1
+}
+bIG.wxXCkey=1
+oJG.wxXCkey=1
+xKG.wxXCkey=1
+_(tGG,eHG)
 }
 tGG.wxXCkey=1
-eHG.wxXCkey=1
-bIG.wxXCkey=1
-_(lEG,aFG)
+return lEG
 }
-lEG.wxXCkey=1
-return cCG
+hAG.wxXCkey=2
+_2z(z,9,oBG,e,s,gg,hAG,'item','index','index')
 }
-f9F.wxXCkey=2
-_2z(z,9,c0F,e,s,gg,f9F,'item','index','index')
-}
-l1F.wxXCkey=1
-_(r,oZF)
+t3F.wxXCkey=1
+_(r,a2F)
 return r
 }
 e_[x[62]]={f:m62,j:[],i:[],ti:[],ic:[]}
@@ -2716,8 +2729,8 @@ e_[x[65]]={f:m65,j:[],i:[],ti:[],ic:[]}
 d_[x[66]]={}
 var m66=function(e,s,r,gg){
 var z=gz$gwx_67()
-var cNG=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
-_(r,cNG)
+var oPG=_mz(z,'uni-segmented-control',['activeColor',0,'bind:__l',1,'bind:clickItem',1,'class',2,'current',3,'data-event-opts',4,'styleType',5,'values',6,'vueId',7],[],e,s,gg)
+_(r,oPG)
 return r
 }
 e_[x[66]]={f:m66,j:[],i:[],ti:[],ic:[]}
@@ -2748,108 +2761,108 @@ e_[x[70]]={f:m70,j:[],i:[],ti:[],ic:[]}
 d_[x[71]]={}
 var m71=function(e,s,r,gg){
 var z=gz$gwx_72()
-var aTG=_mz(z,'view',['class',0,'style',1],[],e,s,gg)
-var eVG=_n('view')
-_rz(z,eVG,'class',2,e,s,gg)
-var xYG=_mz(z,'view',['bindtap',3,'class',1,'data-event-opts',2],[],e,s,gg)
-var oZG=_mz(z,'uni-icon',['bind:__l',6,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(xYG,oZG)
-_(eVG,xYG)
+var eVG=_mz(z,'view',['class',0,'style',1],[],e,s,gg)
+var oXG=_n('view')
+_rz(z,oXG,'class',2,e,s,gg)
+var f1G=_mz(z,'view',['bindtap',3,'class',1,'data-event-opts',2],[],e,s,gg)
+var c2G=_mz(z,'uni-icon',['bind:__l',6,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(f1G,c2G)
+_(oXG,f1G)
+var xYG=_v()
+_(oXG,xYG)
+if(_oz(z,12,e,s,gg)){xYG.wxVkey=1
+}
+var oZG=_v()
+_(oXG,oZG)
+if(_oz(z,13,e,s,gg)){oZG.wxVkey=1
+}
+xYG.wxXCkey=1
+oZG.wxXCkey=1
+_(eVG,oXG)
 var bWG=_v()
 _(eVG,bWG)
-if(_oz(z,12,e,s,gg)){bWG.wxVkey=1
+if(_oz(z,14,e,s,gg)){bWG.wxVkey=1
+var h3G=_n('view')
+_rz(z,h3G,'class',15,e,s,gg)
+var o4G=_v()
+_(h3G,o4G)
+var c5G=function(l7G,o6G,a8G,gg){
+var e0G=_v()
+_(a8G,e0G)
+if(_oz(z,20,l7G,o6G,gg)){e0G.wxVkey=1
 }
-var oXG=_v()
-_(eVG,oXG)
-if(_oz(z,13,e,s,gg)){oXG.wxVkey=1
+e0G.wxXCkey=1
+return a8G
+}
+o4G.wxXCkey=2
+_2z(z,18,c5G,e,s,gg,o4G,'item','index','index')
+var bAH=_v()
+_(h3G,bAH)
+var oBH=function(oDH,xCH,fEH,gg){
+var hGH=_v()
+_(fEH,hGH)
+if(_oz(z,25,oDH,xCH,gg)){hGH.wxVkey=1
+}
+hGH.wxXCkey=1
+return fEH
+}
+bAH.wxXCkey=2
+_2z(z,23,oBH,e,s,gg,bAH,'temp','index','index')
+var oHH=_v()
+_(h3G,oHH)
+var cIH=function(lKH,oJH,aLH,gg){
+var eNH=_v()
+_(aLH,eNH)
+if(_oz(z,30,lKH,oJH,gg)){eNH.wxVkey=1
+}
+eNH.wxXCkey=1
+return aLH
+}
+oHH.wxXCkey=2
+_2z(z,28,cIH,e,s,gg,oHH,'item','index','index')
+_(bWG,h3G)
+}
+else{bWG.wxVkey=2
+var bOH=_n('view')
+_rz(z,bOH,'class',31,e,s,gg)
+var oPH=_v()
+_(bOH,oPH)
+var xQH=function(fSH,oRH,cTH,gg){
+var oVH=_v()
+_(cTH,oVH)
+if(_oz(z,36,fSH,oRH,gg)){oVH.wxVkey=1
+}
+oVH.wxXCkey=1
+return cTH
+}
+oPH.wxXCkey=2
+_2z(z,34,xQH,e,s,gg,oPH,'item','index','index')
+var cWH=_v()
+_(bOH,cWH)
+var oXH=function(aZH,lYH,t1H,gg){
+var b3H=_v()
+_(t1H,b3H)
+if(_oz(z,41,aZH,lYH,gg)){b3H.wxVkey=1
+}
+b3H.wxXCkey=1
+return t1H
+}
+cWH.wxXCkey=2
+_2z(z,39,oXH,e,s,gg,cWH,'temp','index','index')
+_(bWG,bOH)
 }
 bWG.wxXCkey=1
-oXG.wxXCkey=1
-_(aTG,eVG)
-var tUG=_v()
-_(aTG,tUG)
-if(_oz(z,14,e,s,gg)){tUG.wxVkey=1
-var f1G=_n('view')
-_rz(z,f1G,'class',15,e,s,gg)
-var c2G=_v()
-_(f1G,c2G)
-var h3G=function(c5G,o4G,o6G,gg){
-var a8G=_v()
-_(o6G,a8G)
-if(_oz(z,20,c5G,o4G,gg)){a8G.wxVkey=1
-}
-a8G.wxXCkey=1
-return o6G
-}
-c2G.wxXCkey=2
-_2z(z,18,h3G,e,s,gg,c2G,'item','index','index')
-var t9G=_v()
-_(f1G,t9G)
-var e0G=function(oBH,bAH,xCH,gg){
-var fEH=_v()
-_(xCH,fEH)
-if(_oz(z,25,oBH,bAH,gg)){fEH.wxVkey=1
-}
-fEH.wxXCkey=1
-return xCH
-}
-t9G.wxXCkey=2
-_2z(z,23,e0G,e,s,gg,t9G,'temp','index','index')
-var cFH=_v()
-_(f1G,cFH)
-var hGH=function(cIH,oHH,oJH,gg){
-var aLH=_v()
-_(oJH,aLH)
-if(_oz(z,30,cIH,oHH,gg)){aLH.wxVkey=1
-}
-aLH.wxXCkey=1
-return oJH
-}
-cFH.wxXCkey=2
-_2z(z,28,hGH,e,s,gg,cFH,'item','index','index')
-_(tUG,f1G)
-}
-else{tUG.wxVkey=2
-var tMH=_n('view')
-_rz(z,tMH,'class',31,e,s,gg)
-var eNH=_v()
-_(tMH,eNH)
-var bOH=function(xQH,oPH,oRH,gg){
-var cTH=_v()
-_(oRH,cTH)
-if(_oz(z,36,xQH,oPH,gg)){cTH.wxVkey=1
-}
-cTH.wxXCkey=1
-return oRH
-}
-eNH.wxXCkey=2
-_2z(z,34,bOH,e,s,gg,eNH,'item','index','index')
-var hUH=_v()
-_(tMH,hUH)
-var oVH=function(oXH,cWH,lYH,gg){
-var t1H=_v()
-_(lYH,t1H)
-if(_oz(z,41,oXH,cWH,gg)){t1H.wxVkey=1
-}
-t1H.wxXCkey=1
-return lYH
-}
-hUH.wxXCkey=2
-_2z(z,39,oVH,e,s,gg,hUH,'temp','index','index')
-_(tUG,tMH)
-}
-tUG.wxXCkey=1
-_(r,aTG)
+_(r,eVG)
 return r
 }
 e_[x[71]]={f:m71,j:[],i:[],ti:[],ic:[]}
 d_[x[72]]={}
 var m72=function(e,s,r,gg){
 var z=gz$gwx_73()
-var b3H=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
-var o4H=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
-_(b3H,o4H)
-_(r,b3H)
+var x5H=_mz(z,'label',['bindtap',0,'class',1,'data-event-opts',1,'data-url',2],[],e,s,gg)
+var o6H=_mz(z,'uni-icon',['bind:__l',4,'class',1,'color',2,'size',3,'type',4,'vueId',5],[],e,s,gg)
+_(x5H,o6H)
+_(r,x5H)
 return r
 }
 e_[x[72]]={f:m72,j:[],i:[],ti:[],ic:[]}
@@ -3189,29 +3202,51 @@ __webpack_require__.r(__webpack_exports__);
     //console.log(platform);			
     plus.runtime.getProperty(plus.runtime.appid, function (widgetInfo) {
       uni.request({
-        url: 'http://download.wealth-point.com/update2/GetVersion.php',
+        url: 'http://download.wealth-point.com/update/GetVersion.php',
         success: function success(result) {
           if (result.data && result.data !== widgetInfo.version) {
-            var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' : 'http://download.wealth-point.com/update2/apk.wgt';
-            //console.log(downUrl);	
-            uni.downloadFile({
-              url: downUrl,
-              success: function success(downloadResult) {
-                //console.log(downloadResult);
-                if (downloadResult.statusCode === 200) {
-                  console.log('installing...', " at App.vue:24");
-                  plus.runtime.install(downloadResult.tempFilePath, {
-                    force: true },
-                  function () {
-                    //console.log('install success...');  
-                    plus.runtime.restart();
-                  }, function (e) {
-                    //console.error('install fail...');  
-                  });
+            uni.showModal({
+              content: '发现新版本',
+              success: function success(res) {
+                if (res.confirm) {
+                  var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
+                  'http://download.wealth-point.com/update2/apk.wgt';
+                  console.log(downUrl, " at App.vue:23");
+                  uni.downloadFile({
+                    url: downUrl,
+                    success: function success(downloadResult) {
+                      console.log(downloadResult, " at App.vue:27");
+                      if (downloadResult.statusCode === 200) {
+                        console.log('installing...', " at App.vue:29");
+                        plus.runtime.install(downloadResult.tempFilePath, {
+                          force: true },
+                        function () {
+                          console.log('install success...', " at App.vue:33");
+                          uni.showModal({
+                            content: '安装成功!',
+                            success: function success(res) {
+                              if (res.confirm) {
+                                plus.runtime.restart();
+                              }
+                            } });
+
+
+                        }, function (e) {
+                          console.error('install fail...', " at App.vue:44");
+                          uni.showModal({
+                            content: '安装失败!',
+                            success: function success(res) {
+
+                            } });
+
+                        });
+                      }
+                    },
+                    fail: function fail(err) {
+                      console.log(err, " at App.vue:55");
+                    } });
+
                 }
-              },
-              fail: function fail(err) {
-                console.log(err, " at App.vue:36");
               } });
 
           }
@@ -3221,10 +3256,10 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   onShow: function onShow() {
-    console.log('App Show', " at App.vue:46");
+    console.log('App Show', " at App.vue:68");
   },
   onHide: function onHide() {
-    console.log('App Hide', " at App.vue:49");
+    console.log('App Hide', " at App.vue:71");
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -30533,6 +30568,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _common = _interopRequireDefault(__webpack_require__(/*! ../../common/common.js */ "../../../../test/WealthPoint/common/common.js"));
 var _request = __webpack_require__(/*! ../../common/request.js */ "../../../../test/WealthPoint/common/request.js");
 
@@ -30559,6 +30597,80 @@ var _config = __webpack_require__(/*! ../../common/config.js */ "../../../../tes
       uni.navigateTo({
         url: e.currentTarget.dataset.url });
 
+    },
+    edition: function edition() {
+      var platform = '';
+      uni.getSystemInfo({
+        success: function success(res) {
+          platform = res.platform;
+        } });
+
+      console.log(platform, " at pages\\mine\\mine.vue:111");
+      plus.runtime.getProperty(plus.runtime.appid, function (widgetInfo) {
+        uni.request({
+          url: 'http://download.wealth-point.com/update2/GetVersion.php',
+          success: function success(result) {
+            if (result.data || result.data == widgetInfo.version) {
+              uni.showModal({
+                content: '已是最新版本!',
+                success: function success(res) {
+                  console.log('old', " at pages\\mine\\mine.vue:120");
+                } });
+
+            } else if (result.data && result.data !== widgetInfo.version) {
+              uni.showModal({
+                content: '发现新版本',
+                success: function success(res) {
+                  if (res.confirm) {
+                    var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
+                    'http://download.wealth-point.com/update2/apk.wgt';
+                    console.log(downUrl, " at pages\\mine\\mine.vue:130");
+                    uni.downloadFile({
+                      url: downUrl,
+                      success: function success(downloadResult) {
+                        console.log(downloadResult, " at pages\\mine\\mine.vue:134");
+                        if (downloadResult.statusCode === 200) {
+                          console.log('installing...', " at pages\\mine\\mine.vue:136");
+                          plus.runtime.install(downloadResult.tempFilePath, {
+                            force: true },
+                          function () {
+                            console.log('install success...', " at pages\\mine\\mine.vue:140");
+                            uni.showModal({
+                              content: '安装成功!',
+                              success: function success(res) {
+                                if (res.confirm) {
+                                  plus.runtime.restart();
+                                }
+                              } });
+
+
+                          }, function (e) {
+                            console.error('install fail...', " at pages\\mine\\mine.vue:151");
+                            uni.showModal({
+                              content: '安装失败!',
+                              success: function success(res) {
+
+                              } });
+
+                          });
+                        }
+                      },
+                      fail: function fail(err) {
+                        console.log(err, " at pages\\mine\\mine.vue:162");
+                      } });
+
+                  }
+                } });
+
+            }
+          },
+          fail: function fail(res) {
+
+          } });
+
+
+
+      });
     },
     goOut: function goOut() {
       uni.clearStorageSync();
