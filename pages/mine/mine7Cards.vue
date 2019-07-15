@@ -38,10 +38,10 @@
 				<view class="list" v-show="current===1">
 					<view class="item flex-start" v-for="(temp,index) in arr2" :key="index" v-show="temp.type!=='code'">
 						<view class="flex2">
-							<image v-show="temp.type==='phone'" :src="icon1"></image>
-							<image v-show="temp.type==='name'" :src="icon2"></image>
-							<image v-show="temp.type==='unblock'" :src="icon3"></image>
-							<image v-show="temp.type==='super_unblock'" :src="icon4"></image>
+							<image v-show="temp.type==='phone'" src="/static/images/shop2.png"></image>
+							<image v-show="temp.type==='name'" src="/static/images/shop1.png"></image>
+							<image v-show="temp.type==='unblock'" src="/static/images/shop3.png"></image>
+							<image v-show="temp.type==='super_unblock'" src="/static/images/shop4.png"></image>
 						</view>
 						<view class="flex5">
 							<view v-show="temp.type==='phone'" class="name">改手机号卡</view>

@@ -127,14 +127,14 @@ __webpack_require__.r(__webpack_exports__);
         id: 0,
         name: 'gift_phone',
         text: '改手机号卡',
-        icon: '/static/images/shop1.png' },
+        icon: '/static/images/shop2.png' },
 
       {
         price: 0.25,
         id: 1,
         name: "gift_name",
         text: '改姓名卡',
-        icon: '/static/images/shop2.png' },
+        icon: '/static/images/shop1.png' },
 
       {
         price: 0.25,
