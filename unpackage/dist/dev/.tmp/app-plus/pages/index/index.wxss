@@ -137,8 +137,7 @@
 	background-size: 100% 100%;
 	padding: 20rpx;
 	margin: 20rpx auto;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	position: relative;
 	top: 30%;
 }
@@ -150,13 +149,11 @@
 }
 .signBtn {
 	background: -webkit-gradient(linear, left top, left bottom, from(#EA6F53), to(#D03C29));
-	background: -webkit-linear-gradient(top, #EA6F53, #D03C29);
 	background: -o-linear-gradient(top, #EA6F53, #D03C29);
 	background: linear-gradient(180deg, #EA6F53, #D03C29);
 	width: 270rpx;
 	height: 270rpx;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	color: #FFFFFF;
 	line-height: 270rpx;
 	font-size: 32rpx;

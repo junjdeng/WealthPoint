@@ -3,7 +3,7 @@
 .section1 .title{font-size: 32rpx; color: #ffffff; line-height: 1.6em; margin-top: 120rpx;
 }
 .section1 .num{font-size: 64rpx;color: #CCA366; line-height: 1.6em; font-weight: bold; margin-bottom: 30rpx;}
-.section1 .circel{border: 2px solid #CCA366; width: 400rpx; height: 400rpx; -webkit-border-radius: 50%; border-radius: 50%; margin: 0 auto;
+.section1 .circel{border: 2px solid #CCA366; width: 400rpx; height: 400rpx; border-radius: 50%; margin: 0 auto;
 position: relative; top: 120rpx;}
 .section_title {color: #333333;font-size: 32rpx;font-weight: bold;line-height: 2em;}
 .section2{margin: 20rpx;width: 710rpx;}
@@ -11,8 +11,7 @@ position: relative; top: 120rpx;}
 	background: #FFFFFF;
 	margin-bottom: 20rpx;
 	padding: 20rpx;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	color: #333333;
 	font-size: 28rpx;
 	line-height: 2em;

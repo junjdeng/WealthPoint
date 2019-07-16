@@ -4,7 +4,7 @@
     "iPhone",
     "iPad"
   ],
-  "id": "__UNI__A40D1B1",
+  "id": "__UNI__9089A9C",
   "name": "Wealth Point",
   "version": {
     "name": "2.0.0",
@@ -49,10 +49,12 @@
           "hdpi": "unpackage/res/icons/72x72.png",
           "xhdpi": "unpackage/res/icons/96x96.png",
           "xxhdpi": "unpackage/res/icons/144x144.png",
-          "xxxhdpi": "unpackage/res/icons/192x192.png"
+          "xxxhdpi": "unpackage/res/icons/192x192.png",
+          "ldpi": "unpackage/res/icons/48x48.png",
+          "mdpi": "unpackage/res/icons/48x48.png"
         },
         "ios": {
-          "appstore": "unpackage/res/icons/1024x1024.png",
+          "appstore": "static/images/app.png",
           "ipad": {
             "app": "unpackage/res/icons/76x76.png",
             "app@2x": "unpackage/res/icons/152x152.png",
@@ -149,7 +151,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.0.1",
+      "compilerVersion": "2.1.0",
       "control": "v8",
       "nvueCompiler": "weex"
     },

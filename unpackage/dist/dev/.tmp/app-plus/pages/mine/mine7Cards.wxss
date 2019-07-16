@@ -308,8 +308,7 @@
 	width: 670rpx;
 	padding: 20rpx;
 	margin: 0 20rpx 20rpx 20rpx;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	font-size: 32rpx;
 	line-height: 2em;
 	padding: 20rpx;
@@ -318,8 +317,7 @@
 .list .item image {
 	width: 160rpx;
 	height: 160rpx;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 }
 .list .item .price {
 	color: #D03C29;

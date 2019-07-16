@@ -327,8 +327,7 @@
 	margin: 30rpx auto;
 	background: #CCA366;
 	color: #fff;
-	-webkit-border-radius: 10rpx;
-	        border-radius: 10rpx;
+	border-radius: 10rpx;
 	overflow: hidden;
 }
 .uni-btn-v button {

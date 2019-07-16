@@ -80,8 +80,7 @@
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s;
     width: 540rpx;
-    -webkit-border-radius: 20rpx;
-            border-radius: 20rpx;
+    border-radius: 20rpx;
     background-color: #fff;
     overflow: hidden;
     opacity: 0;

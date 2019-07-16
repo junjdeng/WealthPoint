@@ -27,8 +27,7 @@ page{background: #f5f5f5;}
 	background: #ffffff;
 	margin: 0 20rpx;
 	width: 710rpx;
-	-webkit-border-radius: 16rpx;
-	        border-radius: 16rpx;
+	border-radius: 16rpx;
 	margin-top: 20rpx;
 }
 .flex-center {

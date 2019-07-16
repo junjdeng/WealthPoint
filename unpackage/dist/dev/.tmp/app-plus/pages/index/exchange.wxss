@@ -67,8 +67,7 @@
 }
 input{
 	border:2rpx solid #f7f7f7;
-	-webkit-border-radius:8rpx;
-	        border-radius:8rpx;
+	border-radius:8rpx;
 	outline:none;
 	padding:10rpx 10rpx;
 }
@@ -76,8 +75,7 @@ input{
 	color: #FF3333;
 	font-size: 28rpx;
 	 border:1px solid #FF3333; 
-	 -webkit-border-radius: 16rpx; 
-	         border-radius: 16rpx;
+	 border-radius: 16rpx;
 	 padding:12rpx 20rpx;
 	 margin-left:20rpx;
 }

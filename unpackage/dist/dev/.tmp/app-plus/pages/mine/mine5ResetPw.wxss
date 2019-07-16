@@ -15,8 +15,7 @@
 .dj_form .uni-form-item image {
 	width: 100rpx;
 	height: 100rpx;
-	-webkit-border-radius: 50rpx;
-	        border-radius: 50rpx;
+	border-radius: 50rpx;
 }
 .dj_form .uni-form-item .title {
 	color: #333333;

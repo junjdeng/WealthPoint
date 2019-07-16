@@ -307,8 +307,7 @@
 	width: 670rpx;
 	padding: 20rpx;
 	margin: 0 20rpx 20rpx 20rpx;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	font-size: 28rpx;
 	line-height: 2em;
 	color: #333333;
@@ -344,8 +343,7 @@
 	text-align: center;
 	padding: 5rpx;
 	background: #CCA366;
-	-webkit-border-radius: 6rpx;
-	        border-radius: 6rpx;
+	border-radius: 6rpx;
 	color: #fff;
 	overflow: hidden;
 }

@@ -21,8 +21,7 @@
 }
 .section1 .total_card {
 	background: rgba(255, 255, 255, 0.4);
-	-webkit-border-radius: 16rpx;
-	        border-radius: 16rpx;
+	border-radius: 16rpx;
 	margin-top: 10rpx;
 	padding: 30rpx 5rpx;
 	text-align: center;
@@ -84,8 +83,7 @@
 	font-size: 32rpx;
 	font-weight: 400;
 	border: 1px solid #FF5533;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	padding: 10rpx 40rpx;
 }
 .section_title ._span {
@@ -134,8 +132,7 @@
 	z-index:100;
 	width:20rpx;
 	height:20rpx;
-	-webkit-border-radius:50%;
-	        border-radius:50%;
+	border-radius:50%;
 	background: #e4393c;
 }
 .hasData::after{
@@ -144,7 +141,6 @@
 	width:20rpx;
 	height:20rpx;
 	background: red;
-	-webkit-border-radius:50%;
-	        border-radius:50%;
+	border-radius:50%;
 }
 

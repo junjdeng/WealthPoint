@@ -15,8 +15,7 @@
 	        justify-content: center;
 	width: 100%;
 	font-size: 28rpx;
-	-webkit-border-radius: 10rpx;
-	        border-radius: 10rpx;
+	border-radius: 10rpx;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	margin: 0 auto;
@@ -27,8 +26,7 @@
 }
 .segmented-control.text {
 	border: 0;
-	-webkit-border-radius: 0rpx;
-	        border-radius: 0rpx;
+	border-radius: 0rpx;
 }
 .segmented-control-item {
 	-webkit-box-flex: 1;

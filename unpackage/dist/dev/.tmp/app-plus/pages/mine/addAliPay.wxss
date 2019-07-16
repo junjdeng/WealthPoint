@@ -9,8 +9,7 @@
 	background: #FFFFFF;
 	font-size: 32rpx;
 	line-height: 2em;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	padding: 20rpx;
 	margin-bottom: 20rpx;
 }
@@ -36,8 +35,7 @@
 	width: 710rpx;
 	background: #CCA366;
 	color: #ffffff;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	margin-top: 80rpx;
 	font-size: 32rpx;
 	height: 88rpx;

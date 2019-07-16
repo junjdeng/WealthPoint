@@ -306,8 +306,7 @@
 	-webkit-box-sizing:border-box;
 	        box-sizing:border-box;
 	border:2rpx solid #f7f7f7;
-	-webkit-border-radius:10rpx;
-	        border-radius:10rpx;
+	border-radius:10rpx;
 	padding:20rpx 10rpx;
 	font-size: 32rpx;
 	color:#333;
@@ -324,8 +323,7 @@
 	line-height: 80rpx;
 	-webkit-box-sizing:border-box;
 	        box-sizing:border-box;
-	-webkit-border-radius:5rpx;
-	        border-radius:5rpx;
+	border-radius:5rpx;
 }
 
 

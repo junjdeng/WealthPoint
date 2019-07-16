@@ -17,8 +17,7 @@
 	line-height: 1.6em;
 	background: #D03C29;
 	color: #FFFFFF;
-	-webkit-border-radius: 8rpx;
-	        border-radius: 8rpx;
+	border-radius: 8rpx;
 	padding: 5rpx 10rpx;
 	margin: 0 10rpx;
 }

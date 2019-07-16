@@ -338,9 +338,7 @@
 	width: 120rpx !important;
 	height: 60rpx !important;
 
-	-webkit-border-radius: 10rpx;
-
-	        border-radius: 10rpx;
+	border-radius: 10rpx;
 	overflow: hidden;
 	font-size: 24rpx !important;
 	color: #fff;

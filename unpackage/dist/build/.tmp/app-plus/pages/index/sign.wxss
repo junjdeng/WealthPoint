@@ -17,8 +17,7 @@
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 }
 .box>view {
 	width: 560rpx;
@@ -47,13 +46,10 @@
 .section1 {
 	width: 750rpx;
 	height: 360rpx;
-	-webkit-border-bottom-left-radius: 40rpx;
-	        border-bottom-left-radius: 40rpx;
-	-webkit-border-bottom-right-radius: 40rpx;
-	        border-bottom-right-radius: 40rpx;
+	border-bottom-left-radius: 40rpx;
+	border-bottom-right-radius: 40rpx;
 	padding: 40rpx 0;
 	background: -webkit-gradient(linear, left top, left bottom, from(#CEA15A), to(#F3CB84));
-	background: -webkit-linear-gradient(#CEA15A, #F3CB84);
 	background: -o-linear-gradient(#CEA15A, #F3CB84);
 	background: linear-gradient(#CEA15A, #F3CB84);
 	text-align: center;
@@ -89,8 +85,7 @@
 	color: #FF5533;
 	font-size: 32rpx;
 	border: 1px solid #FF5533;
-	-webkit-border-radius: 16rpx;
-	        border-radius: 16rpx;
+	border-radius: 16rpx;
 	padding: 10rpx 40rpx;
 }
 .section2 {
@@ -120,8 +115,7 @@
 	color: #888888;
 	font-weight: 500;
 	background: #f9f9f9;
-	-webkit-border-radius:6rpx;
-	        border-radius:6rpx;
+	border-radius:6rpx;
 	overflow:hidden;
 	padding: 16rpx 20rpx 11rpx 20rpx;
 }
@@ -138,16 +132,14 @@
 	font-size: 32rpx;
 	background: #CCA366;
 	color: #FFFFFF;
-	-webkit-border-radius: 35rpx;
-	        border-radius: 35rpx;
+	border-radius: 35rpx;
 	text-align: center;
 }
 .point {
 	width: 20rpx;
 	height: 20rpx;
 	margin: 10rpx auto;
-	-webkit-border-radius: 10rpx;
-	        border-radius: 10rpx;
+	border-radius: 10rpx;
 }
 .red {
 	background: #FF5533;
@@ -166,13 +158,11 @@
 }
 .signBtn {
 	background: -webkit-gradient(linear, left top, left bottom, from(#EA6F53), to(#D03C29));
-	background: -webkit-linear-gradient(top, #EA6F53, #D03C29);
 	background: -o-linear-gradient(top, #EA6F53, #D03C29);
 	background: linear-gradient(180deg, #EA6F53, #D03C29);
 	width: 270rpx;
 	height: 270rpx;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	color: #FFFFFF;
 	line-height: 270rpx;
 	font-size: 32rpx;
@@ -183,8 +173,7 @@
 	width: 30rpx;
 	height: 30rpx;
 	background: #fff;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	text-align: center;
 	line-height: 30rpx;
 	color: #CCA366;
