@@ -1,7 +1,6 @@
 <script>
 	export default {
 		onLaunch: function() {
-			// #ifdef APP-PLUS 
 			let platform = '';
 			uni.getSystemInfo({
 				success: function (res) {
@@ -62,7 +61,6 @@
 					}  
 				});  
 			});  
-			// #endif  
 		},
 		onShow: function() {
 			console.log('App Show')

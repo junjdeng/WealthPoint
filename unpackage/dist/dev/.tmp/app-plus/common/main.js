@@ -82,7 +82,6 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 {
   onLaunch: function onLaunch() {
-
     var platform = '';
     uni.getSystemInfo({
       success: function success(res) {
@@ -101,17 +100,17 @@ __webpack_require__.r(__webpack_exports__);
                 if (res.confirm) {
                   var downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
                   'http://download.wealth-point.com/update2/apk.wgt';
-                  console.log(downUrl, " at App.vue:23");
+                  console.log(downUrl, " at App.vue:22");
                   uni.downloadFile({
                     url: downUrl,
                     success: function success(downloadResult) {
-                      console.log(downloadResult, " at App.vue:27");
+                      console.log(downloadResult, " at App.vue:26");
                       if (downloadResult.statusCode === 200) {
-                        console.log('installing...', " at App.vue:29");
+                        console.log('installing...', " at App.vue:28");
                         plus.runtime.install(downloadResult.tempFilePath, {
                           force: true },
                         function () {
-                          console.log('install success...', " at App.vue:33");
+                          console.log('install success...', " at App.vue:32");
                           uni.showModal({
                             content: '安装成功!',
                             success: function success(res) {
@@ -122,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
                         }, function (e) {
-                          console.error('install fail...', " at App.vue:44");
+                          console.error('install fail...', " at App.vue:43");
                           uni.showModal({
                             content: '安装失败!',
                             success: function success(res) {
@@ -133,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
                       }
                     },
                     fail: function fail(err) {
-                      console.log(err, " at App.vue:55");
+                      console.log(err, " at App.vue:54");
                     } });
 
                 }
@@ -143,13 +142,12 @@ __webpack_require__.r(__webpack_exports__);
         } });
 
     });
-
   },
   onShow: function onShow() {
-    console.log('App Show', " at App.vue:68");
+    console.log('App Show', " at App.vue:66");
   },
   onHide: function onHide() {
-    console.log('App Hide', " at App.vue:71");
+    console.log('App Hide', " at App.vue:69");
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
