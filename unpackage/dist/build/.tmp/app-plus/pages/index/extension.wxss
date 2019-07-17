@@ -1,0 +1,51 @@
+
+.content {
+	width: 710rpx;
+	margin: 20rpx auto;
+	display: -webkit-box !important;
+	display: -webkit-flex !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.content>view {
+	width: 345rpx;
+	height: 500rpx;
+	margin-bottom: 20rpx;
+	border: 2rpx solid #f7f7f7;
+	border-radius: 8rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	position:relative;
+	overflow:hidden;
+}
+.content>view image {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: content;
+	   object-fit: content;
+}
+.content>view:nth-child(2n) {
+	margin-left: 20rpx
+}
+.btn{
+	position:absolute;
+	z-index:100;
+	width:80rpx;
+	height:60rpx;
+	color:#fff;
+	line-height: 60rpx;
+	text-align: center;
+	border-radius:10rpx;
+	background: rgba(0,0,0,.5);
+	bottom:10rpx;
+	right:10rpx;
+	font-size: 24rpx;
+}
+

@@ -180,7 +180,7 @@
 			this.cWidth = uni.upx2px(680);
 			this.cHeight = uni.upx2px(460);
 			this.getServerData();
-			this.getServerData2();
+			/* this.getServerData2(); */
 		},
 
 		methods: {

@@ -1,5 +1,4 @@
 import {config} from './config.js'
-
 const djRequest = async function (opt){
 	opt = opt || {};
     opt.url = opt.url || '';
@@ -10,10 +9,20 @@ const djRequest = async function (opt){
     };
     opt.success = opt.success || function () {};
 	
-	if(config.User != null){
-		opt.header.sessionid = config.User.sessionId;
-	}
-	
+	let sessionid;
+	uni.getStorage({
+		key: 'sessionid',
+		success(e) {
+			if (e.data) {
+				sessionid = e.data;
+				opt.header.sessionid = sessionid;
+			} else {
+				uni.reLaunch({
+					url: '/pages/login/login'
+				});
+			}
+		}
+	})
 	if (config.Authorization == null) {
 	    await getAuth();
 		opt.header.authorization = config.Authorization;			

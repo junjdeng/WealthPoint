@@ -2,6 +2,7 @@
 	<view class="content">
 		<view v-for="(item,index) in arr" :key="index">
 			<image :src="item" @click="yulan"></image>
+			<view class="btn" @click="saveFile(item)">保存</view>
 		</view>
 	</view>
 </template>
@@ -11,7 +12,8 @@
 		data() {
 			return {
 				arr:[
-					'/static/images/t1.png'
+					'/static/images/t1.png',
+					'http://b.hiphotos.baidu.com/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg'
 				]
 			};
 		},
@@ -21,6 +23,7 @@
 				let that=this;
 				uni.previewImage({
 					urls: that.arr,
+					current:'0',
 					longPressActions: {
 						itemList: ['保存图片'],
 						success: function(data) {
@@ -39,21 +42,29 @@
 					content: '是否保存图片?',
 					success: function(res) {
 						if (res.confirm) {
-							uni.getImageInfo({
-								src: url,
-								success: function(image) {
-									uni.saveImageToPhotosAlbum({
-										filePath: image.path,
-										success: function() {
-											uni.showToast({
-												title: '保存成功,请在相册中查看!',
-												icon: 'none'
-											})
-
-										}
-									});
+							uni.downloadFile({
+								url: url,
+								success: (res) => {
+									console.log(res)
+									if (res.statusCode === 200) {
+										uni.saveImageToPhotosAlbum({
+											filePath: res.tempFilePath,
+											success: function() {
+												uni.showToast({
+													title: "保存成功",
+													icon: "none"
+												});
+											},
+											fail: function() {
+												uni.showToast({
+													title: "保存失败，请稍后重试",
+													icon: "none"
+												});
+											}
+										});
+									}
 								}
-							});
+							})
 						}
 					}
 				})

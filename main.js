@@ -6,34 +6,40 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+	...App
 })
-
-
-uni.getStorage({//如果存在sessionid则跳到首页，否则去登陆页
-	key:'sessionid',
-	success(e){
+uni.getStorage({ //如果存在sessionid则跳到首页，否则去登陆页
+	key: 'sessionid',
+	success(e) {
 		uni.switchTab({
-			url:'pages/index/index'
+			url: 'pages/index/index'
 		})
 	},
-	fail(e){
-		uni.navigateTo({
-			url:'pages/login/login'
+	fail(e) {
+		uni.reLaunch({
+			url: '/pages/login/login'
 		})
 	}
 })
-let times=null;
+let times = null;
 uni.getStorage({
-	key:'time',
-	success(e){
-		times=JSON.parse(e.data)
+	key: 'time',
+	success(e) {
+		times = JSON.parse(e.data)
 	}
 })
-if(new Date().getTime()-times>(1000 * 60 * 60 * 24 * 7)){//大于七天清除本地存储
+if (new Date().getTime() - times > (1000 * 60 * 60 * 24 * 7)) { //大于七天清除本地存储1000 * 60 * 60 * 24 * 7
 	uni.clearStorage();
-	uni.navigateTo({
-		url:'pages/login/login'
+	uni.showToast({
+		title: '登录状态已失效,请重新登录',
+		icon: 'none'
 	})
+	setTimeout(function(){
+		uni.reLaunch({
+			url: '/pages/login/login'
+		})
+		
+	}, 800)
+
 }
 app.$mount()

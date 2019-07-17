@@ -1,4 +1,6 @@
 <script>
+	import common from './common/common.js'
+	import {config} from './common/config.js'
 	export default {
 		onLaunch: function() {
 			let platform = '';
@@ -63,6 +65,12 @@
 			});  
 		},
 		onShow: function() {
+			uni.getStorage({
+				key:'loginInfo',
+				success(e){
+					config.User=JSON.parse(e.data);
+				}
+			})
 			console.log('App Show')
 		},
 		onHide: function() {

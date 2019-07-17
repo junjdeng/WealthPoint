@@ -93,16 +93,6 @@
 				forSell: 0, //待卖出AP总数
 				financialWallet: 0, //理财钱包
 				totalRevenue: 0, //总收益
-				buyFlag:false,
-				sellFlag:false,
-				buyMatch:0,
-				buyPay:0,
-				buyConfirm:0,
-				buyEvaluate:0,
-				sellMatch:0,
-				sellPay:0,
-				sellConfirm:0,
-				buyEvaluate:0
 			}
 		},
 		components: {
@@ -143,30 +133,7 @@
 				})
 			}
 		},
-		//每个订单的数量
-		/* getData(type,idx){
-			djRequest({
-				url: '/api/order',
-				method: 'POST',
-				data: {
-					start: 0,
-					length: 50,
-					status: idx,
-					type: type
-				},
-				success: function(res) {
-					that.list = [];
-					if (res.data.status === 200) {
-						if (res.data.data.data.length > 0) {
-							let arr = res.data.data.data;
-							for (let i = 0; i < arr.length; i++) {
-								
-							}
-						}
-					}
-				}
-			})
-		} */
+		
 		onShow() {
 			common.balance();
 			this.wallet(); //钱包资产

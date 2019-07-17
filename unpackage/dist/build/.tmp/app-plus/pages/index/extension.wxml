@@ -1,1 +1,1 @@
-<view><image src="{{url}}" data-event-opts="{{[['tap',[['saveImg',['$0'],['url']]]]]}}" bindtap="__e"></image></view>
+<view class="content"><block wx:for="{{arr}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view><image src="{{item}}" data-event-opts="{{[['tap',[['yulan',['$event']]]]]}}" bindtap="__e"></image><view data-event-opts="{{[['tap',[['saveFile',['$0'],[[['arr','',index]]]]]]]}}" class="btn" bindtap="__e">保存</view></view></block></view>
