@@ -19,17 +19,17 @@
 									if (res.confirm) {
 										let downUrl = platform == 'ios' ? 'http://download.wealth-point.com/update2/ios.wgt' :
 											'http://download.wealth-point.com/update2/apk.wgt';
-										console.log(downUrl);
+										//console.log(downUrl);
 										uni.downloadFile({
 											url: downUrl,
 											success: (downloadResult) => {
-												console.log(downloadResult);
+												//console.log(downloadResult);
 												if (downloadResult.statusCode === 200) {
-													console.log('installing...');
+													//console.log('installing...');
 													plus.runtime.install(downloadResult.tempFilePath, {
 														force: true
 													}, function() {
-														console.log('install success...');
+														//console.log('install success...');
 														uni.showModal({
 															content: '安装成功!',
 															success: function(res) {
@@ -40,7 +40,7 @@
 														})
 													
 													}, function(e) {
-														console.error('install fail...');
+														//console.error('install fail...');
 														uni.showModal({
 															content: '安装失败!',
 															success: function(res) {
@@ -51,7 +51,7 @@
 												}
 											},
 											fail(err) {
-												console.log(err);
+												//console.log(err);
 											}
 										});
 									}

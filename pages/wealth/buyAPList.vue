@@ -148,7 +148,7 @@
 				this.sucs = false;
 				this.flag = true;
 				this.gif = false;
-				that.inputShow = true;
+				this.inputShow = true;
 				this.$refs.files.value = null;
 			},
 			chooseImg() {
@@ -293,7 +293,7 @@
 								let time24ms = 24 * 3600 * 1000;
 								for (let i = 0; i < arr.length; i++) {
 									let curOrder = arr[i];
-									let orderTime
+									let orderTime;
 									if (idx === 'match') {
 										orderTime = Number(curOrder.time) * 1000; //订单时间
 									} else if (idx === 'pay') {
@@ -308,10 +308,10 @@
 										let orderStart = time24ms - orderOffsetTime;
 										curOrder.rever = orderStart;
 									}
-									that.list = [];
-									that.list = arr;
-									that.getData(idx);
 								}
+								that.list = [];
+								that.list = arr;
+								that.getData(idx);
 							}
 						}
 					}

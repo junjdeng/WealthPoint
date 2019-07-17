@@ -1,0 +1,1 @@
+<view class="content"><block wx:for="{{arr}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view><image src="{{item}}" data-event-opts="{{[['tap',[['yulan',['$event']]]]]}}" bindtap="__e"></image></view></block></view>

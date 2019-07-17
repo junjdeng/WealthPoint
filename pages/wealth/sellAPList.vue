@@ -61,25 +61,25 @@
 			return {
 				items: [{
 						name: '待匹配',
-						type:'match',
+						type: 'match',
 						num: 0
 					},
 					{
-						name: '待付款',
-						type:'pay',
+						name: '待收款',
+						type: 'pay',
 						num: 0
 					},
 					{
 						name: '待确认',
-						type:'confirm',
+						type: 'confirm',
 						num: 0
 					},
 					{
 						name: '待评价',
-						type:'evaluate',
+						type: 'evaluate',
 						num: 0
 					},
-				
+
 				],
 				current: 0,
 				list: []
@@ -114,7 +114,7 @@
 					url: e.currentTarget.dataset.url
 				})
 			},
-			
+
 			info(idx) {
 				let that = this;
 				djRequest({
@@ -130,14 +130,14 @@
 						let arr = res.data.data.data;
 						let ars = [];
 						that.items.forEach((item, index) => {
-						  if (idx === item.type) {
-							  arr.forEach(temp=>{
-								  if(temp.type==='sell'){
-									  ars.push(temp);
-								  }
-							  });
-							  item.num = ars.length;
-						  }
+							if (idx === item.type) {
+								arr.forEach(temp => {
+									if (temp.type === 'sell') {
+										ars.push(temp);
+									}
+								});
+								item.num = ars.length;
+							}
 						});
 					},
 				})
@@ -210,11 +210,10 @@
 						if (res.data.status === 200) {
 							if (res.data.data.data.length > 0) {
 								let arr = res.data.data.data;
-								let arr1 = [];
 								let time24ms;
 								for (let i = 0; i < arr.length; i++) {
 									let curOrder = arr[i];
-									let orderTime
+									let orderTime;
 									if (idx === 'match') {
 										orderTime = Number(curOrder.time) * 1000; //订单时间
 									} else if (idx === 'pay') {
@@ -234,7 +233,7 @@
 										let orderStart = time24ms - orderOffsetTime;
 										curOrder.rever = orderStart;
 									}
-									curOrder.rever -= 1000;
+									/* curOrder.rever -= 1000; */
 								}
 								that.list = [];
 								that.list = arr;

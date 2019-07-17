@@ -16,7 +16,12 @@
 				}
 			}
 		},
-		
+		{
+			"path": "pages/index/extension",
+			"style": {
+				"navigationBarTitleText": "推广"
+			}
+		},
 		{
 			"path": "pages/index/newsList",
 			"style": {

@@ -6,7 +6,7 @@
 					<image src="../../static/images/main1.png"></image>
 					<view>如何赚钱</view>
 				</view>
-				<view class="flex1 item">
+				<view class="flex1 item" data-url="extension" @click="navTo">
 					<image src="../../static/images/main2.png"></image>
 					<view>推广二维码</view>
 				</view>
@@ -221,7 +221,7 @@
 							that.color = Number(that.low - that.opens);
 						},
 						fail: function(res) {
-							console.log(res, 4)
+							/* console.log(res, 4) */
 							//that.getBTC();
 						}
 					})

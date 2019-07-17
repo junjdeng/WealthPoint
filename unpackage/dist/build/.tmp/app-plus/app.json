@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/extension",
     "pages/index/newsList",
     "pages/index/btc",
     "pages/index/customSuggest",
