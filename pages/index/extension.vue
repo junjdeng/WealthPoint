@@ -2,7 +2,7 @@
 	<view class="content">
 		<view v-for="(item,index) in arr" :key="index">
 			<image :src="item" @click="yulan"></image>
-			<view class="btn" @click="saveFile(item)">保存</view>
+			<!-- <view class="btn" @click="saveFile(item)">保存</view> -->
 		</view>
 	</view>
 </template>
@@ -12,9 +12,7 @@
 		data() {
 			return {
 				arr:[
-					'/static/images/t1.png',
-					'http://b.hiphotos.baidu.com/image/h%3D300/sign=ad628627aacc7cd9e52d32d909032104/32fa828ba61ea8d3fcd2e9ce9e0a304e241f5803.jpg'
-				]
+					'/static/images/t1.png']
 			};
 		},
 		onLoad() {},
@@ -45,7 +43,7 @@
 							uni.downloadFile({
 								url: url,
 								success: (res) => {
-									console.log(res)
+									//console.log(res)
 									if (res.statusCode === 200) {
 										uni.saveImageToPhotosAlbum({
 											filePath: res.tempFilePath,

@@ -7,7 +7,6 @@
 		</view>
 	</view>
 </template>
-
 <script>
 	import uniIcon from "@/components/uni-icon/uni-icon.vue"
 	import common from '../../common/common.js'
@@ -43,7 +42,6 @@
 							common.TostUtil(res.data.message);
 						}
 					})
-
 				} else if (number <= 0) { //否则不能提取
 					common.TostUtil('暂无分红中的AP！');
 				} else if (number < 7) {
@@ -52,7 +50,6 @@
 			},
 			getData() {
 				let that = this;
-				
 				djRequest({
 					url: '/api/seed',
 					method: 'POST',

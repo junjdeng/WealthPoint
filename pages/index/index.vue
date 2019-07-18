@@ -183,6 +183,7 @@
 			/* this.getServerData2(); */
 		},
 
+
 		methods: {
 			nowDate(value){
 				let date = new Date(Number(value));

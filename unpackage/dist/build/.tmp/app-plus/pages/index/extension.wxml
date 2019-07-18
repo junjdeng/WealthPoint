@@ -1,1 +1,1 @@
-<view class="content"><block wx:for="{{arr}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view><image src="{{item}}" data-event-opts="{{[['tap',[['yulan',['$event']]]]]}}" bindtap="__e"></image><view data-event-opts="{{[['tap',[['saveFile',['$0'],[[['arr','',index]]]]]]]}}" class="btn" bindtap="__e">保存</view></view></block></view>
+<view class="content"><block wx:for="{{arr}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view><image src="{{item}}" data-event-opts="{{[['tap',[['yulan',['$event']]]]]}}" bindtap="__e"></image></view></block></view>

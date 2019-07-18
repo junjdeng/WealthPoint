@@ -28,7 +28,7 @@ uni.getStorage({
 		times = JSON.parse(e.data)
 	}
 })
-if (new Date().getTime() - times > (1000 * 60 * 60 * 24 * 7)) { //大于七天清除本地存储1000 * 60 * 60 * 24 * 7
+if (new Date().getTime() - times > (1000 * 60 * 60 * 24 * 3)) { //大于七天清除本地存储1000 * 60 * 60 * 24 * 3
 	uni.clearStorage();
 	uni.showToast({
 		title: '登录状态已失效,请重新登录',

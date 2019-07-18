@@ -10,7 +10,7 @@
 				<view class="down" v-show="down">
 					<view @click="hopeGet">提取分红</view>
 					<view @click="hopeSend">赠送</view>
-					<view @click="hopeRev">扣除</view>
+					<view @click="hopeRev">消费</view>
 					
 				</view>
 			</view>
@@ -19,7 +19,7 @@
 				<view class="down" v-show="down">
 					<view @click="bonusGet">奖金</view>
 					<view @click="bonusOther">奖励</view>
-					<view @click="bonusRev">扣除</view>
+					<view @click="bonusRev">消费</view>
 				</view>
 			</view>
 		</view>
@@ -32,7 +32,7 @@
 			<view class="list" v-for="(item,index) in listWalletChange" :key="index" v-if="item.balanceType=='ecash'">
 				<view>{{item.time | formatDate(2)}}</view>
 				<view v-show="item.type=='addition'">赠送</view>
-				<view v-show="item.type=='substruction'">扣除</view>
+				<view v-show="item.type=='substruction'">消费</view>
 				<view>{{item.amount}}</view>
 			</view>
 			<view class="list" v-for="(temp,index) in consume" :key="index" v-if="temp.from=='ecash'">
@@ -56,7 +56,7 @@
 			<view class="list" v-for="(item,index) in listWalletChange" :key="index" v-if="item.balanceType=='bonus'">
 				<view>{{item.time | formatDate(2)}}</view>
 				<view v-show="item.type=='addition'">奖励</view>
-				<view v-show="item.type=='substruction'">扣除</view>
+				<view v-show="item.type=='substruction'">消费</view>
 				<view class="">{{item.username}}</view>
 				<view>{{item.amount}}</view>
 			</view>
@@ -177,7 +177,7 @@
 			//扣除希望钱包
 			hopeRev() {
 				let that=this;
-				that.hopeSelTxt="扣除";
+				that.hopeSelTxt="消费";
 				that.down=!that.down;
 				that.listWallet=[];
 				that.listWalletChange=[];
@@ -251,7 +251,7 @@
 			//扣除奖金钱包
 			bonusRev() {
 				let that = this;
-				that.bonusSelTxt='扣除';
+				that.bonusSelTxt='消费';
 				that.down=!that.down;
 				that.listBonus=[];
 				that.listWalletChange=[];
