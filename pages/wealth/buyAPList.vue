@@ -320,10 +320,10 @@
 			getData(idx) {
 				let that = this;
 				let arrs = that.list;
+				if (that.orderTimer != null) {
+					clearInterval(that.orderTimer);
+				}
 				arrs.forEach(item => {
-					if (that.orderTimer != null) {
-						clearInterval(that.orderTimer);
-					}
 					that.orderTimer = setInterval(function() {
 						item.rever -= 1000;
 						if (item.rever <= 0) {
@@ -331,7 +331,6 @@
 						}
 					}, 1000)
 				})
-				that.list = arrs;
 			},
 		}
 	}
