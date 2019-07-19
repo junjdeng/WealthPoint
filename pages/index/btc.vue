@@ -46,12 +46,8 @@
 				},
 				method: 'GET',
 				success: function(res) {
-					/* console.log(res) */
 					let arr = res.data.data
 					arr.forEach(item => {
-						if(item.symbol=='usdt'){
-							console.log(item.open)
-						}
 						if ((item.symbol == 'btcusdt') || (item.symbol == 'ethusdt') || (item.symbol == 'eosusdt') || (item.symbol ==
 								'xrpusdt') || (item.symbol == 'bchusdt') || (item.symbol == 'etcusdt') || (item.symbol == 'ltcusdt') || (
 								item.symbol == 'bsvusdt'|| (item.symbol == 'dashusdt')|| (item.symbol == 'adausdt')|| (item.symbol == 'trxusdt')

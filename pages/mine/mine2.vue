@@ -3,7 +3,7 @@
 		<view class="section1">
 			<view class="title">当前云用户等级</view>
 			<view class="num wpgold">{{dj}}</view>
-			<span class="flex1 want" data-url="buyAP" @tap="navTo">等级规则</span>
+			<!-- <span class="flex1 want" data-url="buyAP" @tap="navTo">等级规则</span> -->
 		</view>
 
 		<view class="section2">
