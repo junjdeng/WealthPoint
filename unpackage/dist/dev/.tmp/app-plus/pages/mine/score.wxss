@@ -1,0 +1,18 @@
+
+.content {
+	width: 750rpx;
+	margin: 0 auto;
+	padding: 20rpx 20rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background: #fff;
+	border-top:2rpx solid #f7f7f7;
+}
+.main {
+	font-size: 32rpx;
+	color: #666;
+	letter-spacing: 4rpx;
+	line-height: 1.8;
+	text-indent: 2em;
+}
+

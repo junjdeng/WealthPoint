@@ -4,7 +4,7 @@
 			<view class="title">当前信用评分</view>
 			<view class="num wpgold">5</view>
 			<view class="flex-center" style="width:50%;margin:0 auto;">
-				<span class="flex1 want" data-url="buyAP" @tap="navTo">云信用评分规则</span>
+				<span class="flex1 want" data-url="score" @tap="navTo">云信用评分规则</span>
 				<!-- <span class="flex1 want" data-url="buyAP" @tap="navTo">常见问题</span> -->
 			</view>
 		</view>
@@ -40,7 +40,11 @@
 			
 		},
 		methods: {
-
+			navTo(e) {
+				uni.navigateTo({
+					url: e.currentTarget.dataset.url
+				})
+			},
 		}
 	}
 </script>

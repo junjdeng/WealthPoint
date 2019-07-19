@@ -86,7 +86,6 @@
 		},
 		onShow() {
 			let that = this;
-			
 			if (that.current === 0) {
 				common.balance();
 				that.phone = config.balance.phone;
@@ -105,8 +104,6 @@
 					that.current = index;
 					if (that.current === 1) {
 						that.hasUse();
-					} else if (that.current === 0) {
-						that.hasGet();
 					}
 				}
 			},

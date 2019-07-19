@@ -31,7 +31,6 @@
 				</view>
 			</view>
 		</view>
-		
 		<view class="section section2">
 			<view class="notice flex-start">
 				<uni-icon type="sound" class="sound_icon" size="14" color="#CCA366" style="position:relative;top:-5upx!important;"></uni-icon>

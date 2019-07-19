@@ -1,9 +1,10 @@
 <template>
 	<view class="content">
-		<view v-for="(item,index) in arr" :key="index">
+		<!-- <view v-for="(item,index) in arr" :key="index">
 			<image :src="item" @click="yulan"></image>
-			<!-- <view class="btn" @click="saveFile(item)">保存</view> -->
-		</view>
+			
+		</view> -->
+		<!-- <view class="btn" @click="saveFile(item)">保存</view> -->
 	</view>
 </template>
 

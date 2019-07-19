@@ -684,6 +684,18 @@ eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! 
 
 /***/ }),
 
+/***/ "../../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fscore\"}":
+/*!*******************************************************************!*\
+  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fscore"} ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ \"../../../../../test/WealthPoint/pages.json\");\n\nvar _vue = _interopRequireDefault(__webpack_require__(/*! vue */ \"./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js\"));\nvar _score = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/score.vue */ \"../../../../../test/WealthPoint/pages/mine/score.vue\"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}\ncreatePage(_score.default);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/uni-app-plus/dist/index.js\")[\"createPage\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbbnVsbF0sIm5hbWVzIjpbImNyZWF0ZVBhZ2UiLCJQYWdlIl0sIm1hcHBpbmdzIjoia0RBQUE7O0FBRUE7QUFDQSwrSTtBQUNBQSxVQUFVLENBQUNDLGNBQUQsQ0FBVixDIiwiZmlsZSI6Ii4uLy4uLy4uLy4uLy4uL3Rlc3QvV2VhbHRoUG9pbnQvbWFpbi5qcz97XCJwYWdlXCI6XCJwYWdlcyUyRm1pbmUlMkZzY29yZVwifS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAndW5pLXBhZ2VzJztcblxuaW1wb3J0IFZ1ZSBmcm9tICd2dWUnICAgICAgICAgICAgXG5pbXBvcnQgUGFnZSBmcm9tICcuL3BhZ2VzL21pbmUvc2NvcmUudnVlJ1xuY3JlYXRlUGFnZShQYWdlKSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///../../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fscore\"}\n");
+
+/***/ }),
+
 /***/ "../../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fmine%2Fsignature\"}":
 /*!***********************************************************************!*\
   !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fmine%2Fsignature"} ***!

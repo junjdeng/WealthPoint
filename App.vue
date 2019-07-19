@@ -14,6 +14,7 @@
 				uni.request({  
 					url: 'http://download.wealth-point.com/update2/GetVersion.php',   
 					success: (result) => {
+						console.log(widgetInfo.version,result.data)
 						if (result.data && result.data  !==  widgetInfo.version) {
 							uni.showModal({
 								content: '发现新版本',

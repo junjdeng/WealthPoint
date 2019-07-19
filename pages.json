@@ -355,6 +355,12 @@
 			}
 		},
 		{
+			"path": "pages/mine/score",
+			"style": {
+				"navigationBarTitleText": "云信用评分规则"
+			}
+		},
+		{
 			"path": "pages/mine/mine2",
 			"style": {
 				"navigationBarTitleText": "云用户"
