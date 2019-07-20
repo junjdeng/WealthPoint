@@ -94,7 +94,7 @@
 
 	.img {
 		width: 100%;
-		height: 600upx;
+		height: 800upx;
 		overflow: hidden;
 		margin-top: 40upx;
 	}

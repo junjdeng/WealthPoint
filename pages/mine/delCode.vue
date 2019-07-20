@@ -75,7 +75,6 @@
 				},
 				success: function(res) {
 					that.srcs = 'http://api.wealth-point.com' + res.data.data.images;
-					console.log(that.srcs, 4)
 				}
 			})
 		},

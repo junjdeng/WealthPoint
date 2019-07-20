@@ -5,7 +5,7 @@
 				<text>道具:</text><text>{{text}}</text>
 			</view>
 			<view>
-				<text>售价:</text><text>{{price}} Ap</text>
+				<text>售价:</text><text>{{price}} AP</text>
 			</view>
 			<view>
 				<text>购买数量:</text><text>1 张</text>
@@ -28,11 +28,11 @@
 					3.使用后，银行账号和支付宝 二维码会被清空，需要完善后才可以卖出AP
 				</view>
 				<view v-if="id==2">
-					1.适用于领导人为伞下会员解封<br>
+					1.适用于领导人为伞下云用户解封<br>
 					2.适用于一个计时周期未排单被封号的账号
 				</view>
 				<view v-if="id==3">
-					1.适用于领导人为伞下会员解封<br>
+					1.适用于领导人为伞下云用户解封<br>
 					2.适用于超时不打款和上传假凭证被封的账号
 				</view>
 			</view>

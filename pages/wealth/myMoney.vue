@@ -77,6 +77,7 @@
 				url:'/api/statistics/index',
 				method:'GET',
 				success:function(res){
+					console.log(res)
 					that.buy=res.data.data.buyOrderTotal;
 					that.sell=res.data.data.sellOrderTotal;
 					that.totalRevenue=(parseFloat(res.data.data.growingSeedTotal)+parseFloat(res.data.data.rewardSeedTotal)).toFixed(4);
@@ -87,7 +88,7 @@
 			let that = this;
 			setTimeout(function(){
 				that.getServerData();
-			},300)
+			},400)
 			
 		},
 		methods: {

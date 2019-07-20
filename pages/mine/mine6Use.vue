@@ -3,8 +3,8 @@
 		<view class="form_wrap">
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
-					<span class="flex2 title">会员用户名</span>
-					<input class="uni-input flex5" v-model.trim="userName" placeholder="请输入会员用户名" />
+					<span class="flex2 title">云用户名</span>
+					<input class="uni-input flex5" v-model.trim="userName" placeholder="请输入云用户名" />
 				</view>
 
 				<view class="uni-form-item uni-column flex-start">

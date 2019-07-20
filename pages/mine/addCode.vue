@@ -88,9 +88,7 @@
 							name: 'files',
 							success:function(result) {
 								var res = JSON.parse(result.data);
-								console.log(res);
 								if (res.status == 200){
-									console.log(res)
 									_this.url = config.BASE_URL + res.data.filePath+res.data.fileName;
 									_this.imageFile = res.data;
 								}else{
@@ -124,7 +122,6 @@
 				
 				if(that.flag){
 				  var imageUrl = that.imageFile.filePath+that.imageFile.fileName;
-
 				  var data = {
 					  'qr_code_file':imageUrl,
 					  'accountName':that.userName,
@@ -139,7 +136,6 @@
 					data: data,
 					method: 'POST',
 					success: function(res) {
-						console.log(res)
 						that.flag = true;
 						if (res.data.status === 200) {
 							uni.navigateBack();
@@ -169,7 +165,16 @@
 .dj_form .uni-btn-v button{background: #CCA366; font-size: 32upx; color: #ffffff;}
 .dj_form .uni-form-item  .forward{text-align: right;}
 .dj_form .tips{padding: 20upx; margin-top: 1em; font-size: 24upx; color: #D03C29;}
-.getImg{width:160upx;height:160upx;border:1px solid #f7f7f7;position:relative;margin-left:40upx;}
+.getImg{
+	width:160upx;
+	height:160upx;
+	border:1px solid #f7f7f7;
+	position:relative;
+	margin-left:40upx;
+	background-image: url('./../../static/images/bgs.png');
+	background-size:100% 100%;
+	
+	}
 .getImg input{
 	display:block;
 	width:100%;
