@@ -17,11 +17,13 @@
 .content>view {
 	width: 345rpx;
 	height: 500rpx;
-	margin-bottom: 20rpx;
+	margin-bottom: 40rpx;
 	border: 2rpx solid #f7f7f7;
 	border-radius: 8rpx;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
+	-webkit-box-shadow:5rpx 10rpx 5rpx #ccc;
+	        box-shadow:5rpx 10rpx 5rpx #ccc;
 	position:relative;
 	overflow:hidden;
 }

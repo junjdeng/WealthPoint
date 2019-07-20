@@ -180,8 +180,8 @@
 				uni.clearStorageSync();
 				config.balance = null;
 				config.User = null;
-				uni.switchTab({
-					url: '../index/index'
+				uni.reLaunch({
+					url: '../login/login'
 				})
 			}
 		}

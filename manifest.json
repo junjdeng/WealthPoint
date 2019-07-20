@@ -2,10 +2,13 @@
     "name" : "Wealth Point",
     "appid" : "__UNI__9089A9C",
     "description" : "",
-    "versionName" : "2.0.1",
+    "versionName" : "2.0.4",
     "versionCode" : "100",
     "transformPx" : false,
     "app-plus" : {
+        "compatible" : {
+            "ignoreVersion" : true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+        },
         /* 5+App特有相关 */
         "usingComponents" : true,
         "splashscreen" : {
@@ -63,7 +66,7 @@
                     "mdpi" : "unpackage/res/icons/48x48.png"
                 },
                 "ios" : {
-                    "appstore" : "static/images/app.png",
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",

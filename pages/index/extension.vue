@@ -1,20 +1,41 @@
 <template>
 	<view class="content">
-		<!-- <view v-for="(item,index) in arr" :key="index">
+		<view v-for="(item,index) in arr" :key="index">
 			<image :src="item" @click="yulan"></image>
-			
-		</view> -->
+		</view>
+		
 		<!-- <view class="btn" @click="saveFile(item)">保存</view> -->
 	</view>
 </template>
-
 <script>
+	import common from '../../common/common.js'
+	import { config } from '../../common/config.js'
+	import { djRequest } from '../../common/request.js'
 	export default {
 		data() {
 			return {
-				arr:[
-					'/static/images/t1.png']
+				arr:[]
 			};
+		},
+		
+		onShow(){
+			let that = this;
+			djRequest({
+				url:'/api/business',
+				method:'GET',
+				success:function(res){
+					if(res.data.status===200){
+						let ars= res.data.data;
+						ars=ars.slice(1);
+						let arq=[];
+						ars.forEach(item=>{
+							item='http://api.wealth-point.com'+item;
+							arq.push(item);
+						})
+						that.arr = arq;
+					}
+				}
+			})
 		},
 		onLoad() {},
 		methods: {
@@ -44,7 +65,6 @@
 							uni.downloadFile({
 								url: url,
 								success: (res) => {
-									//console.log(res)
 									if (res.statusCode === 200) {
 										uni.saveImageToPhotosAlbum({
 											filePath: res.tempFilePath,
@@ -85,10 +105,11 @@
 	.content>view {
 		width: 345upx;
 		height: 500upx;
-		margin-bottom: 20upx;
+		margin-bottom: 40upx;
 		border: 2upx solid #f7f7f7;
 		border-radius: 8upx;
 		box-sizing: border-box;
+		box-shadow:5upx 10upx 5upx #ccc;
 		position:relative;
 		overflow:hidden;
 	}
