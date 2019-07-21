@@ -214,7 +214,7 @@
 						"buttons": [{
 							"text": "分红中的AP",
 							"color": "#333",
-							"fontSize": "16px",
+							"fontSize": "14px",
 							"width": "100"
 						}]
 					}

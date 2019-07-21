@@ -41,8 +41,7 @@
 				url: 'https://api.huobi.pro/market/tickers',
 				header: {
 					'Content-Type': 'application/x-www-form-urlencoded',
-					'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-					'timeout': 8000
+					'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
 				},
 				method: 'GET',
 				success: function(res) {
@@ -55,7 +54,6 @@
 									
 							if (!item.hasOwnProperty('cat')) {
 								item.cat = item.symbol.replace(/usdt/g,'').toUpperCase();
-								
 							}
 							if (!item.hasOwnProperty('num')) {
 								item.num = (((Number(Number(item.close) - Number(item.open)) / (Number(item.open))).toFixed(4)) * 100).toFixed(2);
@@ -72,7 +70,6 @@
 				},
 				fail: function(res) {
 					console.log(res, 4)
-					//that.getBTC();
 				}
 			})
 		}
