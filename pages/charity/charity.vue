@@ -35,7 +35,7 @@
 		<view class="list">
 			<view class="flex-start item">
 				<view class="flex2">
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/app.png"></image>
 				</view>
 				<view class="flex5 content" >
 					<view class="title ellipsis">Kadena将于10月份与价值30亿…</view>
@@ -44,7 +44,7 @@
 			</view>
 			<view class="flex-start item">
 				<view class="flex2">
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/app.png"></image>
 				</view>
 				<view class="flex5 content" >
 					<view class="title ellipsis">Kadena将于10月份与价值30亿…</view>
@@ -53,7 +53,7 @@
 			</view>
 			<view class="flex-start item">
 				<view class="flex2">
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/app.png"></image>
 				</view>
 				<view class="flex5 content" >
 					<view class="title ellipsis">Kadena将于10月份与价值30亿…</view>
@@ -90,7 +90,7 @@
 	}
 </script>
 <style>
-.section1{padding: 20upx; width: 670upx; text-align: center;}
+.section1{padding: 20upx; width: 710upx; text-align: center;}
 .section1 .title{font-size: 28upx; color: #333333; line-height: 1.6em; font-weight: bold;}
 .section1 .num{font-size: 48upx; line-height: 2em; font-weight: bold;}
 
@@ -98,7 +98,7 @@
 .section1 .total_card .num{font-size: 32upx; color: #333333; font-weight: bold;}
 .section1 .total_card .title{font-size: 28upx; color: #666666;}
 
-.section_title{font-size: 36upx; color: #333333; line-height: 2em; height: 2em; text-align: left; width: 710upx; padding: 20upx 30upx;margin-bottom:30upx;}
+.section_title{font-size: 36upx; color: #333333; line-height: 2em; height: 2em; text-align: left; width: 710upx; padding: 20upx;margin-bottom:30upx;}
 .section_title span{float: right;font-size: 28upx; color: #999999;}
 
 .list{width: 710upx;}

@@ -102,4 +102,11 @@
 .tree_wrap .tree_txt {
 	padding: 10rpx 0;
 }
+.noData{
+	width:750rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color:#999;
+	padding:20rpx 0;
+}
 

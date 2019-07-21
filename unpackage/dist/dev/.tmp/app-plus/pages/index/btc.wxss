@@ -317,7 +317,7 @@
 	border-bottom: 2rpx solid #f7f7f7;
 	padding: 20rpx 0;
 }
-.title view {
+.title>view {
 	width: 33.3%;
 	text-align: center;
 }

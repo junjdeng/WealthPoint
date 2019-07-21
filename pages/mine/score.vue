@@ -18,10 +18,10 @@
 	border-top:2upx solid #f7f7f7;
 }
 .main {
-	font-size: 32upx;
+	font-size: 28upx;
 	color: #666;
-	letter-spacing: 4upx;
-	line-height: 1.8;
+	letter-spacing: 2upx;
+	line-height: 1.5;
 	text-indent: 2em;
 }
 </style>

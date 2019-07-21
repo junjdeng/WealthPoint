@@ -4,7 +4,7 @@
 		<view class="list">
 			<view class="flex-start item" data-url="charityDetail" @tap="navTo">
 				<view class="flex2">
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/app.png"></image>
 				</view>
 				<view class="flex5 content" >
 					<view class="title ellipsis">Kadena将于10月份与价值30亿…</view>
@@ -13,7 +13,7 @@
 			</view>
 			<view class="flex-start item">
 				<view class="flex2">
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/app.png"></image>
 				</view>
 				<view class="flex5 content" >
 					<view class="title ellipsis">Kadena将于10月份与价值30亿…</view>
@@ -22,7 +22,7 @@
 			</view>
 			<view class="flex-start item">
 				<view class="flex2">
-					<image src="../../static/images/bg112.jpg"></image>
+					<image src="../../static/images/app.png"></image>
 				</view>
 				<view class="flex5 content" >
 					<view class="title ellipsis">Kadena将于10月份与价值30亿…</view>

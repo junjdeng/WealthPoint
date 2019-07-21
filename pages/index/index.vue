@@ -215,12 +215,12 @@
 							let arr = res.data.data;
 							arr.forEach(item=>{
 								if(item.symbol=='btcusdt'){
-									that.amount = Number(item.amount).toFixed(2);
-							that.high = Number(item.high).toFixed(2);
-							that.low = Number(item.low).toFixed(2);
-							that.theNow = Number(item.close).toFixed(2);
-							that.opens = Number(item.open).toFixed(2);
-							that.num = Number(that.theNow - that.opens).toFixed(2);
+									that.amount = Number(item.amount).toFixed(4);
+							that.high = Number(item.high).toFixed(4);
+							that.low = Number(item.low).toFixed(4);
+							that.theNow = Number(item.close).toFixed(4);
+							that.opens = Number(item.open).toFixed(4);
+							that.num = Number(that.theNow - that.opens).toFixed(4);
 							that.cent = Number((that.num / that.opens) * 100).toFixed(2);
 							that.color = Number(that.low - that.opens);
 								}

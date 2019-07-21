@@ -9,7 +9,7 @@
 		<view class="section2">
 			<view class="section_title">我的云用户</view>
 
-			<view class="tree_wrap">
+			<view class="tree_wrap" v-if="treeData.subData.length>0">
 				<view class="tree_first">
 					<view class="tree_first_title tree_txt" @tap="clickTree(treeData)" >
 						<uni-icon :type="treeData.isShow" class="forward" size="16" color="#999999"></uni-icon>{{treeData.username}} ({{treeData.levelName}})
@@ -23,6 +23,7 @@
 					</view>
 				</view>
 			</view>
+			<view class="noData" v-else>暂无数据</view>
 		</view>
 	</view>
 </template>
@@ -191,5 +192,12 @@
 		}
 	.tree_wrap .tree_txt {
 		padding: 10upx 0;
+	}
+	.noData{
+		width:750upx;
+		text-align: center;
+		font-size: 28upx;
+		color:#999;
+		padding:20upx 0;
 	}
 </style>

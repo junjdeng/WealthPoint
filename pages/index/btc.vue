@@ -6,10 +6,10 @@
 			<view>24H涨幅</view>
 		</view>
 		<view class="title fz" v-for="(item,index) in list" :key="index">
-			<view style="display:flex;justify-content:center;align-items:center;"><!-- <image class="imgs" :src="item.icon"></image> --><view>{{item.cat}}</view></view>
+			<view style="display:flex;justify-content:center;align-items:center;"><view>{{item.cat}}</view><text style="font-size:24upx!important;color:#999!important;">/USDT</text></view>
 			<view>
-				<view style="font-size:28upx;color:#333;text-align:center;width:100%;font-weight:bold;">￥{{item.price}}</view>
-				<view style="font-size:24upx;color:#666;text-align:center;width:100%;">${{item.close}}</view>
+				<view style="font-size:28upx;color:#333;text-align:center;width:100%;font-weight:bold;">{{item.close}}</view>
+				<view style="font-size:24upx;color:#666;text-align:center;width:100%;">≈￥{{item.price}}</view>
 			</view>
 			<view>
 				<view class="high green" v-if="item.num>=0" >
@@ -41,7 +41,8 @@
 				url: 'https://api.huobi.pro/market/tickers',
 				header: {
 					'Content-Type': 'application/x-www-form-urlencoded',
-					'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
+					'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
+					'timeout': 8000
 				},
 				method: 'GET',
 				success: function(res) {
@@ -51,7 +52,6 @@
 								'xrpusdt') || (item.symbol == 'bchusdt') || (item.symbol == 'etcusdt') || (item.symbol == 'ltcusdt') || (
 								item.symbol == 'bsvusdt'|| (item.symbol == 'dashusdt')|| (item.symbol == 'adausdt')|| (item.symbol == 'trxusdt')
 								|| (item.symbol == 'atomusdt')|| (item.symbol == 'omgusdt')|| (item.symbol == 'neousdt'))) {
-									
 							if (!item.hasOwnProperty('cat')) {
 								item.cat = item.symbol.replace(/usdt/g,'').toUpperCase();
 							}
@@ -60,7 +60,7 @@
 							}
 							item.high = Number(item.high).toFixed(2);
 							item.low = Number(item.low).toFixed(2);
-							item.close = Number(item.close).toFixed(2);
+							item.close = Number(item.close).toFixed(4);
 							if (!item.hasOwnProperty('price')) {
 								item.price = (item.close*6.86).toFixed(2);
 							}
@@ -70,6 +70,7 @@
 				},
 				fail: function(res) {
 					console.log(res, 4)
+					//that.getBTC();
 				}
 			})
 		}
@@ -94,7 +95,7 @@
 		padding: 20upx 0;
 	}
 
-	.title view {
+	.title>view {
 		width: 33.3%;
 		text-align: center;
 	}
