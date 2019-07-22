@@ -26,6 +26,11 @@
 					<image class="imgs" v-else-if="item.cat == 'TRX'" src="/static/images/coin/trx.png"></image>
 					<image class="imgs" v-else-if="item.cat == 'XRP'" src="/static/images/coin/XRP.png"></image>
 					<image class="imgs" v-else-if="item.cat == 'BSV'" src="/static/images/coin/bsv.png"></image>
+					<image class="imgs" v-else-if="item.cat == 'ZEC'" src="/static/images/coin/ZEC.png"></image>
+					<image class="imgs" v-else-if="item.cat == 'ONT'" src="/static/images/coin/ONT.png"></image>
+					<image class="imgs" v-else-if="item.cat == 'QTUM'" src="/static/images/coin/QTUM.png"></image>
+					<image class="imgs" v-else-if="item.cat == 'GXC'" src="/static/images/coin/GXC.png"></image>
+					<image class="imgs" v-else-if="item.cat == 'HT'" src="/static/images/coin/ht.png"></image>
 					<view>
 						<view>
 							<view>
@@ -48,6 +53,11 @@
 						<view class="txt" v-if="item.cat == 'BSV'">比特币SV</view>
 						<view class="txt" v-if="item.cat == 'LTC'">莱特币</view>
 						<view class="txt" v-if="item.cat == 'EOS'">柚子</view>
+						<view class="txt" v-if="item.cat == 'ZEC'">大零币</view>
+						<view class="txt" v-if="item.cat == 'ONT'">本体</view>
+						<view class="txt" v-if="item.cat == 'QTUM'">量子</view>
+						<view class="txt" v-if="item.cat == 'GXC'">公信宝</view>
+						<view class="txt" v-if="item.cat == 'HT'">火币Token</view>
 					</view>
 				</view>
 			</view>
@@ -108,6 +118,11 @@ export default {
 						item.symbol == 'atomusdt' ||
 						item.symbol == 'omgusdt' ||
 						item.symbol == 'neousdt' ||
+						item.symbol == 'zecusdt' ||
+						item.symbol == 'ontusdt' ||
+						item.symbol == 'gxcusdt' ||
+						item.symbol == 'qtumusdt' ||
+						item.symbol == 'htusdt' ||
 						item.symbol == 'aeusdt'
 					) {
 						if (!item.hasOwnProperty('cat')) {
@@ -176,7 +191,7 @@ export default {
 	width: 120upx !important;
 	height: 60upx !important;
 
-	border-radius: 10upx;
+	border-radius: 4upx;
 	overflow: hidden;
 	font-size: 24upx !important;
 	color: #fff;
