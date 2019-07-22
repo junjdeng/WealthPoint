@@ -353,6 +353,13 @@
 	background: #7ed321;
 }
 .imgs {
-	width:40rpx;height:40rpx;margin-right:5rpx;
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 5rpx;
+}
+.txt{
+	font-size: 24rpx;
+	color:#666;
+	text-align:left;
 }
 
