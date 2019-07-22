@@ -9,25 +9,48 @@
 			<view>24H涨幅</view>
 		</view>
 		<view class="title fz" v-for="(item, index) in list" :key="index">
-			<view style="display:flex;justify-content:center;align-items:center;">
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='OMG'" src="/static/images/coin/omg.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='ETH'" src="/static/images/coin/eth.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='ETC'" src="/static/images/coin/etc.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='ADA'" src="/static/images/coin/ADA.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='AE'" src="/static/images/coin/ae.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='ATOM'" src="/static/images/coin/atom.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='BCH'" src="/static/images/coin/BCH.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='BTC'" src="/static/images/coin/BTC.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='DASH'" src="/static/images/coin/DASH.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='EOS'" src="/static/images/coin/EOS.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='LTC'" src="/static/images/coin/ltc.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='NEO'" src="/static/images/coin/neo.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='TRX'" src="/static/images/coin/trx.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='XRP'" src="/static/images/coin/XRP.png"></image>
-				<image style="width:40upx;height:40upx;margin-right:5upx;" v-if="item.cat=='BSV'" src="/static/images/coin/bsv.png"></image>
-				<view>{{ item.cat }}</view>
-				<text style="font-size:24upx!important;color:#999!important;">/USDT</text>
+			<view>
+				<view style="display:flex;justify-content:center;align-items:center;">
+				<image class="imgs" v-if="item.cat=='OMG'" src="/static/images/coin/omg.png"></image>
+				<image class="imgs" v-if="item.cat=='ETH'" src="/static/images/coin/eth.png"></image>
+				<image class="imgs" v-if="item.cat=='ETC'" src="/static/images/coin/etc.png"></image>
+				<image class="imgs" v-if="item.cat=='ADA'" src="/static/images/coin/ADA.png"></image>
+				<image class="imgs" v-if="item.cat=='AE'" src="/static/images/coin/AE.png"></image>
+				<image class="imgs" v-if="item.cat=='ATOM'" src="/static/images/coin/atom.png"></image>
+				<image class="imgs" v-if="item.cat=='BCH'" src="/static/images/coin/BCH.png"></image>
+				<image class="imgs" v-if="item.cat=='BTC'" src="/static/images/coin/BTC.png"></image>
+				<image class="imgs" v-if="item.cat=='DASH'" src="/static/images/coin/DASH.png"></image>
+				<image class="imgs" v-if="item.cat=='EOS'" src="/static/images/coin/EOS.png"></image>
+				<image class="imgs" v-if="item.cat=='LTC'" src="/static/images/coin/ltc.png"></image>
+				<image class="imgs" v-if="item.cat=='NEO'" src="/static/images/coin/neo.png"></image>
+				<image class="imgs" v-if="item.cat=='TRX'" src="/static/images/coin/trx.png"></image>
+				<image class="imgs" v-if="item.cat=='XRP'" src="/static/images/coin/XRP.png"></image>
+				<image class="imgs" v-if="item.cat=='BSV'" src="/static/images/coin/bsv.png"></image>
+				<view>
+					<view>
+						<view>{{ item.cat }}<text style="font-size:24upx!important;color:#999!important;">/USDT</text></view>
+					</view>
+					<view v-if="item.cat=='BTC'">比特币</view>
+			<view  v-if="item.cat=='ETH'">以钛坊</view>
+			<view  v-if="item.cat=='ETC'">以钛经典</view>
+			<view  v-if="item.cat=='XRP'">瑞波币</view>
+			<view  v-if="item.cat=='TRX'">波场</view>
+			<view  v-if="item.cat=='NEO'">小蚁</view>
+			<view  v-if="item.cat=='DASH'">达世币</view>
+			<view  v-if="item.cat=='BCH'">比特币现金</view>
+			<view  v-if="item.cat=='ADA'">艾达币</view>
+			<view  v-if="item.cat=='AE'">阿姨币</view>
+			<view  v-if="item.cat=='OMG'">嫩模币</view>
+			<view  v-if="item.cat=='ATOM'">ATOM币</view>
+			<view  v-if="item.cat=='BSV'">比特币SV</view>
+			<view  v-if="item.cat=='LTC'">莱特币</view>
+			<view  v-if="item.cat=='EOS'">柚子币</view>
+				</view>
+				
 			</view>
+			
+			</view>
+			
 			<view>
 				<view style="font-size:28upx;color:#333;text-align:center;width:100%;font-weight:bold;">{{ item.close }}</view>
 				<view style="font-size:24upx;color:#666;text-align:center;width:100%;">≈￥{{ item.price }}</view>
@@ -83,7 +106,8 @@ export default {
 						item.symbol == 'trxusdt' ||
 						item.symbol == 'atomusdt'||
 						item.symbol == 'omgusdt' ||
-						item.symbol == 'neousdt'
+						item.symbol == 'neousdt' ||
+						item.symbol == 'aeusdt'
 					) {
 						if (!item.hasOwnProperty('cat')) {
 							item.cat = item.symbol.replace(/usdt/g, '').toUpperCase();
@@ -168,9 +192,6 @@ export default {
 	background: #7ed321;
 }
 .imgs {
-	display: inline-block;
-	width: 32upx;
-	height: 32upx;
-	margin-right: 10upx;
+	width:40upx;height:40upx;margin-right:5upx;
 }
 </style>

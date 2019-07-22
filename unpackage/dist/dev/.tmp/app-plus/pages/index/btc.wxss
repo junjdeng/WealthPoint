@@ -353,9 +353,6 @@
 	background: #7ed321;
 }
 .imgs {
-	display: inline-block;
-	width: 32rpx;
-	height: 32rpx;
-	margin-right: 10rpx;
+	width:40rpx;height:40rpx;margin-right:5rpx;
 }
 
