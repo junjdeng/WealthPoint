@@ -9,10 +9,10 @@
 	border-top:2rpx solid #f7f7f7;
 }
 .main {
-	font-size: 32rpx;
+	font-size: 28rpx;
 	color: #666;
-	letter-spacing: 4rpx;
-	line-height: 1.8;
+	letter-spacing: 2rpx;
+	line-height: 1.5;
 	text-indent: 2em;
 }
 

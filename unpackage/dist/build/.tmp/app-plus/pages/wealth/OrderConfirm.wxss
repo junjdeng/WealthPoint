@@ -294,14 +294,14 @@
 }
 
 
-page.data-v-54db8e0e,
-page.data-v-54db8e0e {
+page.data-v-086f2890,
+page.data-v-086f2890 {
 	width: 100%;
 	height: 100%;
 	position: relative;
 	background: #fff !important;
 }
-.box.data-v-54db8e0e {
+.box.data-v-086f2890 {
 	width: 100%;
 	height: 100%;
 	background: #fff;
@@ -310,25 +310,25 @@ page.data-v-54db8e0e {
 
 	        box-sizing: border-box;
 }
-.ul-main.data-v-54db8e0e {
+.ul-main.data-v-086f2890 {
 	padding: 20rpx 20rpx;
 	font-size: 28rpx;
 	color: #666;
 }
-.ul-main>view>view.data-v-54db8e0e {
+.ul-main>view>view.data-v-086f2890 {
 	padding: 20rpx 0;
 }
-.ul-main>view>view>._span.data-v-54db8e0e:first-child {
+.ul-main>view>view>._span.data-v-086f2890:first-child {
 	display: inline-block;
 	width: 200rpx;
 }
-.img.data-v-54db8e0e {
+.img.data-v-086f2890 {
 	width: 100%;
-	height: 600rpx;
+	height: 800rpx;
 	overflow: hidden;
 	margin-top: 40rpx;
 }
-.img image.data-v-54db8e0e {
+.img image.data-v-086f2890 {
 	width: 100%;
 	height: 100%;
 }

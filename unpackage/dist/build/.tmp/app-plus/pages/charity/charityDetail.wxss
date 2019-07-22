@@ -6,8 +6,15 @@
 .section1 .progress_card .info{color: #333333; font-size: 28rpx; line-height: 3em;text-align: left;}
 .section1 .progress_card .info ._span{float: right;}
 .content{ background: #ffffff; width: 710rpx;padding: 20rpx; margin-top: 20rpx;}
-.content .title{color: #333333; font-size: 32rpx; line-height: 2em;}
+.content .title{color: #333333; font-size: 32rpx; line-height: 2em;text-align: center;}
 .content .sub_title{color: #999999; font-size: 24rpx; line-height: 2em;}
 .bottomBtn{display: block; width: 100%; position: fixed; bottom: 0; background: #CCA366; color: #ffffff;
  font-size: 32rpx; height: 100rpx; line-height: 100rpx; text-align: center;}
+.con{
+	 padding-bottom:120rpx;
+}
+.conFont{
+	 font-size: 28rpx;
+	 text-indent:2em;
+}
 

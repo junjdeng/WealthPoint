@@ -39,25 +39,25 @@
 							</view>
 						</view>
 						<view class="txt" v-if="item.cat == 'BTC'">比特币</view>
-						<view class="txt" v-if="item.cat == 'ETH'">以钛坊</view>
-						<view class="txt" v-if="item.cat == 'ETC'">以钛经典</view>
-						<view class="txt" v-if="item.cat == 'XRP'">瑞波币</view>
-						<view class="txt" v-if="item.cat == 'TRX'">波场</view>
-						<view class="txt" v-if="item.cat == 'NEO'">小蚁</view>
-						<view class="txt" v-if="item.cat == 'DASH'">达世币</view>
-						<view class="txt" v-if="item.cat == 'BCH'">比特币现金</view>
-						<view class="txt" v-if="item.cat == 'ADA'">艾达币</view>
-						<view class="txt" v-if="item.cat == 'AE'">阿姨币</view>
-						<view class="txt" v-if="item.cat == 'OMG'">嫩模币</view>
-						<view class="txt" v-if="item.cat == 'ATOM'">ATOM币</view>
-						<view class="txt" v-if="item.cat == 'BSV'">比特币SV</view>
-						<view class="txt" v-if="item.cat == 'LTC'">莱特币</view>
-						<view class="txt" v-if="item.cat == 'EOS'">柚子</view>
-						<view class="txt" v-if="item.cat == 'ZEC'">大零币</view>
-						<view class="txt" v-if="item.cat == 'ONT'">本体</view>
-						<view class="txt" v-if="item.cat == 'QTUM'">量子</view>
-						<view class="txt" v-if="item.cat == 'GXC'">公信宝</view>
-						<view class="txt" v-if="item.cat == 'HT'">火币Token</view>
+						<view class="txt" v-else-if="item.cat == 'ETH'">以钛坊</view>
+						<view class="txt" v-else-if="item.cat == 'ETC'">以钛经典</view>
+						<view class="txt" v-else-if="item.cat == 'XRP'">瑞波币</view>
+						<view class="txt" v-else-if="item.cat == 'TRX'">波场</view>
+						<view class="txt" v-else-if="item.cat == 'NEO'">小蚁</view>
+						<view class="txt" v-else-if="item.cat == 'DASH'">达世币</view>
+						<view class="txt" v-else-if="item.cat == 'BCH'">比特币现金</view>
+						<view class="txt" v-else-if="item.cat == 'ADA'">艾达币</view>
+						<view class="txt" v-else-if="item.cat == 'AE'">阿姨币</view>
+						<view class="txt" v-else-if="item.cat == 'OMG'">嫩模币</view>
+						<view class="txt" v-else-if="item.cat == 'ATOM'">ATOM币</view>
+						<view class="txt" v-else-if="item.cat == 'BSV'">比特币SV</view>
+						<view class="txt" v-else-if="item.cat == 'LTC'">莱特币</view>
+						<view class="txt" v-else-if="item.cat == 'EOS'">柚子</view>
+						<view class="txt" v-else-if="item.cat == 'ZEC'">大零币</view>
+						<view class="txt" v-else-if="item.cat == 'ONT'">本体</view>
+						<view class="txt" v-else-if="item.cat == 'QTUM'">量子</view>
+						<view class="txt" v-else-if="item.cat == 'GXC'">公信宝</view>
+						<view class="txt" v-else-if="item.cat == 'HT'">火币Token</view>
 					</view>
 				</view>
 			</view>
@@ -77,6 +77,7 @@
 			</view>
 		</view>
 		<view class="intro" v-if="list.length > 0">--数据来源:火币网</view>
+		<image v-if="showData" style="width:80upx;height:80upx;display:block;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;" src="/static/images/loading.gif"></image>
 	</view>
 </template>
 
@@ -85,7 +86,8 @@ import uniIcon from '@/components/uni-icon/uni-icon.vue';
 export default {
 	data() {
 		return {
-			list: []
+			list: [],
+			showData:true
 		};
 	},
 	onShow() {
@@ -100,6 +102,7 @@ export default {
 			},
 			method: 'GET',
 			success: function(res) {
+				that.showData=false;
 				let arr = res.data.data,
 					ars = [];
 				arr.forEach(item => {
@@ -143,6 +146,7 @@ export default {
 				that.list = ars;
 			},
 			fail: function(res) {
+				that.showData=false;
 				console.log(res, 4);
 			}
 		});
@@ -212,9 +216,9 @@ export default {
 	height: 40upx;
 	margin-right: 5upx;
 }
-.txt{
+.txt {
 	font-size: 24upx;
-	color:#666;
-	text-align:left;
+	color: #666;
+	text-align: left;
 }
 </style>

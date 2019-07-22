@@ -5,6 +5,7 @@
 			<view>分红天数:{{item.count}}天</view>
 			<view class="comfire" :class="((item.count>=7)&&(item.flagTime))?'sel':''" @click="toGet(item.number,item.count,item.id)">提取</view>
 		</view>
+		<image v-if="showData" style="width:80upx;height:80upx;display:block;position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;" src="/static/images/loading.gif"></image>
 	</view>
 </template>
 <script>
@@ -19,7 +20,8 @@
 	export default {
 		data() {
 			return {
-				dataList: []
+				dataList: [],
+				showData:true
 			}
 		},
 		onShow() {
@@ -50,6 +52,7 @@
 			},
 			getData() {
 				let that = this;
+				
 				djRequest({
 					url: '/api/seed',
 					method: 'POST',
@@ -92,6 +95,7 @@
 										curGrow.total = (Number(curGrow.number) + Number(curGrow.harvestNumber)).toFixed(4);
 									}
 								}
+								that.showData=false;
 								that.dataList = arr;
 							}, 1000);
 						}

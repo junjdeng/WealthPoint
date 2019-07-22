@@ -317,7 +317,7 @@
 	border-bottom: 2rpx solid #f7f7f7;
 	padding: 20rpx 0;
 }
-.title view {
+.title > view {
 	width: 33.3%;
 	text-align: center;
 }
@@ -338,7 +338,7 @@
 	width: 120rpx !important;
 	height: 60rpx !important;
 
-	border-radius: 10rpx;
+	border-radius: 4rpx;
 	overflow: hidden;
 	font-size: 24rpx !important;
 	color: #fff;
@@ -347,15 +347,19 @@
 	text-align: center;
 }
 .red {
-	background: #FF5533;
+	background: #ff5533;
 }
 .green {
-	background: #7ED321;
+	background: #7ed321;
 }
-.imgs{
-	display:inline-block;
-	width:32rpx;
-	height:32rpx;
-	margin-right:10rpx;
+.imgs {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 5rpx;
+}
+.txt {
+	font-size: 24rpx;
+	color: #666;
+	text-align: left;
 }
 

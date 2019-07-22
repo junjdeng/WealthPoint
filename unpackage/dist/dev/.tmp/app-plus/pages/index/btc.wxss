@@ -357,9 +357,9 @@
 	height: 40rpx;
 	margin-right: 5rpx;
 }
-.txt{
+.txt {
 	font-size: 24rpx;
-	color:#666;
-	text-align:left;
+	color: #666;
+	text-align: left;
 }
 
