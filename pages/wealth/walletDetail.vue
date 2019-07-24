@@ -40,11 +40,12 @@
 				<view class="">购买道具</view>
 				<view class="">-{{temp.price}}</view>
 			</view>
-			<view class="list" v-for="(item,index) in listWallet" v-if="listWallet.length>0" :key="index">
+			<view class="list" v-for="(item,index) in listWallet" v-if="hopeFlag&&listWallet.length>0" :key="index">
 				<view>{{item.harvestTime | formatDate(2)}}</view>
 				<view>提取分红</view>
 				<view>{{item.total}}</view>
 			</view>
+			<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
 		</view>
 		<view class="bs" v-else>
 			<view class="bonus-title">
@@ -97,10 +98,24 @@
 				whichWallet:'希望钱包明细',
 				hopeSelTxt:'提取分红',
 				bonusSelTxt:'奖金',
+				start:0,
+				length:20,
+				isMore:true,
+				hopeFlag:true
 			}
 		},
 		components: {
 			uniIcon
+		},
+		onPullDownRefresh: function() {	
+			this.start = 0;
+			this.listWallet = [];
+			this.hopeGet();
+		},
+		onReachBottom: function() {		
+			if (this.isMore) {
+				this.hopeGet();
+			}
 		},
 		onShow() {
 			let that = this;
@@ -126,18 +141,25 @@
 			hopeGet() {
 				let that = this;
 				that.down=false;
+				that.hopeFlag=true;
 				that.hopeSelTxt="提取分红";
-				that.listWallet=[];
+				/* that.listWallet=[]; */
 				that.listWalletChange=[];
 				that.consume=[];
 				djRequest({
 					url: '/api/seed',
 					data: {
-						start: 0,
-						length: 500
+						start: that.start,
+						length: that.length
 					},
 					method: 'POST',
 					success: function(res) {
+						uni.stopPullDownRefresh();
+						if (res.data.data.data.length < that.length) {
+							that.isMore = false;
+						}else{
+							that.isMore = true;
+						}
 						let arr1 = res.data.data.data,
 							arr = [];
 						arr1.forEach(item => {
@@ -148,16 +170,18 @@
 								arr.push(item);
 							}
 						});
-						that.listWallet = arr;
+						that.listWallet = that.listWallet.concat(arr);
+						that.start = that.listWallet.length;
 					}
 				})
 			},
 			//赠送希望钱包
 			hopeSend() {
 				let that = this;
+				that.hopeFlag=false;
 				that.hopeSelTxt="赠送";
 				that.down=!that.down;
-				that.listWallet=[];
+				/* that.listWallet=[]; */
 				that.listWalletChange=[];
 				that.consume=[];
 				djRequest({
@@ -177,9 +201,10 @@
 			//扣除希望钱包
 			hopeRev() {
 				let that=this;
+				that.hopeFlag=false;
 				that.hopeSelTxt="消费";
 				that.down=!that.down;
-				that.listWallet=[];
+				/* that.listWallet=[]; */
 				that.listWalletChange=[];
 				that.consume=[];
 				djRequest({
@@ -302,6 +327,8 @@
 		width:32upx;
 		text-align: left;
 	}
+	.more{text-align: center; color: #999999; height: 40upx; 
+		line-height: 40upx; font-size: 28upx; padding: 20upx 0;margin-top:20upx;}
 	.header .con .back{
 		margin-left:-20upx;
 	}
