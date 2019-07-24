@@ -8,7 +8,7 @@
 			<view class="btns" v-if="type==1">
 				<view class="btnTitle" @click="getDown">{{hopeSelTxt}}</view>
 				<view class="down" v-show="down">
-					<view @click="hopeGet">提取分红</view>
+					<view @click="historyData">提取分红</view>
 					<view @click="hopeSend">赠送</view>
 					<view @click="hopeRev">消费</view>
 					
@@ -136,6 +136,14 @@
 		methods: {
 			goBack() {
 				uni.navigateBack()
+			},
+			historyData(){
+				let that = this;
+				that.hopeFlag=true;
+				that.down=false;
+				that.listWalletChange=[];
+				that.consume=[];
+				that.hopeSelTxt="提取分红";
 			},
 			//提取分红希望钱包
 			hopeGet() {
@@ -322,6 +330,8 @@
 		font-size: 28upx;
 		background: #fff;
 		border-bottom:2upx solid #f7f7f7;
+		position:fixed;
+		top:-1upx;
 	}
 	.header .con{
 		width:32upx;
@@ -393,7 +403,9 @@
 		border-top: 2upx solid #f7f7f7;
 		font-size: 28upx;
 	}
-
+	.wt,.bs{
+		margin-top:120upx;
+	}
 	.wt>.wallet-title>view,
 	.wt>.list>view {
 		width: 33.3%;

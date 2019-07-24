@@ -122,7 +122,7 @@
 .item image{
 	width:40rpx;
 	height:40rpx;
-	margin-top:5rpx;
+	margin-top:10rpx;
 }
 .item .num {
 	width: 70rpx;
