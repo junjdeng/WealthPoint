@@ -18,9 +18,8 @@
 	        align-items: center;
 	font-size: 28rpx;
 	background: #fff;
-	border-bottom:2rpx solid #f7f7f7;
 	position:fixed;
-	top:-1rpx;
+	top:-2rpx;
 }
 .header .con{
 	width:32rpx;
@@ -99,7 +98,7 @@
 	font-size: 28rpx;
 }
 .wt,.bs{
-	margin-top:120rpx;
+	margin-top:116rpx;
 }
 .wt>.wallet-title>view,
 .wt>.list>view {

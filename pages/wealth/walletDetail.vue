@@ -2,7 +2,7 @@
 	<view class="section2" style="position:relative;">
 		<view class="header">
 			<view class="con" @click="goBack">
-				<uni-icon type="back" class="back" size="28" color="#999999"></uni-icon>
+				<uni-icon type="back" class="back" size="28" color="#666"></uni-icon>
 			</view>
 			<view class="cter" style="font-size:32upx;">{{whichWallet}}</view>
 			<view class="btns" v-if="type==1">
@@ -329,9 +329,8 @@
 		align-items: center;
 		font-size: 28upx;
 		background: #fff;
-		border-bottom:2upx solid #f7f7f7;
 		position:fixed;
-		top:-1upx;
+		top:-2upx;
 	}
 	.header .con{
 		width:32upx;
@@ -404,7 +403,7 @@
 		font-size: 28upx;
 	}
 	.wt,.bs{
-		margin-top:120upx;
+		margin-top:116upx;
 	}
 	.wt>.wallet-title>view,
 	.wt>.list>view {
