@@ -298,6 +298,8 @@
 	width: 100%;
 	margin-top: 2rpx;
 }
+.more{text-align: center; color: #999999; height: 40rpx; 
+	line-height: 40rpx; font-size: 28rpx; padding: 20rpx 0;margin-top:20rpx;}
 .out {
 	width: 100%;
 	padding: 20rpx;
@@ -317,7 +319,7 @@
 	        align-items: center;
 	background: #fff;
 	font-size: 28rpx;
-	border-bottom:2rpx solid #f7f7f7;
+	border-bottom: 2rpx solid #f7f7f7;
 }
 .comfire {
 	width: 80rpx;
@@ -329,7 +331,7 @@
 	font-size: 28rpx;
 }
 .sel {
-	background: #CCA366;
+	background: #cca366;
 	color: #fff;
 }
 

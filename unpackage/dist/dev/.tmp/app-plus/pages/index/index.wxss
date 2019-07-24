@@ -56,11 +56,11 @@
 	font-size: 24rpx;
 	color: #333333;
 	display: block;
-	width: 520rpx!important;
-	text-align:left;
-	padding-left:20rpx;
+	width: 520rpx !important;
+	text-align: left;
+	padding-left: 20rpx;
 	height: 50rpx;
-	
+
 	line-height: 50rpx;
 }
 .section_title {
@@ -89,17 +89,17 @@
 }
 .section3 .total {
 	font-size: 56rpx;
-	color: #FF5533;
+	color: #ff5533;
 	text-align: center;
 }
 .section3 .total_sub {
 	font-size: 28rpx;
-	
+
 	text-align: center;
 }
 .section3 .total_sub2 {
 	font-size: 28rpx;
-	
+
 	text-align: center;
 }
 .rt {
@@ -143,18 +143,18 @@
 }
 .pop_wrap .text {
 	font-size: 32rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 	line-height: 3em;
 	padding: 20rpx 0;
 }
 .signBtn {
-	background: -webkit-gradient(linear, left top, left bottom, from(#EA6F53), to(#D03C29));
-	background: -o-linear-gradient(top, #EA6F53, #D03C29);
-	background: linear-gradient(180deg, #EA6F53, #D03C29);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ea6f53), to(#d03c29));
+	background: -o-linear-gradient(top, #ea6f53, #d03c29);
+	background: linear-gradient(180deg, #ea6f53, #d03c29);
 	width: 270rpx;
 	height: 270rpx;
 	border-radius: 50%;
-	color: #FFFFFF;
+	color: #ffffff;
 	line-height: 270rpx;
 	font-size: 32rpx;
 	text-align: center;
@@ -205,7 +205,7 @@
 	margin-top: 5px;
 }
 .qiun-bg-white {
-	background: #FFFFFF;
+	background: #ffffff;
 }
 .qiun-title-bar {
 	width: 96%;
@@ -223,18 +223,18 @@
 .qiun-charts {
 	width: 375px;
 	height: 250px;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	overflow: hidden;
 }
 .charts {
 	width: 375px;
 	height: 250px;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
-.red{
-	color:#FF3333!important;
+.red {
+	color: #ff3333 !important;
 }
-.green{
-	color:green!important;
+.green {
+	color: green !important;
 }
 

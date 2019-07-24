@@ -87,69 +87,82 @@ export default {
 	data() {
 		return {
 			list: [],
-			showData:true
+			showData: true
 		};
+	},
+	methods: {
+		compare(property) {
+			return function(a, b) {
+				var value1 = Number(a[property]);
+				var value2 = Number(b[property]);
+				return value1 - value2;
+			};
+		},
+		getData() {
+			let that = this;
+			that.list = [];
+			uni.request({
+				url: 'http://47.107.144.37/market/tickers',
+				header: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+					'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
+					timeout: 8000
+				},
+				method: 'GET',
+				success: function(res) {
+					that.showData = false;
+					let arr = res.data.data,
+						ars = [];
+					arr.forEach(item => {
+						if (
+							item.symbol == 'btcusdt' ||
+							item.symbol == 'ethusdt' ||
+							item.symbol == 'eosusdt' ||
+							item.symbol == 'xrpusdt' ||
+							item.symbol == 'bchusdt' ||
+							item.symbol == 'etcusdt' ||
+							item.symbol == 'ltcusdt' ||
+							item.symbol == 'bsvusdt' ||
+							item.symbol == 'dashusdt' ||
+							item.symbol == 'adausdt' ||
+							item.symbol == 'trxusdt' ||
+							item.symbol == 'atomusdt' ||
+							item.symbol == 'omgusdt' ||
+							item.symbol == 'neousdt' ||
+							item.symbol == 'zecusdt' ||
+							item.symbol == 'ontusdt' ||
+							item.symbol == 'gxcusdt' ||
+							item.symbol == 'qtumusdt' ||
+							item.symbol == 'htusdt' ||
+							item.symbol == 'aeusdt'
+						) {
+							if (!item.hasOwnProperty('cat')) {
+								item.cat = item.symbol.replace(/usdt/g, '').toUpperCase();
+							}
+							if (!item.hasOwnProperty('num')) {
+								item.num = ((Number(Number(item.close) - Number(item.open)) / Number(item.open)).toFixed(4) * 100).toFixed(2);
+							}
+							item.high = Number(item.high).toFixed(2);
+							item.low = Number(item.low).toFixed(2);
+							item.close = Number(item.close).toFixed(4);
+							if (!item.hasOwnProperty('price')) {
+								item.price = (item.close * 6.9).toFixed(2);
+							}
+							ars.push(item);
+						}
+					});
+					that.list =ars.reverse(ars.sort(that.compare('close')))
+				},
+				fail: function(res) {
+					that.showData = false;
+					console.log(res, 4);
+				}
+			});
+		}
 	},
 	onShow() {
 		let that = this;
-		that.list = [];
-		uni.request({
-			url: 'http://huobi.wezoz.com/market/tickers',
-			header: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-				'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
-				timeout: 8000
-			},
-			method: 'GET',
-			success: function(res) {
-				that.showData=false;
-				let arr = res.data.data,
-					ars = [];
-				arr.forEach(item => {
-					if (
-						item.symbol == 'btcusdt' ||
-						item.symbol == 'ethusdt' ||
-						item.symbol == 'eosusdt' ||
-						item.symbol == 'xrpusdt' ||
-						item.symbol == 'bchusdt' ||
-						item.symbol == 'etcusdt' ||
-						item.symbol == 'ltcusdt' ||
-						item.symbol == 'bsvusdt' ||
-						item.symbol == 'dashusdt' ||
-						item.symbol == 'adausdt' ||
-						item.symbol == 'trxusdt' ||
-						item.symbol == 'atomusdt' ||
-						item.symbol == 'omgusdt' ||
-						item.symbol == 'neousdt' ||
-						item.symbol == 'zecusdt' ||
-						item.symbol == 'ontusdt' ||
-						item.symbol == 'gxcusdt' ||
-						item.symbol == 'qtumusdt' ||
-						item.symbol == 'htusdt' ||
-						item.symbol == 'aeusdt'
-					) {
-						if (!item.hasOwnProperty('cat')) {
-							item.cat = item.symbol.replace(/usdt/g, '').toUpperCase();
-						}
-						if (!item.hasOwnProperty('num')) {
-							item.num = ((Number(Number(item.close) - Number(item.open)) / Number(item.open)).toFixed(4) * 100).toFixed(2);
-						}
-						item.high = Number(item.high).toFixed(2);
-						item.low = Number(item.low).toFixed(2);
-						item.close = Number(item.close).toFixed(4);
-						if (!item.hasOwnProperty('price')) {
-							item.price = (item.close * 6.9).toFixed(2);
-						}
-						ars.push(item);
-					}
-				});
-				that.list = ars;
-			},
-			fail: function(res) {
-				that.showData=false;
-				console.log(res, 4);
-			}
-		});
+		that.getData();
 	}
 };
 </script>

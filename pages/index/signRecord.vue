@@ -8,10 +8,12 @@
 			<view>{{item.time | formatDate(2)}}</view>
 			<view>+{{item.integral}}</view>
 		</view>
+		
 		<view class="title"  v-if="list.length>0">
 			<view>合计</view>
 			<view style="font-size:40upx;color:#D03C29;">{{total}}</view>
 		</view>
+		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
 	</view>
 </template>
 
@@ -27,43 +29,44 @@
 				list:[],
 				total:0,
 				start:0,
-				length:500,
+				length:20,
 				isMore:true,
 			}
 		},
-		/* onPullDownRefresh: function() {	
+		onPullDownRefresh: function() {	
 			this.start = 0;
 			this.list = [];
 			this.record();
 		},
-		onReachBottom: function() {		
+		onReachBottom: function() {	
 			if (this.isMore) {
 				this.record();
 			}
-		}, */
+		},
 		onShow(){
 			this.record();
 		},
 		methods:{
 			record () {
 				let that = this;
+				that.total=0;
 				djRequest({
 					url:'/api/sign/sign_list',
 					method:'POST',
 					data:{
-						start: 0,
-						length: 500
+						start: that.start,
+						length: that.length,
 					},
 					success:function(res){
-						/* uni.stopPullDownRefresh();
+						uni.stopPullDownRefresh();
 						if (res.data.data.data.length < that.length) {
 							that.isMore = false;
 						}else{
 							that.isMore = true;
-						} */
-						/* that.list = that.list.concat(res.data.data.data);
-						that.start = that.list.length; */
-						that.list=res.data.data.data;
+						}
+						that.list = that.list.concat(res.data.data.data);
+						that.start = that.list.length;
+						/* that.list=res.data.data.data; */
 						that.list.forEach(item=>{
 							that.total+=Number(item.integral)
 						})

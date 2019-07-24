@@ -66,6 +66,7 @@
     "pages/mine/mine6Use",
     "pages/mine/mine7Cards",
     "pages/login/login",
+    "pages/login/forget",
     "pages/login/finishRegisterInfo",
     "pages/login/waitAgree",
     "pages/login/register",

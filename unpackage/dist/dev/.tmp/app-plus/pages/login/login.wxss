@@ -4,7 +4,7 @@ page{background: #ffffff;}
 .login_form{margin: 50rpx 75rpx; display: inline-block; width: 600rpx;}
 .login_form .uni-form-item{margin-top: 40rpx;}
 .login_form .uni-input{color: #333333; font-size: 32rpx; border-bottom: 1px solid #999999;}
-.login_form .uni-btn-v{margin-top: 100rpx;}
+.login_form .uni-btn-v{margin-top: 80rpx;}
 .login_form .uni-btn-v button{background: #CCA366; font-size: 32rpx; color: #ffffff;}
 .register{color: #CCA366; font-size: 32rpx; text-align: center;}
 image{
@@ -12,5 +12,23 @@ image{
 	width:240rpx;
 	height:200rpx;
 	margin:80rpx auto 30rpx;
+}
+.forget{
+	width:120rpx;
+	margin-left:480rpx;
+	margin-top:20rpx;
+	position:relative;
+	font-size: 24rpx;
+	color:#666!important;
+	text-align:center;
+}
+.forget::before{
+	position:absolute;
+	width:90%;
+	height:2rpx;
+	background: #999;
+	top:100%;
+	left:0;
+	content:'';
 }
 

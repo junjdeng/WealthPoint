@@ -535,6 +535,12 @@
 			}
 		},
 		{
+			"path": "pages/login/forget",
+			"style": {
+				"navigationBarTitleText": "重置密码"
+			}
+		},
+		{
 			"path": "pages/login/finishRegisterInfo",
 			"style": {
 				"navigationBarTitleText": "完善资料",

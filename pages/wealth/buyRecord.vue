@@ -10,6 +10,7 @@
 				<view class="shape"></view>
 			</view>
 		</view>
+		
 		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
 	</view>
 </template>

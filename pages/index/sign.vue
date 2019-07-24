@@ -343,7 +343,7 @@
 	.item image{
 		width:40upx;
 		height:40upx;
-		margin-top:5upx;
+		margin-top:10upx;
 	}
 	.item .num {
 		width: 70upx;

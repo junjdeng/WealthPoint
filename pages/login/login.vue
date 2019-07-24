@@ -9,7 +9,7 @@
 			<view class="uni-form-item uni-column">
                 <input class="uni-input" name="password" password type="text" v-model="pwd" placeholder="密码"  />
 			</view>
-									
+			<!-- <view class="forget" data-url="forget" @tap="navTo">忘记密码？</view>	 -->					
 			<view class="uni-btn-v">
 				<button formType="submit">登录</button>
 			</view>
@@ -45,6 +45,11 @@
 			registre(){
 				uni.navigateTo({
 					url: '/pages/login/register'
+				});
+			},
+			navTo(e) {
+				uni.navigateTo({
+					url: e.currentTarget.dataset.url
 				});
 			},
 			login(data){				
@@ -105,7 +110,7 @@
 	.login_form{margin: 50upx 75upx; display: inline-block; width: 600upx;}
 	.login_form .uni-form-item{margin-top: 40upx;}
 	.login_form .uni-input{color: #333333; font-size: 32upx; border-bottom: 1px solid #999999;}
-	.login_form .uni-btn-v{margin-top: 100upx;}
+	.login_form .uni-btn-v{margin-top: 80upx;}
 	.login_form .uni-btn-v button{background: #CCA366; font-size: 32upx; color: #ffffff;}
 	.register{color: #CCA366; font-size: 32rpx; text-align: center;}
 	image{
@@ -113,5 +118,23 @@
 		width:240upx;
 		height:200upx;
 		margin:80upx auto 30upx;
+	}
+	.forget{
+		width:120upx;
+		margin-left:480upx;
+		margin-top:20upx;
+		position:relative;
+		font-size: 24upx;
+		color:#666!important;
+		text-align:center;
+	}
+	.forget::before{
+		position:absolute;
+		width:90%;
+		height:2upx;
+		background: #999;
+		top:100%;
+		left:0;
+		content:'';
 	}
 </style>
