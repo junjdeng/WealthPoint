@@ -77,6 +77,7 @@
 	}
 	.title:first-child{
 		border-bottom:2upx solid #f7f7f7;
+		border-top:2upx solid #f7f7f7;
 	}
 	.list{
 		border-bottom:2upx solid #f7f7f7;

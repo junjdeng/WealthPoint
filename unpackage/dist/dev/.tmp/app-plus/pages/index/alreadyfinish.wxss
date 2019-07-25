@@ -26,6 +26,7 @@
 }
 .title:first-child{
 	border-bottom:2rpx solid #f7f7f7;
+	border-top:2rpx solid #f7f7f7;
 }
 .list{
 	border-bottom:2rpx solid #f7f7f7;

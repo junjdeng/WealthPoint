@@ -50,8 +50,7 @@
 				}
 				var _this = this;
 				uni.showModal({
-					title: '签到积分兑换',
-					content: '确定将您的签到积分兑换AP？',
+					content: '确定将您的签到积分兑换为AP？',
 					success: function (res) {
 						if (res.confirm) {
 							djRequest({
@@ -60,12 +59,24 @@
 									integral:Number(_this.integral)
 								},
 								method:'POST',
-								success:function(res) {											
+								success:function(res) {	
 									if (res.data.status == 200){
 										common.TostUtil(res.data.message);
-										_this.total-= Number(_this.integral);
+										(function(){
+											djRequest({
+												url: '/api/member/balance',
+												method: 'GET',
+												success: function(res) {
+													if (res.data.status === 200) {
+														config.balance = res.data.data;
+														_this.total = config.balance.sign;
+													}
+												}
+											})
+										})();
 									}else{
 										common.TostUtil(res.data.message);
+										_this.integral='';
 									}
 								}
 							})	
@@ -76,18 +87,14 @@
 			},
 			record () {
 				let that = this;
-				that.total=0
 				djRequest({
-					url:'/api/sign/sign_list',
-					method:'POST',
-					data:{
-						start:0,
-						length:5000
-					},
-					success:function(res){
-						res.data.data.data.forEach(item=>{
-							that.total+=Number(item.integral)
-						})
+					url: '/api/member/balance',
+					method: 'GET',
+					success: function(res) {
+						if (res.data.status === 200) {
+							config.balance = res.data.data;
+							that.total = config.balance.sign;
+						}
 					}
 				})
 			}
@@ -127,6 +134,7 @@
 	}
 	.title:first-child{
 		border-bottom:2upx solid #f7f7f7;
+		border-top:2upx solid #f7f7f7;
 	}
 	.tips {
 		padding: 20upx;
