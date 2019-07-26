@@ -1,5 +1,15 @@
 {
-  "navigationBarTitleText": "买入AP",
+  "navigationBarTitleText": "买入云果",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "自动买入设置",
+        "color": "#333",
+        "fontSize": "14px",
+        "width": "100"
+      }
+    ]
+  },
   "usingComponents": {
     "uni-icon": "/components/uni-icon/uni-icon"
   }

@@ -8,7 +8,7 @@
 					</view>
 					<view class="flex5">
 						<view class="name">{{temp.text}}</view>
-						<view class="price">{{temp.price}}AP</view>
+						<view class="price">{{temp.price}}pcs</view>
 					</view>
 				</view>
 			</view>

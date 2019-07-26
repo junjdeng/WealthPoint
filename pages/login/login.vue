@@ -9,7 +9,7 @@
 			<view class="uni-form-item uni-column">
                 <input class="uni-input" name="password" password type="text" v-model="pwd" placeholder="密码"  />
 			</view>
-			<view class="forget" data-url="forget" @tap="navTo">忘记密码？</view>						
+			<!-- <view class="forget" data-url="forget" @tap="navTo">忘记密码？</view> -->						
 			<view class="uni-btn-v">
 				<button formType="submit">登录</button>
 			</view>
@@ -65,7 +65,6 @@
 								key:'sessionid',
 								data:res.data.data.sessionId
 							})
-							
 							uni.setStorage({
 								key:'userpwd',
 								data:data

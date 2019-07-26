@@ -6,7 +6,7 @@
 			<view class="btns" v-if="type == 1">
 				<view class="btnTitle" @click="getDown">{{ hopeSelTxt }}</view>
 				<view class="down" v-show="down">
-					<view @click="historyData">提取分红</view>
+					<view @click="historyData">已采摘</view>
 					<view @click="hopeSend">赠送</view>
 					<view @click="hopeRev">消费</view>
 				</view>
@@ -39,7 +39,7 @@
 			</view>
 			<view class="list" v-for="(item, index) in listWallet" v-if="hopeFlag && listWallet.length > 0" :key="index">
 				<view>{{ item.harvestTime | formatDate(2) }}</view>
-				<view>提取分红</view>
+				<view>已采摘</view>
 				<view>{{ item.total }}</view>
 			</view>
 		</view>
@@ -70,7 +70,7 @@
 				<view class="">{{ temp.bonus }}</view>
 			</view>
 		</view>
-		<view class="more">{{ isMore ? '上拉加载更多' : '暂无更多数据' }}</view>
+		<view class="more">{{ isMore ? '' : '暂无更多数据' }}</view>
 	</view>
 </template>
 
@@ -89,7 +89,7 @@ export default {
 			consume: [], //消费列表
 			down: false, //下拉框
 			whichWallet: '希望钱包明细',
-			hopeSelTxt: '提取分红',
+			hopeSelTxt: '已采摘',
 			bonusSelTxt: '奖金',
 			start: 0,
 			length: 20,
@@ -148,7 +148,7 @@ export default {
 			that.down = false;
 			that.listWalletChange = [];
 			that.consume = [];
-			that.hopeSelTxt = '提取分红';
+			that.hopeSelTxt = '已采摘';
 		},
 		bonusData() {
 			let that = this;
@@ -163,7 +163,7 @@ export default {
 			let that = this;
 			that.down = false;
 			that.hopeFlag = true;
-			that.hopeSelTxt = '提取分红';
+			that.hopeSelTxt = '已采摘';
 			/* that.listWallet=[]; */
 			that.listWalletChange = [];
 			that.consume = [];
@@ -306,7 +306,9 @@ export default {
 		bonusRev() {
 			let that = this;
 			that.bonusSelTxt = '消费';
+			that.bonusFlag = false;
 			that.down = !that.down;
+			
 			/* that.listBonus=[]; */
 			that.listWalletChange = [];
 			that.consume = [];

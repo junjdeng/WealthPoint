@@ -744,6 +744,18 @@ eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! 
 
 /***/ }),
 
+/***/ "../../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FautomaticBuy\"}":
+/*!****************************************************************************!*\
+  !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FautomaticBuy"} ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ \"../../../../../test/WealthPoint/pages.json\");\n\nvar _vue = _interopRequireDefault(__webpack_require__(/*! vue */ \"./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js\"));\nvar _automaticBuy = _interopRequireDefault(__webpack_require__(/*! ./pages/wealth/automaticBuy.vue */ \"../../../../../test/WealthPoint/pages/wealth/automaticBuy.vue\"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}\ncreatePage(_automaticBuy.default);\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ \"./node_modules/@dcloudio/uni-app-plus/dist/index.js\")[\"createPage\"]))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbbnVsbF0sIm5hbWVzIjpbImNyZWF0ZVBhZ2UiLCJQYWdlIl0sIm1hcHBpbmdzIjoia0RBQUE7O0FBRUE7QUFDQSx3SztBQUNBQSxVQUFVLENBQUNDLHFCQUFELENBQVYsQyIsImZpbGUiOiIuLi8uLi8uLi8uLi8uLi90ZXN0L1dlYWx0aFBvaW50L21haW4uanM/e1wicGFnZVwiOlwicGFnZXMlMkZ3ZWFsdGglMkZhdXRvbWF0aWNCdXlcIn0uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJ3VuaS1wYWdlcyc7XG5cbmltcG9ydCBWdWUgZnJvbSAndnVlJyAgICAgICAgICAgIFxuaW1wb3J0IFBhZ2UgZnJvbSAnLi9wYWdlcy93ZWFsdGgvYXV0b21hdGljQnV5LnZ1ZSdcbmNyZWF0ZVBhZ2UoUGFnZSkiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///../../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FautomaticBuy\"}\n");
+
+/***/ }),
+
 /***/ "../../../../../test/WealthPoint/main.js?{\"page\":\"pages%2Fwealth%2FbuyAP\"}":
 /*!*********************************************************************!*\
   !*** D:/test/WealthPoint/main.js?{"page":"pages%2Fwealth%2FbuyAP"} ***!

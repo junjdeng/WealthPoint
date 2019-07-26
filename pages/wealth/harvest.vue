@@ -1,11 +1,11 @@
 <template>
 	<view class="content">
 		<view class="out" v-for="(item, index) in dataList" :key="index">
-			<view>{{ item.total }} AP</view>
-			<view>分红天数:{{ item.count }}天</view>
-			<view class="comfire" :class="item.count >= 7 && item.flagTime ? 'sel' : ''" @click="toGet(item.number, item.count, item.id)">提取</view>
+			<view>{{ item.total }} pcs</view>
+			<view>生息天数:{{ item.count }}天</view>
+			<view class="comfire" :class="item.count >= 7 && item.flagTime ? 'sel' : ''" @click="toGet(item.number, item.count, item.id)">采摘</view>
 		</view>
-		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
+		<view class="more">{{isMore ? '' : '暂无更多数据'}}</view>
 	</view>
 </template>
 <script>
@@ -51,15 +51,17 @@ export default {
 							that.dataList=[];
 							that.start=0;
 							that.getData();
+							common.TostUtil('采摘成功！');
+						}else{
+							common.TostUtil(res.data.message);
 						}
-						common.TostUtil(res.data.message);
 					}
 				});
 			} else if (number <= 0) {
 				//否则不能提取
-				common.TostUtil('暂无分红中的AP！');
+				common.TostUtil('暂无生息中的云果！');
 			} else if (number < 7) {
-				common.TostUtil('最低分红7天方可提取！');
+				common.TostUtil('最低生息7天方可采摘！');
 			}
 		},
 		getData() {

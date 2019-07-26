@@ -1,10 +1,10 @@
 <template>
 	<view class="content">
 		<view>
-			<view class="lf">获得的AP</view>
+			<view class="lf">获得的云果</view>
 			<view class="rt">
 				<span class="fw">{{obj.total}}</span>
-				<span class="sm">AP</span>
+				<span class="sm">pcs</span>
 			</view>
 		</view>
 		<view class="gray">
@@ -12,7 +12,7 @@
 			<view>{{obj.orderId}}</view>
 		</view>
 		<view class="gray">
-			<view>AP数量</view>
+			<view>云果数量</view>
 			<view>{{obj.number}}</view>
 		</view>
 		<view class="gray">
@@ -40,16 +40,16 @@
 			<view>+5</view>
 		</view>
 		<view class="lf" v-if="obj.harvestStatus">
-			<view>分红状态</view>
+			<view>状态</view>
 			<view class="red" v-if="obj.harvestStatus==='growing'">
-				分红中(收益率{{obj.harvestSpeed}}%每天)
+				生息中(收益率{{obj.harvestSpeed}}%每天)
 			</view>
 			<view class="red" v-if="obj.harvestStatus==='reward'">
-				已收割
+				已采摘
 			</view>
 		</view>
 		<view class="lf"  v-if="obj.harvestStatus==='growing'">
-			<view>分红天数</view>
+			<view>生息天数</view>
 			<view class="red">{{grow}}天</view>
 		</view>
 	</view>

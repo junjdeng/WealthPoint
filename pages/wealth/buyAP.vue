@@ -15,7 +15,7 @@
 			<form class="dj_form" @submit="formSubmit">
 				<view class="uni-form-item uni-column flex-start">
 					<span class="flex2 title">买入数量</span>
-					<input class="uni-input flex5" v-model="APNumber" placeholder="您当前等级可买入AP数量为1个到10个" type="number" />
+					<input class="uni-input flex5" v-model="APNumber" placeholder="您当前等级可买入1 pcs~10 pcs" type="number" />
 				</view>
 
 				<view class="uni-form-item uni-column flex-start">
@@ -56,6 +56,11 @@
 				count: 0 ,//本周期完成订单数
 				ends:0
 			}
+		},
+		onNavigationBarButtonTap(e) {
+			uni.navigateTo({
+				url: 'automaticBuy'
+			})
 		},
 		computed: {
 			'total': function() {
@@ -136,12 +141,12 @@
 						return;
 					}
 					if (that.APNumber > 10) {
-						common.TostUtil('单次承租数量不能大于10个！');
+						common.TostUtil('单次承租数量不能大于10pcs！');
 						that.flag = true;
 						return;
 					}
 					if (that.APNumber < 1) {
-						common.TostUtil('单次承租数量不能小于1个！');
+						common.TostUtil('单次承租数量不能小于1pcs！');
 						that.flag = true;
 						return;
 					}

@@ -4,7 +4,7 @@
 			<view class="title">云积分</view>
 			<view class="tip" @click="getKnow">签到说明 <text class="crl">!</text></view>
 			<view class="num wpgold">{{signNum}}</view>
-			<span class="want" data-url="exchange" @tap="navTo">兑换AP</span>
+			<span class="want" data-url="exchange" @tap="navTo">兑换云果</span>
 		</view>
 
 		<view class=" section section2">
@@ -28,10 +28,10 @@
 				</view>
 				<view>1. 每日签到可获得相应云积分奖励
 					<br />
-					2. 云积分奖励大小根据签到连续性、购买AP付款时间、购买金额来判断
+					2. 云积分奖励大小根据签到连续性、购买云果付款时间、购买金额来判断
 
 					<br />
-					3. 云积分累计到一定额度可兑换AP、商品、云链等
+					3. 云积分累计到一定额度可兑换云果、商品、云链等
 
 					<br />
 					4. 本签到积分最终解释权归W云积分生态系统所有

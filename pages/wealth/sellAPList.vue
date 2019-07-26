@@ -11,7 +11,7 @@
 						<!--  v-if="temp.type==='sell'" -->
 						<view class="first">{{temp.orderId}}</view>
 						<view class="tw">
-							<view>{{temp.number}} <text>AP</text></view>
+							<view>{{temp.number}} <text>pcs</text></view>
 							<view>
 								<!-- 待匹配 -->
 								<view v-show="current===0">申请时间: {{temp.time | formatDate(1)}}</view>

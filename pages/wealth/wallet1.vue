@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="section1">
-			<view class="title">AP数量</view>
+			<view class="title">云果数量</view>
 			<view class="num wpgold">{{wallet}}</view>
 		</view>
 	</view>

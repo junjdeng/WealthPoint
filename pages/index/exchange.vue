@@ -8,11 +8,11 @@
 			<view class="input">
 				<input type="number" v-model.trim="integral" placeholder="请输入您要兑换的积分">
 			</view>
-			<view class="btn" @click="change">兑换AP</view>
+			<view class="btn" @click="change">兑换云果</view>
 		</view>
 		<view class="tips">
 			*兑换的积分，必须是大于等于5000且是5000的倍数<br/>
-			*每5000积分可兑换0.25AP
+			*每5000积分可兑换0.25 pcs云果
 		</view>
 	</view>
 </template>
@@ -50,7 +50,7 @@
 				}
 				var _this = this;
 				uni.showModal({
-					content: '确定将您的签到积分兑换为AP？',
+					content: '确定将您的签到积分兑换为云果？',
 					success: function (res) {
 						if (res.confirm) {
 							djRequest({

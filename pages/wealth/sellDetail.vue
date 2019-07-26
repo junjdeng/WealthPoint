@@ -4,7 +4,7 @@
 			<view class="lf">卖出</view>
 			<view class="rt">
 				<span class="fw">{{obj.number}}</span>
-				<span class="sm">AP</span>
+				<span class="sm">pcs</span>
 			</view>
 		</view>
 		<view class="gray">
@@ -12,7 +12,7 @@
 			<view>{{obj.orderId}}</view>
 		</view>
 		<view class="gray">
-			<view>AP数量</view>
+			<view>云果数量</view>
 			<view>{{obj.number}}</view>
 		</view>
 		<view class="gray">

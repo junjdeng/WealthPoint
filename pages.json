@@ -113,7 +113,7 @@
 		{
 			"path": "pages/index/exchange",
 			"style": {
-				"navigationBarTitleText": "兑换AP",
+				"navigationBarTitleText": "兑换云果",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -202,7 +202,23 @@
 		{
 			"path": "pages/wealth/buyAP",
 			"style": {
-				"navigationBarTitleText": "买入AP"
+				"navigationBarTitleText": "买入云果",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "自动买入设置",
+							"color": "#333",
+							"fontSize": "14px",
+							"width": "100"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/wealth/automaticBuy",
+			"style": {
+				"navigationBarTitleText": "自动买入设置"
 			}
 		},
 		{
@@ -212,8 +228,8 @@
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
-							"text": "分红中的AP",
-							"color": "#333",
+							"text": "生息中...",
+							"color": "#CCA366",
 							"fontSize": "14px",
 							"width": "100"
 						}]
@@ -265,7 +281,7 @@
 		{
 			"path": "pages/wealth/buyDetail",
 			"style": {
-				"navigationBarTitleText": "AP详情"
+				"navigationBarTitleText": "云果详情"
 			}
 		},
 		{
@@ -277,19 +293,19 @@
 		{
 			"path": "pages/wealth/sellAP",
 			"style": {
-				"navigationBarTitleText": "卖出AP"
+				"navigationBarTitleText": "卖出云果"
 			}
 		},
 		{
 			"path": "pages/wealth/sellDetail",
 			"style": {
-				"navigationBarTitleText": "AP详情"
+				"navigationBarTitleText": "云果详情"
 			}
 		},
 		{
 			"path": "pages/wealth/harvest",
 			"style": {
-				"navigationBarTitleText": "分红中的AP"
+				"navigationBarTitleText": "生息中的云果"
 			}
 		},
 		{

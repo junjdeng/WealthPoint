@@ -75,7 +75,7 @@
 		</view>
 
 		<view class="section section4">
-			<view class="section_title">AP收益曲线(%)</view>
+			<view class="section_title">云果收益曲线(%)</view>
 			<view class="trend">
 				<view class="qiun-columns">
 					<view class="qiun-charts"><canvas canvas-id="canvas" id="canvas" class="charts" @touchstart="touchCanvas"></canvas></view>
@@ -83,7 +83,7 @@
 			</view>
 		</view>
 		<!-- <view class="section section4">
-			<view class="section_title">AP成交量</view>
+			<view class="section_title">云果成交量</view>
 			<view class="trend">
 				<view class="qiun-columns">
 					<view class="qiun-charts">

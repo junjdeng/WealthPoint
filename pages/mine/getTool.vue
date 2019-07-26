@@ -5,7 +5,7 @@
 				<text>道具:</text><text>{{text}}</text>
 			</view>
 			<view>
-				<text>售价:</text><text>{{price}} AP</text>
+				<text>售价:</text><text>{{price}} pcs</text>
 			</view>
 			<view>
 				<text>购买数量:</text><text>1 张</text>
@@ -25,7 +25,7 @@
 				<view v-if="id==1">
 					1.只适用于本账号<br>
 					2. 账号如果有待匹配或未完成的卖出订单，不能使用<br>
-					3.使用后，银行账号和支付宝 二维码会被清空，需要完善后才可以卖出AP
+					3.使用后，银行账号和支付宝 二维码会被清空，需要完善后才可以卖出云果
 				</view>
 				<view v-if="id==2">
 					1.适用于领导人为伞下云用户解封<br>

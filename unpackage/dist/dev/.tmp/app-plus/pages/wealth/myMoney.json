@@ -3,8 +3,8 @@
   "titleNView": {
     "buttons": [
       {
-        "text": "分红中的AP",
-        "color": "#333",
+        "text": "生息中...",
+        "color": "#CCA366",
         "fontSize": "14px",
         "width": "100"
       }

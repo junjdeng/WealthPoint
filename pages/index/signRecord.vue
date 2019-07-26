@@ -13,7 +13,7 @@
 			<view>合计</view>
 			<view style="font-size:40upx;color:#D03C29;">{{total}}</view>
 		</view>
-		<view class="more">{{isMore ? '上拉加载更多' : '暂无更多数据'}}</view>
+		<view class="more">{{isMore ? '' : '暂无更多数据'}}</view>
 	</view>
 </template>
 

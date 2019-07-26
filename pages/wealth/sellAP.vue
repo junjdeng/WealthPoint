@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="section1">
-			<view class="title">AP数量</view>
+			<view class="title">云果数量</view>
 			<view class="num wpgold">{{wallet}}</view>
 		</view>
 
@@ -90,19 +90,19 @@
 							return;
 						}
 						if (parseFloat(that.APNumber) > parseFloat(that.wallet)) {
-							common.TostUtil('此钱包中AP数量不足！');
+							common.TostUtil('此钱包中云果数量不足！');
 							that.APNumber = '';
 							that.flag = true;
 							return;
 						}
 						if (parseFloat(that.APNumber) > 20) {
-							common.TostUtil('单次承退数量不能大于20个！');
+							common.TostUtil('单次承退数量不能大于20pcs！');
 							that.APNumber = '';
 							that.flag = true;
 							return;
 						}
 						if (config.balance.ecashLock !== 'no') { //希望钱包是否被锁定
-							common.TostUtil('希望钱包中AP已被锁定，不能卖出！');
+							common.TostUtil('希望钱包中云果已被锁定，不能卖出！');
 							that.flag = true;
 							return;
 						}
@@ -115,18 +115,18 @@
 							return;
 						}
 						if (parseFloat(that.APNumber) > parseFloat(that.wallet)) {
-							common.TostUtil('此钱包中AP数量不足！');
+							common.TostUtil('此钱包中云果数量不足！');
 							that.APNumber = '';
 							that.flag = true;
 							return;
 						}
 						if (parseFloat(that.APNumber) < 0.5) {
-							common.TostUtil('最少0.5个！');
+							common.TostUtil('最少0.5pcs！');
 							that.flag = true;
 							return;
 						}
 						if (config.balance.bonusLock !== 'no') { //奖金钱包是否被锁定
-							common.TostUtil('奖金钱包中AP已被锁定，不能卖出！');
+							common.TostUtil('奖金钱包中云果已被锁定，不能卖出！');
 							that.flag = true;
 							return;
 						}

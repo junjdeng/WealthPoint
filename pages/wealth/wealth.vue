@@ -3,13 +3,13 @@
 		<view class="section section1" style="background-image: url('../../static/images/wealthbg.jpg');">
 			<view class="flex-start">
 				<view class="flex1">
-					<view class="title">总资产AP</view>
+					<view class="title">总资产PCS</view>
 					<view class="num wpgold">{{totalAssets}}</view>
 				</view>
 				<view class="flex1 count">
-					<view>买入AP总数<span>{{buyNumber}}</span></view>
-					<view>已卖出AP数<span>{{sellNumber}}</span></view>
-					<view>待卖出AP数<span>{{forSell}}</span></view>
+					<view>买入云果总数<span>{{buyNumber}}</span></view>
+					<view>已卖出云果数<span>{{sellNumber}}</span></view>
+					<view>待卖出云果数<span>{{forSell}}</span></view>
 				</view>
 			</view>
 
@@ -36,7 +36,7 @@
 		</view>
 
 		<view class="section section2">
-			<view class="section_title">财务中心<span data-url="myMoney" @tap="navTo">分红收益<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon></span></span></view>
+			<view class="section_title">财务中心<span data-url="myMoney" @tap="navTo">生息收益<uni-icon type="forward" class="forward" size="20" color="#999999"></uni-icon></span></span></view>
 			<!-- <view class="flex-start condition_card">
 				<view class="flex1">
 					<view>总收益</view>
@@ -60,14 +60,14 @@
 						<image src="../../static/images/wealth2.jpg"></image>
 						<view class="color" v-show="buyFlag"></view>
 					</view>
-					<view class="title" style="color:#ff3333;">AP订单</view>
+					<view class="title" style="color:#ff3333;">云果订单</view>
 				</view>
 				<view class="flex1" data-url="sellAPList" @tap="navTo">
 					<view class="father">
 						<image src="../../static/images/wealth1.jpg"></image>
 						<view class="color" v-show="sellFlag"></view>
 					</view>
-					<view class="title" style="color:#3481F5;">AP订单</view>
+					<view class="title" style="color:#3481F5;">云果订单</view>
 				</view>
 			</view>
 		</view>

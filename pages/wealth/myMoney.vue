@@ -11,7 +11,7 @@
         <view class="profit-main-right">
           <view style="font-size: 50upx;color:#CCA366;height: 40upx;position:absolute;left:-10upx;top:-10upx;">*</view>
           <view>
-            <view>AP每天的收益分红</view>
+            <view>云果每天的生息</view>
           </view>
           <view>
             <view>系统赠送</view>
@@ -53,15 +53,15 @@
 				totalRevenue:0
 			}
 		},
-		onShow(){
+		/* onShow(){
 			common.balance();
-		},
+		}, */
 		onNavigationBarButtonTap(e) {
 			uni.navigateTo({
 				url: 'harvest'
 			})
 		},
-		onLoad() {
+		onShow() {
 			_self = this;
 			this.cWidth=uni.upx2px(750);
 			this.cHeight=uni.upx2px(500);

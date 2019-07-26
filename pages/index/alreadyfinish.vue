@@ -3,17 +3,17 @@
 		<view class="title">
 			<view>兑换时间</view>
 			<view>消耗积分</view>
-			<view>获得AP</view>
+			<view>获得云果</view>
 		</view>
 		<view class="list" v-if="list.length>0" v-for="(item,index) in list" :key="index">
 			<view>{{item.time | formatDate(2)}}</view>
 			<view>-{{item.integral}}</view>
-			<view>+{{item.number}}</view>
+			<view>+{{item.number}}pcs</view>
 		</view>
 		<view class="title"  v-if="list.length>0">
 			<view>合计</view>
 			<view style="font-size:40upx;color:#7ED321;">-{{total}}</view>
-			<view style="font-size:40upx;color:#D03C29;">+{{num}}</view>
+			<view style="font-size:40upx;color:#D03C29;">+{{num}}pcs</view>
 		</view>
 	</view>
 </template>
